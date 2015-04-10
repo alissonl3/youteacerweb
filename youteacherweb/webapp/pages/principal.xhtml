@@ -1,0 +1,111 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:composite="http://java.sun.com/jsf/composite"
+	xmlns:p="http://primefaces.org/ui">
+
+
+<ui:composition template="/templates/template.xhtml">
+
+
+
+	<ui:define name="conteudo">
+		<div style="margin: auto; width: 900px; height: 950px; padding-top: 50px;">
+
+			<h:form id="formLista">
+
+				<p:dataTable value="#{visitanteMB.bean.visitantes}" var="visitante"
+					paginator="true" rows="15" rowKey="#{visitante.id}"
+					selectionMode="single"
+					selection="#{visitanteMB.bean.visitanteSelecionado}">
+					<p:column headerText="Id">
+						<h:outputText value="#{visitante.id}"/>
+					</p:column>
+					<p:column headerText="Nome">
+						<h:outputText value="#{visitante.nome}"/>
+					</p:column>
+					<p:column headerText="Telefone">
+						<h:outputText value="#{visitante.telefone}"/>
+					</p:column>
+					<p:column headerText="Endereço">
+						<h:outputText value="#{visitante.endereco}"/>
+					</p:column>
+					<p:column headerText="">
+						<p:commandButton icon="ui-icon-trash"
+							action="#{visitanteMB.deletar(visitante)}" update="@form"/>
+					</p:column>
+				</p:dataTable>
+				<hr />
+				<p:commandButton value="#{bundle['login.button.novo']}"
+					oncomplete="PF('dialogCadastro').show();" />
+				<p:commandButton value="#{bundle['button.atualizar']}"
+					icon="ui-icon-document" oncomplete="PF('dialogAtualizar').show();"
+					update=":formAtualizar" />
+				<hr />
+			</h:form>
+
+
+		</div>
+
+
+		<p:dialog widgetVar="dialogCadastro">
+			<h:form>
+
+				<h:panelGrid columns="2">
+					<h:outputLabel value="#{bundle['login.label.nome']}" />
+					<p:inputText value="#{visitanteMB.bean.visitante.nome}"
+						required="true" />
+					<h:outputLabel value="#{bundle['login.label.idade']}" />
+					<p:inputText value="#{visitanteMB.bean.visitante.idade}"
+						required="true" />
+					<h:outputLabel value="#{bundle['login.label.telefone']}" />
+					<p:inputMask mask="(99) 9999-9999"
+						value="#{visitanteMB.bean.visitante.telefone}" required="true" />
+					<h:outputLabel value="#{bundle['login.label.endereco']}" />
+					<p:inputText value="#{visitanteMB.bean.visitante.endereco}"
+						required="true" />
+					<p:commandButton value="#{bundle['button.cadastrar']}"
+						actionListener="#{visitanteMB.adicionar}"
+						oncomplete="PF('dialogCadastro').hide();"
+						update="@form, :formLista"></p:commandButton>
+				</h:panelGrid>
+			</h:form>
+		</p:dialog>
+
+		<p:dialog widgetVar="dialogAtualizar">
+			<h:form id="formAtualizar">
+				<h:inputHidden value="#{visitanteMB.bean.visitanteSelecionado.id}" />
+				<h:panelGrid columns="2">
+					<h:outputLabel value="#{bundle['login.label.nome']}" />
+					<p:inputText value="#{visitanteMB.bean.visitanteSelecionado.nome}"
+						required="true" />
+					<h:outputLabel value="#{bundle['login.label.idade']}" />
+					<p:inputText value="#{visitanteMB.bean.visitanteSelecionado.idade}"
+						required="true" />
+					<h:outputLabel value="#{bundle['login.label.telefone']}" />
+					<p:inputText
+						value="#{visitanteMB.bean.visitanteSelecionado.telefone}"
+						required="true" />
+					<h:outputLabel value="#{bundle['login.label.endereco']}" />
+					<p:inputText
+						value="#{visitanteMB.bean.visitanteSelecionado.endereco}"
+						required="true" />
+					<p:commandButton value="#{bundle['button.atualizar']}"
+						actionListener="#{visitanteMB.atualizar}"
+						oncomplete="PF('dialogAtualizar').hide();"
+						update="@form, :formLista" />
+				</h:panelGrid>
+			</h:form>
+		</p:dialog>
+
+	</ui:define>
+
+
+
+</ui:composition>
+
+</html>

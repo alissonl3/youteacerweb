@@ -1,0 +1,25 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<ui:composition template="/templates/template.xhtml">
+
+	<ui:define name="conteudo">
+	<hr />
+		<div align="center" style="padding-top: 100px;">
+			<span style="color: red; font-size: 30px;"> Aconteceu aquele
+				tal de erro 500!</span>
+		</div>
+		<hr />
+		<div align="center">
+			<span style="color: black; font-size: 20px;">Verifique a sua conexão com o banco de dados!!!</span><br />
+			<h:outputLink value="login.jsf">Voltar</h:outputLink>
+		</div>
+	</ui:define>
+
+</ui:composition>
+</html>
