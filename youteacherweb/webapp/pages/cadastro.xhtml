@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="/templates/template.xhtml">
+	
+	<ui:define name="content">
+	    
+	    <h:form>
+	    	<h:outputLabel>NOME:</h:outputLabel>
+	    	<h:inputText value=""></h:inputText>
+	    	<h:outputLabel>EMAIL:</h:outputLabel>
+	    	<p:inputText id="email" required="true" label="EMAIL:" size="40" requiredMessage="Por favor! Entre com seu E-mail."
+	    	validatorMessage="Email Inválido!">
+	    	<f:validateRegex
+				pattern="^[_A-Za-z0-9-\+]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$" />
+	    	
+	    	</p:inputText>
+	    	<h:outputLabel>DATA NASCIMENTO:</h:outputLabel>
+	    	<h:inputText value=""></h:inputText>
+	    	<h:outputLabel>LOGIN:</h:outputLabel>
+	    	<h:inputText value=""></h:inputText>
+	    	<h:outputLabel>SENHA:</h:outputLabel>
+	    	<h:inputText value=""></h:inputText>
+	    	<h:outputLabel>ADM:</h:outputLabel>
+	    	<h:inputText value=""></h:inputText>
+	    </h:form>
+	    
+	</ui:define>
+	
+</ui:composition>
+</html>
