@@ -15,6 +15,7 @@ import javax.persistence.Persistence;
 public class Banco {
     
     EntityManager em;
+    
     private static Banco instancia;
     
     
