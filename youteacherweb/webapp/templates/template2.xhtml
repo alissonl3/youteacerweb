@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title><ui:insert name="title">Default title</ui:insert></title>
+	<h:outputStylesheet library="css" name="them.css" />
+</h:head>
+
+
+
+<h:body>
+
+	<div id="page">
+		<div id="header" align="center">
+			<ui:insert name="header">
+
+
+				<b>SISTEMA DE LOGIN</b>
+				<hr />
+				<h:form>
+					<p:menubar>
+				<p:menuitem value="ENTRAR" url="login.jsf"></p:menuitem>
+				<p:menuitem value="GALERIA" url="contato.jsf"></p:menuitem>
+				<p:menuitem value="GERENCIAR" url="principal.jsf"></p:menuitem>
+					</p:menubar>
+				</h:form>
+				
+			</ui:insert>
+		</div>
+
+
+		<div id="content">
+			
+				<ui:insert name="conteudo" />
+			
+		</div>
+
+		<div id="footer" align="center">
+			<ui:insert name="footer">
+				<hr />
+ 	Desenvolvido por Alisson Lopes e Alan Lopes.
+ 			</ui:insert>
+		</div>
+	</div>
+
+</h:body>
+
+</html>

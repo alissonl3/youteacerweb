@@ -1,51 +1,115 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
-          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:ui="http://java.sun.com/jsf/facelets"
-	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:p="http://primefaces.org/ui">
-<h:head>
-	<title><ui:insert name="title">Default title</ui:insert></title>
-	<h:outputStylesheet library="css" name="them.css" />
-</h:head>
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>Questionário</title>      
+    </h:head>
+    
+     <style>
+            
+            body{
+               
+                padding:0px;
+            margin:0px;
+            background: red;
+            background: url(../resources/imagens/bg_pagina_1024.png) repeat-y center;
+           
+            }
+            .geral{
+                margin: 0px; padding: 0px;
+                
+            }
+            
+            .container{
+                width: 980px;
+                margin: auto;
+/*                 border-right: 2px solid darkgray ;
+            border-left: 2px solid darkgray;
+            border-bottom: 2px solid darkgray;*/
+            background: white;
+            }
+             .header {
+                 /*background: url(../resources/imagens/fundo_header.png) repeat-x;*/
+                 background: white;
+            width:auto;
+            height:121px;
+            
+/*            border-top: 2px solid darkgray;*/
+           border-bottom: 2px solid greenyellow;
+            margin-bottom: 13px;
+        }
+        
+       
+        
+        
+        .corpo{
+          width: 980px;
+          margin: auto;
+          height: auto;
+            
+            
+        }
+            
+            
+            
+        </style>
+    
+    <h:body >
+        <div class="geral" >
+             <div class="header">
+                  <div id="logo" style="background: url(../resources/imagens/pr_paranavai.jpg) no-repeat; height: 100px; width: 177px; float: left; margin-top: 10px; margin-right: 10px;
+                       margin-left:  60px;">
+                     
+                 </div>
+                 <div id="titulo" style="background: url(../resources/imagens/novo_bkg_2_1.png) no-repeat; height:110px; width: 755px; float: left;
+                      margin-top: 10px; margin-left: 30px;">
+                    
+                     
+                 </div>
+                
+                <div id="menu" style=" float: right; margin-top: 40px; margin-left: 30px;
+                     ">
+                     <h:form>
+                        
+                      
+                         <div style="margin-left: 10px; float: right; margin-right: 100px;">
+                             <p:commandButton  action="#{controleLogin.logOff()}" icon="ui-icon-extlink" />
 
+                         </div>
+                     </h:form>
+                     
+                 </div>
+                   
+                </div>
+            <div class="container">
 
+                <div class="corpo">
 
-<h:body>
-
-	<div id="page">
-		<div id="header" align="center">
-			<ui:insert name="header">
-
-
-				<b>SISTEMA DE LOGIN</b>
-				<hr />
-				<h:form>
-					<p:menubar>
-				<p:menuitem value="ENTRAR" url="login.jsf"></p:menuitem>
-				<p:menuitem value="GALERIA" url="contato.jsf"></p:menuitem>
-				<p:menuitem value="GERENCIAR" url="principal.jsf"></p:menuitem>
-					</p:menubar>
-				</h:form>
-				
-			</ui:insert>
-		</div>
-
-
-		<div id="content">
-			
-				<ui:insert name="conteudo" />
-			
-		</div>
-
-		<div id="footer" align="center">
-			<ui:insert name="footer">
-				<hr />
- 	Desenvolvido por Alisson Lopes.
- 			</ui:insert>
-		</div>
-	</div>
-
-</h:body>
-
+                    <ui:insert name="conteudo">
+                     
+                        Aqui é o corpo
+                    </ui:insert>
+                               
+                </div>
+                <div style="clear: both;"></div>
+             
+                     
+                  
+                
+            </div>
+            <div class="footer" style="text-align:center; color: gray; font: 10px; margin-top: 10px; margin-bottom: 10px;">
+                    Site desenvolvido por Alisson Lopes - 2014
+                </div>
+            
+            
+            
+            
+        </div>
+        
+    </h:body>
+        
 </html>

@@ -27,8 +27,6 @@ public class Usuario implements Serializable{
 	@Temporal(TemporalType.DATE)
 	@Column(name="dataNascimento")
 	private Date dataNascimento;
-	@Column(name="login")
-	private String login;
 	@Column(name="senha")
 	private String senha;
 	@Column(name="adm")
@@ -66,13 +64,6 @@ public class Usuario implements Serializable{
 		this.dataNascimento = dataNascimento;
 	}
 
-	public String getLogin() {
-		return login;
-	}
-
-	public void setLogin(String login) {
-		this.login = login;
-	}
 
 	public String getSenha() {
 		return senha;

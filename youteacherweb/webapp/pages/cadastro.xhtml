@@ -7,28 +7,92 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:p="http://primefaces.org/ui">
 
-<ui:composition template="/templates/template.xhtml">
+<ui:composition template="/templates/template_initial.xhtml">
 	
-	<ui:define name="content">
+	<ui:define name="container">
+
+	
+	     <!-- NAVBAR
+    ================================================== -->
+    <div class="navbar-wrapper">
+      <!-- Wrap the .navbar in .container to center it within the absolutely positioned parent. -->
+      <div class="container">
+
+        <div class="navbar navbar-inverse">
+          <div class="navbar-inner">
+            <!-- Responsive Navbar Part 1: Button for triggering responsive navbar (not covered in tutorial). Include responsive CSS to utilize. -->
+            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="brand" href="#">Project name</a>
+            <!-- Responsive Navbar Part 2: Place all navbar contents you want collapsed withing .navbar-collapse.collapse. -->
+            <div class="nav-collapse collapse">
+              <ul class="nav">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <!-- Read about Bootstrap dropdowns at http://twbs.github.com/bootstrap/javascript.html#dropdowns -->
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="#">Action</a></li>
+                    <li><a href="#">Another action</a></li>
+                    <li><a href="#">Something else here</a></li>
+                    <li class="divider"></li>
+                    <li class="nav-header">Nav header</li>
+                    <li><a href="#">Separated link</a></li>
+                    <li><a href="#">One more separated link</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div><!--/.nav-collapse -->
+          </div><!-- /.navbar-inner -->
+        </div><!-- /.navbar -->
+
+      </div> <!-- /.container -->
+    </div><!-- /.navbar-wrapper -->
 	    
-	    <h:form>
-	    	<h:outputLabel>NOME:</h:outputLabel>
-	    	<h:inputText value=""></h:inputText>
-	    	<h:outputLabel>EMAIL:</h:outputLabel>
-	    	<p:inputText id="email" required="true" label="EMAIL:" size="40" requiredMessage="Por favor! Entre com seu E-mail."
-	    	validatorMessage="Email Inválido!">
-	    	<f:validateRegex
-				pattern="^[_A-Za-z0-9-\+]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$" />
+	    <h:form id="frmCadastro" >
 	    	
-	    	</p:inputText>
-	    	<h:outputLabel>DATA NASCIMENTO:</h:outputLabel>
-	    	<h:inputText value=""></h:inputText>
-	    	<h:outputLabel>LOGIN:</h:outputLabel>
-	    	<h:inputText value=""></h:inputText>
-	    	<h:outputLabel>SENHA:</h:outputLabel>
-	    	<h:inputText value=""></h:inputText>
-	    	<h:outputLabel>ADM:</h:outputLabel>
-	    	<h:inputText value=""></h:inputText>
+	    	
+	    	<p:fieldset legend="Cadastro" style="margin-bottom:20px">
+	    	<h:panelGrid columns="1" >
+	    		<h:outputText value="Nome"/>
+	    		
+	    		<p:inputText id="nome" value="#{cadastroMB.nome}" maxlength="50" size="47"  required="true" requiredMessage="O campo nome não pode ficar em branco"/>
+	    		<p:message for="nome" display="text"/>
+	    		
+		    	<h:outputText value="*E-mail"/>
+		    	<p:inputText id="email" required="true" label="EMAIL:" size="47" requiredMessage="O campo e-mail não pode ficar em branco"
+		    	validatorMessage="Email Inválido!" value="#{cadastroMB.email}">
+		    	<f:validateRegex
+					pattern="^[_A-Za-z0-9-\+]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$" />
+		    	</p:inputText>
+		    	<p:watermark for="email" value="Email Address *" />
+		    	<p:message for="email" display="text"/>
+		    	<p:separator/>
+		    	<h:outputText value="Data de nascimento"></h:outputText>
+		    	<p:inputMask id="nascimento" mask="99/99/9999" label="Data Nascimento:" maxlength="10" required="true" value="#{cadastroMB.dataNascimento}"
+		    	requiredMessage="O campo Data de nascimento não pode ficar em branco">
+		    			<f:convertDateTime pattern="d/M/yyyy" />
+		    	</p:inputMask>
+		    	<p:message for="nascimento" display="text"></p:message>
+		    	</h:panelGrid>
+		    	
+		    	
+			    <h:panelGrid columns="2" id="matchGrid" cellpadding="5"> 
+			    	
+			    	<h:outputText value="Senha"/>
+			    	<h:outputText value="*Confirmar senha"/>
+			    	<p:password id="senha"  value="#{cadastroMB.senha}" required="true" match="senha2" requiredMessage="Digite uma senha!"/>
+			    	<p:password id="senha2" value="#{cadastroMB.senha}" required="true"  validatorMessage="Senha incorreta"/>
+			    	<p:message for="senha" display="text"/>
+			    	 <p:commandButton update="frmCadastro" value="Save" />
+		    	</h:panelGrid>
+		    	
+	    	</p:fieldset>
 	    </h:form>
 	    
 	</ui:define>
