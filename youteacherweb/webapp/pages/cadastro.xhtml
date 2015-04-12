@@ -41,10 +41,10 @@
 			    	
 			    	<h:outputText value="Senha"/>
 			    	<h:outputText value="*Confirmar senha"/>
-			    	<p:password id="senha"  value="#{usuarioMB.viewBean.usuario.senha}" required="true" match="senha2" requiredMessage="Digite uma senha!"/>
-			    	<p:password id="senha2" value="#{usuarioMB.viewBean.usuario.senha}" required="true"  validatorMessage="Senha incorreta"/>
+			    	<p:password id="senha"  value="#{usuarioMB.viewBean.usuario.senha}" required="true" match="senha2" requiredMessage="Digite uma senha!" validatorMessage="Senha incorreta"/>
+			    	<p:password id="senha2" value="#{usuarioMB.viewBean.usuario.senha}" required="true" />
 			    	<p:message for="senha" display="text"/>
-			    	<p:commandButton update="@form" value="Save"  actionListener="#{usuarioMB.inserir}" process="@form"  />
+			    	<p:commandButton update="@form" value="Cadastrar"  actionListener="#{usuarioMB.inserir}" process="@form"  />
 		    	</h:panelGrid>
 		    	
 	    	</p:fieldset>
