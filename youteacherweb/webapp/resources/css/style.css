@@ -43,3 +43,39 @@ html, body {
 	text-align: center;
 	width: 100%;
 }
+
+.btnVerde{
+/* 	background:  #00FF00; */
+	background:  #43B312;
+	border: 2px solid greenyellow;
+	width: 150px;
+}
+
+.btnVerdeClaro{
+	
+/* 	background:  #80BD00; */
+	background:  #86E65C;
+	border: 2px solid greenyellow;
+	width: 150px;
+}
+.btnBege{
+/* 	background:  #80BD00; */
+	background:  #808000;
+}
+
+.btnRoxo{
+/* 	background:  #000000; */
+	background:  #3A238D;
+	
+}
+
+.btnAzul{
+/* 	background:  #F70700; */
+	background:  #121AB3;
+}
+
+
+
+
+
+
