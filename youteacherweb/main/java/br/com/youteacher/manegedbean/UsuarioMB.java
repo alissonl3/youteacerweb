@@ -13,6 +13,9 @@ import javax.faces.bean.ManagedBean;
 
 import javax.faces.context.FacesContext;
 
+
+import javax.servlet.http.HttpSession;
+
 import br.com.youteacher.banco.BancoDAO;
 import br.com.youteacher.viewbean.UsuarioViewBean;
 import br.com.youteacherweb.entidades.Usuario;
@@ -90,6 +93,49 @@ public class UsuarioMB implements Serializable {
 		 viewBean.setUsuario(new Usuario());
 	 }
 
+	 //EXECUTAR O LOGIN DO USUARIO
+	    public String loginUsuario(){
+	        
+	        listarCondicao();
+	  
+	    if(!viewBean.getUsuarios().isEmpty()){
+	             
+	            viewBean.setUsuarioLogado(viewBean.getUsuarios().get(0)); 
+	            
+	            FacesContext fc = FacesContext.getCurrentInstance();
+	            HttpSession session = (HttpSession) fc.getExternalContext().getSession(false);
+	            session.setAttribute("objLogin", "logado");
+	        
+	            return "/aluno/home.jsf?faces-redirect=true";
+	        
+	        }
+	         else {
+	            
+	            mostraMenssagem("LOGIN",  "Senha ou login incorretos!!!");
+	            return "home";
+	        
+	        }
+	    
+	   
+	    }
+	    
+	 //EXECUTAR LOGOFF DO USUARIO
+	    public String logOff(){
+
+	        FacesContext fc = FacesContext.getCurrentInstance();
+	        HttpSession session = (HttpSession) fc.getExternalContext().getSession(false);
+	        session.removeAttribute("objLogin");
+	    
+	    return "/home.xhtml?faces-redirect=true";
+	    }
+	 
+	 //LISTAR CONDICÃO LOGAR USUARIO
+	 public void listarCondicao(){
+		    
+	        viewBean.setUsuarios(dao.listarCondicao(Usuario.class, " email = '" + viewBean.getUsuario().getEmail() + "' and senha = '" + viewBean.getUsuario().getSenha() + "'"));
+	    
+	    }
+	 
 	public UsuarioViewBean getViewBean() {
 		return viewBean;
 	}

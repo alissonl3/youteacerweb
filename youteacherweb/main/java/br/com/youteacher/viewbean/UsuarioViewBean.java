@@ -10,6 +10,7 @@ public class UsuarioViewBean {
 	
 private Usuario usuario;
 private List<Usuario> usuarios;
+private Usuario usuarioLogado;
 	
 	public UsuarioViewBean(){
 		
@@ -19,6 +20,17 @@ private List<Usuario> usuarios;
 	
 	private void initValues(){
 		usuario = new Usuario();
+		usuarioLogado = new Usuario();
+	}
+	
+	
+
+	public Usuario getUsuarioLogado() {
+		return usuarioLogado;
+	}
+
+	public void setUsuarioLogado(Usuario usuarioLogado) {
+		this.usuarioLogado = usuarioLogado;
 	}
 
 	public Usuario getUsuario() {

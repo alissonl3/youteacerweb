@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+
+<h:form id="frmLogin">
+
+	<p:fieldset legend="Login" style="margin-bottom:20px">
+		<h:panelGrid columns="1">
+			<h:outputText style="font-size: 16px;" 
+				value="Para se logar informe seu nome e e-mail nos campos indicados." />
+			<h:outputText value="*E-mail:" />
+			<p:inputText id="email" required="true" label="EMAIL:" size="47"
+				requiredMessage="O campo e-mail não pode ficar em branco"
+				validatorMessage="Email Inválido!"
+				value="#{usuarioMB.viewBean.usuario.email}">
+				<f:validateRegex
+					pattern="^[_A-Za-z0-9-\+]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$" />
+			</p:inputText>
+			<p:watermark for="email" value="Ex(xx@gmail.com)" />
+			<p:message for="email" display="text" />
+			<h:outputText value="*Senha:" />
+			<p:password id="senha" value="#{usuarioMB.viewBean.usuario.senha}"
+				required="true" requiredMessage="Digite uma senha!" size="47" />
+			<p:watermark for="senha" value="Senha" />
+			<p:message for="senha" display="text" />
+	
+				<p:commandButton update="@form" value="ENTRAR"
+					styleClass="btnVerdeClaro" style="width: 150px; background:  #86E65C;"
+					action="#{usuarioMB.loginUsuario}" />
+		</h:panelGrid>
+	</p:fieldset>
+</h:form>
+
+</html>

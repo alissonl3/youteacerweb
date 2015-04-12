@@ -12,7 +12,8 @@
 
 	    	<p:fieldset legend="Cadastro" style="margin-bottom:20px">
 	    	<h:panelGrid columns="1" >
-	    	<h:outputText value="*Campos obrigatórios" style="color:red;"/>	  
+	    	<h:outputText style="font-size: 16px;" value="Para se cadastrar preencha corretamente os campos indicados."/>	
+	    	<h:outputText  value="*Campos obrigatórios" style="color:red; font-size: 15px;"/>	  
 	    	<h:outputText value="Id:"/>	    		
 	    		<p:inputText id="id" value="#{usuarioMB.viewBean.usuario.id}" maxlength="5" size="10"  disabled="true" />
 	    		
@@ -40,8 +41,7 @@
 		    	</h:panelGrid>
 		    	
 		    	
-			    <h:panelGrid columns="2" id="matchGrid" cellpadding="5"> 
-			    	
+			    <h:panelGrid columns="2" id="matchGrid" cellpadding="5"> 			    	
 			    	<h:outputText value="*Senha:"/>
 			    	<h:outputText value="*Confirmar senha:"/>
 			    	<p:password id="senha"  value="#{usuarioMB.viewBean.usuario.senha}" required="true" match="senha2" requiredMessage="Digite uma senha!" validatorMessage="Senha incorreta"/>
@@ -49,8 +49,8 @@
 			    	<p:watermark for="senha" value="Senha" />
 			    	<p:watermark for="senha2" value="Confirmar Senha" />
 			    	<p:message for="senha" display="text"/><h:outputText value=""/>
-			    	<p:commandButton update="@form" value="CADASTRAR" styleClass="btnVerdeClaro" style="width: 150px;"  actionListener="#{usuarioMB.inserir}"  />
-			    	<p:commandButton update="@form" value="CANCELAR" styleClass="btnVerdeClaro" style="width: 150px;"  icon="ui-icon-close" type="reset" onclick="PF('dlgCadastrar').hide();"  />
+			    	<p:commandButton update="@form" value="CADASTRAR"  style="width: 150px; background:  #86E65C;"  actionListener="#{usuarioMB.inserir}"  />
+			    	<p:commandButton update="@form" value="CANCELAR"  style="width: 150px; background:  #86E65C;"  type="reset" onclick="PF('dlgCadastrar').hide();"  />
 		    	</h:panelGrid>
 		    	
 	    	</p:fieldset>
