@@ -12,39 +12,45 @@
 
 	    	<p:fieldset legend="Cadastro" style="margin-bottom:20px">
 	    	<h:panelGrid columns="1" >
+	    	<h:outputText value="*Campos obrigatórios" style="color:red;"/>	  
 	    	<h:outputText value="Id:"/>	    		
 	    		<p:inputText id="id" value="#{usuarioMB.viewBean.usuario.id}" maxlength="5" size="10"  disabled="true" />
 	    		
 	    		<h:outputText value="*Nome:"/>	    		
 	    		<p:inputText id="nome" value="#{usuarioMB.viewBean.usuario.nome}" maxlength="50" size="47"  required="true" requiredMessage="O campo nome não pode ficar em branco"/>
+	    		<p:watermark for="nome" value="Nome Completo" />
 	    		<p:message for="nome" display="text"/>
 	    		
-		    	<h:outputText value="*E-mail"/>
+		    	<h:outputText value="*E-mail:"/>
 		    	<p:inputText id="email" required="true" label="EMAIL:" size="47" requiredMessage="O campo e-mail não pode ficar em branco"
 		    	validatorMessage="Email Inválido!" value="#{usuarioMB.viewBean.usuario.email}">
 		    	<f:validateRegex
 					pattern="^[_A-Za-z0-9-\+]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$" />
 		    	</p:inputText>
-		    	<p:watermark for="email" value="Email Address *" />
+		    	<p:watermark for="email" value="Ex(xx@gmail.com)" />
 		    	<p:message for="email" display="text"/>
 		    	<p:separator/>
-		    	<h:outputText value="Data de nascimento"></h:outputText>
+		    	<h:outputText value="*Data de nascimento:"></h:outputText>
 		    	<p:inputMask id="nascimento" mask="99/99/9999" label="Data Nascimento:" maxlength="10" required="true" value="#{usuarioMB.viewBean.usuario.dataNascimento}"
 		    	requiredMessage="O campo Data de nascimento não pode ficar em branco">
 		    			<f:convertDateTime pattern="d/M/yyyy" />
 		    	</p:inputMask>
+		    	<p:watermark for="nascimento" value="Ex(12/12/1999)" />
 		    	<p:message for="nascimento" display="text"></p:message>
 		    	</h:panelGrid>
 		    	
 		    	
 			    <h:panelGrid columns="2" id="matchGrid" cellpadding="5"> 
 			    	
-			    	<h:outputText value="Senha"/>
-			    	<h:outputText value="*Confirmar senha"/>
+			    	<h:outputText value="*Senha:"/>
+			    	<h:outputText value="*Confirmar senha:"/>
 			    	<p:password id="senha"  value="#{usuarioMB.viewBean.usuario.senha}" required="true" match="senha2" requiredMessage="Digite uma senha!" validatorMessage="Senha incorreta"/>
 			    	<p:password id="senha2" value="#{usuarioMB.viewBean.usuario.senha}" required="true" />
-			    	<p:message for="senha" display="text"/>
-			    	<p:commandButton update="@form" value="Cadastrar"  actionListener="#{usuarioMB.inserir}" process="@form"  />
+			    	<p:watermark for="senha" value="Senha" />
+			    	<p:watermark for="senha2" value="Confirmar Senha" />
+			    	<p:message for="senha" display="text"/><h:outputText value=""/>
+			    	<p:commandButton update="@form" value="CADASTRAR" styleClass="btnVerdeClaro" style="width: 150px;"  actionListener="#{usuarioMB.inserir}"  />
+			    	<p:commandButton update="@form" value="CANCELAR" styleClass="btnVerdeClaro" style="width: 150px;"  icon="ui-icon-close" type="reset" onclick="PF('dlgCadastrar').hide();"  />
 		    	</h:panelGrid>
 		    	
 	    	</p:fieldset>

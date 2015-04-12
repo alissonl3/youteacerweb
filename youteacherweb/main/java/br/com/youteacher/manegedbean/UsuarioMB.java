@@ -15,6 +15,7 @@ import javax.faces.context.FacesContext;
 
 import br.com.youteacher.banco.BancoDAO;
 import br.com.youteacher.viewbean.UsuarioViewBean;
+import br.com.youteacherweb.entidades.Usuario;
 
 @ManagedBean
 public class UsuarioMB implements Serializable {
@@ -44,6 +45,7 @@ public class UsuarioMB implements Serializable {
 			dao.inserir(viewBean.getUsuario());
 			mostraMenssagem("SUCESSO", "Usuario inserido com sucesso.");
 			
+			novoUsuario();
 			
 		}catch(Exception e){
 			
@@ -82,6 +84,11 @@ public class UsuarioMB implements Serializable {
 	    
 	    
 	    }
+	 
+	 //NOVO USUARIO
+	 public void novoUsuario(){
+		 viewBean.setUsuario(new Usuario());
+	 }
 
 	public UsuarioViewBean getViewBean() {
 		return viewBean;
