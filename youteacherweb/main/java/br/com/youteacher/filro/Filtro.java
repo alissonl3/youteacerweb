@@ -33,7 +33,7 @@ public class Filtro implements Filter {
 	            
 	            String contextPath =  ((HttpServletRequest) request).getContextPath();
 	            
-	            ((HttpServletResponse) response).sendRedirect(contextPath + "/home.xhtml");
+	            ((HttpServletResponse) response).sendRedirect(contextPath + "/index.html");
 	        
 	        
 	        }
@@ -41,7 +41,7 @@ public class Filtro implements Filter {
 	        
 	             String contextPath =  ((HttpServletRequest) request).getContextPath();
 	            
-	            ((HttpServletResponse) response).sendRedirect(contextPath + "/home.jsf");
+	            ((HttpServletResponse) response).sendRedirect(contextPath + "/index.html");
 	        
 	        
 	        }

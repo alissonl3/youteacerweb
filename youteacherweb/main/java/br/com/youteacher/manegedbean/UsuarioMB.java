@@ -112,7 +112,7 @@ public class UsuarioMB implements Serializable {
 	         else {
 	            
 	            mostraMenssagem("LOGIN",  "Senha ou login incorretos!!!");
-	            return "home";
+	            return "index";
 	        
 	        }
 	    
@@ -121,12 +121,14 @@ public class UsuarioMB implements Serializable {
 	    
 	 //EXECUTAR LOGOFF DO USUARIO
 	    public String logOff(){
+	    	
+	    	System.out.println("Entrou no medoto sair!");
 
 	        FacesContext fc = FacesContext.getCurrentInstance();
 	        HttpSession session = (HttpSession) fc.getExternalContext().getSession(false);
 	        session.removeAttribute("objLogin");
 	    
-	    return "/home.xhtml?faces-redirect=true";
+	        return "/index.html?faces-redirect=true";
 	    }
 	 
 	 //LISTAR CONDICÃO LOGAR USUARIO

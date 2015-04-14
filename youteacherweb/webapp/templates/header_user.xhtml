@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:composite="http://java.sun.com/jsf/composite"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+
+</h:head>
+<h:body>
+
+
+
+
+	<ui:composition>
+
+		<div class="ui-grid ui-grid-responsive">
+			<div class="ui-grid-row">
+				<div class="ui-grid-col-8">LOGO</div>
+				<div class="ui-grid-col-3">
+					<h:form id="frmBotaoInicial">
+						<p:commandButton id="btnDisciplinas" styleClass="btnVerdeClaro"
+							style="width: 150px;" value="DISCIPLINAS" type="button"
+							onclick="PF('dlgDisciplinas').show();" />
+
+						<p:commandButton id="btnSair" styleClass="btnVerdeClaro"
+							style="width: 150px;" value="SAIR" action="#{usuarioMB.logOff}">
+							<p:confirm header="Confirmação"
+								message="Tem certeza que deseja sair?" icon="ui-icon-alert" />
+						</p:commandButton>
+
+						<p:confirmDialog global="true" id="confirmDlg" >
+							<p:commandButton value="Sim" type="button"
+								styleClass="ui-confirmdialog-yes" icon="ui-icon-check" />
+							<p:commandButton value="Não" type="button"
+								styleClass="ui-confirmdialog-no" icon="ui-icon-close"  />
+						</p:confirmDialog>
+
+					</h:form>
+				</div>
+				<div class="ui-grid-col-1"></div>
+			</div>
+		</div>
+
+		<p:dialog id="dlgDisciplinas" widgetVar="dlgDisciplinas">
+			<ui:include src="/aluno/disciplinas.xhtml"></ui:include>
+		</p:dialog>
+	
+
+	</ui:composition>
+</h:body>
+</html>
