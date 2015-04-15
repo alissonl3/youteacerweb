@@ -10,7 +10,8 @@
 
 	    <h:form id="frmCadastro" >
 
-	    	<p:fieldset legend="Cadastro" style="margin-bottom:20px">
+	    	<fieldset>
+	    	<legend><b>Cadastro</b></legend>
 	    	<h:panelGrid columns="1" >
 	    	<h:outputText style="font-size: 16px;" value="Para se cadastrar preencha corretamente os campos indicados."/>	
 	    	<h:outputText  value="*Campos obrigatórios" style="color:red; font-size: 15px;"/>	  
@@ -53,7 +54,7 @@
 			    	<p:commandButton update="@form" value="CANCELAR"  style="width: 150px; background:  #86E65C;"  type="reset" onclick="PF('dlgCadastrar').hide();"  />
 		    	</h:panelGrid>
 		    	
-	    	</p:fieldset>
+	    	</fieldset>
 	    </h:form>
 
 </html>

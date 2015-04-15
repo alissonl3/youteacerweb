@@ -10,12 +10,19 @@
 
 <h:form id="frmLogin">
 
-	<p:fieldset legend="Login" style="margin-bottom:20px">
+	<fieldset style="margin-bottom:20px">
+	<legend><b>Login</b></legend>
+		<h:panelGrid columns="2">
+		<div style="height: 200px; width: 200px; background: url(../resources/imagens/cadeado.png) no-repeat center;">
+			
+		</div>
 		<h:panelGrid columns="1">
-			<h:outputText style="font-size: 16px;" 
-				value="Para se logar informe seu nome e e-mail nos campos indicados." />
-			<h:outputText value="*E-mail:" />
-			<p:inputText id="email" required="true" label="EMAIL:" size="47"
+			
+			<h:outputText 
+				value=" " />
+			<h:outputText value="E-mail:" />
+			
+			<p:inputText id="email" required="true" label="EMAIL:" size="30"
 				requiredMessage="O campo e-mail não pode ficar em branco"
 				validatorMessage="Email Inválido!"
 				value="#{usuarioMB.viewBean.usuario.email}">
@@ -24,17 +31,20 @@
 			</p:inputText>
 			<p:watermark for="email" value="Ex(xx@gmail.com)" />
 			<p:message for="email" display="text" />
-			<h:outputText value="*Senha:" />
+			<h:outputText value="Senha:" />
 			<p:password id="senha" value="#{usuarioMB.viewBean.usuario.senha}"
-				required="true" requiredMessage="Digite uma senha!" size="47" />
+				required="true" requiredMessage="Digite uma senha!" size="30" />
 			<p:watermark for="senha" value="Senha" />
 			<p:message for="senha" display="text" />
-	
+			<h:panelGrid columns="2">
 				<p:commandButton update="@form" value="ENTRAR"
 					styleClass="btnVerdeClaro" style="width: 150px; background:  #86E65C;"
 					action="#{usuarioMB.loginUsuario}" />
+				<p:commandLink value="Esqueceu a senha?"/>	
+			</h:panelGrid>
 		</h:panelGrid>
-	</p:fieldset>
+		</h:panelGrid>
+	</fieldset>
 </h:form>
 
 </html>

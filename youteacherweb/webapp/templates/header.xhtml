@@ -34,10 +34,12 @@
 			</div>
 		</div>
 
-		<p:dialog id="dlgCadastrar" widgetVar="dlgCadastrar">
+		<p:dialog id="dlgCadastrar" widgetVar="dlgCadastrar" modal="true"  resizable="false" showHeader="false" >
+		<div style="float: right;"><p:commandButton type="button" icon="ui-icon-close" style="background: white;" onclick="PF('dlgCadastrar').hide();"/></div>
 			<ui:include src="/pages/cadastro.xhtml"></ui:include>
 		</p:dialog>
-		<p:dialog id="dlgLogin" widgetVar="dlgLogin">
+		<p:dialog id="dlgLogin" widgetVar="dlgLogin" modal="true"  resizable="false" showHeader="false" >
+			<div style="float: right;"><p:commandButton type="button" icon="ui-icon-close" style="background: white;" onclick="PF('dlgLogin').hide();"/></div>
 			<ui:include src="/pages/login.xhtml"></ui:include>
 		</p:dialog>
 		
