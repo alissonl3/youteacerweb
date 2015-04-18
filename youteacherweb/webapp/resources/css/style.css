@@ -72,8 +72,60 @@ html, body {
 	background:  #121AB3;
 }
 
+.corVerde {
+	background: #24b85b;
+	color: white;
+	border-color: #24b85b;
+}
+
+.corAzul {
+	background: #027abd;
+	color: white;
+	border-color: #027abd;
+}
+
+.corVermelho {
+	background: #c70200;
+	color: white;
+	border-color: #c70200;
+}
+
+.corBege{
+	background: #d6b328;
+	color: white;
+	border-color: #d6b328;
+}
+
+.corLaranja {
+	background: #ffac45;
+	color: white;
+	border-color: #ffac45;
+}
+
+.corLaranjaEscuro {
+	background: #f60;
+	color: white;
+	border-color: #f60;
+}
+
+.corRoxo {
+	background: #d360a5;
+	color: white;
+	border-color: #d360a5;
+}
+
+.corRosa {
+	background: #f54d77;
+	color: white;
+	border-color: #9cc9ec;
+}
 
 
+.corClaro {
+	background: #9cc9ec;
+	color: white;
+	border-color: #9cc9ec;
+}
 
 
 

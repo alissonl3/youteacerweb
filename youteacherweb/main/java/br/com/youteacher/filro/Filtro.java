@@ -29,7 +29,7 @@ public class Filtro implements Filter {
 	        String login = (String) req.getSession().getAttribute("objLogin");
 	        String url = req.getRequestURI();
 	        
-	        if(url.contains("pages") && (login == null || !login.equals("logado"))){
+	        if(url.contains("aluno") && (login == null || !login.equals("logado"))){
 	            
 	            String contextPath =  ((HttpServletRequest) request).getContextPath();
 	            

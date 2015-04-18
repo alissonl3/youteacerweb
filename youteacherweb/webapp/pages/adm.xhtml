@@ -1,18 +1,19 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:p="http://primefaces.org/ui">
 
-
-<h:form id="frmLogin">
-
+<ui:composition template="/templates/template.xhtml">
 	
+
+	<ui:define name="conteudo">
+	
+		<h:form id="frmLoginAdm">
 		<h:panelGrid columns="1" cellpadding="3">
-			<h:outputText value="Para se logar informe os campos abaixo."
+			<h:outputText value="Para continuar, efetue o login."
 				style="font-size:15px; width: 315px; height:50px ;" />
 			<h:outputText value=" " />
 			<h:outputText value="E-mail:" style="font-size:15px; " />
@@ -33,11 +34,12 @@
 
 			<p:commandButton update="@form" value="ENTRAR"
 				styleClass="btnVerdeClaro"
-				style="width: 315px;height:50px ;background:#24b85b;color: white;border-color: #24b85b; font:18px 'Ruda',sans-serif;"
+				style="width: 315px;height:50px ; background:  #86E65C;"
 				action="#{usuarioMB.loginUsuario}" />
 			<p:commandLink value="Esqueceu a senha?" />
 		</h:panelGrid>
+		</h:form>
 	
-</h:form>
-
+	</ui:define>
+</ui:composition>
 </html>

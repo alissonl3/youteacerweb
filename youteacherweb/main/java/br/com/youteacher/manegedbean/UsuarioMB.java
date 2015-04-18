@@ -121,8 +121,6 @@ public class UsuarioMB implements Serializable {
 	    
 	 //EXECUTAR LOGOFF DO USUARIO
 	    public String logOff(){
-	    	
-	    	System.out.println("Entrou no medoto sair!");
 
 	        FacesContext fc = FacesContext.getCurrentInstance();
 	        HttpSession session = (HttpSession) fc.getExternalContext().getSession(false);

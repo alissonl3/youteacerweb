@@ -8,53 +8,60 @@
 	xmlns:p="http://primefaces.org/ui">
 
 
-	    <h:form id="frmCadastro" >
+<h:form id="frmCadastro">
 
-	    	<fieldset>
-	    	<legend><b>Cadastro</b></legend>
-	    	<h:panelGrid columns="1" >
-	    	<h:outputText style="font-size: 16px;" value="Para se cadastrar preencha corretamente os campos indicados."/>	
-	    	<h:outputText  value="*Campos obrigatórios" style="color:red; font-size: 15px;"/>	  
-	    	<h:outputText value="Id:"/>	    		
-	    		<p:inputText id="id" value="#{usuarioMB.viewBean.usuario.id}" maxlength="5" size="10"  disabled="true" />
-	    		
-	    		<h:outputText value="*Nome:"/>	    		
-	    		<p:inputText id="nome" value="#{usuarioMB.viewBean.usuario.nome}" maxlength="50" size="47"  required="true" requiredMessage="O campo nome não pode ficar em branco"/>
-	    		<p:watermark for="nome" value="Nome Completo" />
-	    		<p:message for="nome" display="text"/>
-	    		
-		    	<h:outputText value="*E-mail:"/>
-		    	<p:inputText id="email" required="true" label="EMAIL:" size="47" requiredMessage="O campo e-mail não pode ficar em branco"
-		    	validatorMessage="Email Inválido!" value="#{usuarioMB.viewBean.usuario.email}">
-		    	<f:validateRegex
-					pattern="^[_A-Za-z0-9-\+]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$" />
-		    	</p:inputText>
-		    	<p:watermark for="email" value="Ex(xx@gmail.com)" />
-		    	<p:message for="email" display="text"/>
-		    	<p:separator/>
-		    	<h:outputText value="*Data de nascimento:"></h:outputText>
-		    	<p:inputMask id="nascimento" mask="99/99/9999" label="Data Nascimento:" maxlength="10" required="true" value="#{usuarioMB.viewBean.usuario.dataNascimento}"
-		    	requiredMessage="O campo Data de nascimento não pode ficar em branco">
-		    			<f:convertDateTime pattern="d/M/yyyy" />
-		    	</p:inputMask>
-		    	<p:watermark for="nascimento" value="Ex(12/12/1999)" />
-		    	<p:message for="nascimento" display="text"></p:message>
-		    	</h:panelGrid>
-		    	
-		    	
-			    <h:panelGrid columns="2" id="matchGrid" cellpadding="5"> 			    	
-			    	<h:outputText value="*Senha:"/>
-			    	<h:outputText value="*Confirmar senha:"/>
-			    	<p:password id="senha"  value="#{usuarioMB.viewBean.usuario.senha}" required="true" match="senha2" requiredMessage="Digite uma senha!" validatorMessage="Senha incorreta"/>
-			    	<p:password id="senha2" value="#{usuarioMB.viewBean.usuario.senha}" required="true" />
-			    	<p:watermark for="senha" value="Senha" />
-			    	<p:watermark for="senha2" value="Confirmar Senha" />
-			    	<p:message for="senha" display="text"/><h:outputText value=""/>
-			    	<p:commandButton update="@form" value="CADASTRAR"  style="width: 150px; background:  #86E65C;"  actionListener="#{usuarioMB.inserir}"  />
-			    	<p:commandButton update="@form" value="CANCELAR"  style="width: 150px; background:  #86E65C;"  type="reset" onclick="PF('dlgCadastrar').hide();"  />
-		    	</h:panelGrid>
-		    	
-	    	</fieldset>
-	    </h:form>
+
+	<h:panelGrid columns="1" cellpadding="3">
+
+		<h:outputText value="Para se cadastrar informe os campos abaixo."
+			style="font-size:15px; width: 315px; height:50px ;" />
+
+		<h:outputText value="Id:" style="font-size:15px;" />
+		<p:inputText id="id" value="#{usuarioMB.viewBean.usuario.id}"
+			maxlength="5" size="10" style="height:30px ;" disabled="true" />
+
+		<h:outputText value="Nome" style="font-size:15px;" />
+		<p:inputText id="nome" value="#{usuarioMB.viewBean.usuario.nome}"
+			style="height:30px ;" maxlength="50" size="30" required="true"
+			requiredMessage="O campo nome não pode ficar em branco" />
+		<p:message for="nome" display="text" />
+
+		<h:outputText value="E-mail" style="font-size:15px;" />
+		<p:inputText id="email" required="true" label="EMAIL:"
+			style="height:30px ;" size="30"
+			requiredMessage="O campo e-mail não pode ficar em branco"
+			validatorMessage="Email Inválido!"
+			value="#{usuarioMB.viewBean.usuario.email}">
+			<f:validateRegex
+				pattern="^[_A-Za-z0-9-\+]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$" />
+		</p:inputText>
+		<p:message for="email" display="text" />
+		<h:outputText value="Data de nascimento" style="font-size:15px;"></h:outputText>
+		<p:inputMask id="nascimento" mask="99/99/9999" style="height:30px ;"
+			label="Data Nascimento:" maxlength="10" required="true"
+			value="#{usuarioMB.viewBean.usuario.dataNascimento}"
+			requiredMessage="O campo Data de nascimento não pode ficar em branco">
+			<f:convertDateTime pattern="d/M/yyyy" />
+		</p:inputMask>
+		<p:message for="nascimento" display="text"></p:message>
+
+
+
+		<h:outputText value="Senha" style="font-size:15px;" />
+		<p:password id="senha" style="height:30px ;"
+			value="#{usuarioMB.viewBean.usuario.senha}" size="30" required="true"
+			match="senha2" requiredMessage="Digite uma senha!"
+			validatorMessage="Senha incorreta" />
+		<p:message for="senha" display="text" />
+		<h:outputText value="Confirmar senha" style="font-size:15px;" />
+		<p:password id="senha2" style="height:30px ;"
+			value="#{usuarioMB.viewBean.usuario.senha}" size="30" required="true" />
+
+		<p:commandButton update="@form" value="CADASTRAR"
+			style="width: 315px;height:50px ; background:#24b85b;color: white;border-color: #24b85b;font:18px 'Ruda',sans-serif;"
+			actionListener="#{usuarioMB.inserir}" />
+
+	</h:panelGrid>
+</h:form>
 
 </html>

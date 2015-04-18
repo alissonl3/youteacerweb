@@ -19,30 +19,34 @@
 
 		<div class="ui-grid ui-grid-responsive">
 			<div class="ui-grid-row">
-				<div class="ui-grid-col-8">LOGO</div>
-				<div class="ui-grid-col-3">
+				<div class="ui-grid-col-7">LOGO</div>
+				<div class="ui-grid-col-4">
 					<h:form id="frmBotaoInicial">
-						<p:commandButton id="btnCadastro" styleClass="btnVerdeClaro" style="width: 150px;"
-							value="CADASTRAR" type="button"
-							onclick="PF('dlgCadastrar').show();" />
+						<p:commandButton id="btnCadastro" styleClass="corClaro" style="width: 200px; height:50px ; font:18px 'Ruda',sans-serif;"
+							value="CADASTRAR" type="button" />
+						
 
-						<p:commandButton id="btnLogar" styleClass="btnVerdeClaro" style="width: 150px;"
-							value="LOGIN" type="button" onclick="PF('dlgLogin').show();"/>
+						<p:commandButton id="btnLogar" styleClass="corClaro" style="width: 200px; height:50px;height:50px ; font:18px 'Ruda',sans-serif;"
+							value="LOGIN" type="button" />
+							
+						
 					</h:form>
 				</div>
 				<div class="ui-grid-col-1"></div>
 			</div>
 		</div>
-
-		<p:dialog id="dlgCadastrar" widgetVar="dlgCadastrar" modal="true"  resizable="false" showHeader="false" >
-		<div style="float: right;"><p:commandButton type="button" icon="ui-icon-close" style="background: white;" onclick="PF('dlgCadastrar').hide();"/></div>
-			<ui:include src="/pages/cadastro.xhtml"></ui:include>
-		</p:dialog>
-		<p:dialog id="dlgLogin" widgetVar="dlgLogin" modal="true"  resizable="false" showHeader="false" >
-			<div style="float: right;"><p:commandButton type="button" icon="ui-icon-close" style="background: white;" onclick="PF('dlgLogin').hide();"/></div>
-			<ui:include src="/pages/login.xhtml"></ui:include>
-		</p:dialog>
 		
+		 <p:overlayPanel id="opCadastrar" for=":frmBotaoInicial:btnCadastro" hideEffect="fade" showEffect="fade"
+						  dismissable="false" showCloseIcon="true" my="center top" at="center bottom" >
+							<ui:include src="/pages/cadastro.xhtml"></ui:include>
+						</p:overlayPanel>
+						
+		<p:overlayPanel id="opLogin" for=":frmBotaoInicial:btnLogar" hideEffect="fade" showEffect="fade"
+						 dismissable="false" showCloseIcon="true" my="center top" at="center bottom">
+								<ui:include src="/pages/login.xhtml"></ui:include>
+						</p:overlayPanel>	
+
+	
 
 	</ui:composition>
 </h:body>
