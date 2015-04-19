@@ -18,26 +18,26 @@
 	<ui:composition>
 
 		<div class="ui-grid ui-grid-responsive">
-			<div class="ui-grid-row">
+			<div class="ui-grid-row" style="background: #9cc9ec;">
 			<div class="ui-grid-col-1"></div>
 				<div class="ui-grid-col-6">
+				<div style="width: 150px; height: 150px; background: url(../resources/imagens/new_logo.png) no-repeat; float: left;">				
+				</div>
+			
 				
-				<div style="width: 150px; height: 150px; background: yellow; float: left;">
-					LOGO
-				</div>
-				<div style="width: auto; height: 150px; background: gray; float: left;">
-					YOUTEACHER
+				<div style="width: auto; height: 90px; float: left; margin-top: 50px;">
+					<font style="font-size: 80px; font-family:'Ruda',sans-serif; color: white;">YOUTEACHER</font>
 				</div>
 				
 				</div>
-				<div class="ui-grid-col-4" style="padding-top: 60px;">
+				<div class="ui-grid-col-4" style="padding-top: 80px; padding-left: 80px;" >
 					<h:form id="frmBotaoInicial">
-						<p:commandButton id="btnDisciplinas" styleClass="corAzul"
+						<p:commandButton id="btnDisciplinas" styleClass="corClaro"
 							style="width: 200px; height:50px; font:18px 'Ruda',sans-serif;" value="DISCIPLINAS" type="button"
 							 />
 
-						<p:commandButton id="btnConta" styleClass="corAzul"
-							style="width: 200px; height:50px ; font:18px 'Ruda',sans-serif;"  value="SAIR"  />
+						<p:commandButton id="btnConta" styleClass="corClaro"
+							style="width: 150px; height:50px ; font:18px 'Ruda',sans-serif;"  value="CONTA"  />
 
 					</h:form>
 				</div>
