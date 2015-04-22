@@ -10,6 +10,8 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
+
+import br.com.youteacherweb.entidades.Usuario;
 /**
  *
  * @author ALISSON
@@ -22,11 +24,11 @@ public class BancoDAO implements Serializable {
 	
 	EntityManager em;
     
-    public List listaTodos(Class classe){
+    public List listaTodos(Usuario user){
     
         em = Banco.getIstancia().getEm();
         em.getTransaction().begin();
-        Query q = em.createQuery("from " + classe.getSimpleName());
+        Query q = em.createQuery("from " + user);
         em.getTransaction().commit();
         return q.getResultList();
         

@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+	
+	
+	<h:form id="frmDlgTemplate">
+	
+	<!-- Menssagem sobre formulário -->
+	<p:dialog id="dlgTemplateFormulario" widgetVar="dlgTemplateFormulario" width="500px" height="500px" modal="true" showHeader="false">
+	<font style="color: #24b85b; font-size: 30px; float: left;">
+		<b>Formulários</b>
+	</font>
+	<p:commandButton styleClass="corClaro" icon="ui-icon-close" oncomplete="PF('dlgTemplateFormulario').hide();" style=" float: right; background:white;  " />
+	
+		<br />
+		<br />
+		<br />
+		<br />
+	
+		Aqui vai o conteudo sobre os formulários.
+	</p:dialog>
+	
+	<!-- Menssagem sobre video -->
+	<p:dialog id="dlgTemplateVideo" widgetVar="dlgTemplateVideo" width="500px" height="500px" modal="true" showHeader="false" >
+	<font style="color: #24b85b; font-size: 30px; float: left;">
+		<b>Video-aulas</b>
+	</font>
+	<p:commandButton styleClass="corClaro" icon="ui-icon-close" oncomplete="PF('dlgTemplateVideo').hide();" style=" float: right; background:white;  " />
+	
+		<br />
+		<br />
+		<br />
+		<br />
+	
+		Aqui vai o conteudo sobre os videos.
+	</p:dialog>
+	
+	</h:form>	
+
+</html>

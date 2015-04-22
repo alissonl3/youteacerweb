@@ -2,12 +2,14 @@ package br.com.youteacherweb.entidades;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -33,6 +35,15 @@ public class Usuario implements Serializable{
 	private String senha;
 	@Column(name="adm")
 	private String adm;
+	
+
+	public String getAdm() {
+		return adm;
+	}
+
+	public void setAdm(String adm) {
+		this.adm = adm;
+	}
 
 	public Integer getId() {
 		return id;

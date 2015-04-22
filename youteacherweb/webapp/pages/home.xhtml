@@ -2,13 +2,68 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
-	xmlns:h="http://java.sun.com/jsf/html">
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
 
 <ui:composition template="/templates/template.xhtml">
 	
 
 	<ui:define name="conteudo">		
-				Aqui é o conteudo da pagina!!!
+	    <div style="min-height: 100%; height:auto; width: 100%; margin-top: 20px;">
+	    
+	    <!-- Div do Titutlo Objetivo -->
+	    <div style="margin: auto; width: 800px;">
+	    	<h1 style="text-align: center; color: #ff8d3b; font-size: 40px; font-weight: bold; ">OBJETIVO.APRENDIZADO.SUCESSO!</h1>
+	    </div>
+		
+		<div style="width: 50%; float: left; height: 100%;  ">
+		<!-- Div da foto -->
+		<div style="width: 256px; height: 256px; margin: auto;">
+		<img src="../resources/imagens/icone_form.png" style=" float: left; max-width:100%; height:auto; margin-top: 10px;" />
+		</div>
+		<!-- Div do texto -->
+		<div style="margin: auto; width: 256px; height: 200px;" >
+		<p style="text-align: center; color: #24b85b; font-size: 40px;">
+		<b>Formulários</b>
+		</p>
+		<p>
+			Responda formulários para testa o seu conhecimeno... 
+			<p:commandLink value="Leia mais" oncomplete="PF('dlgTemplateFormulario').show();" />
+		</p>
+		</div>	
+		</div>
+		
+		<div style="width: 50%; float: left; height: 100%;  ">
+		<!-- Div da foto -->
+		<div style="width: 256px; height: 256px;  margin: auto;">
+			<img src="../resources/imagens/icone_video.png" style=" float: left; max-width:100%; height:auto; margin-top: 10px;" />
+		</div>
+		<!-- Div do texto -->
+		<div style="margin: auto; width: 256px; height: 200px;">
+		<p style="text-align: center; color: #24b85b; font-size: 40px;">
+		<b>Video-aulas</b>
+		</p>
+		<p>
+			Video-aulas sobre determinado assunto... 
+			<p:commandLink value="Leia mais" oncomplete="PF('dlgTemplateVideo').show();"  />
+		</p>
+		</div>	
+		</div>	
+		
+		<div style="clear: both;"></div>
+		
+		 <div style=" height: auto; width: 100%; margin-top: 20px; ">
+		 <div style="width: auto; margin: auto; height: 256px;">
+		 
+		 
+		 </div>
+		</div>	
+			
+			
+		</div> <!-- Fim da TAG pai -->
+		
+		<ui:include src="../templates/dlgsTemplate.xhtml"></ui:include>
+		
 	</ui:define>
 </ui:composition>
 </html>

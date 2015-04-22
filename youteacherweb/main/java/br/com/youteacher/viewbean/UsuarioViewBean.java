@@ -11,6 +11,8 @@ public class UsuarioViewBean {
 private Usuario usuario;
 private List<Usuario> usuarios;
 private Usuario usuarioLogado;
+
+private boolean habilitarVisualizacaoIdCadastro;
 	
 	public UsuarioViewBean(){
 		
@@ -21,9 +23,19 @@ private Usuario usuarioLogado;
 	private void initValues(){
 		usuario = new Usuario();
 		usuarioLogado = new Usuario();
+		
+		habilitarVisualizacaoIdCadastro = false;
 	}
-	
-	
+
+
+	public boolean isHabilitarVisualizacaoIdCadastro() {
+		return habilitarVisualizacaoIdCadastro;
+	}
+
+	public void setHabilitarVisualizacaoIdCadastro(
+			boolean habilitarVisualizacaoIdCadastro) {
+		this.habilitarVisualizacaoIdCadastro = habilitarVisualizacaoIdCadastro;
+	}
 
 	public Usuario getUsuarioLogado() {
 		return usuarioLogado;
