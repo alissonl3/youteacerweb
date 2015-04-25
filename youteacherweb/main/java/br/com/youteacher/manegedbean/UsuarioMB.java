@@ -31,6 +31,9 @@ public class UsuarioMB implements Serializable {
 	
 	public UsuarioMB(){}
 	
+	//Formulário
+	private boolean habilitarFormulario;
+	
 	
 	@PostConstruct
 	private void initPage(){
@@ -59,7 +62,7 @@ public class UsuarioMB implements Serializable {
 		
 	}
 	
-	//INSERIR UM NOVO ALUNO
+	//DELETAR UM NOVO ALUNO
 		public void deletar(){
 			
 			try{
@@ -78,7 +81,7 @@ public class UsuarioMB implements Serializable {
 		}
 	
 	
-	//MOSTRAR MENSSAGEM DE NOTFICAÇÃO
+	//MOSTRAR MENSSAGEM DE NOTIFICAÇÃO
 	 public void mostraMenssagem(String titulo, String menssagem){
 	        
 	        FacesContext fc = FacesContext.getCurrentInstance();
@@ -136,6 +139,16 @@ public class UsuarioMB implements Serializable {
 	    
 	    }
 	 
+	 
+	 
+	public boolean isHabilitarFormulario() {
+		return habilitarFormulario;
+	}
+
+	public void setHabilitarFormulario(boolean habilitarFormulario) {
+		this.habilitarFormulario = habilitarFormulario;
+	}
+
 	public UsuarioViewBean getViewBean() {
 		return viewBean;
 	}

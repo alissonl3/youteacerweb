@@ -53,6 +53,7 @@ html, body {
 	background: #24b85b;
 	color: white;
 	border-color: #24b85b;
+	
 }
 
 .corAzul {
@@ -116,8 +117,8 @@ html, body {
 
 .corpo{
 	width: 1000px;
-	margin-left: 210px;;
 	background: white;
+	margin: auto;
 	
 }
 
@@ -158,8 +159,8 @@ html, body {
 
 .corpo{
 	width: 1100px;
-	margin-left: 210px;;
 	background: white;
+	margin: auto;
 	
 }
 
