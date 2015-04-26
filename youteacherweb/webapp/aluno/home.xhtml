@@ -61,10 +61,10 @@
 				Aqui é o painel de formularios.
 			<p:separator/>
 			<div style="width: 450px; margin: auto;">
-			<p:commandButton styleClass="btnGrande corVerde" value="Corrigir" style="margin-right:25px;" update="@form :pnFormulario">
+			<p:commandButton styleClass="bt" value="Corrigir" style="margin-right:25px;" update="@form :pnFormulario">
 			<f:setPropertyActionListener target="#{usuarioMB.habilitarFormulario}" value="#{false}" />
 			</p:commandButton>
-			<p:commandButton styleClass="btnGrande corVerde" style="magin-bottom: 20px;" value="Cancelar" update="@form :pnFormulario">
+			<p:commandButton styleClass="bt" style="magin-bottom: 20px;" value="Cancelar" update="@form :pnFormulario">
 			<f:setPropertyActionListener target="#{usuarioMB.habilitarFormulario}" value="#{false}" />
 			</p:commandButton>
 			
