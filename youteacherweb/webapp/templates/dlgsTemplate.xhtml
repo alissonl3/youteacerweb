@@ -9,7 +9,7 @@
 	<h:form id="frmDlgTemplate">
 	
 	<!-- Menssagem sobre formulário -->
-	<p:dialog id="dlgTemplateFormulario" widgetVar="dlgTemplateFormulario" width="500px" height="500px" modal="true" showHeader="false">
+	<p:dialog id="dlgTemplateFormulario" widgetVar="dlgTemplateFormulario" width="500px" height="200px" modal="true" showHeader="false">
 	<font style="color: #24b85b; font-size: 30px; float: left;">
 		<b>Formulários</b>
 	</font>
@@ -19,12 +19,16 @@
 		<br />
 		<br />
 		<br />
-	
-		Aqui vai o conteudo sobre os formulários.
+		<div style="text-align:justify; text-decoration: none;">
+		<h:outputText value="Os formulários são desenvolvidos pelos próprios autores das video-aulas, sendo que 
+		será do critério dele criar ou não um questionário para o assunto ensinado. Lembrando 
+		que os formulários são validados pelos ADM'S."/>		
+		</div>
+		
 	</p:dialog>
 	
 	<!-- Menssagem sobre video -->
-	<p:dialog id="dlgTemplateVideo" widgetVar="dlgTemplateVideo" width="500px" height="500px" modal="true" showHeader="false" >
+	<p:dialog id="dlgTemplateVideo" widgetVar="dlgTemplateVideo" width="500px" height="200px" modal="true" showHeader="false" >
 	<font style="color: #24b85b; font-size: 30px; float: left;">
 		<b>Video-aulas</b>
 	</font>
@@ -34,8 +38,12 @@
 		<br />
 		<br />
 		<br />
-	
-		Aqui vai o conteudo sobre os videos.
+		<div style="text-align:justify; text-decoration: none;">
+		<h:outputText value="	As videos aulas são desenvolvidas pelos próprios usuarios, havendo assim um maior 
+		compartilhamento de informações de diversas areas. Lembrando que todos os videos
+		são validados pelos ADM'S."/>
+		</div>
+		
 	</p:dialog>
 	
 	</h:form>	

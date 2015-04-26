@@ -4,74 +4,44 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:p="http://primefaces.org/ui"
-	xmlns:f="http://java.sun.com/jsf/core"
-	>
+	xmlns:f="http://java.sun.com/jsf/core">
 
 <ui:composition template="/templates/template_user.xhtml">
-	
+
 
 	<ui:define name="conteudo">
-	
-			<!-- Adicionar Video -->
-			<div class="ui-grid-row">
-			<div class="ui-grid-col-12">
-			<center>
-				<p:commandButton value="Adicionar vídeo" styleClass="btAddVideo"/>
+		<!-- Adicionar Video -->
+		<div class="ui-grid-row">
+			<!-- Div lista de vídeos -->
+			<div class="ui-grid-col-6">
+				<h3>Vídeos-aulas</h3>
+
+				<p:scrollPanel mode="native" style="width:400px;height:600px">
+					<p>
+						<p:commandLink styleClass="estiloLink">
+							<h:outputText value="Teste" />
+						</p:commandLink>
+					</p>
+					<p>
+						<p:commandLink styleClass="estiloLink">
+							<h:outputText value="Ajax Submit" />
+						</p:commandLink>
+					</p>
+				</p:scrollPanel>
+
+			</div>
+
+			<div class="ui-grid-col-6">
+				<center>
+					<p:commandButton value="Adicionar vídeo" styleClass="btAddVideo" />
 				</center>
 			</div>
-		
-			</div>
-		<div style="min-height: 100%; height: auto; width: 100%;">
-		
-		
-		
-		
-		<!-- Div da parte do menu -->
-		<div style="width: 25%;  float: left; height: 100%; height: 200px;  ">
-			<h1 style="text-align: center; color: #ff8d3b; font-size: 20px; font-weight: bold; ">
-			Disciplinas
-			</h1>
-			<ui:include src="menu_disciplinas.xhtml"></ui:include>
+
+
 		</div>
-		
-		
-		
-		<!-- Div da parte do video -->
-		<div style="width: 75%; float: left; height: 100%; height: 600px;  ">
-			<h1 style="text-align: center; color: #ff8d3b; font-size: 40px; font-weight: bold; ">
-			<h:outputText value="#{usuarioMB.viewBean.tituloVideo}" />
-			</h1>
-			<div style="width: 600px; height: 500px; margin: auto;">
-			<p:media value="#{usuarioMB.viewBean.urlVideo}" width="600" height="400" player="flash"/>
-			<!-- Botão do Formulário -->
-			<div style="float: right; margin-top: 3px;">
-			<h:form>
-			<p:commandButton styleClass="btnGrande corLaranjaEscuro" value="Praticar" update="@form :pnFormulario">
-			<f:setPropertyActionListener target="#{usuarioMB.habilitarFormulario}" value="#{true}" />
-			</p:commandButton> 
-			</h:form>
-			</div>
-			</div>			
-		</div>	
-		<!-- Painel oculto do Formulário -->
-		<p:outputPanel id="pnFormulario" style="margim:10px;">
-		
-			<h:form id="frmFormulario" rendered="#{usuarioMB.habilitarFormulario}" >
-			<p:separator/>
-				Aqui é o painel de formularios.
-			<p:separator/>
-			<div style="width: 450px; margin: auto;">
-			<p:commandButton styleClass="bt" value="Corrigir" style="margin-right:25px;" update="@form :pnFormulario">
-			<f:setPropertyActionListener target="#{usuarioMB.habilitarFormulario}" value="#{false}" />
-			</p:commandButton>
-			<p:commandButton styleClass="bt" style="magin-bottom: 20px;" value="Cancelar" update="@form :pnFormulario">
-			<f:setPropertyActionListener target="#{usuarioMB.habilitarFormulario}" value="#{false}" />
-			</p:commandButton>
-			
-			</div>		
-			</h:form>
-		</p:outputPanel>
-		</div>		
+
+
+
 	</ui:define>
 </ui:composition>
 </html>

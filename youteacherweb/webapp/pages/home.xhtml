@@ -13,7 +13,7 @@
 	    
 	    <!-- Div do Titutlo Objetivo -->
 	    <div style="margin: auto; width: 800px;">
-	    	<h1 style="text-align: center; color: #ff8d3b; font-size: 40px; font-weight: bold; ">OBJETIVO.APRENDIZADO.SUCESSO!</h1>
+	    	<h1 style="text-align: center; color: #ff8d3b; font-family: ‘Lucida Console’, sans-serif; font-size: 40px; font-weight: bold; ">OBJETIVO.APRENDIZADO.SUCESSO!</h1>
 	    </div>
 		
 		<div style="width: 50%; float: left; height: 100%;  ">
@@ -23,10 +23,10 @@
 		</div>
 		<!-- Div do texto -->
 		<div style="margin: auto; width: 256px; height: 200px;" >
-		<p style="text-align: center; color: #24b85b; font-size: 40px;">
+		<p style="text-align: center; color: #24b85b; font-size: 40px; font-family: ‘Lucida Console’, sans-serif;">
 		<b>Formulários</b>
 		</p>
-		<p>
+		<p style="color: black; font-family: ‘Lucida Console’, sans-serif;">
 			Responda formulários para testa o seu conhecimeno... 
 			<p:commandLink value="Leia mais" oncomplete="PF('dlgTemplateFormulario').show();" />
 		</p>
@@ -43,7 +43,7 @@
 		<p style="text-align: center; color: #24b85b; font-size: 40px;">
 		<b>Video-aulas</b>
 		</p>
-		<p>
+		<p style="color: black;">
 			Video-aulas sobre determinado assunto... 
 			<p:commandLink value="Leia mais" oncomplete="PF('dlgTemplateVideo').show();"  />
 		</p>
@@ -54,11 +54,24 @@
 		 <p:separator />
 		<div style="clear: both;"></div>
 		
+		<h1 style="text-align: center; color: #ff8d3b; font-size: 40px; font-weight: bold; ">EXPERIMENTE</h1>
+		
+		<!-- Tag do video -->
+		 <div style=" height: 600px; width: 800px; margin:auto; margin-top: 20px; margin-bottom: 20px;" >
+		 
+			<p:media value="#{usuarioMB.viewBean.urlVideo}" width="800" height="600" player="flash"/>
+		
+		</div>
+		
+		<div style="clear: both;"></div>
+		 <p:separator />
+		<div style="clear: both;"></div>
+		
 		<h1 style="text-align: center; color: #ff8d3b; font-size: 40px; font-weight: bold; ">CONTATO</h1>
 		
 		<!-- Tag de contatos -->
-		 <div style=" height: auto; width: 100%; margin-top: 20px;">
-		 <div style="width: 33%; margin: auto; height: 256px; float: left;  background:#9cc9ec;  text-align: center;">
+		 <div style=" height: 300px; width: 100%; margin-top: 20px;">
+		 <div style="width: 33%; margin: auto; margin-left:6px; height: 256px; float: left;  background:#9cc9ec;  text-align: center;">
 		<p style="text-align: center; color: #24b85b; font-size: 30px;">
 		<b>Facebook</b>
 		</p> 

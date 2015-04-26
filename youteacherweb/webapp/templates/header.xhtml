@@ -18,8 +18,10 @@
 	<ui:composition>
 
 		<div class="ui-grid ">
-			<p:growl id="growl" showDetail="true" sticky="true" />  
-			<div class="ui-grid-row" style="background: #9cc9ec;">
+			<p:growl id="growl" showDetail="true" sticky="true" />
+			
+			  <!-- Div imagem -->
+			<div class="ui-grid-row" >
 			<div class="ui-grid-col-2" >
 			</div>
 	
@@ -28,30 +30,13 @@
 				</div>
 				
 				<div class="ui-grid-col-4" style="padding-top: 80px; padding-left: 80px;"   >
-					<h:form id="frmBotaoInicial">
-						<p:commandButton id="btnCadastro" styleClass="bt" 
-							value="CADASTRAR" type="button" />
-						
-
-						<p:commandButton id="btnLogar" styleClass="bt" 
-							value="LOGIN" type="button" />
-							
-						
-					</h:form>
+				
 				</div>
 				<div class="ui-grid-col-1"></div>
 			</div>
 		</div>
 		
-		 <p:overlayPanel id="opCadastrar" for=":frmBotaoInicial:btnCadastro" hideEffect="fade" showEffect="fade"
-						  dismissable="false" showCloseIcon="true" my="center top" at="center bottom" >
-							<ui:include src="/pages/cadastro.xhtml"></ui:include>
-						</p:overlayPanel>
-						
-		<p:overlayPanel id="opLogin" for=":frmBotaoInicial:btnLogar" hideEffect="fade" showEffect="fade"
-						 dismissable="false" showCloseIcon="true" my="center top" at="center bottom">
-								<ui:include src="/pages/login.xhtml"></ui:include>
-						</p:overlayPanel>	
+		
 
 	
 

@@ -14,7 +14,6 @@ public class UsuarioViewBean {
 	private boolean habilitarVisualizacaoIdCadastro;
 	private String tituloVideo;
 	private String urlVideo;
-	private boolean teste;
 	private String nomeUsuario;
 
 	public UsuarioViewBean() {
