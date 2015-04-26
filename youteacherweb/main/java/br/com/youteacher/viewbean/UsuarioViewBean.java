@@ -16,6 +16,7 @@ private Usuario usuarioLogado;
 private boolean habilitarVisualizacaoIdCadastro;
 private String tituloVideo;
 private String urlVideo;
+private boolean teste;
 	
 	public UsuarioViewBean(){
 		
