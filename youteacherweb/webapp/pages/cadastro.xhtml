@@ -9,16 +9,10 @@
 
 
 <h:form id="frmCadastro">
-
-
 	<h:panelGrid columns="1" cellpadding="3">
 
 		<h:outputText value="Para se cadastrar informe os campos abaixo."
 			style="font-size:15px; width: 315px; height:50px ;" />
-
-		<h:outputText value="Id:" style="font-size:15px;" />
-		<p:inputText id="id" value="#{usuarioMB.viewBean.usuario.id}"
-			maxlength="5" size="10" style="height:30px ;" disabled="true" />
 
 		<h:outputText value="Nome" style="font-size:15px;" />
 		<p:inputText id="nome" value="#{usuarioMB.viewBean.usuario.nome}"
@@ -57,9 +51,10 @@
 		<p:password id="senha2" style="height:30px ;"
 			value="#{usuarioMB.viewBean.usuario.senha}" size="30" required="true" />
 
-		<p:commandButton update="@form" value="CADASTRAR"
+		<p:commandButton  value="CADASTRAR"
 			style="width: 315px;height:50px ; background:#24b85b;color: white;border-color: #24b85b;font:18px 'Ruda',sans-serif;"
-			actionListener="#{usuarioMB.inserir}" />
+			actionListener="#{usuarioMB.inserir}" update="frmCadastro "/>
+	
 
 	</h:panelGrid>
 </h:form>

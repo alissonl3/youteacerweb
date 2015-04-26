@@ -21,6 +21,22 @@ html, body {
 	width: 100%;
 }
 
+
+.btAddVideo{
+	font-size: 110%;
+	border-radius: 4px;
+	text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+	background: rgb(202, 60, 60);
+}
+
+.bt{
+			font-size: 90%;
+			color: white;
+			border-radius: 4px;
+            text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+			background: rgb(28, 184, 65);
+}
+
 .btnVerde{
 /* 	background:  #00FF00; */
 	background:  #43B312;

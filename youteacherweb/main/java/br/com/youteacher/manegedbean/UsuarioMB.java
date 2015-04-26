@@ -28,7 +28,6 @@ public class UsuarioMB implements Serializable {
 
 	private UsuarioViewBean viewBean;
 
-	
 	public UsuarioMB(){}
 	
 	//Formulário
@@ -84,9 +83,8 @@ public class UsuarioMB implements Serializable {
 	//MOSTRAR MENSSAGEM DE NOTIFICAÇÃO
 	 public void mostraMenssagem(String titulo, String menssagem){
 	        
-	        FacesContext fc = FacesContext.getCurrentInstance();
-	        FacesMessage men = new FacesMessage(titulo, menssagem);
-	        fc.addMessage(null, men);
+		 FacesContext context = FacesContext.getCurrentInstance();
+	        context.addMessage(null, new FacesMessage(titulo,  menssagem));
 	    
 	    
 	    }
@@ -104,18 +102,19 @@ public class UsuarioMB implements Serializable {
 	    if(!viewBean.getUsuarios().isEmpty()){
 	             
 	            viewBean.setUsuarioLogado(viewBean.getUsuarios().get(0)); 
-	            
+	            viewBean.setNomeUsuario(viewBean.getUsuarios().get(0).getNome());
+	          
 	            FacesContext fc = FacesContext.getCurrentInstance();
 	            HttpSession session = (HttpSession) fc.getExternalContext().getSession(false);
 	            session.setAttribute("objLogin", "logado");
 	        
-	            return "/aluno/home.jsf?faces-redirect=true";
+	            return "logado";
 	        
 	        }
 	         else {
 	            
 	            mostraMenssagem("LOGIN",  "Senha ou login incorretos!!!");
-	            return "index";
+	            return "inicial";
 	        
 	        }
 	    
@@ -129,7 +128,7 @@ public class UsuarioMB implements Serializable {
 	        HttpSession session = (HttpSession) fc.getExternalContext().getSession(false);
 	        session.removeAttribute("objLogin");
 	    
-	        return "/index.html?faces-redirect=true";
+	        return "sair";
 	    }
 	 
 	 //LISTAR CONDICÃO LOGAR USUARIO
@@ -137,6 +136,7 @@ public class UsuarioMB implements Serializable {
 		    
 	        viewBean.setUsuarios(dao.listarCondicao(Usuario.class, " email = '" + viewBean.getUsuario().getEmail() + "' and senha = '" + viewBean.getUsuario().getSenha() + "'"));
 	    
+	        
 	    }
 	 
 	 

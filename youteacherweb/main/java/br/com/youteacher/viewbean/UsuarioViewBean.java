@@ -1,41 +1,38 @@
 package br.com.youteacher.viewbean;
 
-
-
 import java.util.List;
 
 import br.com.youteacherweb.entidades.Usuario;
 
 public class UsuarioViewBean {
-	
-private Usuario usuario;
-private List<Usuario> usuarios;
-private Usuario usuarioLogado;
 
-//pagina
-private boolean habilitarVisualizacaoIdCadastro;
-private String tituloVideo;
-private String urlVideo;
-private boolean teste;
-	
-	public UsuarioViewBean(){
-		
+	private Usuario usuario;
+	private List<Usuario> usuarios;
+	private Usuario usuarioLogado;
+
+	// pagina
+	private boolean habilitarVisualizacaoIdCadastro;
+	private String tituloVideo;
+	private String urlVideo;
+	private boolean teste;
+	private String nomeUsuario;
+
+	public UsuarioViewBean() {
+
 		initValues();
 
 	}
-	
-	private void initValues(){
+
+	private void initValues() {
 		usuario = new Usuario();
 		usuarioLogado = new Usuario();
-		
-		//pagina
+
+		// pagina
 		habilitarVisualizacaoIdCadastro = false;
 		tituloVideo = "YouTeacher";
 		urlVideo = "https://www.youtube.com/v/1OH3ISC-vfk";
 	}
-	
 
-	
 	public String getUrlVideo() {
 		return urlVideo;
 	}
@@ -84,7 +81,13 @@ private boolean teste;
 	public void setUsuarios(List<Usuario> usuarios) {
 		this.usuarios = usuarios;
 	}
-	
-	
+
+	public String getNomeUsuario() {
+		return nomeUsuario;
+	}
+
+	public void setNomeUsuario(String nomeUsuario) {
+		this.nomeUsuario = nomeUsuario;
+	}
 
 }
