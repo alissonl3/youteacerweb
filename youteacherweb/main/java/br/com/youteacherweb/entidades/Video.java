@@ -27,8 +27,9 @@ public class Video implements Serializable{
 	@Column(name="disciplina")
 	private String disciplina;
 	
-	@JoinColumn(name="idUsuario")
-	@OneToOne
+	
+	@ManyToOne
+	@JoinColumn(name="usuario_id")
 	private Usuario usuario;
 
 	public Integer getId() {

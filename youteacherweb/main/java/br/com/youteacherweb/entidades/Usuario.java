@@ -6,10 +6,12 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -36,6 +38,17 @@ public class Usuario implements Serializable{
 	@Column(name="adm")
 	private String adm;
 	
+	@OneToMany(mappedBy="usuario", targetEntity=Video.class,fetch = FetchType.LAZY)
+	private List<Video> videos;
+	
+
+	public List<Video> getVideos() {
+		return videos;
+	}
+
+	public void setVideos(List<Video> videos) {
+		this.videos = videos;
+	}
 
 	public String getAdm() {
 		return adm;
