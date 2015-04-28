@@ -44,6 +44,7 @@ html, body {
 			border-radius: 4px;
             text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
 			background: rgb(28, 184, 65);
+			border: rgb(28, 184, 65);
 }
 
 .btnVerde{
@@ -132,58 +133,7 @@ html, body {
 
 
 
-@media only screen and (min-width: 480px) { }
-
-
-@media only screen and (min-width: 600px) { }
-
-
-@media only screen and (min-width: 1200px) {
-
-.corpo{
-	width: 1000px;
-	margin: auto;
-	background: rgba(156, 201, 236, 0.8);
-	-moz-border-radius:30px;
-	-webkit-border-radius:30px;
- 	border-radius:30px;
- 	border: 2px solid greenyellow; 
-	
-}
-
-
-
-.header {
-	background: white;
-	width:auto;
-	height: 130px;
-}
-
-
-.botoes{
-	
-	margin-top: 50px;
-	padding-left:30px;
-	height: 30px;	
-	width:  450px;
-	float: left;
-
-}
-
-.btnGrande{
-	
-	 width:150px;
-	 height:30px; 
-	 font:15px 'Ruda',sans-serif;
-	
-}
-
-
-	
-}
-
-
-@media only screen and (min-width: 1366px) { 
+@media only screen and (min-width: 900px) { 
 
 .corpo{
 	width: 1100px;

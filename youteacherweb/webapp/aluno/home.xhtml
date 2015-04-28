@@ -33,7 +33,7 @@
 
 			<div class="ui-grid-col-6">
 				<center>
-					<p:commandButton value="Adicionar vídeo" styleClass="btAddVideo" />
+					<p:commandButton id="btnAddVideo" value="Adicionar vídeo" styleClass="btAddVideo" oncomplete="PF('dlgAdiconarVideo').show();" />
 				</center>
 			</div>
 
@@ -41,6 +41,7 @@
 		</div>
 
 
+	<ui:include src="../templates/dlgsTemplate.xhtml"></ui:include>
 
 	</ui:define>
 </ui:composition>
