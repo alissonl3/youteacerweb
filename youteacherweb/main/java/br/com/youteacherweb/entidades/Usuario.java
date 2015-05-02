@@ -17,14 +17,14 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 @Entity
-@Table(name="entidadeUsuario")
+@Table(name="usuario")
 public class Usuario implements Serializable{
 
 	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue (strategy = GenerationType.AUTO)
-	@Column(name="idUsuario")
+	@Column(name="id")
 	private Integer id;
 	@Column(name="nome")
 	private String nome;

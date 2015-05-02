@@ -33,6 +33,14 @@
 		</navigation-case>
 
 	</navigation-rule>
+	<navigation-rule>
+		<from-view-id>/aluno/home.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>video</from-outcome>
+			<to-view-id>/aluno/addvideo.xhtml</to-view-id>
+		</navigation-case>
+
+	</navigation-rule>
 
 	<navigation-rule>
 
@@ -45,7 +53,7 @@
 			<to-view-id>/aluno/home.xhtml</to-view-id>
 
 		</navigation-case>
-		
+
 		<navigation-case>
 
 			<from-outcome>inicial</from-outcome>
@@ -55,9 +63,9 @@
 		</navigation-case>
 
 
-		
+
 
 	</navigation-rule>
-	
+
 
 </faces-config>

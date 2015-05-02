@@ -2,32 +2,46 @@ package br.com.youteacherweb.entidades;
 
 import java.io.Serializable;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="entidadeVideo")
-public class Video implements Serializable{
+@Table(name = "video")
+public class Video implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-	
+
 	@Id
-	@GeneratedValue (strategy = GenerationType.AUTO)
-	@Column(name="idVideo")
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "id")
 	private Integer id;
-	@Column(name="url")
+	@Column(name = "url")
 	private String url;
+	@Column(name = "titulo")
+	private String titulo;
 
 	@ManyToOne
-	@JoinColumn(name="usuario_id")
 	private Usuario usuario;
+	
+	@OneToOne(cascade=CascadeType.REMOVE)
+	private Formulario formulario;
+	
+	
+
+	public Formulario getFormulario() {
+		return formulario;
+	}
+
+	public void setFormulario(Formulario formulario) {
+		this.formulario = formulario;
+	}
 
 	public Integer getId() {
 		return id;
@@ -52,8 +66,13 @@ public class Video implements Serializable{
 	public void setUsuario(Usuario usuario) {
 		this.usuario = usuario;
 	}
-	
-	
-	
+
+	public String getTitulo() {
+		return titulo;
+	}
+
+	public void setTitulo(String titulo) {
+		this.titulo = titulo;
+	}
 
 }

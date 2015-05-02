@@ -20,5 +20,13 @@
     PATH="/pages/home.xhtml" TARGET="rules:#pages#home.xhtml"
     TITLE="sair" model-entity="JSFProcessItemOutput"/>
   </PROCESS-ITEM>
+  <PROCESS-ITEM ID="rules:#aluno#home.xhtml:1" NAME="item1"
+   PATH="/aluno/home.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="video::#aluno#addvideo.xhtml" NAME="output"
+    PATH="/aluno/addvideo.xhtml" TARGET="rules:#aluno#addvideo.xhtml"
+    TITLE="video" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
  </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#aluno#addvideo.xhtml"
+  PATH="/aluno/addvideo.xhtml" SHAPE="256,177,0,0" model-entity="JSFProcessGroup"/>
 </PROCESS>

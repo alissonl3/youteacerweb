@@ -14,7 +14,7 @@ import javax.persistence.Query;
 import br.com.youteacherweb.entidades.Usuario;
 /**
  *
- * @author ALISSON
+ * @author ALISSON e ALAN
  */
 public class BancoDAO implements Serializable {
  
