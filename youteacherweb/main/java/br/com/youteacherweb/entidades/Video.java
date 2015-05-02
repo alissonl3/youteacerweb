@@ -24,10 +24,7 @@ public class Video implements Serializable{
 	private Integer id;
 	@Column(name="url")
 	private String url;
-	@Column(name="disciplina")
-	private String disciplina;
-	
-	
+
 	@ManyToOne
 	@JoinColumn(name="usuario_id")
 	private Usuario usuario;
@@ -46,14 +43,6 @@ public class Video implements Serializable{
 
 	public void setUrl(String url) {
 		this.url = url;
-	}
-
-	public String getDisciplina() {
-		return disciplina;
-	}
-
-	public void setDisciplina(String disciplina) {
-		this.disciplina = disciplina;
 	}
 
 	public Usuario getUsuario() {

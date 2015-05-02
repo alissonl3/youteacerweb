@@ -38,17 +38,6 @@ public class Usuario implements Serializable{
 	@Column(name="adm")
 	private String adm;
 	
-	@OneToMany(mappedBy="usuario", targetEntity=Video.class,fetch = FetchType.LAZY)
-	private List<Video> videos;
-	
-
-	public List<Video> getVideos() {
-		return videos;
-	}
-
-	public void setVideos(List<Video> videos) {
-		this.videos = videos;
-	}
 
 	public String getAdm() {
 		return adm;

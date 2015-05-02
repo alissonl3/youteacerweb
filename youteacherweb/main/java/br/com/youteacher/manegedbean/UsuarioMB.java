@@ -17,6 +17,7 @@ import javax.faces.context.FacesContext;
 import javax.servlet.http.HttpSession;
 
 import br.com.youteacher.banco.BancoDAO;
+import br.com.youteacher.banco.dao.UsuarioDAO;
 import br.com.youteacher.viewbean.UsuarioViewBean;
 import br.com.youteacherweb.entidades.Usuario;
 
@@ -24,7 +25,7 @@ import br.com.youteacherweb.entidades.Usuario;
 public class UsuarioMB implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
-	private BancoDAO dao ;
+	private UsuarioDAO dao;
 
 	private UsuarioViewBean viewBean;
 
@@ -37,7 +38,7 @@ public class UsuarioMB implements Serializable {
 	@PostConstruct
 	private void initPage(){
 		
-		dao = new BancoDAO();
+		dao = new UsuarioDAO();
 		viewBean = new UsuarioViewBean();
 		
 	}
@@ -47,7 +48,7 @@ public class UsuarioMB implements Serializable {
 		
 		try{
 			
-			dao.inserir(viewBean.getUsuario());
+			dao.inserirUsuario(viewBean.getUsuario());
 			mostraMenssagem("SUCESSO", "Usuario inserido com sucesso.");
 			
 			novoUsuario();
@@ -66,7 +67,7 @@ public class UsuarioMB implements Serializable {
 			
 			try{
 				
-				dao.deletar(viewBean.getUsuario());
+				dao.deletarUsuario(viewBean.getUsuario());
 				mostraMenssagem("SUCESSO", "Usuario deletado com sucesso.");
 				
 				
@@ -134,7 +135,7 @@ public class UsuarioMB implements Serializable {
 	 //LISTAR CONDICÃO LOGAR USUARIO
 	 public void listarCondicao(){
 		    
-	        viewBean.setUsuarios(dao.listarCondicao(Usuario.class, " email = '" + viewBean.getUsuario().getEmail() + "' and senha = '" + viewBean.getUsuario().getSenha() + "'"));
+	        viewBean.setUsuarios(dao.listarCondicaoUsuario(" email = '" + viewBean.getUsuario().getEmail() + "' and senha = '" + viewBean.getUsuario().getSenha() + "'"));
 	    
 	        
 	    }
