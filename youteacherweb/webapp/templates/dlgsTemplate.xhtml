@@ -4,65 +4,146 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:p="http://primefaces.org/ui">
-	
-	
-	<h:form id="frmDlgTemplate">
-	
+
+
+<h:form id="frmDlgTemplate">
+
 	<!-- Menssagem sobre formulário -->
-	<p:dialog id="dlgTemplateFormulario" widgetVar="dlgTemplateFormulario" width="500px" height="200px" modal="true" showHeader="false">
-	<font style="color: #24b85b; font-size: 30px; float: left;">
-		<b>Formulários</b>
-	</font>
-	<p:commandButton styleClass="corClaro" icon="ui-icon-close" oncomplete="PF('dlgTemplateFormulario').hide();" style=" float: right; background:white;  " />
-	
+	<p:dialog id="dlgTemplateFormulario" widgetVar="dlgTemplateFormulario"  resizable="false"
+		width="500px" height="270px" modal="true" showHeader="false">
+		<font style="color: #24b85b; font-size: 30px; float: left;"> <b>Formulários</b>
+		</font>
+		<p:commandButton styleClass="corClaro" icon="ui-icon-close"
+			oncomplete="PF('dlgTemplateFormulario').hide();"
+			style=" float: right; background:white;  " />
+
 		<br />
 		<br />
-		<br />
-		<br />
-		<div style="text-align:justify; text-decoration: none;">
-		<h:outputText value="Os formulários são desenvolvidos pelos próprios autores das video-aulas, sendo que 
+		<div class="row">
+		<!-- Desenho -->
+		<div class="ui-grid-col-3">
+			<img src="../resources/imagens/professor.jpg"
+				style="float: left; max-width: 100%; height: auto;" />
+		</div>
+		<div class="ui-grid-col-9">
+		<div style="text-align: justify; text-decoration: none; color: graytext; 
+		margin-top: 50px;">
+			<h:outputText
+				value="Os formulários são desenvolvidos pelos próprios autores das video-aulas, sendo que 
 		será do critério dele criar ou não um questionário para o assunto ensinado. Lembrando 
-		que os formulários são validados pelos ADM'S."/>		
+		que os formulários são validados pelos ADM'S." />
 		</div>
-		
+		</div>
+		</div>
+
 	</p:dialog>
-	
+
 	<!-- Menssagem sobre video -->
-	<p:dialog id="dlgTemplateVideo" widgetVar="dlgTemplateVideo" width="500px" height="200px" modal="true" showHeader="false" >
-	<font style="color: #24b85b; font-size: 30px; float: left;">
-		<b>Video-aulas</b>
-	</font>
-	<p:commandButton styleClass="corClaro" icon="ui-icon-close" oncomplete="PF('dlgTemplateVideo').hide();" style=" float: right; background:white;  " />
-	
+	<p:dialog id="dlgTemplateVideo" widgetVar="dlgTemplateVideo"  resizable="false"
+		width="500px" height="270px" modal="true" showHeader="false">
+		<font style="color: #24b85b; font-size: 30px; float: left;"> <b>Video-aulas</b>
+		</font>
+		<p:commandButton styleClass="corClaro" icon="ui-icon-close"
+			oncomplete="PF('dlgTemplateVideo').hide();"
+			style=" float: right; background:white;  " />
+
 		<br />
 		<br />
-		<br />
-		<br />
-		<div style="text-align:justify; text-decoration: none;">
-		<h:outputText value="	As videos aulas são desenvolvidas pelos próprios usuarios, havendo assim um maior 
+
+		<div class="row">
+		<!-- Desenho -->
+		<div class="ui-grid-col-3">
+			<img src="../resources/imagens/professor.jpg"
+				style="float: left; max-width: 100%; height: auto;" />
+		</div>
+		<div class="ui-grid-col-9">
+		<div style="text-align: justify; text-decoration: none; color: graytext; 
+		margin-top: 50px;">
+			<h:outputText
+				value="	As videos aulas são desenvolvidas pelos próprios usuarios, havendo assim um maior 
 		compartilhamento de informações de diversas areas. Lembrando que todos os videos
-		são validados pelos ADM'S."/>
+		são validados pelos ADM'S." />
 		</div>
-		
+		</div>
+		</div>
+
 	</p:dialog>
-	
+
 	<!-- Menssagem adicionar video -->
-	<p:dialog id="dlgAdiconarVideo" widgetVar="dlgAdiconarVideo" width="500px" height="200px" modal="true" showHeader="false">
-	<font style="color: #24b85b; font-size: 30px; float: left;">
-		<b>Adicionar Video</b>
-	</font>
-	<p:commandButton styleClass="corClaro" icon="ui-icon-close" oncomplete="PF('dlgAdiconarVideo').hide();" style=" float: right; background:white;  " />
-	
+	<p:dialog id="dlgAdiconarVideo" widgetVar="dlgAdiconarVideo" resizable="false"
+		dynamic="true" modal="true" showHeader="false">
+		<font style="color: #24b85b; font-size: 30px; float: left;"> <b>Adicionar
+				Video</b>
+		</font>
+		<p:commandButton styleClass="corClaro" icon="ui-icon-close"
+			oncomplete="PF('dlgAdiconarVideo').hide();"
+			style=" float: right; background:white;  " />
+
 		<br />
-		<br />
-		<br />
-		<br />
-		<div style="text-align:justify; text-decoration: none;">
-		<h:outputText value="Campo para add um video."/>		
+
+		<!-- Formulário para cadastro de video -->
+		<div class="row">
+		<!-- Formulário -->
+		<div class="ui-grid-col-9">
+		<h:panelGrid columns="1" cellpadding="3">
+			<h:outputText value="Preenche todos os campos abaixo."
+				style="font-size:15px; width: 315px; height:50px ;" />
+			<h:outputText value=" " />
+			<h:outputText value="Titulo:" style="font-size:15px; " />
+
+			<p:inputText id="iptTituloCadastro" label="Titulo:" size="30"
+			 required="true" value="#{usuarioMB.viewBean.usuario.email}" />
+			<h:outputText value="URL:" style="font-size:15px; " />
+			<p:inputText id="iptUrlCadastro"
+			  required="true" value="#{usuarioMB.viewBean.usuario.senha}" size="30" />
+
+			<p:commandButton update="@form" value="CONFIRMAR"
+				styleClass="btnVerdeClaro" 
+				style="width: 315px;height:50px ;background:#24b85b;color: white;border-color: #24b85b; font:18px 'Ruda',sans-serif;" />
+		</h:panelGrid>
 		</div>
-		
+		<!-- Imagem Button -->
+		<div class="ui-grid-col-3">
+		<p:commandButton update="@form" value=""
+				style="width: 105px;height:105px ; margin-top:50px; background: url(../resources/imagens/registro.png) no-repeat; border-color: white; font:18px 'Ruda',sans-serif;" 
+				oncomplete="PF('dlgTemplateFormulario').show();"/>
+				
+		</div>
+		</div>
 	</p:dialog>
-	
-	</h:form>	
+
+	<!-- Dialgo do Pesquisa Avançada -->
+	<p:dialog id="dlgPesquisaVideoAvan" widgetVar="dlgPesquisaVideoAvan"  resizable="false"
+		dynamic="true" modal="true" showHeader="false">
+		<font style="color: #24b85b; font-size: 30px; float: left;"> <b>Pesquisar
+				Video</b>
+		</font>
+		<p:commandButton styleClass="corClaro" icon="ui-icon-close"
+			oncomplete="PF('dlgPesquisaVideoAvan').hide();"
+			style=" float: right; background:white;" />
+
+		<br />
+		<br />
+
+		<h:panelGrid columns="1" cellpadding="3">
+			<h:outputText value="Pesquise pelos campos abaixo."
+				style="font-size:15px; width: 315px; height:50px ;" />
+			<h:outputText value=" " />
+			<h:outputText value="Titulo:" style="font-size:15px; " />
+
+			<p:inputText id="iptTitulo" label="Titulo:" size="30"
+				value="#{usuarioMB.viewBean.usuario.email}" />
+			<h:outputText value="Autor:" style="font-size:15px; " />
+			<p:inputText id="iptAutor"
+				value="#{usuarioMB.viewBean.usuario.senha}" size="30" />
+
+			<p:commandButton update="@form" value="PESQUISAR"
+				styleClass="btnVerdeClaro"
+				style="width: 315px;height:50px ;background:#24b85b;color: white;border-color: #24b85b; font:18px 'Ruda',sans-serif;" />
+		</h:panelGrid>
+
+	</p:dialog>
+
+</h:form>
 
 </html>

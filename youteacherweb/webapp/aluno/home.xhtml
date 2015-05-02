@@ -11,12 +11,26 @@
 
 	<ui:define name="conteudo">
 		<!-- Adicionar Video -->
-		<div class="ui-grid-row">
+		<div class="ui-grid-row" >
 			<!-- Div lista de vídeos -->
-			<div class="ui-grid-col-6">
-				<h3>Vídeos-aulas</h3>
-
-				<p:scrollPanel mode="native" style="width:400px;height:600px">
+			<div class="ui-grid-col-4"
+				style=" margin-top: 30px; height: 500px;">
+				<!-- Componente de Pesquisa -->
+				<div style="width: 350px; height: 50px; margin-left: 20px;">
+					
+						<p:inputText id="iptPesquisa" size="22"
+							style="height:30px ; margin-right:5px; "
+							value="#{usuarioMB.viewBean.usuario.email}" />
+						<p:commandButton id="btnPesquisaVideo" styleClass="bt"
+							type="button" icon="ui-icon-search"  />
+						<p:commandButton id="btnPesquisaAvan" styleClass="bt"
+							 icon="ui-icon-newwin" 
+							 oncomplete="PF('dlgPesquisaVideoAvan').show();" />
+			
+				</div>
+				<!-- Componente da lista de videos -->
+				<p:scrollPanel mode="native"
+					style="width:330px;height:400px; margin-left:20px;">
 					<p>
 						<p:commandLink styleClass="estiloLink">
 							<h:outputText value="Teste" />
@@ -30,18 +44,62 @@
 				</p:scrollPanel>
 
 			</div>
-
-			<div class="ui-grid-col-6">
-				<center>
-					<p:commandButton id="btnAddVideo" value="Adicionar vídeo" styleClass="btAddVideo" oncomplete="PF('dlgAdiconarVideo').show();" />
-				</center>
+			<!-- Painel Direito -->
+			<div class="ui-grid-col-8" style=" margin-top:30px; height: 550px;">
+			<!-- Desenho -->
+				<div class="ui-grid-col-6">
+				<img src="../resources/imagens/nerd_home.png" style=" float: left; max-width:100%; height:auto;" />
+				</div>
+				<!-- Botão adicionar -->
+				<div class="ui-grid-col-6">
+				<center style="margin-top: 100px;">
+					<h3 style="text-align: center; color: #ff8d3b; font-family: ‘Lucida Console’, sans-serif; font-size: 20px; font-weight: bold; ">COMPARTILHE CONHECIMENTO!</h3>	
+					<div style="width: 300px;">
+					<p style="text-align:inherit; color: graytext; font-weight: bold;">
+						Tem conhecimento de algo importante, não perca tempo... Compartilhe já!
+					</p>
+					</div>				
+					<div style="clear: both;"></div>
+					<p:commandButton id="btnAddVideo" value="Adicionar vídeo"
+						styleClass="btAddVideo" style="border-radius: 15px; color: white; margin-top: 50px; height:80px;"
+						oncomplete="PF('dlgAdiconarVideo').show();" />
+				</center>				
+				</div>				
 			</div>
-
-
 		</div>
+		
+		<div style="clear: both;"></div>
+			<p:separator />
+		<div style="clear: both;"></div>
+		
+		<!-- Histórico de videos -->
+		<div class="ui-grid-row" >
+		
+			<!-- Div lista de vídeos -->
+			<div class="ui-grid-col-4"
+				style=" margin-top: 30px; height: 400px;">
+				
+				<!-- Div da Imagem -->
+			<center>
+				<img src="../resources/imagens/nerd22.png"
+					style="max-width: 100%; height: auto; margin-top: 10px;" />
+			</center>
+	
+			</div>
+			
+			<!-- Painel Direito -->
+			<div class="ui-grid-col-8" style=" margin-top:30px; height: 400px;">
+			<center>
+			<h3 style="text-align: center; color: #ff8d3b; font-family: ‘Lucida Console’, sans-serif; font-size: 30px; font-weight: bold; ">HISTÓRICO</h3>	
+			</center>
+			
+			</div>
+			
+		</div>
+			
 
 
-	<ui:include src="../templates/dlgsTemplate.xhtml"></ui:include>
+		<ui:include src="../templates/dlgsTemplate.xhtml"></ui:include>
 
 	</ui:define>
 </ui:composition>
