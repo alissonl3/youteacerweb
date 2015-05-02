@@ -39,16 +39,17 @@
 								style="font-size:15px; width: 315px; height:50px ;" />
 							<h:outputText value=" " />
 							<h:outputText value="Titulo:" style="font-size:15px; " />
-
 							<p:inputText id="iptTituloCadastro" label="Titulo:" size="30"
-								required="true" value="#{usuarioMB.viewBean.usuario.email}" />
+								 value="#{usuarioMB.viewBean.video.titulo}" required="true"/>
+								
 							<h:outputText value="URL:" style="font-size:15px; " />
 							<p:inputText id="iptUrlCadastro" required="true"
-								value="#{usuarioMB.viewBean.usuario.senha}" size="30" />
+								value="#{usuarioMB.viewBean.video.url}" size="30" />
 
-							<p:commandButton update="@form" value="CONFIRMAR"
+							<p:commandButton  value="CONFIRMAR"
 								styleClass="btnVerdeClaro"
-								style="width: 315px;height:50px ;background:#24b85b;color: white;border-color: #24b85b; font:18px 'Ruda',sans-serif;" />
+								style="width: 315px;height:50px ;background:#24b85b;color: white;border-color: #24b85b; font:18px 'Ruda',sans-serif;"
+								actionListener="#{usuarioMB.inserirVideo}" update="@form"/>
 						</h:panelGrid>
 					</div>
 

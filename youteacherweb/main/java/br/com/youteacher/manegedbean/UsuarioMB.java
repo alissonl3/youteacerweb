@@ -17,6 +17,7 @@ import javax.faces.context.FacesContext;
 import javax.servlet.http.HttpSession;
 
 import br.com.youteacher.banco.BancoDAO;
+import br.com.youteacher.banco.VideoDAO;
 import br.com.youteacher.banco.dao.UsuarioDAO;
 import br.com.youteacher.viewbean.UsuarioViewBean;
 import br.com.youteacherweb.entidades.Usuario;
@@ -26,6 +27,7 @@ public class UsuarioMB implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	private UsuarioDAO dao;
+	private VideoDAO videoDAO;
 
 	private UsuarioViewBean viewBean;
 
@@ -40,8 +42,25 @@ public class UsuarioMB implements Serializable {
 		
 		dao = new UsuarioDAO();
 		viewBean = new UsuarioViewBean();
+		videoDAO = new VideoDAO();
 		
 	}
+	//ADICIONAR VIDEO
+	public void inserirVideo(){
+		try{
+			viewBean.getVideo().setUsuario(viewBean.getUsuarioLogado());
+			videoDAO.inserir(viewBean.getVideo());
+			
+			
+		}catch(Exception e){
+			mostraMenssagem("ERRO!!", "Erro ao inserir video!");
+			System.out.println("Erro video:"+e);
+		}
+		
+		
+	}
+	
+	
 	
 	//INSERIR UM NOVO ALUNO
 	public void inserir(){
@@ -121,6 +140,8 @@ public class UsuarioMB implements Serializable {
 	    
 	   
 	    }
+	   
+	    
 	    
 	 //EXECUTAR LOGOFF DO USUARIO
 	    public String logOff(){

@@ -8,18 +8,16 @@ public class VideoDAO {
 
 	EntityManager em;
 
-	public boolean inserir(Video video) {
+	public void inserir(Video video) {
 
 		try {
 			em = Banco.getIstancia().getEm();
 			em.getTransaction().begin();
 			em.persist(video);
 			em.getTransaction().commit();
-			return true;
 		} catch (Exception e) {
 			em.getTransaction().rollback();
 			e.printStackTrace();
-			return false;
 
 		}
 
