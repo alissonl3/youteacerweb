@@ -1,0 +1,117 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="/templates/template_user.xhtml">
+
+	<ui:define name="conteudo">
+		<h:form id="frmVideo">
+			<div class="ui-grid">
+				<div class="ui-grid-row">
+					<div class="ui-grid-col-12">
+						<center>
+							<h3
+								style="text-align: center; color: #ff8d3b; font-family: ‘Lucida Console’, sans-serif; font-size: 30px; font-weight: bold;">ADICIONAR
+								VIDEO</h3>
+						</center>
+					</div>
+				</div>
+				<!-- Formulário para cadastro de video -->
+				<div class="ui-grid-row"
+					style="margin-top: 20px; margin-bottom: 20px;">
+					<!-- Formulário -->
+					<div class="ui-grid-col-5">
+						<!-- Div da Imagem -->
+						<center>
+							<img src="../resources/imagens/aluno9.png"
+								style="max-width: 100%; height: auto; margin-top: 10px;" />
+						</center>
+					</div>
+
+					<div class="ui-grid-col-4" style="padding-top: 20px;">
+						<h:panelGrid columns="1" cellpadding="3">
+							<h:outputText value="Preenche todos os campos abaixo."
+								style="font-size:15px; width: 315px; height:50px ;" />
+							<h:outputText value=" " />
+							<h:outputText value="Titulo:" style="font-size:15px; " />
+
+							<p:inputText id="iptTituloCadastro" label="Titulo:" size="30"
+								required="true" value="#{usuarioMB.viewBean.usuario.email}" />
+							<h:outputText value="URL:" style="font-size:15px; " />
+							<p:inputText id="iptUrlCadastro" required="true"
+								value="#{usuarioMB.viewBean.usuario.senha}" size="30" />
+
+							<p:commandButton update="@form" value="CONFIRMAR"
+								styleClass="btnVerdeClaro"
+								style="width: 315px;height:50px ;background:#24b85b;color: white;border-color: #24b85b; font:18px 'Ruda',sans-serif;" />
+						</h:panelGrid>
+					</div>
+
+					<!-- Imagem Button -->
+					<div class="ui-grid-col-1">
+						<p:commandButton update=":frmQuestionario" value=""
+							style="width: 105px;height:105px ; margin-top:50px; background: url(../resources/imagens/registro.png) no-repeat; border-color: white; font:18px 'Ruda',sans-serif;">
+							<f:setPropertyActionListener target="#{usuarioMB.viewBean.habilitarVisualizacaoQuestionario}" value="#{true}"/>
+							</p:commandButton>
+
+					</div>
+					<div class="ui-grid-col-1"></div>
+
+
+				</div>
+			</div>
+		</h:form>
+
+		<!-- Formulario de Questionário -->
+		<p:outputPanel id="pnlQuestionario">
+			<h:form id="frmQuestionario" rendered="#{usuarioMB.viewBean.habilitarVisualizacaoQuestionario}">
+				<p:separator />
+				<center>
+					<h3
+						style="text-align: center; color: #ff8d3b; font-family: ‘Lucida Console’, sans-serif; font-size: 30px; font-weight: bold;">FORMULÁRIO</h3>
+				</center>
+				<div class="ui-grid">
+					<div class="ui-grid-row" style="margin-bottom: 20px;">
+						<div class="ui-grid-col-3"></div>
+
+						<div class="ui-grid-col-6">
+						<div style="width: 400px; margin: auto;">
+						<h:panelGrid columns="1" cellpadding="3">
+							<h:outputText value=" " />
+							<h:outputText value="1° Pergunta:" style="font-size:15px; " />
+							<p:inputTextarea id="iptPergunta1"  cols="40" rows="2"
+								 value="#{usuarioMB.viewBean.usuario.email}" />
+							<h:outputText value="2° Pergunta:" style="font-size:15px; " />
+							<p:inputTextarea id="iptPergunta2"  cols="40" rows="2"
+								value="#{usuarioMB.viewBean.usuario.senha}" />
+
+						
+						</h:panelGrid>
+						<center>
+						<p:commandButton update="@form" value="CRIAR"
+								styleClass="btnVerdeClaro" id="btnCriarQuestionario"
+								style=" margin-top:10px;  width: 315px;height:50px ;background:#24b85b;color: white;border-color: #24b85b; font:18px 'Ruda',sans-serif;" >
+								<f:setPropertyActionListener target="#{usuarioMB.viewBean.habilitarVisualizacaoQuestionario}" value="#{false}"/>
+								</p:commandButton>
+						</center>
+						</div>
+						</div>
+
+						<div class="ui-grid-col-3"></div>
+					</div>
+				</div>
+			</h:form>
+		</p:outputPanel>
+
+
+		<ui:include src="../templates/dlgsTemplate.xhtml"></ui:include>
+
+	</ui:define>
+</ui:composition>
+
+</html>

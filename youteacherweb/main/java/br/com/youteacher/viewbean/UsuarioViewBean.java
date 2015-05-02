@@ -15,6 +15,9 @@ public class UsuarioViewBean {
 	private String tituloVideo;
 	private String urlVideo;
 	private String nomeUsuario;
+	
+	//pagina cadastro video
+	private boolean habilitarVisualizacaoQuestionario;
 
 	public UsuarioViewBean() {
 
@@ -30,6 +33,16 @@ public class UsuarioViewBean {
 		habilitarVisualizacaoIdCadastro = false;
 		tituloVideo = "YouTeacher";
 		urlVideo = "https://www.youtube.com/v/1OH3ISC-vfk";
+		habilitarVisualizacaoQuestionario = false;
+	}
+	
+	public boolean isHabilitarVisualizacaoQuestionario() {
+		return habilitarVisualizacaoQuestionario;
+	}
+
+	public void setHabilitarVisualizacaoQuestionario(
+			boolean habilitarVisualizacaoQuestionario) {
+		this.habilitarVisualizacaoQuestionario = habilitarVisualizacaoQuestionario;
 	}
 
 	public String getUrlVideo() {

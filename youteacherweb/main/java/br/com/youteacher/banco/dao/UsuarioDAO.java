@@ -51,7 +51,7 @@ public class UsuarioDAO implements Serializable {
 		}
 	}
 	
-	 public List listarCondicaoUsuario(String condicao){
+	 public List<Usuario> listarCondicaoUsuario(String condicao){
 		    
 	        em = Banco.getIstancia().getEm();
 	        em.getTransaction().begin();
@@ -60,4 +60,33 @@ public class UsuarioDAO implements Serializable {
 	        return q.getResultList();
 	    
 	    }
+	 
+	 public List<Usuario> listaTodosUsuarios(Usuario user){
+		    
+	        em = Banco.getIstancia().getEm();
+	        em.getTransaction().begin();
+	        Query q = em.createQuery("from " + user);
+	        em.getTransaction().commit();
+	        return q.getResultList();
+	        
+	    
+	    }
+	 
+	  public void salvarUsuario(Usuario user){
+	        em = Banco.getIstancia().getEm();
+	        em.getTransaction().begin();
+	        em.merge(user);
+	        em.getTransaction().commit();
+	
+	    }
+	  
+	  public Usuario retornarUsuario( Long id){
+	        em = Banco.getIstancia().getEm();
+	        Usuario retornado = null;
+	        em.getTransaction().begin();
+	        retornado = em.find(Usuario.class, id);
+	        em.getTransaction().commit();
+	        return retornado;
+	 
+	   }
 }
