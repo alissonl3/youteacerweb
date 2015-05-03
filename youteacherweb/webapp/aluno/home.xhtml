@@ -15,22 +15,16 @@
 			<!-- Div lista de vídeos -->
 			<div class="ui-grid-col-4" style="margin-top: 30px; height: 500px;">
 				<!-- Componente de Pesquisa -->
-				<div style="width: 350px; height: 50px; margin-left: 20px;">
-
-					<p:inputText id="iptPesquisa" size="22"
-						style="height:30px ; margin-right:5px; "
-						value="#{usuarioMB.viewBean.usuario.email}" />
-					<p:commandButton id="btnPesquisaVideo" styleClass="bt"
-						type="button" icon="ui-icon-search" />
+				<div style="width: 330px; ">
 					<p:commandButton id="btnPesquisaAvan" styleClass="bt"
-						icon="ui-icon-newwin"
+						icon="ui-icon-newwin" style="float:right;"
 						oncomplete="PF('dlgPesquisaVideoAvan').show();" />
 
 				</div>
 				<!-- Componente da lista de videos -->
-				<h:panelGrid  style="margin-bottom:50px" cellpadding="5" >
+				<h:panelGrid  style=" margin-left: 20px; margin-bottom:50px" cellpadding="5" >
 				<p:selectOneListbox id="listaVideos" value="#{usuarioMB.viewBean.videos}"
-					var="v" filter="true"
+					var="v" filter="true" style="width: 300px;" scrollHeight="400"
 					filterMatchMode="contains">
 					<f:selectItems value="#{usuarioMB.viewBean.videos}" var="videos"
 						itemLabel="#{videos.titulo}" itemValue="#{videos}" />
