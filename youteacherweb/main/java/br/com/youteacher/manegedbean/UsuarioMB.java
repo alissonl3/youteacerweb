@@ -105,60 +105,55 @@ public class UsuarioMB implements Serializable {
 		}
 
 	}
-	
+
 	// GERAR CAMPOS DINAMICOS DO FORMULARIO
-		public void gerarCampo() {
-			
-			componenteCount += 1;
+	public void gerarCampo() {
 
-			// INPUT PARA A PERGUNTA
-			HtmlOutputText ol = new HtmlOutputText();
-			ol.setId("oplPergunta" + componenteCount);
-			ol.setValue("Pergunta " + componenteCount);
-			grid.getChildren().add(ol);
+		componenteCount += 1;
 
-			// INPUT PARA O CAMPO EM BRANCO
-			HtmlOutputText ol2 = new HtmlOutputText();
-			ol.setId("oplPerguntaBranco" + componenteCount);
-			ol.setValue("Valor Nove");
-			grid.getChildren().add(ol2);
-			
-			//INPUT TEXT AREA PARA A PERGUNTA
-			InputTextarea ipa = new InputTextarea();
-			ipa.setId("iptPergunta" + componenteCount);
-			ipa.setStyle("min-width: 100px;");
-			ipa.setValue("Valor");
-			ipa.setMaxlength(50);
-			ipa.setCols(40);
-			ipa.setRows(2);
-			grid.getChildren().add(ipa);
+		// INPUT PARA A PERGUNTA
+		HtmlOutputText ol = new HtmlOutputText();
+		ol.setId("oplPergunta" + componenteCount);
+		ol.setValue("Pergunta " + componenteCount);
+		grid.getChildren().add(ol);
 
-			//BOTÃO PARA ADICIONAR ALTERNATIVAS
-			CommandButton bt = new CommandButton();
-			bt.setId("bntAddAlternativa" + componenteCount);
-			bt.setValue(" ");
-			bt.setStyle("width: 35px;height:35px ; margin-top:5px; background: url(../resources/imagens/add-icon.png) no-repeat; border-color: white; font:18px 'Ruda',sans-serif;");
-			bt.setUpdate("@form");
-			bt.setAjax(false);
-			grid.getChildren().add(bt);
-			
-			//ADICIONAR OS INPUT AREAS
-			iptsPerguntas.add(ipa);
+		// INPUT PARA O CAMPO EM BRANCO
+		HtmlOutputText ol2 = new HtmlOutputText();
+		ol.setId("oplPerguntaBranco" + componenteCount);
+		ol.setValue("Valor Nove");
+		grid.getChildren().add(ol2);
+
+		// INPUT TEXT AREA PARA A PERGUNTA
+		InputTextarea ipa = new InputTextarea();
+		ipa.setId("iptPergunta" + componenteCount);
+		ipa.setStyle("min-width: 100px;");
+		ipa.setValue("Valor");
+		ipa.setMaxlength(50);
+		ipa.setCols(40);
+		ipa.setRows(2);
+		grid.getChildren().add(ipa);
+
+		// BOTÃO PARA ADICIONAR ALTERNATIVAS
+		CommandButton bt = new CommandButton();
+		bt.setId("bntAddAlternativa" + componenteCount);
+		bt.setValue(" ");
+		bt.setStyle("width: 35px;height:35px ; margin-top:5px; background: url(../resources/imagens/add-icon.png) no-repeat; border-color: white; font:18px 'Ruda',sans-serif;");
+		bt.setUpdate("@form");
+		bt.setAjax(false);
+		grid.getChildren().add(bt);
+
+		// ADICIONAR OS INPUT AREAS
+		iptsPerguntas.add(ipa);
+	}
+
+	// RESETAR O GRID PARA UM NOVO CADASTRO DE FORMULÁRIO
+	public void limparGrid() {
+		iptsPerguntas = new ArrayList<InputTextarea>();
+
+		if (grid != null) {
+			grid.getChildren().clear();
 		}
-
-		// RESETAR O GRID PARA UM NOVO CADASTRO DE FORMULÁRIO
-		public void limparGrid() {
-			iptsPerguntas = new ArrayList<InputTextarea>();
-			
-			
-			if (grid != null) {
-				grid.getChildren().clear();
-			}
-		}
-
-
-
-
+	}
 
 	// MOSTRAR MENSSAGEM DE NOTIFICAÇÃO
 	public void mostraMenssagem(String titulo, String menssagem) {
@@ -181,6 +176,18 @@ public class UsuarioMB implements Serializable {
 	// ATUALIZAR LISTA VIDEOS
 	public void atualizarListaVideo() {
 		viewBean.setVideos(videoDAO.listarTodos());
+		 addRecente(viewBean.getVideos());
+	}
+
+	// ADICIONADOS RECENTEMENTE
+	public void addRecente(List<Video> videos) {
+		List<Video> recentes = new ArrayList<Video>();
+		int tamanho = videos.size();
+		for (int i = (tamanho - 3); i < tamanho; i++) {
+			recentes.add(videos.get(i));
+		}
+		viewBean.setVideosRecente(recentes);
+
 	}
 
 	// EXECUTAR O LOGIN DO USUARIO
@@ -229,7 +236,7 @@ public class UsuarioMB implements Serializable {
 				+ viewBean.getUsuario().getSenha() + "'"));
 
 	}
-	
+
 	public int getComponenteCount() {
 		return componenteCount;
 	}

@@ -16,15 +16,7 @@ public class UsuarioViewBean {
 	private Video video;
 	private Formulario formulario;
 	private List<Video> videos;
-	
-	
-	public List<Video> getVideos() {
-		return videos;
-	}
-
-	public void setVideos(List<Video> videos) {
-		this.videos = videos;
-	}
+	private List<Video> videosRecente;
 
 	// pagina
 	private boolean habilitarVisualizacaoIdCadastro;
@@ -45,7 +37,7 @@ public class UsuarioViewBean {
 		usuario = new Usuario();
 		usuarioLogado = new Usuario();
 		video = new Video();
-		
+
 		// pagina
 		habilitarVisualizacaoIdCadastro = false;
 		tituloVideo = "YouTeacher";
@@ -135,5 +127,20 @@ public class UsuarioViewBean {
 		this.formulario = formulario;
 	}
 
+	public List<Video> getVideos() {
+		return videos;
+	}
+
+	public void setVideos(List<Video> videos) {
+		this.videos = videos;
+	}
+
+	public List<Video> getVideosRecente() {
+		return videosRecente;
+	}
+
+	public void setVideosRecente(List<Video> videosRecente) {
+		this.videosRecente = videosRecente;
+	}
 
 }
