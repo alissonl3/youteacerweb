@@ -1,7 +1,9 @@
 package br.com.youteacher.viewbean;
 
+import java.util.ArrayList;
 import java.util.List;
 
+import br.com.youteacher.banco.dao.VideoDAO;
 import br.com.youteacherweb.entidades.Formulario;
 import br.com.youteacherweb.entidades.Usuario;
 import br.com.youteacherweb.entidades.Video;
@@ -13,6 +15,16 @@ public class UsuarioViewBean {
 	private Usuario usuarioLogado;
 	private Video video;
 	private Formulario formulario;
+	private List<Video> videos;
+	
+	
+	public List<Video> getVideos() {
+		return videos;
+	}
+
+	public void setVideos(List<Video> videos) {
+		this.videos = videos;
+	}
 
 	// pagina
 	private boolean habilitarVisualizacaoIdCadastro;
@@ -33,7 +45,7 @@ public class UsuarioViewBean {
 		usuario = new Usuario();
 		usuarioLogado = new Usuario();
 		video = new Video();
-
+		
 		// pagina
 		habilitarVisualizacaoIdCadastro = false;
 		tituloVideo = "YouTeacher";
@@ -122,5 +134,6 @@ public class UsuarioViewBean {
 	public void setFormulario(Formulario formulario) {
 		this.formulario = formulario;
 	}
+
 
 }

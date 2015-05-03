@@ -40,9 +40,11 @@ public class VideoDAO {
 	}
 
 	public List<Video> listarTodos() {
-		Query query = em.createQuery("SELECT e FROM video e");
-		List<Video> videos = query.getResultList();
-		return videos;
+		em = Banco.getIstancia().getEm();
+		em.getTransaction().begin();
+		Query query = em.createQuery("SELECT c FROM Video c");
+		em.getTransaction().commit();
+		return query.getResultList();
 
 	}
 

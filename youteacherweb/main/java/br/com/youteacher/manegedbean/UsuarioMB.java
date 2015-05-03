@@ -3,6 +3,7 @@ package br.com.youteacher.manegedbean;
 
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.annotation.PostConstruct;
 import javax.faces.application.FacesMessage;
@@ -19,7 +20,7 @@ import javax.servlet.http.HttpSession;
 import br.com.youteacher.banco.dao.VideoDAO;
 import br.com.youteacher.banco.dao.UsuarioDAO;
 import br.com.youteacher.viewbean.UsuarioViewBean;
-import br.com.youteacherweb.entidades.Usuario;
+import br.com.youteacherweb.entidades.*;
 
 @ManagedBean
 public class UsuarioMB implements Serializable {
@@ -32,6 +33,9 @@ public class UsuarioMB implements Serializable {
 
 	public UsuarioMB(){}
 	
+	private List<Video> videos;
+	
+
 	//Formulário
 	private boolean habilitarFormulario;
 	private boolean habilitarVisualizacaoQuestionario;
@@ -43,6 +47,7 @@ public class UsuarioMB implements Serializable {
 		dao = new UsuarioDAO();
 		viewBean = new UsuarioViewBean();
 		videoDAO = new VideoDAO();
+		
 		
 	}
 	//ADICIONAR VIDEO
@@ -123,6 +128,7 @@ public class UsuarioMB implements Serializable {
 	             
 	            viewBean.setUsuarioLogado(viewBean.getUsuarios().get(0)); 
 	            viewBean.setNomeUsuario(viewBean.getUsuarios().get(0).getNome());
+	            viewBean.setVideos(videoDAO.listarTodos());
 	          
 	            FacesContext fc = FacesContext.getCurrentInstance();
 	            HttpSession session = (HttpSession) fc.getExternalContext().getSession(false);
