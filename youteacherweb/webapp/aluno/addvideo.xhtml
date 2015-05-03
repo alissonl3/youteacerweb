@@ -81,8 +81,8 @@
 					<h3
 						style="text-align: center; color: #ff8d3b; font-family: ‘Lucida Console’, sans-serif; font-size: 30px; font-weight: bold;">FORMULÁRIO</h3>
 
-					<p:commandButton update="@form :pnlQuestionario" value=""
-						id="btnAddPeg"
+					<p:commandButton update="frmQuestionario:pnlGridDinamico" value=""
+						id="btnAddPeg" actionListener="#{usuarioMB.gerarCampo}"
 						style="width: 65px;height:65px ; margin-top:5px; background: url(../resources/imagens/add2.png) no-repeat; border-color: white; font:18px 'Ruda',sans-serif;">
 					</p:commandButton>
 				</center>
@@ -98,20 +98,15 @@
 									<p:inputTextarea id="iptPergunta1" cols="40" rows="2"
 										value="#{usuarioMB.viewBean.usuario.email}" />
 									<p:commandButton update="@form" value=""
-										id="btnAddResp1"
+										id="bntAddAlternativa1"
 										style="width: 35px;height:35px ; margin-top:5px; background: url(../resources/imagens/add-icon.png) no-repeat; border-color: white; font:18px 'Ruda',sans-serif;">
 									</p:commandButton>
-									<h:outputText value="2° Pergunta:" style="font-size:15px; " />
-									<h:outputText value=" " />
-									<p:inputTextarea id="iptPergunta2" cols="40" rows="2"
-										value="#{usuarioMB.viewBean.usuario.senha}" />
-										<p:commandButton update="@form" value=""
-										id="btnAddResp2"
-										style="width: 35px;height:35px ; margin-top:5px; background: url(../resources/imagens/add-icon.png) no-repeat; border-color: white; font:18px 'Ruda',sans-serif;">
-									</p:commandButton>
-
-
 								</h:panelGrid>
+								<br />
+							
+									<h:panelGrid id="pnlGridDinamico" binding="#{usuarioMB.grid}" columns="2"
+										cellpadding="3" />
+
 								<center>
 									<p:commandButton update="@form pnlQuestionario" value="CRIAR"
 										styleClass="btnVerdeClaro" id="btnCriarQuestionario"
