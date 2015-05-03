@@ -26,7 +26,7 @@
 					cellpadding="5">
 					<p:selectOneListbox id="listaVideos"
 						value="#{usuarioMB.viewBean.videos}" var="v" filter="true"
-						style="width: 300px;" scrollHeight="400"
+						style="width: 300px; background: #F0FFFF; border:#F0FFFF; color:graytext; font-size:20px; text-align:center;" scrollHeight="400"
 						filterMatchMode="contains">
 						<f:selectItems value="#{usuarioMB.viewBean.videos}" var="videos"
 							itemLabel="#{videos.titulo}" itemValue="#{videos}" />
@@ -92,10 +92,12 @@
 						style="text-align: center; color: #ff8d3b; font-family: ‘Lucida Console’, sans-serif; font-size: 30px; font-weight: bold;">ADICIONADOS
 						RECENTEMENTE</h3>
 				</center>
-				<p:selectOneListbox id="recente" value="#{usuarioMB.viewBean.videosRecente}">
+				<center>
+				<p:selectOneListbox id="recente" value="#{usuarioMB.viewBean.videosRecente}" scrollHeight="200" style="width:500px; color:graytext; font-size: 25px; font-weight:bold; background: #F0FFFF; border:#F0FFFF;  font-family: ‘Lucida Console’, sans-serif;">
 					<f:selectItems value="#{usuarioMB.viewBean.videosRecente}" var="recentes"
 							itemLabel="#{recentes.titulo}" itemValue="#{recentes}" />
 				</p:selectOneListbox>
+				</center>
 
 			</div>
 

@@ -108,42 +108,43 @@ public class UsuarioMB implements Serializable {
 
 	// GERAR CAMPOS DINAMICOS DO FORMULARIO
 	public void gerarCampo() {
-
-		componenteCount += 1;
+		
+		int id = ++componenteCount;
+		System.out.println("Valor id " + id);
 
 		// INPUT PARA A PERGUNTA
 		HtmlOutputText ol = new HtmlOutputText();
-		ol.setId("oplPergunta" + componenteCount);
-		ol.setValue("Pergunta " + componenteCount);
+		ol.setId("oplPergunta" + id);
+		ol.setValue("Pergunta " + id);
 		grid.getChildren().add(ol);
 
 		// INPUT PARA O CAMPO EM BRANCO
-		HtmlOutputText ol2 = new HtmlOutputText();
-		ol.setId("oplPerguntaBranco" + componenteCount);
-		ol.setValue("Valor Nove");
-		grid.getChildren().add(ol2);
+//		HtmlOutputText ol2 = new HtmlOutputText();
+//		ol.setId("oplPerguntaBranco" + componenteCount);
+//		ol.setValue("Valor Nove");
+//		grid.getChildren().add(ol2);
 
 		// INPUT TEXT AREA PARA A PERGUNTA
-		InputTextarea ipa = new InputTextarea();
-		ipa.setId("iptPergunta" + componenteCount);
-		ipa.setStyle("min-width: 100px;");
-		ipa.setValue("Valor");
-		ipa.setMaxlength(50);
-		ipa.setCols(40);
-		ipa.setRows(2);
-		grid.getChildren().add(ipa);
+//		InputTextarea ipa = new InputTextarea();
+//		ipa.setId("iptPergunta" + componenteCount);
+//		ipa.setStyle("min-width: 100px;");
+//		ipa.setValue("Valor");
+//		ipa.setMaxlength(50);
+//		ipa.setCols(40);
+//		ipa.setRows(2);
+//		grid.getChildren().add(ipa);
 
 		// BOTÃO PARA ADICIONAR ALTERNATIVAS
-		CommandButton bt = new CommandButton();
-		bt.setId("bntAddAlternativa" + componenteCount);
-		bt.setValue(" ");
-		bt.setStyle("width: 35px;height:35px ; margin-top:5px; background: url(../resources/imagens/add-icon.png) no-repeat; border-color: white; font:18px 'Ruda',sans-serif;");
-		bt.setUpdate("@form");
-		bt.setAjax(false);
-		grid.getChildren().add(bt);
+//		CommandButton bt = new CommandButton();
+//		bt.setId("bntAddAlternativa" + componenteCount);
+//		bt.setValue(" ");
+//		bt.setStyle("width: 35px;height:35px ; margin-top:5px; background: url(../resources/imagens/add-icon.png) no-repeat; border-color: white; font:18px 'Ruda',sans-serif;");
+//		bt.setUpdate("@form");
+//		bt.setAjax(false);
+//		grid.getChildren().add(bt);
 
 		// ADICIONAR OS INPUT AREAS
-		iptsPerguntas.add(ipa);
+		//iptsPerguntas.add(ipa);
 	}
 
 	// RESETAR O GRID PARA UM NOVO CADASTRO DE FORMULÁRIO

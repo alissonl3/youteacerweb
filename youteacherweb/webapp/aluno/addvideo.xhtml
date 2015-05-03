@@ -81,8 +81,8 @@
 					<h3
 						style="text-align: center; color: #ff8d3b; font-family: ‘Lucida Console’, sans-serif; font-size: 30px; font-weight: bold;">FORMULÁRIO</h3>
 
-					<p:commandButton update="frmQuestionario:pnlGridDinamico" value=""
-						id="btnAddPeg" actionListener="#{usuarioMB.gerarCampo}"
+					<p:commandButton value=""
+						id="btnAddPeg" actionListener="#{usuarioMB.gerarCampo}" update="frmQuestionario:pnlDinamico"
 						style="width: 65px;height:65px ; margin-top:5px; background: url(../resources/imagens/add2.png) no-repeat; border-color: white; font:18px 'Ruda',sans-serif;">
 					</p:commandButton>
 				</center>
@@ -103,10 +103,10 @@
 									</p:commandButton>
 								</h:panelGrid>
 								<br />
-							
-									<h:panelGrid id="pnlGridDinamico" binding="#{usuarioMB.grid}" columns="2"
+								<h:panelGroup id="pnlDinamico">
+									<h:panelGrid  binding="#{usuarioMB.grid}" columns="2"
 										cellpadding="3" />
-
+								</h:panelGroup>
 								<center>
 									<p:commandButton update="@form pnlQuestionario" value="CRIAR"
 										styleClass="btnVerdeClaro" id="btnCriarQuestionario"
