@@ -1,10 +1,11 @@
-package br.com.youteacher.banco;
+package br.com.youteacher.banco.dao;
 
 import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
+import br.com.youteacher.banco.Banco;
 import br.com.youteacherweb.entidades.Formulario;
 
 public class FormularioDAO {

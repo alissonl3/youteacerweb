@@ -21,34 +21,49 @@
 
 	<!-- Regras de navegações da pagina -->
 	<navigation-rule>
-		<from-view-id>/aluno/home.xhtml</from-view-id>
-		<navigation-case>
-			<from-outcome>sair</from-outcome>
-			<to-view-id>/pages/home.xhtml</to-view-id>
-			<redirect/>
-		</navigation-case>
-	</navigation-rule>
-	<navigation-rule>
-		<from-view-id>/aluno/home.xhtml</from-view-id>
-		<navigation-case>
-			<from-outcome>video</from-outcome>
-			<to-view-id>/aluno/addvideo.xhtml</to-view-id>
-			<redirect/>
-		</navigation-case>
-	</navigation-rule>
-	<navigation-rule>
 		<from-view-id>/pages/home.xhtml</from-view-id>
 		<navigation-case>
 			<from-outcome>logado</from-outcome>
 			<to-view-id>/aluno/home.xhtml</to-view-id>
-			<redirect/>
+			<redirect></redirect>
 		</navigation-case>
 		<navigation-case>
 			<from-outcome>inicial</from-outcome>
 			<to-view-id>/pages/home.xhtml</to-view-id>
-			<redirect/>
+			<redirect></redirect>
 		</navigation-case>
 	</navigation-rule>
-
-
+	
+	<navigation-rule>
+		<from-view-id>/aluno/home.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>sair</from-outcome>
+			<to-view-id>/pages/home.xhtml</to-view-id>
+			<redirect></redirect>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>video</from-outcome>
+			<to-view-id>/aluno/addvideo.xhtml</to-view-id>
+			<redirect></redirect>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>inicio</from-outcome>
+			<to-view-id>/aluno/home.xhtml</to-view-id>
+			<redirect></redirect>
+		</navigation-case>
+	</navigation-rule>
+	
+		<navigation-rule>
+		<from-view-id>/aluno/addvideo.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>sair</from-outcome>
+			<to-view-id>/pages/home.xhtml</to-view-id>
+			<redirect></redirect>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>inicio</from-outcome>
+			<to-view-id>/aluno/home.xhtml</to-view-id>
+			<redirect></redirect>
+		</navigation-case>
+	</navigation-rule>
 </faces-config>

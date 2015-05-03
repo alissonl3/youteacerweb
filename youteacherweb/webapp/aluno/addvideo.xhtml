@@ -40,10 +40,10 @@
 							<h:outputText value=" " />
 							<h:outputText value="Titulo:" style="font-size:15px; " />
 							<p:inputText id="iptTituloCadastro" label="Titulo:" size="30"
-								 value="#{usuarioMB.viewBean.video.titulo}" required="true"/>
+								 value="#{usuarioMB.viewBean.video.titulo}" />
 								
 							<h:outputText value="URL:" style="font-size:15px; " />
-							<p:inputText id="iptUrlCadastro" required="true"
+							<p:inputText id="iptUrlCadastro" 
 								value="#{usuarioMB.viewBean.video.url}" size="30" />
 
 							<p:commandButton  value="CONFIRMAR"
@@ -55,9 +55,9 @@
 
 					<!-- Imagem Button -->
 					<div class="ui-grid-col-1">
-						<p:commandButton update=":frmQuestionario" value=""
+						<p:commandButton update="@form :pnlQuestionario" value="" id="btnAddQuest"
 							style="width: 105px;height:105px ; margin-top:50px; background: url(../resources/imagens/registro.png) no-repeat; border-color: white; font:18px 'Ruda',sans-serif;">
-							<f:setPropertyActionListener target="#{usuarioMB.viewBean.habilitarVisualizacaoQuestionario}" value="#{true}"/>
+							<f:setPropertyActionListener target="#{usuarioMB.habilitarVisualizacaoQuestionario}" value="#{true}"/>
 							</p:commandButton>
 
 					</div>
@@ -70,7 +70,7 @@
 
 		<!-- Formulario de Questionário -->
 		<p:outputPanel id="pnlQuestionario">
-			<h:form id="frmQuestionario" rendered="#{usuarioMB.viewBean.habilitarVisualizacaoQuestionario}">
+			<h:form id="frmQuestionario" rendered="#{usuarioMB.habilitarVisualizacaoQuestionario}">
 				<p:separator />
 				<center>
 					<h3
@@ -94,10 +94,10 @@
 						
 						</h:panelGrid>
 						<center>
-						<p:commandButton update="@form" value="CRIAR"
+						<p:commandButton update="@form pnlQuestionario" value="CRIAR"
 								styleClass="btnVerdeClaro" id="btnCriarQuestionario"
 								style=" margin-top:10px;  width: 315px;height:50px ;background:#24b85b;color: white;border-color: #24b85b; font:18px 'Ruda',sans-serif;" >
-								<f:setPropertyActionListener target="#{usuarioMB.viewBean.habilitarVisualizacaoQuestionario}" value="#{false}"/>
+								<f:setPropertyActionListener target="#{usuarioMB.habilitarVisualizacaoQuestionario}" value="#{false}"/>
 								</p:commandButton>
 						</center>
 						</div>

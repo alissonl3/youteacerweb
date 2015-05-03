@@ -25,6 +25,7 @@
 					<div class="ui-grid-col-3"
 						style="padding-top: 10px; padding-bottom: 10px; padding-left: 80px;">
 						<h:form id="frmHeaderUser">
+							<p:commandButton id="btnInicio" value="inicio" styleClass="bt" action="inicio" />
 							<p:commandButton id="btnPerfil" value="perfil" styleClass="bt" />
 							<p:commandButton id="btnSair" value="Sair" styleClass="bt"
 								update="@form :frmHeaderUser" action="#{usuarioMB.logOff}" />

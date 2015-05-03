@@ -1,2 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<pageflow:Pageflow xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf14293832237420" configfile="/youteacherweb/webapp/WEB-INF/faces-config.xml"/>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf14293832237420" configfile="/youteacherweb/webapp/WEB-INF/faces-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="aluno/home.xhtml" x="338" y="178" id="pf14306154291540" referenceLink="//@navigationRule.3/@navigationCase.2/@toViewId|" outlinks="pf14306154434419 pf143061546802010 pf143061551778515" inlinks="pf14306154291555 pf143061549850613 pf143061551778515" path="/aluno/home.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/home.xhtml" x="122" y="178" id="pf14306154291556" referenceLink="//@navigationRule.4/@navigationCase.0/@toViewId|" outlinks="pf14306154291555 pf14306154291557" inlinks="pf14306154291557 pf14306154434419 pf143061548555811" path="/pages/home.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="aluno/addvideo.xhtml" x="554" y="178" id="pf14306154291558" referenceLink="//@navigationRule.3/@navigationCase.2/@toViewId|" outlinks="pf143061548555811 pf143061549850613" inlinks="pf143061546802010" path="/aluno/addvideo.xhtml"/>
+  <links id="pf14306154291555" target="pf14306154291540" source="pf14306154291556" outcome="logado" redirect="true"/>
+  <links id="pf14306154291557" target="pf14306154291556" source="pf14306154291556" outcome="inicial" redirect="true">
+    <bendPoints d1Height="-36" d2Height="-36"/>
+    <bendPoints d1Width="-64" d1Height="-36" d2Width="-64" d2Height="-36"/>
+    <bendPoints d1Width="-64" d2Width="-64"/>
+  </links>
+  <links id="pf14306154434419" target="pf14306154291556" source="pf14306154291540" outcome="sair" redirect="true"/>
+  <links id="pf143061546802010" target="pf14306154291558" source="pf14306154291540" outcome="video" redirect="true"/>
+  <links id="pf143061548555811" target="pf14306154291556" source="pf14306154291558" outcome="sair" redirect="true"/>
+  <links id="pf143061549850613" target="pf14306154291540" source="pf14306154291558" outcome="inicio" redirect="true"/>
+  <links id="pf143061551778515" target="pf14306154291540" source="pf14306154291540" outcome="inicio" redirect="true"/>
+</pageflow:Pageflow>

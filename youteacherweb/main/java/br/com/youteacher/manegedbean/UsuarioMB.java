@@ -16,8 +16,7 @@ import javax.faces.context.FacesContext;
 
 import javax.servlet.http.HttpSession;
 
-import br.com.youteacher.banco.BancoDAO;
-import br.com.youteacher.banco.VideoDAO;
+import br.com.youteacher.banco.dao.VideoDAO;
 import br.com.youteacher.banco.dao.UsuarioDAO;
 import br.com.youteacher.viewbean.UsuarioViewBean;
 import br.com.youteacherweb.entidades.Usuario;
@@ -35,6 +34,7 @@ public class UsuarioMB implements Serializable {
 	
 	//Formulário
 	private boolean habilitarFormulario;
+	private boolean habilitarVisualizacaoQuestionario;
 	
 	
 	@PostConstruct
@@ -163,6 +163,13 @@ public class UsuarioMB implements Serializable {
 	 
 	 
 	 
+	public boolean isHabilitarVisualizacaoQuestionario() {
+		return habilitarVisualizacaoQuestionario;
+	}
+	public void setHabilitarVisualizacaoQuestionario(
+			boolean habilitarVisualizacaoQuestionario) {
+		this.habilitarVisualizacaoQuestionario = habilitarVisualizacaoQuestionario;
+	}
 	public boolean isHabilitarFormulario() {
 		return habilitarFormulario;
 	}

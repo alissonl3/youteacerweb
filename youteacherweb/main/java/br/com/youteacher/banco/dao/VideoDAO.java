@@ -1,7 +1,10 @@
-package br.com.youteacher.banco;
+package br.com.youteacher.banco.dao;
 
 import java.util.List;
+
 import javax.persistence.*;
+
+import br.com.youteacher.banco.Banco;
 import br.com.youteacherweb.entidades.Video;
 
 public class VideoDAO {
