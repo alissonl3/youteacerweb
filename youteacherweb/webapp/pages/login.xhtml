@@ -9,8 +9,7 @@
 
 
 <h:form id="frmLogin">
-
-	
+<p:growl id="growl" showDetail="true" showSummary="true" autoUpdate="true" life="5000"/>
 		<h:panelGrid columns="1" cellpadding="3">
 			<h:outputText value="Para se logar informe os campos abaixo."
 				style="font-size:15px; width: 315px; height:50px ;" />
@@ -31,7 +30,7 @@
 				style="height:30px ; " />
 			<p:message for="senha" display="text" />
 		
-			<p:commandButton update="@form :growl" value="ENTRAR"
+			<p:commandButton update="@form" value="ENTRAR"
 				styleClass="btnVerdeClaro"
 				style="width: 315px;height:50px ;background:#24b85b; color: white;border-color: #24b85b; font:18px 'Ruda',sans-serif;"
 				action="#{usuarioMB.loginUsuario}" />

@@ -50,20 +50,25 @@ public class UsuarioMB implements Serializable {
 		
 		
 	}
+	
 	//ADICIONAR VIDEO
-	public void inserirVideo(){
-		try{
-			viewBean.getVideo().setUsuario(viewBean.getUsuarioLogado());
-			videoDAO.inserir(viewBean.getVideo());
+		public void inserirVideo(){
+			try{
+				viewBean.getVideo().setUsuario(viewBean.getUsuarioLogado());
+				videoDAO.inserir(viewBean.getVideo());
+				
+				novoVideo();
+				
+				mostraMenssagem("SUCESSO", "Video inserido com sucesso!");
+				
+				
+			}catch(Exception e){
+				mostraMenssagem("ERRO!!", "Erro ao inserir video!");
+				System.out.println("Erro video:"+e);
+			}
 			
 			
-		}catch(Exception e){
-			mostraMenssagem("ERRO!!", "Erro ao inserir video!");
-			System.out.println("Erro video:"+e);
 		}
-		
-		
-	}
 	
 	
 	
@@ -118,6 +123,11 @@ public class UsuarioMB implements Serializable {
 	 public void novoUsuario(){
 		 viewBean.setUsuario(new Usuario());
 	 }
+	 
+	//NOVO VIDEO
+		 public void novoVideo(){
+			 viewBean.setVideo(new Video());
+		 }
 
 	 //EXECUTAR O LOGIN DO USUARIO
 	    public String loginUsuario(){

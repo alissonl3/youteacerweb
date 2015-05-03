@@ -27,11 +27,6 @@
 			<to-view-id>/aluno/home.xhtml</to-view-id>
 			<redirect></redirect>
 		</navigation-case>
-		<navigation-case>
-			<from-outcome>inicial</from-outcome>
-			<to-view-id>/pages/home.xhtml</to-view-id>
-			<redirect></redirect>
-		</navigation-case>
 	</navigation-rule>
 	
 	<navigation-rule>
