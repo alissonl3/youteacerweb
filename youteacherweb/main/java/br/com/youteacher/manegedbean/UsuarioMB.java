@@ -54,6 +54,8 @@ public class UsuarioMB implements Serializable {
 	//ADICIONAR VIDEO
 		public void inserirVideo(){
 			try{
+				String novoUrl = viewBean.getVideo().getUrl().replace("watch?v=", "v/");
+				viewBean.getVideo().setUrl(novoUrl);
 				viewBean.getVideo().setUsuario(viewBean.getUsuarioLogado());
 				videoDAO.inserir(viewBean.getVideo());
 				
