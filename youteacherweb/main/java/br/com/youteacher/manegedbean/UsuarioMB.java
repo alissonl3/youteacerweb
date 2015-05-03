@@ -129,6 +129,12 @@ public class UsuarioMB implements Serializable {
 			 viewBean.setVideo(new Video());
 		 }
 
+	//ATUALIZAR LISTA VIDEOS
+		 public void atualizarListaVideo(){
+			 viewBean.setVideos(videoDAO.listarTodos());
+		 }
+		 
+		 
 	 //EXECUTAR O LOGIN DO USUARIO
 	    public String loginUsuario(){
 	        
@@ -138,7 +144,7 @@ public class UsuarioMB implements Serializable {
 	             
 	            viewBean.setUsuarioLogado(viewBean.getUsuarios().get(0)); 
 	            viewBean.setNomeUsuario(viewBean.getUsuarios().get(0).getNome());
-	            viewBean.setVideos(videoDAO.listarTodos());
+	            atualizarListaVideo();
 	          
 	            FacesContext fc = FacesContext.getCurrentInstance();
 	            HttpSession session = (HttpSession) fc.getExternalContext().getSession(false);
