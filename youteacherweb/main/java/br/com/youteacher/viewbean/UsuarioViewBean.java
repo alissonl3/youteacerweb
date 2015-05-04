@@ -26,6 +26,9 @@ public class UsuarioViewBean {
 
 	// pagina cadastro video
 	private boolean habilitarVisualizacaoQuestionario;
+	
+	//visualização do video
+	private Video videoSelecionado;
 
 	public UsuarioViewBean() {
 
@@ -37,12 +40,23 @@ public class UsuarioViewBean {
 		usuario = new Usuario();
 		usuarioLogado = new Usuario();
 		video = new Video();
+		videoSelecionado = new Video();
 
 		// pagina
 		habilitarVisualizacaoIdCadastro = false;
 		tituloVideo = "YouTeacher";
 		urlVideo = "https://www.youtube.com/v/1OH3ISC-vfk";
 		habilitarVisualizacaoQuestionario = false;
+	}
+
+	
+	
+	public Video getVideoSelecionado() {
+		return videoSelecionado;
+	}
+
+	public void setVideoSelecionado(Video videoSelecionado) {
+		this.videoSelecionado = videoSelecionado;
 	}
 
 	public boolean isHabilitarVisualizacaoQuestionario() {

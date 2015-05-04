@@ -42,6 +42,9 @@ public class UsuarioMB implements Serializable {
 	private HtmlPanelGrid grid;
 	private int componenteCount = 1;
 	List<InputTextarea> iptsPerguntas = new ArrayList<InputTextarea>();
+	
+	//video
+	private Video videoSelecionado;
 
 	@PostConstruct
 	private void initPage() {
@@ -49,7 +52,13 @@ public class UsuarioMB implements Serializable {
 		dao = new UsuarioDAO();
 		viewBean = new UsuarioViewBean();
 		videoDAO = new VideoDAO();
+		videoSelecionado = new Video();
 
+	}
+	
+	//SETAR VIDEO SELECIONADO
+	public void setarVideoSelecionado(Video video){
+		viewBean.setVideoSelecionado(video);
 	}
 
 	// ADICIONAR VIDEO
@@ -236,6 +245,16 @@ public class UsuarioMB implements Serializable {
 				+ viewBean.getUsuario().getEmail() + "' and senha = '"
 				+ viewBean.getUsuario().getSenha() + "'"));
 
+	}
+	
+	
+
+	public Video getVideoSelecionado() {
+		return videoSelecionado;
+	}
+
+	public void setVideoSelecionado(Video videoSelecionado) {
+		this.videoSelecionado = videoSelecionado;
 	}
 
 	public int getComponenteCount() {
