@@ -30,6 +30,15 @@
 	</navigation-rule>
 	
 	<navigation-rule>
+		<from-view-id>/pages/adm.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>logado2</from-outcome>
+			<to-view-id>/adm/home.xhtml</to-view-id>
+			<redirect></redirect>
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
 		<from-view-id>/aluno/home.xhtml</from-view-id>
 		<navigation-case>
 			<from-outcome>sair</from-outcome>

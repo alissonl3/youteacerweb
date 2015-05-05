@@ -36,9 +36,9 @@
 				style="height:30px ; " />
 			<p:message for="senha" display="text" />
 
-			<p:commandButton update="@form" value="ENTRAR"
-				styleClass="btnVerdeClaro"
-				style="width: 315px;height:50px ; background:  #24b85b;"
+				<p:commandButton update="@form" value="ENTRAR"
+				styleClass="btnVerdeClaro" id="btnLogarAdm"
+				style="width: 315px;height:50px ;background:#24b85b; color: white;border-color: #24b85b; font:18px 'Ruda',sans-serif;"
 				action="#{usuarioMB.loginUsuario}" />
 			<p:commandLink value="Esqueceu a senha?" />
 		</h:panelGrid>
