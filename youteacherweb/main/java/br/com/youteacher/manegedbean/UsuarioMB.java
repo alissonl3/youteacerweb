@@ -53,6 +53,7 @@ public class UsuarioMB implements Serializable {
 		viewBean = new UsuarioViewBean();
 		videoDAO = new VideoDAO();
 		videoSelecionado = new Video();
+		limparGrid();
 
 	}
 	
@@ -80,7 +81,13 @@ public class UsuarioMB implements Serializable {
 		}
 
 	}
-
+	//SELECIONADO
+	public void selecionado(){
+		System.out.println("SELECIONADO:"+viewBean.getVideoSelecionado());
+		
+	}
+	
+	
 	// INSERIR UM NOVO ALUNO
 	public void inserir() {
 
@@ -266,6 +273,9 @@ public class UsuarioMB implements Serializable {
 	}
 
 	public HtmlPanelGrid getGrid() {
+		if (grid == null) {
+			grid = new HtmlPanelGrid();
+		}
 		return grid;
 	}
 

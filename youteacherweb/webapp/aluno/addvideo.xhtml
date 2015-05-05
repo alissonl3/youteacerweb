@@ -81,8 +81,9 @@
 					<h3
 						style="text-align: center; color: #ff8d3b; font-family: ‘Lucida Console’, sans-serif; font-size: 30px; font-weight: bold;">FORMULÁRIO</h3>
 
-					<p:commandButton value=""
-						id="btnAddPeg" actionListener="#{usuarioMB.gerarCampo}" update="frmQuestionario:pnlDinamico"
+					<p:commandButton value="" id="btnAddPeg"
+						actionListener="#{usuarioMB.gerarCampo}"
+						update="frmQuestionario:pnlDinamico"
 						style="width: 65px;height:65px ; margin-top:5px; background: url(../resources/imagens/add2.png) no-repeat; border-color: white; font:18px 'Ruda',sans-serif;">
 					</p:commandButton>
 				</center>
@@ -104,12 +105,12 @@
 								</h:panelGrid>
 								<br />
 								<h:panelGroup id="pnlDinamico">
-									<h:panelGrid  binding="#{usuarioMB.grid}" columns="2"
+									<h:panelGrid binding="#{usuarioMB.grid}" columns="2"
 										cellpadding="3" />
 								</h:panelGroup>
 								<center>
-									<p:commandButton update="@form pnlQuestionario" value="CRIAR"
-										styleClass="btnVerdeClaro" id="btnCriarQuestionario"
+									<p:commandButton value="CRIAR" styleClass="btnVerdeClaro"
+										id="btnCriarQuestionario" update="@form pnlQuestionario"
 										style=" margin-top:10px;  width: 315px;height:50px ;background:#24b85b;color: white;border-color: #24b85b; font:18px 'Ruda',sans-serif;">
 										<f:setPropertyActionListener
 											target="#{usuarioMB.habilitarVisualizacaoQuestionario}"

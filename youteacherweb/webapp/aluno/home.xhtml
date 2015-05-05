@@ -22,21 +22,25 @@
 
 				</div>
 				<!-- Componente da lista de videos -->
-				<h:panelGrid style=" margin-left: 20px; margin-bottom:50px"
-					cellpadding="5">
-					<p:selectOneListbox id="listaVideos"
-						value="#{usuarioMB.viewBean.videos}" var="v" filter="true"
-						style="width: 300px; background: #F0FFFF; border:#F0FFFF; color:graytext; font-size:20px;"
-						scrollHeight="400" filterMatchMode="contains">
-						<f:selectItems value="#{usuarioMB.viewBean.videos}" var="videos"
-							itemLabel="#{videos.titulo}" itemValue="#{videos}"/>
-						<p:ajax event="click" listener="#{usuarioMB.setarVideoSelecionado(v)}" update=":frmDlgTemplate" oncomplete="PF('dlgPlayerVideo').show();" />	
-						<p:column>
-							<h:outputText value="#{v.titulo}" />
-						</p:column>
-					</p:selectOneListbox>
-				</h:panelGrid>
-
+				<h:form>
+					<h:panelGrid style=" margin-left: 20px; margin-bottom:50px"
+						cellpadding="5">
+						<p:selectOneListbox id="listaVideos"
+							value="#{usuarioMB.viewBean.videoSelecionado}" converter="videoConverter" var="v"
+							filter="true"
+							style="width: 300px; background: #F0FFFF; border:#F0FFFF; color:graytext; font-size:20px;"
+							scrollHeight="400" filterMatchMode="contains">
+							<f:selectItems value="#{usuarioMB.viewBean.videos}" var="videos"
+								itemLabel="#{videos.titulo}" itemValue="#{videos}">
+							</f:selectItems>
+							<p:column>
+								<h:outputText value="#{v.titulo}" />
+							</p:column>
+						</p:selectOneListbox>
+					</h:panelGrid>
+					<p:commandButton value="Submit" update="@form :frmDlgTemplate"
+						oncomplete="PF('dlgPlayerVideo').show()"  />
+				</h:form>
 			</div>
 			<!-- Painel Direito -->
 			<div class="ui-grid-col-8" style="margin-top: 30px; height: 550px;">
