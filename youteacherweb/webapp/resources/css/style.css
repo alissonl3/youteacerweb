@@ -9,6 +9,8 @@ html, body {
 }
 
 
+
+
 .geral {
 	margin: 0px;
 	padding: 0px;
@@ -93,6 +95,15 @@ html, body {
 	color: white;
 	border-color: #c70200;
 }
+
+.command:LINK{
+	text-decoration:none;
+	color:blue;
+}
+.command:HOVER{
+	text-decoration: underline;
+}
+
 
 .corBege{
 	background: #d6b328;

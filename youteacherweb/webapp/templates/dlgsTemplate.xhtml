@@ -147,8 +147,6 @@
 	<!-- Dialgo do Palyer do video -->
 	<p:dialog id="dlgPlayerVideo" widgetVar="dlgPlayerVideo"  resizable="false"
 		dynamic="true" modal="true" showHeader="false">
-		<font style="color: #24b85b; font-size: 30px; float: left;"> <b>Video Player</b>
-		</font>
 		<p:commandButton styleClass="corClaro" icon="ui-icon-close"
 			oncomplete="PF('dlgPlayerVideo').hide();"
 			style=" float: right; background:white;" />
@@ -157,20 +155,20 @@
 		<br />
 		<!-- Titulo do video -->
 		<center>
-			<h1 style="text-align: center; color: #ff8d3b; font-size: 40px; font-weight: bold;"><h:outputText value="#{usuarioMB.viewBean.videoSelecionado.titulo}"/> </h1>
+			<h1 style="text-align: center; color: #ff8d3b; font-size: 30px; font-weight: bold;"><h:outputText value="#{usuarioMB.viewBean.videoSelecionado.titulo}"/> </h1>
 		</center>
 		<center>
-			<h3 style="text-align: center; color: #ff8d3b; font-size: 30px; font-weight: bold;">Postado por #{usuarioMB.viewBean.videoSelecionado.usuario.nome}</h3>
+			<h3 style="text-align: center; color: #ff8d3b; font-size: 20px; font-weight: bold;">Postado por #{usuarioMB.viewBean.videoSelecionado.usuario.nome}</h3>
 		</center>
-
+		<hr></hr>
 		<!-- Tag do video -->
-		<div style="height: 500px; width: 700px; margin: auto; margin-top: 20px; margin-bottom: 20px;">
+		<div style="height: 400px; width: 600px; margin: auto; margin-top: 20px; margin-bottom: 20px;">
 
-				<p:media value="#{usuarioMB.viewBean.videoSelecionado.url}" width="700"
-					height="500" player="flash" />
+				<p:media value="#{usuarioMB.viewBean.videoSelecionado.url}" width="600"
+					height="400" player="flash" />
 
 		</div>
-
+		<hr></hr>
 	</p:dialog>
 
 </h:form>
