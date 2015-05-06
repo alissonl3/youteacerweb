@@ -1,6 +1,7 @@
 package br.com.youteacherweb.entidades;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -30,19 +31,6 @@ public class Video implements Serializable {
 	@ManyToOne
 	private Usuario usuario;
 	
-	@OneToOne(cascade=CascadeType.REMOVE)
-	private Formulario formulario;
-	
-	
-
-	public Formulario getFormulario() {
-		return formulario;
-	}
-
-	public void setFormulario(Formulario formulario) {
-		this.formulario = formulario;
-	}
-
 	public Integer getId() {
 		return id;
 	}

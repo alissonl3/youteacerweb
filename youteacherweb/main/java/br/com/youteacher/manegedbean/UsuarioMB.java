@@ -42,8 +42,8 @@ public class UsuarioMB implements Serializable {
 	private HtmlPanelGrid grid;
 	private int componenteCount = 1;
 	List<InputTextarea> iptsPerguntas = new ArrayList<InputTextarea>();
-	
-	//video
+
+	// video
 	private Video videoSelecionado;
 
 	@PostConstruct
@@ -56,9 +56,9 @@ public class UsuarioMB implements Serializable {
 		limparGrid();
 
 	}
-	
-	//SETAR VIDEO SELECIONADO
-	public void setarVideoSelecionado(Video video){
+
+	// SETAR VIDEO SELECIONADO
+	public void setarVideoSelecionado(Video video) {
 		viewBean.setVideoSelecionado(video);
 	}
 
@@ -81,13 +81,13 @@ public class UsuarioMB implements Serializable {
 		}
 
 	}
-	//SELECIONADO
-	public void selecionado(){
-		System.out.println("SELECIONADO:"+viewBean.getVideoSelecionado());
-		
+
+	// SELECIONADO
+	public void selecionado() {
+		System.out.println("SELECIONADO:" + viewBean.getVideoSelecionado());
+
 	}
-	
-	
+
 	// INSERIR UM NOVO ALUNO
 	public void inserir() {
 
@@ -124,7 +124,7 @@ public class UsuarioMB implements Serializable {
 
 	// GERAR CAMPOS DINAMICOS DO FORMULARIO
 	public void gerarCampo() {
-		
+
 		int id = ++componenteCount;
 		System.out.println("Valor id " + id);
 
@@ -135,32 +135,32 @@ public class UsuarioMB implements Serializable {
 		grid.getChildren().add(ol);
 
 		// INPUT PARA O CAMPO EM BRANCO
-//		HtmlOutputText ol2 = new HtmlOutputText();
-//		ol.setId("oplPerguntaBranco" + componenteCount);
-//		ol.setValue("Valor Nove");
-//		grid.getChildren().add(ol2);
+		// HtmlOutputText ol2 = new HtmlOutputText();
+		// ol.setId("oplPerguntaBranco" + componenteCount);
+		// ol.setValue("Valor Nove");
+		// grid.getChildren().add(ol2);
 
 		// INPUT TEXT AREA PARA A PERGUNTA
-//		InputTextarea ipa = new InputTextarea();
-//		ipa.setId("iptPergunta" + componenteCount);
-//		ipa.setStyle("min-width: 100px;");
-//		ipa.setValue("Valor");
-//		ipa.setMaxlength(50);
-//		ipa.setCols(40);
-//		ipa.setRows(2);
-//		grid.getChildren().add(ipa);
+		// InputTextarea ipa = new InputTextarea();
+		// ipa.setId("iptPergunta" + componenteCount);
+		// ipa.setStyle("min-width: 100px;");
+		// ipa.setValue("Valor");
+		// ipa.setMaxlength(50);
+		// ipa.setCols(40);
+		// ipa.setRows(2);
+		// grid.getChildren().add(ipa);
 
 		// BOTÃO PARA ADICIONAR ALTERNATIVAS
-//		CommandButton bt = new CommandButton();
-//		bt.setId("bntAddAlternativa" + componenteCount);
-//		bt.setValue(" ");
-//		bt.setStyle("width: 35px;height:35px ; margin-top:5px; background: url(../resources/imagens/add-icon.png) no-repeat; border-color: white; font:18px 'Ruda',sans-serif;");
-//		bt.setUpdate("@form");
-//		bt.setAjax(false);
-//		grid.getChildren().add(bt);
+		// CommandButton bt = new CommandButton();
+		// bt.setId("bntAddAlternativa" + componenteCount);
+		// bt.setValue(" ");
+		// bt.setStyle("width: 35px;height:35px ; margin-top:5px; background: url(../resources/imagens/add-icon.png) no-repeat; border-color: white; font:18px 'Ruda',sans-serif;");
+		// bt.setUpdate("@form");
+		// bt.setAjax(false);
+		// grid.getChildren().add(bt);
 
 		// ADICIONAR OS INPUT AREAS
-		//iptsPerguntas.add(ipa);
+		// iptsPerguntas.add(ipa);
 	}
 
 	// RESETAR O GRID PARA UM NOVO CADASTRO DE FORMULÁRIO
@@ -193,17 +193,19 @@ public class UsuarioMB implements Serializable {
 	// ATUALIZAR LISTA VIDEOS
 	public void atualizarListaVideo() {
 		viewBean.setVideos(videoDAO.listarTodos());
-		 addRecente(viewBean.getVideos());
+		addRecente(viewBean.getVideos());
 	}
 
 	// ADICIONADOS RECENTEMENTE
 	public void addRecente(List<Video> videos) {
-		List<Video> recentes = new ArrayList<Video>();
-		int tamanho = videos.size();
-		for (int i = (tamanho - 3); i < tamanho; i++) {
-			recentes.add(videos.get(i));
+		if (videos.size() > 3) {
+			List<Video> recentes = new ArrayList<Video>();
+			int tamanho = videos.size();
+			for (int i = (tamanho - 3); i < tamanho; i++) {
+				recentes.add(videos.get(i));
+			}
+			viewBean.setVideosRecente(recentes);
 		}
-		viewBean.setVideosRecente(recentes);
 
 	}
 
@@ -253,8 +255,6 @@ public class UsuarioMB implements Serializable {
 				+ viewBean.getUsuario().getSenha() + "'"));
 
 	}
-	
-	
 
 	public Video getVideoSelecionado() {
 		return videoSelecionado;
