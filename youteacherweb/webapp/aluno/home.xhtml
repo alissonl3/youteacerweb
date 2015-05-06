@@ -28,7 +28,7 @@
 						<p:selectOneListbox id="listaVideos"
 							value="#{usuarioMB.viewBean.videoSelecionado}" converter="videoConverter" var="v"
 							filter="true"
-							style="width: 300px; background: #F0FFFF; border:#F0FFFF; color:graytext; font-size:20px;"
+							style="width: 300px; background: #F0FFFF; border:#F0FFFF; color:graytext; font-size:17px;"
 							scrollHeight="400" filterMatchMode="contains">
 							<p:ajax event="click" update="@form :frmDlgTemplate" oncomplete="PF('dlgPlayerVideo').show()"/>
 							<f:selectItems value="#{usuarioMB.viewBean.videos}" var="videos"
