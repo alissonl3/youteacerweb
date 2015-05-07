@@ -15,6 +15,7 @@ import javax.servlet.http.HttpSession;
 import org.primefaces.component.commandbutton.CommandButton;
 import org.primefaces.component.inputtextarea.InputTextarea;
 
+import br.com.youteacher.banco.dao.FormularioDAO;
 import br.com.youteacher.banco.dao.VideoDAO;
 import br.com.youteacher.banco.dao.UsuarioDAO;
 import br.com.youteacher.viewbean.UsuarioViewBean;
@@ -26,6 +27,7 @@ public class UsuarioMB implements Serializable {
 
 	private UsuarioDAO dao;
 	private VideoDAO videoDAO;
+	private FormularioDAO formularioDAO;
 
 	private UsuarioViewBean viewBean;
 
@@ -37,6 +39,19 @@ public class UsuarioMB implements Serializable {
 	// Formulário
 	private boolean habilitarFormulario;
 	private boolean habilitarVisualizacaoQuestionario;
+	
+	//Perguntas
+	private boolean habilitarVisualizacaoPergunta1;
+	private boolean habilitarVisualizacaoPergunta2;
+	private boolean habilitarVisualizacaoPergunta3;
+	private boolean habilitarVisualizacaoPergunta4;
+	private boolean habilitarVisualizacaoPergunta5;
+	private boolean habilitarVisualizacaoPergunta6;
+	private boolean habilitarVisualizacaoPergunta7;
+	private boolean habilitarVisualizacaoPergunta8;
+	private boolean habilitarVisualizacaoPergunta9;
+	private boolean habilitarVisualizacaoPergunta10;
+	
 
 	// campos dinâmicos
 	private HtmlPanelGrid grid;
@@ -45,11 +60,15 @@ public class UsuarioMB implements Serializable {
 
 	// video
 	private Video videoSelecionado;
+	
+
 
 	@PostConstruct
 	private void initPage() {
 
 		dao = new UsuarioDAO();
+		formularioDAO = new FormularioDAO();
+
 		viewBean = new UsuarioViewBean();
 		videoDAO = new VideoDAO();
 		videoSelecionado = new Video();
@@ -80,6 +99,16 @@ public class UsuarioMB implements Serializable {
 			System.out.println("Erro video:" + e);
 		}
 
+	}
+	
+	//MOSTRAR PERGUNTA 1
+	public void mostrarPergunta1(){
+		habilitarVisualizacaoPergunta1 = true;
+	}
+	
+	//ADICIONAR FORMULÁRIO
+	public void inserirFormulário(){
+		
 	}
 
 	// SELECIONADO
@@ -254,6 +283,98 @@ public class UsuarioMB implements Serializable {
 				+ viewBean.getUsuario().getEmail() + "' and senha = '"
 				+ viewBean.getUsuario().getSenha() + "'"));
 
+	}
+	
+	
+
+	public boolean isHabilitarVisualizacaoPergunta1() {
+		return habilitarVisualizacaoPergunta1;
+	}
+
+	public void setHabilitarVisualizacaoPergunta1(
+			boolean habilitarVisualizacaoPergunta1) {
+		this.habilitarVisualizacaoPergunta1 = habilitarVisualizacaoPergunta1;
+	}
+
+	public boolean isHabilitarVisualizacaoPergunta2() {
+		return habilitarVisualizacaoPergunta2;
+	}
+
+	public void setHabilitarVisualizacaoPergunta2(
+			boolean habilitarVisualizacaoPergunta2) {
+		this.habilitarVisualizacaoPergunta2 = habilitarVisualizacaoPergunta2;
+	}
+
+	public boolean isHabilitarVisualizacaoPergunta3() {
+		return habilitarVisualizacaoPergunta3;
+	}
+
+	public void setHabilitarVisualizacaoPergunta3(
+			boolean habilitarVisualizacaoPergunta3) {
+		this.habilitarVisualizacaoPergunta3 = habilitarVisualizacaoPergunta3;
+	}
+
+	public boolean isHabilitarVisualizacaoPergunta4() {
+		return habilitarVisualizacaoPergunta4;
+	}
+
+	public void setHabilitarVisualizacaoPergunta4(
+			boolean habilitarVisualizacaoPergunta4) {
+		this.habilitarVisualizacaoPergunta4 = habilitarVisualizacaoPergunta4;
+	}
+
+	public boolean isHabilitarVisualizacaoPergunta5() {
+		return habilitarVisualizacaoPergunta5;
+	}
+
+	public void setHabilitarVisualizacaoPergunta5(
+			boolean habilitarVisualizacaoPergunta5) {
+		this.habilitarVisualizacaoPergunta5 = habilitarVisualizacaoPergunta5;
+	}
+
+	public boolean isHabilitarVisualizacaoPergunta6() {
+		return habilitarVisualizacaoPergunta6;
+	}
+
+	public void setHabilitarVisualizacaoPergunta6(
+			boolean habilitarVisualizacaoPergunta6) {
+		this.habilitarVisualizacaoPergunta6 = habilitarVisualizacaoPergunta6;
+	}
+
+	public boolean isHabilitarVisualizacaoPergunta7() {
+		return habilitarVisualizacaoPergunta7;
+	}
+
+	public void setHabilitarVisualizacaoPergunta7(
+			boolean habilitarVisualizacaoPergunta7) {
+		this.habilitarVisualizacaoPergunta7 = habilitarVisualizacaoPergunta7;
+	}
+
+	public boolean isHabilitarVisualizacaoPergunta8() {
+		return habilitarVisualizacaoPergunta8;
+	}
+
+	public void setHabilitarVisualizacaoPergunta8(
+			boolean habilitarVisualizacaoPergunta8) {
+		this.habilitarVisualizacaoPergunta8 = habilitarVisualizacaoPergunta8;
+	}
+
+	public boolean isHabilitarVisualizacaoPergunta9() {
+		return habilitarVisualizacaoPergunta9;
+	}
+
+	public void setHabilitarVisualizacaoPergunta9(
+			boolean habilitarVisualizacaoPergunta9) {
+		this.habilitarVisualizacaoPergunta9 = habilitarVisualizacaoPergunta9;
+	}
+
+	public boolean isHabilitarVisualizacaoPergunta10() {
+		return habilitarVisualizacaoPergunta10;
+	}
+
+	public void setHabilitarVisualizacaoPergunta10(
+			boolean habilitarVisualizacaoPergunta10) {
+		this.habilitarVisualizacaoPergunta10 = habilitarVisualizacaoPergunta10;
 	}
 
 	public Video getVideoSelecionado() {

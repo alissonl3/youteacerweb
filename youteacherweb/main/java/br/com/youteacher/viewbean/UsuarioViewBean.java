@@ -41,6 +41,7 @@ public class UsuarioViewBean {
 		usuarioLogado = new Usuario();
 		video = new Video();
 		videoSelecionado = new Video();
+		formulario = new Formulario();
 
 		// pagina
 		habilitarVisualizacaoIdCadastro = false;
