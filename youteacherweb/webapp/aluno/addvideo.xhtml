@@ -145,18 +145,27 @@
 												itemValue="#{usuarioMB.viewBean.formulario.resposta_E}" />
 										</p:selectOneRadio>
 									</h:panelGrid>
-
+								
 									<!-- Opções -->
-									<h:panelGrid columns="3" cellpadding="3">
+									<h:panelGrid columns="3" cellpadding="3" style="float: right;">
 										<p:commandButton value="" id="btnAddPeg2"
 											update="@form frmQuestionario:pnlPergunta2"
 											style="width: 65px;height:65px ; margin-top:5px; background: url(../resources/imagens/add2.png) no-repeat; border-color: white; font:18px 'Ruda',sans-serif;">
 											<f:setPropertyActionListener target="#{usuarioMB.habilitarVisualizacaoPergunta2}" value="#{true}"/>
 										</p:commandButton>
+										<p:commandButton value="" id="btnLimpa1"
+											update="@form frmQuestionario:pnlPergunta1"
+											style="width: 65px;height:65px ; margin-top:5px; background: url(../resources/imagens/borracha.png) no-repeat; border-color: white; font:18px 'Ruda',sans-serif;">
+										</p:commandButton>
+										<p:commandButton value="" id="btnCancelar1"
+											update="@form frmQuestionario:pnlPergunta1"
+											style="width: 65px;height:65px ; margin-top:5px; background: url(../resources/imagens/cancel.png) no-repeat; border-color: white; font:18px 'Ruda',sans-serif;">
+										</p:commandButton>
 
 									</h:panelGrid>
-
 								</p:outputPanel>
+								
+								<div style="clear: both;"></div>
 
 								<!-- Painel 2 -->
 								<p:outputPanel id="pnlPergunta2"
@@ -219,16 +228,26 @@
 									</h:panelGrid>
 									
 										<!-- Opções -->
-									<h:panelGrid columns="3" cellpadding="3">
+									<h:panelGrid columns="3" cellpadding="3" style="float: right;">
 										<p:commandButton value="" id="btnAddPeg3"
 											update="@form frmQuestionario:pnlPergunta3"
 											style="width: 65px;height:65px ; margin-top:5px; background: url(../resources/imagens/add2.png) no-repeat; border-color: white; font:18px 'Ruda',sans-serif;">
 											<f:setPropertyActionListener target="#{usuarioMB.habilitarVisualizacaoPergunta3}" value="#{true}"/>
 										</p:commandButton>
+										<p:commandButton value="" id="btnLimpa2"
+											update="@form frmQuestionario:pnlPergunta2"
+											style="width: 65px;height:65px ; margin-top:5px; background: url(../resources/imagens/borracha.png) no-repeat; border-color: white; font:18px 'Ruda',sans-serif;">
+										</p:commandButton>
+										<p:commandButton value="" id="btnCancelar2"
+											update="@form frmQuestionario:pnlPergunta2"
+											style="width: 65px;height:65px ; margin-top:5px; background: url(../resources/imagens/cancel.png) no-repeat; border-color: white; font:18px 'Ruda',sans-serif;">
+										</p:commandButton>
 
 									</h:panelGrid>
 
 								</p:outputPanel>
+								
+								<div style="clear: both;"></div>
 								
 								<!-- Painel 3 -->
 								<p:outputPanel id="pnlPergunta3"
@@ -291,16 +310,26 @@
 									</h:panelGrid>
 									
 										<!-- Opções -->
-									<h:panelGrid columns="3" cellpadding="3">
+									<h:panelGrid columns="3" cellpadding="3" style="float: right;">
 										<p:commandButton value="" id="btnAddPeg4"
 											update="@form frmQuestionario:pnlPergunta4"
 											style="width: 65px;height:65px ; margin-top:5px; background: url(../resources/imagens/add2.png) no-repeat; border-color: white; font:18px 'Ruda',sans-serif;">
 											<f:setPropertyActionListener target="#{usuarioMB.habilitarVisualizacaoPergunta4}" value="#{true}"/>
 										</p:commandButton>
+										<p:commandButton value="" id="btnLimpa3"
+											update="@form frmQuestionario:pnlPergunta3"
+											style="width: 65px;height:65px ; margin-top:5px; background: url(../resources/imagens/borracha.png) no-repeat; border-color: white; font:18px 'Ruda',sans-serif;">
+										</p:commandButton>
+										<p:commandButton value="" id="btnCancelar3"
+											update="@form frmQuestionario:pnlPergunta3"
+											style="width: 65px;height:65px ; margin-top:5px; background: url(../resources/imagens/cancel.png) no-repeat; border-color: white; font:18px 'Ruda',sans-serif;">
+										</p:commandButton>
 
 									</h:panelGrid>
 
 								</p:outputPanel>
+								
+								<div style="clear: both;"></div>
 								
 								<!-- Painel 4 -->
 								<p:outputPanel id="pnlPergunta4"
@@ -363,17 +392,27 @@
 									</h:panelGrid>
 									
 										<!-- Opções -->
-									<h:panelGrid columns="3" cellpadding="3">
+									<h:panelGrid columns="3" cellpadding="3" style="float: right;">
 										<p:commandButton value="" id="btnAddPeg5"
 											update="@form frmQuestionario:pnlPergunta5"
 											style="width: 65px;height:65px ; margin-top:5px; background: url(../resources/imagens/add2.png) no-repeat; border-color: white; font:18px 'Ruda',sans-serif;">
 											<f:setPropertyActionListener target="#{usuarioMB.habilitarVisualizacaoPergunta5}" value="#{true}"/>
+										</p:commandButton>
+										<p:commandButton value="" id="btnLimpa4"
+											update="@form frmQuestionario:pnlPergunta4"
+											style="width: 65px;height:65px ; margin-top:5px; background: url(../resources/imagens/borracha.png) no-repeat; border-color: white; font:18px 'Ruda',sans-serif;">
+										</p:commandButton>
+										<p:commandButton value="" id="btnCancelar4"
+											update="@form frmQuestionario:pnlPergunta4"
+											style="width: 65px;height:65px ; margin-top:5px; background: url(../resources/imagens/cancel.png) no-repeat; border-color: white; font:18px 'Ruda',sans-serif;">
 										</p:commandButton>
 
 									</h:panelGrid>
 
 
 								</p:outputPanel>
+								
+								<div style="clear: both;"></div>
 								
 								<!-- Painel 5 -->
 								<p:outputPanel id="pnlPergunta5"
@@ -436,16 +475,26 @@
 									</h:panelGrid>
 									
 										<!-- Opções -->
-									<h:panelGrid columns="3" cellpadding="3">
+									<h:panelGrid columns="3" cellpadding="3" style="float: right;">
 										<p:commandButton value="" id="btnAddPeg6"
 											update="@form frmQuestionario:pnlPergunta6"
 											style="width: 65px;height:65px ; margin-top:5px; background: url(../resources/imagens/add2.png) no-repeat; border-color: white; font:18px 'Ruda',sans-serif;">
 											<f:setPropertyActionListener target="#{usuarioMB.habilitarVisualizacaoPergunta6}" value="#{true}"/>
 										</p:commandButton>
+										<p:commandButton value="" id="btnLimpa5"
+											update="@form frmQuestionario:pnlPergunta5"
+											style="width: 65px;height:65px ; margin-top:5px; background: url(../resources/imagens/borracha.png) no-repeat; border-color: white; font:18px 'Ruda',sans-serif;">
+										</p:commandButton>
+										<p:commandButton value="" id="btnCancelar5"
+											update="@form frmQuestionario:pnlPergunta5"
+											style="width: 65px;height:65px ; margin-top:5px; background: url(../resources/imagens/cancel.png) no-repeat; border-color: white; font:18px 'Ruda',sans-serif;">
+										</p:commandButton>
 
 									</h:panelGrid>
 
 								</p:outputPanel>
+								
+								<div style="clear: both;"></div>
 								
 								<!-- Painel 6 -->
 								<p:outputPanel id="pnlPergunta6"
@@ -490,7 +539,7 @@
 										<h:outputText value=" " />
 									</h:panelGrid>
 									<!-- Resposta certa 6 -->
-									<h:panelGrid columns="1" cellpadding="3">
+									<h:panelGrid columns="1" cellpadding="3" >
 										<h:outputText value="Escolha a resposta correta:" />
 										<p:selectOneRadio id="console6"
 											value="#{usuarioMB.viewBean.formulario.resposta_certa}">
@@ -508,16 +557,26 @@
 									</h:panelGrid>
 									
 										<!-- Opções -->
-									<h:panelGrid columns="3" cellpadding="3">
+									<h:panelGrid columns="3" cellpadding="3" style="float: right;">
 										<p:commandButton value="" id="btnAddPeg7"
 											update="@form frmQuestionario:pnlPergunta7"
 											style="width: 65px;height:65px ; margin-top:5px; background: url(../resources/imagens/add2.png) no-repeat; border-color: white; font:18px 'Ruda',sans-serif;">
 											<f:setPropertyActionListener target="#{usuarioMB.habilitarVisualizacaoPergunta7}" value="#{true}"/>
 										</p:commandButton>
+										<p:commandButton value="" id="btnLimpa6"
+											update="@form frmQuestionario:pnlPergunta6"
+											style="width: 65px;height:65px ; margin-top:5px; background: url(../resources/imagens/borracha.png) no-repeat; border-color: white; font:18px 'Ruda',sans-serif;">
+										</p:commandButton>
+										<p:commandButton value="" id="btnCancelar6"
+											update="@form frmQuestionario:pnlPergunta6"
+											style="width: 65px;height:65px ; margin-top:5px; background: url(../resources/imagens/cancel.png) no-repeat; border-color: white; font:18px 'Ruda',sans-serif;">
+										</p:commandButton>
 
 									</h:panelGrid>
 
 								</p:outputPanel>
+								
+								<div style="clear: both;"></div>
 								
 								<!-- Painel 7 -->
 								<p:outputPanel id="pnlPergunta7"
@@ -562,7 +621,7 @@
 										<h:outputText value=" " />
 									</h:panelGrid>
 									<!-- Resposta certa 7 -->
-									<h:panelGrid columns="1" cellpadding="3">
+									<h:panelGrid columns="1" cellpadding="3" style="float: right;">
 										<h:outputText value="Escolha a resposta correta:" />
 										<p:selectOneRadio id="console7"
 											value="#{usuarioMB.viewBean.formulario.resposta_certa}">
@@ -586,10 +645,20 @@
 											style="width: 65px;height:65px ; margin-top:5px; background: url(../resources/imagens/add2.png) no-repeat; border-color: white; font:18px 'Ruda',sans-serif;">
 											<f:setPropertyActionListener target="#{usuarioMB.habilitarVisualizacaoPergunta8}" value="#{true}"/>
 										</p:commandButton>
+										<p:commandButton value="" id="btnLimpa7"
+											update="@form frmQuestionario:pnlPergunta7"
+											style="width: 65px;height:65px ; margin-top:5px; background: url(../resources/imagens/borracha.png) no-repeat; border-color: white; font:18px 'Ruda',sans-serif;">
+										</p:commandButton>
+										<p:commandButton value="" id="btnCancelar7"
+											update="@form frmQuestionario:pnlPergunta7"
+											style="width: 65px;height:65px ; margin-top:5px; background: url(../resources/imagens/cancel.png) no-repeat; border-color: white; font:18px 'Ruda',sans-serif;">
+										</p:commandButton>
 
 									</h:panelGrid>
 
 								</p:outputPanel>
+								
+								<div style="clear: both;"></div>
 								
 								<!-- Painel 8 -->
 								<p:outputPanel id="pnlPergunta8"
@@ -652,16 +721,26 @@
 									</h:panelGrid>
 									
 										<!-- Opções -->
-									<h:panelGrid columns="3" cellpadding="3">
+									<h:panelGrid columns="3" cellpadding="3" style="float: right;">
 										<p:commandButton value="" id="btnAddPeg9"
 											update="@form frmQuestionario:pnlPergunta9"
 											style="width: 65px;height:65px ; margin-top:5px; background: url(../resources/imagens/add2.png) no-repeat; border-color: white; font:18px 'Ruda',sans-serif;">
 											<f:setPropertyActionListener target="#{usuarioMB.habilitarVisualizacaoPergunta9}" value="#{true}"/>
 										</p:commandButton>
+										<p:commandButton value="" id="btnLimpa8"
+											update="@form frmQuestionario:pnlPergunta8"
+											style="width: 65px;height:65px ; margin-top:5px; background: url(../resources/imagens/borracha.png) no-repeat; border-color: white; font:18px 'Ruda',sans-serif;">
+										</p:commandButton>
+										<p:commandButton value="" id="btnCancelar8"
+											update="@form frmQuestionario:pnlPergunta8"
+											style="width: 65px;height:65px ; margin-top:5px; background: url(../resources/imagens/cancel.png) no-repeat; border-color: white; font:18px 'Ruda',sans-serif;">
+										</p:commandButton>
 
 									</h:panelGrid>
 
 								</p:outputPanel>
+								
+								<div style="clear: both;"></div>
 								
 								<!-- Painel 9 -->
 								<p:outputPanel id="pnlPergunta9"
@@ -724,16 +803,26 @@
 									</h:panelGrid>
 									
 										<!-- Opções -->
-									<h:panelGrid columns="3" cellpadding="3">
+									<h:panelGrid columns="3" cellpadding="3" style="float: right;">
 										<p:commandButton value="" id="btnAddPeg10"
 											update="@form frmQuestionario:pnlPergunta10"
 											style="width: 65px;height:65px ; margin-top:5px; background: url(../resources/imagens/add2.png) no-repeat; border-color: white; font:18px 'Ruda',sans-serif;">
 											<f:setPropertyActionListener target="#{usuarioMB.habilitarVisualizacaoPergunta10}" value="#{true}"/>
 										</p:commandButton>
+										<p:commandButton value="" id="btnLimpa9"
+											update="@form frmQuestionario:pnlPergunta9"
+											style="width: 65px;height:65px ; margin-top:5px; background: url(../resources/imagens/borracha.png) no-repeat; border-color: white; font:18px 'Ruda',sans-serif;">
+										</p:commandButton>
+										<p:commandButton value="" id="btnCancelar9"
+											update="@form frmQuestionario:pnlPergunta9"
+											style="width: 65px;height:65px ; margin-top:5px; background: url(../resources/imagens/cancel.png) no-repeat; border-color: white; font:18px 'Ruda',sans-serif;">
+										</p:commandButton>
 
 									</h:panelGrid>
 
 								</p:outputPanel>
+								
+								<div style="clear: both;"></div>
 								
 								<!-- Painel 10 -->
 								<p:outputPanel id="pnlPergunta10"
@@ -793,6 +882,19 @@
 											<f:selectItem itemLabel="E)"
 												itemValue="#{usuarioMB.viewBean.formulario.resposta_E}" />
 										</p:selectOneRadio>
+									</h:panelGrid>
+									
+										<!-- Opções -->
+									<h:panelGrid columns="2" cellpadding="3" style="float: right;">
+										<p:commandButton value="" id="btnLimpa10"
+											update="@form frmQuestionario:pnlPergunta10"
+											style="width: 65px;height:65px ; margin-top:5px; background: url(../resources/imagens/borracha.png) no-repeat; border-color: white; font:18px 'Ruda',sans-serif;">
+										</p:commandButton>
+										<p:commandButton value="" id="btnCancelar10"
+											update="@form frmQuestionario:pnlPergunta10"
+											style="width: 65px;height:65px ; margin-top:5px; background: url(../resources/imagens/cancel.png) no-repeat; border-color: white; font:18px 'Ruda',sans-serif;">
+										</p:commandButton>
+
 									</h:panelGrid>
 
 								</p:outputPanel>
