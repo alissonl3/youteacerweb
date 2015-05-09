@@ -1,0 +1,862 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+	
+	
+	<!-- Formulario de Questionário -->
+		<p:outputPanel id="pnlQuestionario">
+			<h:form id="frmQuestionario"
+				rendered="#{usuarioMB.habilitarVisualizacaoQuestionario}">
+				<p:growl showDetail="true" showSummary="true" life="5000" />
+				<p:separator />
+				<center>
+					<h3
+						style="text-align: center; color: #ff8d3b; font-family: ‘Lucida Console’, sans-serif; font-size: 30px; font-weight: bold;">FORMULÁRIO</h3>
+
+				</center>
+				<div class="ui-grid">
+					<div class="ui-grid-row" style="margin-bottom: 20px;">
+						<div class="ui-grid-col-2"></div>
+
+						<div class="ui-grid-col-8">
+							<div style="width: 700px; margin: auto;">
+
+								<p:outputPanel id="pnlPergunta1" rendered="true">
+									<!-- Pergunta 1 -->
+									<h:panelGrid columns="1" cellpadding="3">
+
+										<h:outputText value="1° Pergunta:" style="font-size:15px; " />
+										<p:inputTextarea id="iptPergunta1" cols="75" rows="2"
+											value="#{usuarioMB.viewBean.formulario1.pergunta}" />
+										<h:outputText value=" " />
+										
+										<!-- Alternativa A -->
+										<h:outputText value="A)" style="font-size:15px; " />
+										<p:inputTextarea id="iptResposta1A" cols="75" rows="1"
+											value="#{usuarioMB.viewBean.formulario1.resposta_A}" />
+										
+										<!-- Alternativa B -->
+										<h:outputText value="B)" style="font-size:15px; " />
+										
+										<p:inputTextarea id="iptResposta1B" cols="75" rows="1"
+											value="#{usuarioMB.viewBean.formulario1.resposta_B}" />
+										<h:outputText value=" " />
+										<!-- Alternativa C -->
+										<h:outputText value="C)" style="font-size:15px; " />
+										
+										<p:inputTextarea id="iptResposta1C" cols="75" rows="1"
+											value="#{usuarioMB.viewBean.formulario1.resposta_C}" />
+										<h:outputText value=" " />
+										<!-- Alternativa D -->
+										<h:outputText value="D)" style="font-size:15px; " />
+										
+										<p:inputTextarea id="iptResposta1D" cols="75" rows="1"
+											value="#{usuarioMB.viewBean.formulario1.resposta_D}" />
+										<h:outputText value=" " />
+										<!-- Alternativa E -->
+										<h:outputText value="E)" style="font-size:15px; " />
+										
+										<p:inputTextarea id="iptResposta1E" cols="75" rows="1"
+											value="#{usuarioMB.viewBean.formulario1.resposta_E}" />
+										<h:outputText value=" " />
+									</h:panelGrid>
+									<!-- Resposta certa 1 -->
+									<h:panelGrid columns="1" cellpadding="3">
+										<h:outputText value="Escolha a resposta correta:" />
+										<p:selectOneRadio id="console1"
+											value="#{usuarioMB.viewBean.formulario1.resposta_certa}">
+											<f:selectItem itemLabel="A)"
+												itemValue="#{usuarioMB.viewBean.formulario1.resposta_A}" />
+											<f:selectItem itemLabel="B)"
+												itemValue="#{usuarioMB.viewBean.formulario1.resposta_B}" />
+											<f:selectItem itemLabel="C)"
+												itemValue="#{usuarioMB.viewBean.formulario1.resposta_C}" />
+											<f:selectItem itemLabel="D)"
+												itemValue="#{usuarioMB.viewBean.formulario1.resposta_D}" />
+											<f:selectItem itemLabel="E)"
+												itemValue="#{usuarioMB.viewBean.formulario1.resposta_E}" />
+										</p:selectOneRadio>
+									</h:panelGrid>
+								
+									<!-- Opções -->
+									<h:panelGrid columns="3" cellpadding="3" style="float: right;">
+										<p:commandButton value="" id="btnAddPeg2"
+											update="@form frmQuestionario:pnlPergunta2"
+											style="width: 65px;height:65px ; margin-top:5px; background: url(../resources/imagens/add2.png) no-repeat; border-color: white; font:18px 'Ruda',sans-serif;">
+											<f:setPropertyActionListener target="#{usuarioMB.habilitarVisualizacaoPergunta2}" value="#{true}"/>
+										</p:commandButton>
+										<p:commandButton value="" id="btnLimpa1"
+											update="@form frmQuestionario:pnlPergunta1"
+											style="width: 65px;height:65px ; margin-top:5px; background: url(../resources/imagens/borracha.png) no-repeat; border-color: white; font:18px 'Ruda',sans-serif;">
+										</p:commandButton>
+										<p:commandButton value="" id="btnCancelar1"
+											update="@form frmQuestionario:pnlPergunta1"
+											style="width: 65px;height:65px ; margin-top:5px; background: url(../resources/imagens/cancel.png) no-repeat; border-color: white; font:18px 'Ruda',sans-serif;">
+										</p:commandButton>
+
+									</h:panelGrid>
+								</p:outputPanel>
+								
+								<div style="clear: both;"></div>
+
+								<!-- Painel 2 -->
+								<p:outputPanel id="pnlPergunta2"
+									rendered="#{usuarioMB.habilitarVisualizacaoPergunta2}">
+									<!-- Pergunta 2 -->
+									<h:panelGrid columns="1" cellpadding="3">
+
+										<h:outputText value="2° Pergunta:" style="font-size:15px; " />
+										
+										<p:inputTextarea id="iptPergunta2" cols="75" rows="2"
+											value="#{usuarioMB.viewBean.formulario2.pergunta}" />
+										<h:outputText value=" " />
+										<!-- Alternativa A -->
+										<h:outputText value="A)" style="font-size:15px; " />
+										
+										<p:inputTextarea id="iptResposta2A" cols="75" rows="1"
+											value="#{usuarioMB.viewBean.formulario2.resposta_A}" />
+										<h:outputText value=" " />
+										<!-- Alternativa B -->
+										<h:outputText value="B)" style="font-size:15px; " />
+										
+										<p:inputTextarea id="iptResposta2B" cols="75" rows="1"
+											value="#{usuarioMB.viewBean.formulario2.resposta_B}" />
+										<h:outputText value=" " />
+										<!-- Alternativa C -->
+										<h:outputText value="C)" style="font-size:15px; " />
+										
+										<p:inputTextarea id="iptResposta2C" cols="75" rows="1"
+											value="#{usuarioMB.viewBean.formulario2.resposta_C}" />
+										<h:outputText value=" " />
+										<!-- Alternativa D -->
+										<h:outputText value="D)" style="font-size:15px; " />
+										
+										<p:inputTextarea id="iptResposta2D" cols="75" rows="1"
+											value="#{usuarioMB.viewBean.formulario2.resposta_D}" />
+										<h:outputText value=" " />
+										<!-- Alternativa E -->
+										<h:outputText value="E)" style="font-size:15px; " />
+										
+										<p:inputTextarea id="iptResposta2E" cols="75" rows="1"
+											value="#{usuarioMB.viewBean.formulario2.resposta_E}" />
+										<h:outputText value=" " />
+									</h:panelGrid>
+									<!-- Resposta certa 2 -->
+									<h:panelGrid columns="1" cellpadding="3">
+										<h:outputText value="Escolha a resposta correta:" />
+										<p:selectOneRadio id="console2"
+											value="#{usuarioMB.viewBean.formulario2.resposta_certa}">
+											<f:selectItem itemLabel="A)"
+												itemValue="#{usuarioMB.viewBean.formulario2.resposta_A}" />
+											<f:selectItem itemLabel="B)"
+												itemValue="#{usuarioMB.viewBean.formulario2.resposta_B}" />
+											<f:selectItem itemLabel="C)"
+												itemValue="#{usuarioMB.viewBean.formulario2.resposta_C}" />
+											<f:selectItem itemLabel="D)"
+												itemValue="#{usuarioMB.viewBean.formulario2.resposta_D}" />
+											<f:selectItem itemLabel="E)"
+												itemValue="#{usuarioMB.viewBean.formulario2.resposta_E}" />
+										</p:selectOneRadio>
+									</h:panelGrid>
+									
+										<!-- Opções -->
+									<h:panelGrid columns="3" cellpadding="3" style="float: right;">
+										<p:commandButton value="" id="btnAddPeg3"
+											update="@form frmQuestionario:pnlPergunta3"
+											style="width: 65px;height:65px ; margin-top:5px; background: url(../resources/imagens/add2.png) no-repeat; border-color: white; font:18px 'Ruda',sans-serif;">
+											<f:setPropertyActionListener target="#{usuarioMB.habilitarVisualizacaoPergunta3}" value="#{true}"/>
+										</p:commandButton>
+										<p:commandButton value="" id="btnLimpa2"
+											update="@form frmQuestionario:pnlPergunta2"
+											style="width: 65px;height:65px ; margin-top:5px; background: url(../resources/imagens/borracha.png) no-repeat; border-color: white; font:18px 'Ruda',sans-serif;">
+										</p:commandButton>
+										<p:commandButton value="" id="btnCancelar2"
+											update="@form frmQuestionario:pnlPergunta2"
+											style="width: 65px;height:65px ; margin-top:5px; background: url(../resources/imagens/cancel.png) no-repeat; border-color: white; font:18px 'Ruda',sans-serif;">
+										</p:commandButton>
+
+									</h:panelGrid>
+
+								</p:outputPanel>
+								
+								<div style="clear: both;"></div>
+								
+								<!-- Painel 3 -->
+								<p:outputPanel id="pnlPergunta3"
+									rendered="#{usuarioMB.habilitarVisualizacaoPergunta3}">
+									<!-- Pergunta 3 -->
+									<h:panelGrid columns="1" cellpadding="3">
+
+										<h:outputText value="3° Pergunta:" style="font-size:15px; " />
+										
+										<p:inputTextarea id="iptPergunta3" cols="75" rows="2"
+											value="#{usuarioMB.viewBean.formulario3.pergunta}" />
+										<h:outputText value=" " />
+										<!-- Alternativa A -->
+										<h:outputText value="A)" style="font-size:15px; " />
+										
+										<p:inputTextarea id="iptResposta3A" cols="75" rows="1"
+											value="#{usuarioMB.viewBean.formulario3.resposta_A}" />
+										<h:outputText value=" " />
+										<!-- Alternativa B -->
+										<h:outputText value="B)" style="font-size:15px; " />
+										
+										<p:inputTextarea id="iptResposta3B" cols="75" rows="1"
+											value="#{usuarioMB.viewBean.formulario3.resposta_B}" />
+										<h:outputText value=" " />
+										<!-- Alternativa C -->
+										<h:outputText value="C)" style="font-size:15px; " />
+										
+										<p:inputTextarea id="iptResposta3C" cols="75" rows="1"
+											value="#{usuarioMB.viewBean.formulario3.resposta_C}" />
+										<h:outputText value=" " />
+										<!-- Alternativa D -->
+										<h:outputText value="D)" style="font-size:15px; " />
+										
+										<p:inputTextarea id="iptResposta3D" cols="75" rows="1"
+											value="#{usuarioMB.viewBean.formulario3.resposta_D}" />
+										<h:outputText value=" " />
+										<!-- Alternativa E -->
+										<h:outputText value="E)" style="font-size:15px; " />
+										
+										<p:inputTextarea id="iptResposta3E" cols="75" rows="1"
+											value="#{usuarioMB.viewBean.formulario3.resposta_E}" />
+										<h:outputText value=" " />
+									</h:panelGrid>
+									<!-- Resposta certa 3 -->
+									<h:panelGrid columns="1" cellpadding="3">
+										<h:outputText value="Escolha a resposta correta:" />
+										<p:selectOneRadio id="console3"
+											value="#{usuarioMB.viewBean.formulario3.resposta_certa}">
+											<f:selectItem itemLabel="A)"
+												itemValue="#{usuarioMB.viewBean.formulario3.resposta_A}" />
+											<f:selectItem itemLabel="B)"
+												itemValue="#{usuarioMB.viewBean.formulario3.resposta_B}" />
+											<f:selectItem itemLabel="C)"
+												itemValue="#{usuarioMB.viewBean.formulario3.resposta_C}" />
+											<f:selectItem itemLabel="D)"
+												itemValue="#{usuarioMB.viewBean.formulario3.resposta_D}" />
+											<f:selectItem itemLabel="E)"
+												itemValue="#{usuarioMB.viewBean.formulario3.resposta_E}" />
+										</p:selectOneRadio>
+									</h:panelGrid>
+									
+										<!-- Opções -->
+									<h:panelGrid columns="3" cellpadding="3" style="float: right;">
+										<p:commandButton value="" id="btnAddPeg4"
+											update="@form frmQuestionario:pnlPergunta4"
+											style="width: 65px;height:65px ; margin-top:5px; background: url(../resources/imagens/add2.png) no-repeat; border-color: white; font:18px 'Ruda',sans-serif;">
+											<f:setPropertyActionListener target="#{usuarioMB.habilitarVisualizacaoPergunta4}" value="#{true}"/>
+										</p:commandButton>
+										<p:commandButton value="" id="btnLimpa3"
+											update="@form frmQuestionario:pnlPergunta3"
+											style="width: 65px;height:65px ; margin-top:5px; background: url(../resources/imagens/borracha.png) no-repeat; border-color: white; font:18px 'Ruda',sans-serif;">
+										</p:commandButton>
+										<p:commandButton value="" id="btnCancelar3"
+											update="@form frmQuestionario:pnlPergunta3"
+											style="width: 65px;height:65px ; margin-top:5px; background: url(../resources/imagens/cancel.png) no-repeat; border-color: white; font:18px 'Ruda',sans-serif;">
+										</p:commandButton>
+
+									</h:panelGrid>
+
+								</p:outputPanel>
+								
+								<div style="clear: both;"></div>
+								
+								<!-- Painel 4 -->
+								<p:outputPanel id="pnlPergunta4"
+									rendered="#{usuarioMB.habilitarVisualizacaoPergunta4}">
+									<!-- Pergunta 2 -->
+									<h:panelGrid columns="1" cellpadding="3">
+
+										<h:outputText value="4° Pergunta:" style="font-size:15px; " />
+										
+										<p:inputTextarea id="iptPergunta4" cols="75" rows="2"
+											value="#{usuarioMB.viewBean.formulario4.pergunta}" />
+										<h:outputText value=" " />
+										<!-- Alternativa A -->
+										<h:outputText value="A)" style="font-size:15px; " />
+										
+										<p:inputTextarea id="iptResposta4A" cols="75" rows="1"
+											value="#{usuarioMB.viewBean.formulario4.resposta_A}" />
+										<h:outputText value=" " />
+										<!-- Alternativa B -->
+										<h:outputText value="B)" style="font-size:15px; " />
+										
+										<p:inputTextarea id="iptResposta4B" cols="75" rows="1"
+											value="#{usuarioMB.viewBean.formulario4.resposta_B}" />
+										<h:outputText value=" " />
+										<!-- Alternativa C -->
+										<h:outputText value="C)" style="font-size:15px; " />
+										
+										<p:inputTextarea id="iptResposta4C" cols="75" rows="1"
+											value="#{usuarioMB.viewBean.formulario4.resposta_C}" />
+										<h:outputText value=" " />
+										<!-- Alternativa D -->
+										<h:outputText value="D)" style="font-size:15px; " />
+										
+										<p:inputTextarea id="iptResposta4D" cols="75" rows="1"
+											value="#{usuarioMB.viewBean.formulario4.resposta_D}" />
+										<h:outputText value=" " />
+										<!-- Alternativa E -->
+										<h:outputText value="E)" style="font-size:15px; " />
+										
+										<p:inputTextarea id="iptResposta4E" cols="75" rows="1"
+											value="#{usuarioMB.viewBean.formulario4.resposta_E}" />
+										<h:outputText value=" " />
+									</h:panelGrid>
+									<!-- Resposta certa 4 -->
+									<h:panelGrid columns="1" cellpadding="3">
+										<h:outputText value="Escolha a resposta correta:" />
+										<p:selectOneRadio id="console4"
+											value="#{usuarioMB.viewBean.formulario4.resposta_certa}">
+											<f:selectItem itemLabel="A)"
+												itemValue="#{usuarioMB.viewBean.formulario4.resposta_A}" />
+											<f:selectItem itemLabel="B)"
+												itemValue="#{usuarioMB.viewBean.formulario4.resposta_B}" />
+											<f:selectItem itemLabel="C)"
+												itemValue="#{usuarioMB.viewBean.formulario4.resposta_C}" />
+											<f:selectItem itemLabel="D)"
+												itemValue="#{usuarioMB.viewBean.formulario4.resposta_D}" />
+											<f:selectItem itemLabel="E)"
+												itemValue="#{usuarioMB.viewBean.formulario4.resposta_E}" />
+										</p:selectOneRadio>
+									</h:panelGrid>
+									
+										<!-- Opções -->
+									<h:panelGrid columns="3" cellpadding="3" style="float: right;">
+										<p:commandButton value="" id="btnAddPeg5"
+											update="@form frmQuestionario:pnlPergunta5"
+											style="width: 65px;height:65px ; margin-top:5px; background: url(../resources/imagens/add2.png) no-repeat; border-color: white; font:18px 'Ruda',sans-serif;">
+											<f:setPropertyActionListener target="#{usuarioMB.habilitarVisualizacaoPergunta5}" value="#{true}"/>
+										</p:commandButton>
+										<p:commandButton value="" id="btnLimpa4"
+											update="@form frmQuestionario:pnlPergunta4"
+											style="width: 65px;height:65px ; margin-top:5px; background: url(../resources/imagens/borracha.png) no-repeat; border-color: white; font:18px 'Ruda',sans-serif;">
+										</p:commandButton>
+										<p:commandButton value="" id="btnCancelar4"
+											update="@form frmQuestionario:pnlPergunta4"
+											style="width: 65px;height:65px ; margin-top:5px; background: url(../resources/imagens/cancel.png) no-repeat; border-color: white; font:18px 'Ruda',sans-serif;">
+										</p:commandButton>
+
+									</h:panelGrid>
+
+
+								</p:outputPanel>
+								
+								<div style="clear: both;"></div>
+								
+								<!-- Painel 5 -->
+								<p:outputPanel id="pnlPergunta5"
+									rendered="#{usuarioMB.habilitarVisualizacaoPergunta5}">
+									<!-- Pergunta 2 -->
+									<h:panelGrid columns="1" cellpadding="3">
+
+										<h:outputText value="5° Pergunta:" style="font-size:15px; " />
+										
+										<p:inputTextarea id="iptPergunta5" cols="75" rows="2"
+											value="#{usuarioMB.viewBean.formulario5.pergunta}" />
+										<h:outputText value=" " />
+										<!-- Alternativa A -->
+										<h:outputText value="A)" style="font-size:15px; " />
+										
+										<p:inputTextarea id="iptResposta5A" cols="75" rows="1"
+											value="#{usuarioMB.viewBean.formulario5.resposta_A}" />
+										<h:outputText value=" " />
+										<!-- Alternativa B -->
+										<h:outputText value="B)" style="font-size:15px; " />
+										
+										<p:inputTextarea id="iptResposta5B" cols="75" rows="1"
+											value="#{usuarioMB.viewBean.formulario5.resposta_B}" />
+										<h:outputText value=" " />
+										<!-- Alternativa C -->
+										<h:outputText value="C)" style="font-size:15px; " />
+										
+										<p:inputTextarea id="iptResposta5C" cols="75" rows="1"
+											value="#{usuarioMB.viewBean.formulario5.resposta_C}" />
+										<h:outputText value=" " />
+										<!-- Alternativa D -->
+										<h:outputText value="D)" style="font-size:15px; " />
+										
+										<p:inputTextarea id="iptResposta5D" cols="75" rows="1"
+											value="#{usuarioMB.viewBean.formulario5.resposta_D}" />
+										<h:outputText value=" " />
+										<!-- Alternativa E -->
+										<h:outputText value="E)" style="font-size:15px; " />
+										
+										<p:inputTextarea id="iptResposta5E" cols="75" rows="1"
+											value="#{usuarioMB.viewBean.formulario5.resposta_E}" />
+										<h:outputText value=" " />
+									</h:panelGrid>
+									<!-- Resposta certa 5 -->
+									<h:panelGrid columns="1" cellpadding="3">
+										<h:outputText value="Escolha a resposta correta:" />
+										<p:selectOneRadio id="console5"
+											value="#{usuarioMB.viewBean.formulario5.resposta_certa}">
+											<f:selectItem itemLabel="A)"
+												itemValue="#{usuarioMB.viewBean.formulario5.resposta_A}" />
+											<f:selectItem itemLabel="B)"
+												itemValue="#{usuarioMB.viewBean.formulario5.resposta_B}" />
+											<f:selectItem itemLabel="C)"
+												itemValue="#{usuarioMB.viewBean.formulario5.resposta_C}" />
+											<f:selectItem itemLabel="D)"
+												itemValue="#{usuarioMB.viewBean.formulario5.resposta_D}" />
+											<f:selectItem itemLabel="E)"
+												itemValue="#{usuarioMB.viewBean.formulario5.resposta_E}" />
+										</p:selectOneRadio>
+									</h:panelGrid>
+									
+										<!-- Opções -->
+									<h:panelGrid columns="3" cellpadding="3" style="float: right;">
+										<p:commandButton value="" id="btnAddPeg6"
+											update="@form frmQuestionario:pnlPergunta6"
+											style="width: 65px;height:65px ; margin-top:5px; background: url(../resources/imagens/add2.png) no-repeat; border-color: white; font:18px 'Ruda',sans-serif;">
+											<f:setPropertyActionListener target="#{usuarioMB.habilitarVisualizacaoPergunta6}" value="#{true}"/>
+										</p:commandButton>
+										<p:commandButton value="" id="btnLimpa5"
+											update="@form frmQuestionario:pnlPergunta5"
+											style="width: 65px;height:65px ; margin-top:5px; background: url(../resources/imagens/borracha.png) no-repeat; border-color: white; font:18px 'Ruda',sans-serif;">
+										</p:commandButton>
+										<p:commandButton value="" id="btnCancelar5"
+											update="@form frmQuestionario:pnlPergunta5"
+											style="width: 65px;height:65px ; margin-top:5px; background: url(../resources/imagens/cancel.png) no-repeat; border-color: white; font:18px 'Ruda',sans-serif;">
+										</p:commandButton>
+
+									</h:panelGrid>
+
+								</p:outputPanel>
+								
+								<div style="clear: both;"></div>
+								
+								<!-- Painel 6 -->
+								<p:outputPanel id="pnlPergunta6"
+									rendered="#{usuarioMB.habilitarVisualizacaoPergunta6}">
+									<!-- Pergunta 2 -->
+									<h:panelGrid columns="1" cellpadding="3">
+
+										<h:outputText value="6° Pergunta:" style="font-size:15px; " />
+										
+										<p:inputTextarea id="iptPergunta6" cols="75" rows="2"
+											value="#{usuarioMB.viewBean.formulario6.pergunta}" />
+										<h:outputText value=" " />
+										<!-- Alternativa A -->
+										<h:outputText value="A)" style="font-size:15px; " />
+										
+										<p:inputTextarea id="iptResposta6A" cols="75" rows="1"
+											value="#{usuarioMB.viewBean.formulario6.resposta_A}" />
+										<h:outputText value=" " />
+										<!-- Alternativa B -->
+										<h:outputText value="B)" style="font-size:15px; " />
+										
+										<p:inputTextarea id="iptResposta6B" cols="75" rows="1"
+											value="#{usuarioMB.viewBean.formulario6.resposta_B}" />
+										<h:outputText value=" " />
+										<!-- Alternativa C -->
+										<h:outputText value="C)" style="font-size:15px; " />
+										
+										<p:inputTextarea id="iptResposta6C" cols="75" rows="1"
+											value="#{usuarioMB.viewBean.formulario6.resposta_C}" />
+										<h:outputText value=" " />
+										<!-- Alternativa D -->
+										<h:outputText value="D)" style="font-size:15px; " />
+										
+										<p:inputTextarea id="iptResposta6D" cols="75" rows="1"
+											value="#{usuarioMB.viewBean.formulario6.resposta_D}" />
+										<h:outputText value=" " />
+										<!-- Alternativa E -->
+										<h:outputText value="E)" style="font-size:15px; " />
+										
+										<p:inputTextarea id="iptResposta6E" cols="75" rows="1"
+											value="#{usuarioMB.viewBean.formulario6.resposta_E}" />
+										<h:outputText value=" " />
+									</h:panelGrid>
+									<!-- Resposta certa 6 -->
+									<h:panelGrid columns="1" cellpadding="3" >
+										<h:outputText value="Escolha a resposta correta:" />
+										<p:selectOneRadio id="console6"
+											value="#{usuarioMB.viewBean.formulario6.resposta_certa}">
+											<f:selectItem itemLabel="A)"
+												itemValue="#{usuarioMB.viewBean.formulario6.resposta_A}" />
+											<f:selectItem itemLabel="B)"
+												itemValue="#{usuarioMB.viewBean.formulario6.resposta_B}" />
+											<f:selectItem itemLabel="C)"
+												itemValue="#{usuarioMB.viewBean.formulario6.resposta_C}" />
+											<f:selectItem itemLabel="D)"
+												itemValue="#{usuarioMB.viewBean.formulario6.resposta_D}" />
+											<f:selectItem itemLabel="E)"
+												itemValue="#{usuarioMB.viewBean.formulario6.resposta_E}" />
+										</p:selectOneRadio>
+									</h:panelGrid>
+									
+										<!-- Opções -->
+									<h:panelGrid columns="3" cellpadding="3" style="float: right;">
+										<p:commandButton value="" id="btnAddPeg7"
+											update="@form frmQuestionario:pnlPergunta7"
+											style="width: 65px;height:65px ; margin-top:5px; background: url(../resources/imagens/add2.png) no-repeat; border-color: white; font:18px 'Ruda',sans-serif;">
+											<f:setPropertyActionListener target="#{usuarioMB.habilitarVisualizacaoPergunta7}" value="#{true}"/>
+										</p:commandButton>
+										<p:commandButton value="" id="btnLimpa6"
+											update="@form frmQuestionario:pnlPergunta6"
+											style="width: 65px;height:65px ; margin-top:5px; background: url(../resources/imagens/borracha.png) no-repeat; border-color: white; font:18px 'Ruda',sans-serif;">
+										</p:commandButton>
+										<p:commandButton value="" id="btnCancelar6"
+											update="@form frmQuestionario:pnlPergunta6"
+											style="width: 65px;height:65px ; margin-top:5px; background: url(../resources/imagens/cancel.png) no-repeat; border-color: white; font:18px 'Ruda',sans-serif;">
+										</p:commandButton>
+
+									</h:panelGrid>
+
+								</p:outputPanel>
+								
+								<div style="clear: both;"></div>
+								
+								<!-- Painel 7 -->
+								<p:outputPanel id="pnlPergunta7"
+									rendered="#{usuarioMB.habilitarVisualizacaoPergunta7}">
+									<!-- Pergunta 2 -->
+									<h:panelGrid columns="1" cellpadding="3">
+
+										<h:outputText value="7° Pergunta:" style="font-size:15px; " />
+										
+										<p:inputTextarea id="iptPergunta7" cols="75" rows="2"
+											value="#{usuarioMB.viewBean.formulario7.pergunta}" />
+										<h:outputText value=" " />
+										<!-- Alternativa A -->
+										<h:outputText value="A)" style="font-size:15px; " />
+										
+										<p:inputTextarea id="iptResposta7A" cols="75" rows="1"
+											value="#{usuarioMB.viewBean.formulario7.resposta_A}" />
+										<h:outputText value=" " />
+										<!-- Alternativa B -->
+										<h:outputText value="B)" style="font-size:15px; " />
+										
+										<p:inputTextarea id="iptResposta7B" cols="75" rows="1"
+											value="#{usuarioMB.viewBean.formulario7.resposta_B}" />
+										<h:outputText value=" " />
+										<!-- Alternativa C -->
+										<h:outputText value="C)" style="font-size:15px; " />
+										
+										<p:inputTextarea id="iptResposta7C" cols="75" rows="1"
+											value="#{usuarioMB.viewBean.formulario7.resposta_C}" />
+										<h:outputText value=" " />
+										<!-- Alternativa D -->
+										<h:outputText value="D)" style="font-size:15px; " />
+										
+										<p:inputTextarea id="iptResposta7D" cols="75" rows="1"
+											value="#{usuarioMB.viewBean.formulario7.resposta_D}" />
+										<h:outputText value=" " />
+										<!-- Alternativa E -->
+										<h:outputText value="E)" style="font-size:15px; " />
+										
+										<p:inputTextarea id="iptResposta7E" cols="75" rows="1"
+											value="#{usuarioMB.viewBean.formulario7.resposta_E}" />
+										<h:outputText value=" " />
+									</h:panelGrid>
+									<!-- Resposta certa 7 -->
+									<h:panelGrid columns="1" cellpadding="3" style="float: right;">
+										<h:outputText value="Escolha a resposta correta:" />
+										<p:selectOneRadio id="console7"
+											value="#{usuarioMB.viewBean.formulario7.resposta_certa}">
+											<f:selectItem itemLabel="A)"
+												itemValue="#{usuarioMB.viewBean.formulario7.resposta_A}" />
+											<f:selectItem itemLabel="B)"
+												itemValue="#{usuarioMB.viewBean.formulario7.resposta_B}" />
+											<f:selectItem itemLabel="C)"
+												itemValue="#{usuarioMB.viewBean.formulario7.resposta_C}" />
+											<f:selectItem itemLabel="D)"
+												itemValue="#{usuarioMB.viewBean.formulario7.resposta_D}" />
+											<f:selectItem itemLabel="E)"
+												itemValue="#{usuarioMB.viewBean.formulario7.resposta_E}" />
+										</p:selectOneRadio>
+									</h:panelGrid>
+									
+										<!-- Opções -->
+									<h:panelGrid columns="3" cellpadding="3">
+										<p:commandButton value="" id="btnAddPeg8"
+											update="@form frmQuestionario:pnlPergunta8"
+											style="width: 65px;height:65px ; margin-top:5px; background: url(../resources/imagens/add2.png) no-repeat; border-color: white; font:18px 'Ruda',sans-serif;">
+											<f:setPropertyActionListener target="#{usuarioMB.habilitarVisualizacaoPergunta8}" value="#{true}"/>
+										</p:commandButton>
+										<p:commandButton value="" id="btnLimpa7"
+											update="@form frmQuestionario:pnlPergunta7"
+											style="width: 65px;height:65px ; margin-top:5px; background: url(../resources/imagens/borracha.png) no-repeat; border-color: white; font:18px 'Ruda',sans-serif;">
+										</p:commandButton>
+										<p:commandButton value="" id="btnCancelar7"
+											update="@form frmQuestionario:pnlPergunta7"
+											style="width: 65px;height:65px ; margin-top:5px; background: url(../resources/imagens/cancel.png) no-repeat; border-color: white; font:18px 'Ruda',sans-serif;">
+										</p:commandButton>
+
+									</h:panelGrid>
+
+								</p:outputPanel>
+								
+								<div style="clear: both;"></div>
+								
+								<!-- Painel 8 -->
+								<p:outputPanel id="pnlPergunta8"
+									rendered="#{usuarioMB.habilitarVisualizacaoPergunta8}">
+									<!-- Pergunta 2 -->
+									<h:panelGrid columns="1" cellpadding="3">
+
+										<h:outputText value="8° Pergunta:" style="font-size:15px; " />
+										
+										<p:inputTextarea id="iptPergunta8" cols="75" rows="2"
+											value="#{usuarioMB.viewBean.formulario8.pergunta}" />
+										<h:outputText value=" " />
+										<!-- Alternativa A -->
+										<h:outputText value="A)" style="font-size:15px; " />
+										
+										<p:inputTextarea id="iptResposta8A" cols="75" rows="1"
+											value="#{usuarioMB.viewBean.formulario8.resposta_A}" />
+										<h:outputText value=" " />
+										<!-- Alternativa B -->
+										<h:outputText value="B)" style="font-size:15px; " />
+										
+										<p:inputTextarea id="iptResposta8B" cols="75" rows="1"
+											value="#{usuarioMB.viewBean.formulario8.resposta_B}" />
+										<h:outputText value=" " />
+										<!-- Alternativa C -->
+										<h:outputText value="C)" style="font-size:15px; " />
+										
+										<p:inputTextarea id="iptResposta8C" cols="75" rows="1"
+											value="#{usuarioMB.viewBean.formulario8.resposta_C}" />
+										<h:outputText value=" " />
+										<!-- Alternativa D -->
+										<h:outputText value="D)" style="font-size:15px; " />
+										
+										<p:inputTextarea id="iptResposta8D" cols="75" rows="1"
+											value="#{usuarioMB.viewBean.formulario8.resposta_D}" />
+										<h:outputText value=" " />
+										<!-- Alternativa E -->
+										<h:outputText value="E)" style="font-size:15px; " />
+										
+										<p:inputTextarea id="iptResposta8E" cols="75" rows="1"
+											value="#{usuarioMB.viewBean.formulario8.resposta_E}" />
+										<h:outputText value=" " />
+									</h:panelGrid>
+									<!-- Resposta certa 8 -->
+									<h:panelGrid columns="1" cellpadding="3">
+										<h:outputText value="Escolha a resposta correta:" />
+										<p:selectOneRadio id="console8"
+											value="#{usuarioMB.viewBean.formulario8.resposta_certa}">
+											<f:selectItem itemLabel="A)"
+												itemValue="#{usuarioMB.viewBean.formulario8.resposta_A}" />
+											<f:selectItem itemLabel="B)"
+												itemValue="#{usuarioMB.viewBean.formulario8.resposta_B}" />
+											<f:selectItem itemLabel="C)"
+												itemValue="#{usuarioMB.viewBean.formulario8.resposta_C}" />
+											<f:selectItem itemLabel="D)"
+												itemValue="#{usuarioMB.viewBean.formulario8.resposta_D}" />
+											<f:selectItem itemLabel="E)"
+												itemValue="#{usuarioMB.viewBean.formulario8.resposta_E}" />
+										</p:selectOneRadio>
+									</h:panelGrid>
+									
+										<!-- Opções -->
+									<h:panelGrid columns="3" cellpadding="3" style="float: right;">
+										<p:commandButton value="" id="btnAddPeg9"
+											update="@form frmQuestionario:pnlPergunta9"
+											style="width: 65px;height:65px ; margin-top:5px; background: url(../resources/imagens/add2.png) no-repeat; border-color: white; font:18px 'Ruda',sans-serif;">
+											<f:setPropertyActionListener target="#{usuarioMB.habilitarVisualizacaoPergunta9}" value="#{true}"/>
+										</p:commandButton>
+										<p:commandButton value="" id="btnLimpa8"
+											update="@form frmQuestionario:pnlPergunta8"
+											style="width: 65px;height:65px ; margin-top:5px; background: url(../resources/imagens/borracha.png) no-repeat; border-color: white; font:18px 'Ruda',sans-serif;">
+										</p:commandButton>
+										<p:commandButton value="" id="btnCancelar8"
+											update="@form frmQuestionario:pnlPergunta8"
+											style="width: 65px;height:65px ; margin-top:5px; background: url(../resources/imagens/cancel.png) no-repeat; border-color: white; font:18px 'Ruda',sans-serif;">
+										</p:commandButton>
+
+									</h:panelGrid>
+
+								</p:outputPanel>
+								
+								<div style="clear: both;"></div>
+								
+								<!-- Painel 9 -->
+								<p:outputPanel id="pnlPergunta9"
+									rendered="#{usuarioMB.habilitarVisualizacaoPergunta9}">
+									<!-- Pergunta 2 -->
+									<h:panelGrid columns="1" cellpadding="3">
+
+										<h:outputText value="9° Pergunta:" style="font-size:15px; " />
+										
+										<p:inputTextarea id="iptPergunta9" cols="75" rows="2"
+											value="#{usuarioMB.viewBean.formulario9.pergunta}" />
+										<h:outputText value=" " />
+										<!-- Alternativa A -->
+										<h:outputText value="A)" style="font-size:15px; " />
+										
+										<p:inputTextarea id="iptResposta9A" cols="75" rows="1"
+											value="#{usuarioMB.viewBean.formulario9.resposta_A}" />
+										<h:outputText value=" " />
+										<!-- Alternativa B -->
+										<h:outputText value="B)" style="font-size:15px; " />
+										
+										<p:inputTextarea id="iptResposta9B" cols="75" rows="1"
+											value="#{usuarioMB.viewBean.formulario9.resposta_B}" />
+										<h:outputText value=" " />
+										<!-- Alternativa C -->
+										<h:outputText value="C)" style="font-size:15px; " />
+										
+										<p:inputTextarea id="iptResposta9C" cols="75" rows="1"
+											value="#{usuarioMB.viewBean.formulario9.resposta_C}" />
+										<h:outputText value=" " />
+										<!-- Alternativa D -->
+										<h:outputText value="D)" style="font-size:15px; " />
+										
+										<p:inputTextarea id="iptResposta9D" cols="75" rows="1"
+											value="#{usuarioMB.viewBean.formulario9.resposta_D}" />
+										<h:outputText value=" " />
+										<!-- Alternativa E -->
+										<h:outputText value="E)" style="font-size:15px; " />
+										
+										<p:inputTextarea id="iptResposta9E" cols="75" rows="1"
+											value="#{usuarioMB.viewBean.formulario9.resposta_E}" />
+										<h:outputText value=" " />
+									</h:panelGrid>
+									<!-- Resposta certa 9 -->
+									<h:panelGrid columns="1" cellpadding="3">
+										<h:outputText value="Escolha a resposta correta:" />
+										<p:selectOneRadio id="console9"
+											value="#{usuarioMB.viewBean.formulario9.resposta_certa}">
+											<f:selectItem itemLabel="A)"
+												itemValue="#{usuarioMB.viewBean.formulario9.resposta_A}" />
+											<f:selectItem itemLabel="B)"
+												itemValue="#{usuarioMB.viewBean.formulario9.resposta_B}" />
+											<f:selectItem itemLabel="C)"
+												itemValue="#{usuarioMB.viewBean.formulario9.resposta_C}" />
+											<f:selectItem itemLabel="D)"
+												itemValue="#{usuarioMB.viewBean.formulario9.resposta_D}" />
+											<f:selectItem itemLabel="E)"
+												itemValue="#{usuarioMB.viewBean.formulario9.resposta_E}" />
+										</p:selectOneRadio>
+									</h:panelGrid>
+									
+										<!-- Opções -->
+									<h:panelGrid columns="3" cellpadding="3" style="float: right;">
+										<p:commandButton value="" id="btnAddPeg10"
+											update="@form frmQuestionario:pnlPergunta10"
+											style="width: 65px;height:65px ; margin-top:5px; background: url(../resources/imagens/add2.png) no-repeat; border-color: white; font:18px 'Ruda',sans-serif;">
+											<f:setPropertyActionListener target="#{usuarioMB.habilitarVisualizacaoPergunta10}" value="#{true}"/>
+										</p:commandButton>
+										<p:commandButton value="" id="btnLimpa9"
+											actionListener="#{usuarioMB.novoFormulario9}"
+											update="@form frmQuestionario:pnlPergunta9"
+											style="width: 65px;height:65px ; margin-top:5px; background: url(../resources/imagens/borracha.png) no-repeat; border-color: white; font:18px 'Ruda',sans-serif;">
+										</p:commandButton>
+										<p:commandButton value="" id="btnCancelar9"
+											update="@form frmQuestionario:pnlPergunta9"
+											style="width: 65px;height:65px ; margin-top:5px; background: url(../resources/imagens/cancel.png) no-repeat; border-color: white; font:18px 'Ruda',sans-serif;">
+										</p:commandButton>
+
+									</h:panelGrid>
+
+								</p:outputPanel>
+								
+								<div style="clear: both;"></div>
+								
+								<!-- Painel 10 -->
+								<p:outputPanel id="pnlPergunta10"
+									rendered="#{usuarioMB.habilitarVisualizacaoPergunta10}">
+									<!-- Pergunta 2 -->
+									<h:panelGrid columns="1" cellpadding="3">
+
+										<h:outputText value="10° Pergunta:" style="font-size:15px; " />
+										
+										<p:inputTextarea id="iptPergunta10" cols="75" rows="2"
+											value="#{usuarioMB.viewBean.formulario10.pergunta}" />
+										<h:outputText value=" " />
+										<!-- Alternativa A -->
+										<h:outputText value="A)" style="font-size:15px; " />
+										
+										<p:inputTextarea id="iptResposta10A" cols="75" rows="1"
+											value="#{usuarioMB.viewBean.formulario10.resposta_A}" />
+										<h:outputText value=" " />
+										<!-- Alternativa B -->
+										<h:outputText value="B)" style="font-size:15px; " />
+										
+										<p:inputTextarea id="iptResposta10B" cols="75" rows="1"
+											value="#{usuarioMB.viewBean.formulario10.resposta_B}" />
+										<h:outputText value=" " />
+										<!-- Alternativa C -->
+										<h:outputText value="C)" style="font-size:15px; " />
+										
+										<p:inputTextarea id="iptResposta10C" cols="75" rows="1"
+											value="#{usuarioMB.viewBean.formulario10.resposta_C}" />
+										<h:outputText value=" " />
+										<!-- Alternativa D -->
+										<h:outputText value="D)" style="font-size:15px; " />
+										
+										<p:inputTextarea id="iptResposta10D" cols="75" rows="1"
+											value="#{usuarioMB.viewBean.formulario10.resposta_D}" />
+										<h:outputText value=" " />
+										<!-- Alternativa E -->
+										<h:outputText value="E)" style="font-size:15px; " />
+										
+										<p:inputTextarea id="iptResposta10E" cols="75" rows="1"
+											value="#{usuarioMB.viewBean.formulario10.resposta_E}" />
+										<h:outputText value=" " />
+									</h:panelGrid>
+									<!-- Resposta certa 10 -->
+									<h:panelGrid columns="1" cellpadding="3">
+										<h:outputText value="Escolha a resposta correta:" />
+										<p:selectOneRadio id="console10"
+											value="#{usuarioMB.viewBean.formulario10.resposta_certa}">
+											<f:selectItem itemLabel="A)"
+												itemValue="#{usuarioMB.viewBean.formulario10.resposta_A}" />
+											<f:selectItem itemLabel="B)"
+												itemValue="#{usuarioMB.viewBean.formulario10.resposta_B}" />
+											<f:selectItem itemLabel="C)"
+												itemValue="#{usuarioMB.viewBean.formulario10.resposta_C}" />
+											<f:selectItem itemLabel="D)"
+												itemValue="#{usuarioMB.viewBean.formulario10.resposta_D}" />
+											<f:selectItem itemLabel="E)"
+												itemValue="#{usuarioMB.viewBean.formulario10.resposta_E}" />
+										</p:selectOneRadio>
+									</h:panelGrid>
+									
+										<!-- Opções -->
+									<h:panelGrid columns="2" cellpadding="3" style="float: right;">
+										<p:commandButton value="" id="btnLimpa10"
+											actionListener="#{usuarioMB.novoFormulario10}"
+											update="@form frmQuestionario:pnlPergunta10"
+											style="width: 65px;height:65px ; margin-top:5px; background: url(../resources/imagens/borracha.png) no-repeat; border-color: white; font:18px 'Ruda',sans-serif;">
+										</p:commandButton>
+										<p:commandButton value="" id="btnCancelar10"
+											update="@form frmQuestionario:pnlPergunta10"
+											style="width: 65px;height:65px ; margin-top:5px; background: url(../resources/imagens/cancel.png) no-repeat; border-color: white; font:18px 'Ruda',sans-serif;">
+										</p:commandButton>
+
+									</h:panelGrid>
+
+								</p:outputPanel>
+
+								<br />
+								<center>
+									<p:commandButton value="CRIAR" styleClass="btnVerdeClaro"
+										id="btnCriarQuestionario" update="@form pnlQuestionario"
+										style=" margin-top:10px;  width: 315px;height:50px ;background:#24b85b;color: white;border-color: #24b85b; font:18px 'Ruda',sans-serif;">
+										<f:setPropertyActionListener
+											target="#{usuarioMB.habilitarVisualizacaoQuestionario}"
+											value="#{false}" />
+									</p:commandButton>
+								</center>
+							</div>
+						</div>
+
+						<div class="ui-grid-col-2"></div>
+					</div>
+				</div>
+			</h:form>
+		</p:outputPanel>
+
+
+
+
+</html>

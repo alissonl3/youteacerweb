@@ -39,8 +39,8 @@ public class UsuarioMB implements Serializable {
 	// Formulário
 	private boolean habilitarFormulario;
 	private boolean habilitarVisualizacaoQuestionario;
-	
-	//Perguntas
+
+	// Perguntas
 	private boolean habilitarVisualizacaoPergunta1;
 	private boolean habilitarVisualizacaoPergunta2;
 	private boolean habilitarVisualizacaoPergunta3;
@@ -51,17 +51,9 @@ public class UsuarioMB implements Serializable {
 	private boolean habilitarVisualizacaoPergunta8;
 	private boolean habilitarVisualizacaoPergunta9;
 	private boolean habilitarVisualizacaoPergunta10;
-	
-
-	// campos dinâmicos
-	private HtmlPanelGrid grid;
-	private int componenteCount = 1;
-	List<InputTextarea> iptsPerguntas = new ArrayList<InputTextarea>();
 
 	// video
 	private Video videoSelecionado;
-	
-
 
 	@PostConstruct
 	private void initPage() {
@@ -72,7 +64,6 @@ public class UsuarioMB implements Serializable {
 		viewBean = new UsuarioViewBean();
 		videoDAO = new VideoDAO();
 		videoSelecionado = new Video();
-		limparGrid();
 
 	}
 
@@ -100,15 +91,88 @@ public class UsuarioMB implements Serializable {
 		}
 
 	}
-	
-	//MOSTRAR PERGUNTA 1
-	public void mostrarPergunta1(){
+
+	// MOSTRAR PERGUNTA 1
+	public void mostrarPergunta1() {
 		habilitarVisualizacaoPergunta1 = true;
 	}
-	
-	//ADICIONAR FORMULÁRIO
-	public void inserirFormulário(){
+
+	// ADICIONAR FORMULÁRIO
+	public void inserirFormulario() {
+
 		
+	}
+
+	// GERAR NOVOS FORMULARIOS
+	public void novoFormulario1() {		
+		if (habilitarVisualizacaoPergunta1 == true) {
+			 
+			viewBean.setFormulario1(new Formulario());
+
+		}
+	}
+	public void novoFormulario2() {		
+		if (habilitarVisualizacaoPergunta2 == true) {
+			 
+			viewBean.setFormulario2(new Formulario());
+
+		}
+	}
+	public void novoFormulario3() {		
+		if (habilitarVisualizacaoPergunta3 == true) {
+			 
+			viewBean.setFormulario3(new Formulario());
+
+		}
+	}
+	public void novoFormulario4() {		
+		if (habilitarVisualizacaoPergunta4 == true) {
+			 
+			viewBean.setFormulario4(new Formulario());
+
+		}
+	}
+	public void novoFormulario5() {		
+		if (habilitarVisualizacaoPergunta5 == true) {
+			 
+			viewBean.setFormulario5(new Formulario());
+
+		}
+	}
+	public void novoFormulario6() {		
+		if (habilitarVisualizacaoPergunta6 == true) {
+			 
+			viewBean.setFormulario6(new Formulario());
+
+		}
+	}
+	public void novoFormulario7() {		
+		if (habilitarVisualizacaoPergunta7 == true) {
+			 
+			viewBean.setFormulario7(new Formulario());
+
+		}
+	}
+	public void novoFormulario8() {		
+		if (habilitarVisualizacaoPergunta8 == true) {
+			 
+			viewBean.setFormulario8(new Formulario());
+
+		}
+	}
+	public void novoFormulario9() {		
+		if (habilitarVisualizacaoPergunta9 == true) {
+			 
+			viewBean.setFormulario9(new Formulario());
+
+		}
+	}
+	public void novoFormulario10() {		
+		if (habilitarVisualizacaoPergunta10 == true) {
+			 
+			viewBean.setFormulario10(new Formulario());
+
+		}
 	}
 
 	// SELECIONADO
@@ -149,56 +213,6 @@ public class UsuarioMB implements Serializable {
 			System.out.println("Erro " + e);
 		}
 
-	}
-
-	// GERAR CAMPOS DINAMICOS DO FORMULARIO
-	public void gerarCampo() {
-
-		int id = ++componenteCount;
-		System.out.println("Valor id " + id);
-
-		// INPUT PARA A PERGUNTA
-		HtmlOutputText ol = new HtmlOutputText();
-		ol.setId("oplPergunta" + id);
-		ol.setValue("Pergunta " + id);
-		grid.getChildren().add(ol);
-
-		// INPUT PARA O CAMPO EM BRANCO
-		// HtmlOutputText ol2 = new HtmlOutputText();
-		// ol.setId("oplPerguntaBranco" + componenteCount);
-		// ol.setValue("Valor Nove");
-		// grid.getChildren().add(ol2);
-
-		// INPUT TEXT AREA PARA A PERGUNTA
-		// InputTextarea ipa = new InputTextarea();
-		// ipa.setId("iptPergunta" + componenteCount);
-		// ipa.setStyle("min-width: 100px;");
-		// ipa.setValue("Valor");
-		// ipa.setMaxlength(50);
-		// ipa.setCols(40);
-		// ipa.setRows(2);
-		// grid.getChildren().add(ipa);
-
-		// BOTÃO PARA ADICIONAR ALTERNATIVAS
-		// CommandButton bt = new CommandButton();
-		// bt.setId("bntAddAlternativa" + componenteCount);
-		// bt.setValue(" ");
-		// bt.setStyle("width: 35px;height:35px ; margin-top:5px; background: url(../resources/imagens/add-icon.png) no-repeat; border-color: white; font:18px 'Ruda',sans-serif;");
-		// bt.setUpdate("@form");
-		// bt.setAjax(false);
-		// grid.getChildren().add(bt);
-
-		// ADICIONAR OS INPUT AREAS
-		// iptsPerguntas.add(ipa);
-	}
-
-	// RESETAR O GRID PARA UM NOVO CADASTRO DE FORMULÁRIO
-	public void limparGrid() {
-		iptsPerguntas = new ArrayList<InputTextarea>();
-
-		if (grid != null) {
-			grid.getChildren().clear();
-		}
 	}
 
 	// MOSTRAR MENSSAGEM DE NOTIFICAÇÃO
@@ -284,8 +298,6 @@ public class UsuarioMB implements Serializable {
 				+ viewBean.getUsuario().getSenha() + "'"));
 
 	}
-	
-	
 
 	public boolean isHabilitarVisualizacaoPergunta1() {
 		return habilitarVisualizacaoPergunta1;
@@ -383,25 +395,6 @@ public class UsuarioMB implements Serializable {
 
 	public void setVideoSelecionado(Video videoSelecionado) {
 		this.videoSelecionado = videoSelecionado;
-	}
-
-	public int getComponenteCount() {
-		return componenteCount;
-	}
-
-	public void setComponenteCount(int componenteCount) {
-		this.componenteCount = componenteCount;
-	}
-
-	public HtmlPanelGrid getGrid() {
-		if (grid == null) {
-			grid = new HtmlPanelGrid();
-		}
-		return grid;
-	}
-
-	public void setGrid(HtmlPanelGrid grid) {
-		this.grid = grid;
 	}
 
 	public boolean isHabilitarVisualizacaoQuestionario() {

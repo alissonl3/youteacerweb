@@ -14,7 +14,6 @@ public class UsuarioViewBean {
 	private List<Usuario> usuarios;
 	private Usuario usuarioLogado;
 	private Video video;
-	private Formulario formulario;
 	private List<Video> videos;
 	private List<Video> videosRecente;
 
@@ -29,6 +28,19 @@ public class UsuarioViewBean {
 	
 	//visualização do video
 	private Video videoSelecionado;
+	
+	//FORMULÁRIOS
+	private Formulario formulario1;
+	private Formulario formulario2;
+	private Formulario formulario3;
+	private Formulario formulario4;
+	private Formulario formulario5;
+	private Formulario formulario6;
+	private Formulario formulario7;
+	private Formulario formulario8;
+	private Formulario formulario9;
+	private Formulario formulario10;
+	
 
 	public UsuarioViewBean() {
 
@@ -41,7 +53,18 @@ public class UsuarioViewBean {
 		usuarioLogado = new Usuario();
 		video = new Video();
 		videoSelecionado = new Video();
-		formulario = new Formulario();
+		
+		//formulários
+		formulario1 = new Formulario();
+		formulario2 = new Formulario();
+		formulario3 = new Formulario();
+		formulario4 = new Formulario();
+		formulario5 = new Formulario();
+		formulario6 = new Formulario();
+		formulario7 = new Formulario();
+		formulario8 = new Formulario();
+		formulario9 = new Formulario();
+		formulario10 = new Formulario();
 
 		// pagina
 		habilitarVisualizacaoIdCadastro = false;
@@ -134,12 +157,86 @@ public class UsuarioViewBean {
 		this.video = video;
 	}
 
-	public Formulario getFormulario() {
-		return formulario;
+	
+
+	public Formulario getFormulario1() {
+		return formulario1;
 	}
 
-	public void setFormulario(Formulario formulario) {
-		this.formulario = formulario;
+	public void setFormulario1(Formulario formulario1) {
+		this.formulario1 = formulario1;
+	}
+
+	public Formulario getFormulario2() {
+		return formulario2;
+	}
+
+	public void setFormulario2(Formulario formulario2) {
+		this.formulario2 = formulario2;
+	}
+
+	public Formulario getFormulario3() {
+		return formulario3;
+	}
+
+	public void setFormulario3(Formulario formulario3) {
+		this.formulario3 = formulario3;
+	}
+
+	public Formulario getFormulario4() {
+		return formulario4;
+	}
+
+	public void setFormulario4(Formulario formulario4) {
+		this.formulario4 = formulario4;
+	}
+
+	public Formulario getFormulario5() {
+		return formulario5;
+	}
+
+	public void setFormulario5(Formulario formulario5) {
+		this.formulario5 = formulario5;
+	}
+
+	public Formulario getFormulario6() {
+		return formulario6;
+	}
+
+	public void setFormulario6(Formulario formulario6) {
+		this.formulario6 = formulario6;
+	}
+
+	public Formulario getFormulario7() {
+		return formulario7;
+	}
+
+	public void setFormulario7(Formulario formulario7) {
+		this.formulario7 = formulario7;
+	}
+
+	public Formulario getFormulario8() {
+		return formulario8;
+	}
+
+	public void setFormulario8(Formulario formulario8) {
+		this.formulario8 = formulario8;
+	}
+
+	public Formulario getFormulario9() {
+		return formulario9;
+	}
+
+	public void setFormulario9(Formulario formulario9) {
+		this.formulario9 = formulario9;
+	}
+
+	public Formulario getFormulario10() {
+		return formulario10;
+	}
+
+	public void setFormulario10(Formulario formulario10) {
+		this.formulario10 = formulario10;
 	}
 
 	public List<Video> getVideos() {
