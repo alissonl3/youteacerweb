@@ -15,8 +15,6 @@ public class FormularioDAO {
 	public void inserir(Formulario formulario) {
 
 		try {
-			
-			
 			em = Banco.getIstancia().getEm();
 			em.getTransaction().begin();
 			em.persist(formulario);

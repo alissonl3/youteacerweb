@@ -56,6 +56,16 @@ public class UsuarioMB implements Serializable {
 
 	// video
 	private Video videoSelecionado;
+	private int listaTamanho;
+	
+
+	public int getListaTamanho() {
+		return listaTamanho;
+	}
+
+	public void setListaTamanho(int listaTamanho) {
+		this.listaTamanho = listaTamanho;
+	}
 
 	@PostConstruct
 	private void initPage() {
@@ -82,7 +92,7 @@ public class UsuarioMB implements Serializable {
 			viewBean.getVideo().setUrl(novoUrl);
 			viewBean.getVideo().setUsuario(viewBean.getUsuarioLogado());
 			videoDAO.inserir(viewBean.getVideo());
-
+			atualizarListaVideo();
 			novoVideo();
 
 			mostraMenssagem("SUCESSO", "Video inserido com sucesso!");
@@ -102,14 +112,15 @@ public class UsuarioMB implements Serializable {
 		int count = 0;
 		
 		if(viewBean.getFormulario1() != null){
-			viewBean.getFormulario1().setVideo(viewBean.getVideo());
-			System.out.println("Descricao video:"+viewBean.getFormulario1().getVideo().getTitulo());
+			
+			viewBean.getFormulario1().setVideo(viewBean.getVideos().get(listaTamanho));
 			formularioDAO.inserir(viewBean.getFormulario1());
 			count++;
 		}
 		
 		if(habilitarVisualizacaoPergunta2 == true){
 			if(viewBean.getFormulario2() != null){
+				viewBean.getFormulario2().setVideo(viewBean.getVideos().get(listaTamanho));
 				formularioDAO.inserir(viewBean.getFormulario2());
 				count++;
 			}
@@ -117,6 +128,7 @@ public class UsuarioMB implements Serializable {
 		
 		if(habilitarVisualizacaoPergunta3 == true){
 			if(viewBean.getFormulario3() != null){
+				viewBean.getFormulario3().setVideo(viewBean.getVideos().get(listaTamanho));
 				formularioDAO.inserir(viewBean.getFormulario3());
 				count++;
 			}
@@ -124,6 +136,7 @@ public class UsuarioMB implements Serializable {
 		
 		if(habilitarVisualizacaoPergunta4 == true){
 			if(viewBean.getFormulario4() != null){
+				viewBean.getFormulario4().setVideo(viewBean.getVideos().get(listaTamanho));
 				formularioDAO.inserir(viewBean.getFormulario4());
 				count++;
 			}
@@ -131,6 +144,7 @@ public class UsuarioMB implements Serializable {
 		
 		if(habilitarVisualizacaoPergunta5 == true){
 			if(viewBean.getFormulario5() != null){
+				viewBean.getFormulario5().setVideo(viewBean.getVideos().get(listaTamanho));
 				formularioDAO.inserir(viewBean.getFormulario6());
 				count++;
 			}
@@ -138,6 +152,7 @@ public class UsuarioMB implements Serializable {
 		
 		if(habilitarVisualizacaoPergunta6 == true){
 			if(viewBean.getFormulario6() != null){
+				viewBean.getFormulario6().setVideo(viewBean.getVideos().get(listaTamanho));
 				formularioDAO.inserir(viewBean.getFormulario6());
 				count++;
 			}
@@ -145,6 +160,7 @@ public class UsuarioMB implements Serializable {
 		
 		if(habilitarVisualizacaoPergunta7 == true){
 			if(viewBean.getFormulario7() != null){
+				viewBean.getFormulario7().setVideo(viewBean.getVideos().get(listaTamanho));
 				formularioDAO.inserir(viewBean.getFormulario7());
 				count++;
 			}
@@ -152,6 +168,7 @@ public class UsuarioMB implements Serializable {
 		
 		if(habilitarVisualizacaoPergunta8 == true){
 			if(viewBean.getFormulario8() != null){
+				viewBean.getFormulario8().setVideo(viewBean.getVideos().get(listaTamanho));
 				formularioDAO.inserir(viewBean.getFormulario8());
 				count++;
 			}
@@ -159,6 +176,7 @@ public class UsuarioMB implements Serializable {
 		
 		if(habilitarVisualizacaoPergunta9 == true){
 			if(viewBean.getFormulario9() != null){
+				viewBean.getFormulario9().setVideo(viewBean.getVideos().get(listaTamanho));
 				formularioDAO.inserir(viewBean.getFormulario9());
 				count++;
 			}
@@ -166,6 +184,7 @@ public class UsuarioMB implements Serializable {
 		
 		if(habilitarVisualizacaoPergunta10 == true){
 			if(viewBean.getFormulario10() != null){
+				viewBean.getFormulario10().setVideo(viewBean.getVideos().get(listaTamanho));
 				formularioDAO.inserir(viewBean.getFormulario10());
 				count++;
 			}
@@ -259,11 +278,15 @@ public class UsuarioMB implements Serializable {
 	public void inserir() {
 
 		try {
-
+			if(dao.listarCondicaoUsuario("email = '"+viewBean.getUsuario().getEmail()+"'").size()>0){
+				mostraMenssagem("ERRO", "Já existe um usúario com este Email");
+			}
+			else{
 			dao.inserirUsuario(viewBean.getUsuario());
 			mostraMenssagem("SUCESSO", "Usuario inserido com sucesso.");
 
 			novoUsuario();
+			}
 
 		} catch (Exception e) {
 
@@ -337,6 +360,7 @@ public class UsuarioMB implements Serializable {
 	public void atualizarListaVideo() {
 		viewBean.setVideos(videoDAO.listarTodos());
 		addRecente(viewBean.getVideos());
+		setListaTamanho(viewBean.getVideos().size()-1);
 	}
 
 	// ADICIONADOS RECENTEMENTE
