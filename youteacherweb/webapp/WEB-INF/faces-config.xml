@@ -55,6 +55,11 @@
 			<to-view-id>/aluno/home.xhtml</to-view-id>
 			<redirect></redirect>
 		</navigation-case>
+		<navigation-case>
+			<from-outcome>perfil</from-outcome>
+			<to-view-id>/aluno/perfil.xhtml</to-view-id>
+			<redirect></redirect>
+		</navigation-case>
 	</navigation-rule>
 	
 	<!-- Navegação pagina do video -->
@@ -80,6 +85,20 @@
 	<!-- Navegação pagina do formulário -->
 	<navigation-rule>
 		<from-view-id>/aluno/addformulario.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>sair</from-outcome>
+			<to-view-id>/pages/home.xhtml</to-view-id>
+			<redirect></redirect>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>inicio</from-outcome>
+			<to-view-id>/aluno/home.xhtml</to-view-id>
+			<redirect></redirect>
+		</navigation-case>
+	</navigation-rule>
+	<!-- Navegação pagina do Perfil -->
+	<navigation-rule>
+		<from-view-id>/aluno/perfil.xhtml</from-view-id>
 		<navigation-case>
 			<from-outcome>sair</from-outcome>
 			<to-view-id>/pages/home.xhtml</to-view-id>

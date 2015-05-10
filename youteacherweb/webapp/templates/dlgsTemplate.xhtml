@@ -208,7 +208,7 @@
 			</p:commandButton>
 			<p:commandButton value="NÃO" styleClass="btnVerdeClaro"
 								id="btnNaoForm" action="inicio"
-								oncomplete="PF('dlgCriacaoForm').hide();"
+								oncomplete="PF('dlgCriacaoForm').hide();" actionListener="#{usuarioMB.atualizarListaVideo}"  update="@form"
 								style=" margin-top:10px;  width: 315px;height:50px ;background:#24b85b;color: white;border-color: #24b85b; font:18px 'Ruda',sans-serif;">
 			</p:commandButton>
 			

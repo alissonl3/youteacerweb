@@ -102,6 +102,8 @@ public class UsuarioMB implements Serializable {
 		int count = 0;
 		
 		if(viewBean.getFormulario1() != null){
+			viewBean.getFormulario1().setVideo(viewBean.getVideo());
+			System.out.println("Descricao video:"+viewBean.getFormulario1().getVideo().getTitulo());
 			formularioDAO.inserir(viewBean.getFormulario1());
 			count++;
 		}
@@ -270,6 +272,32 @@ public class UsuarioMB implements Serializable {
 		}
 
 	}
+	//Editar usuario
+	public void alterarUsuario(){
+		try{
+			if(viewBean.getUsuario().getNome().length()>0 && viewBean.getUsuario() != null){
+				viewBean.getUsuarioLogado().setNome(viewBean.getUsuario().getNome());
+			}
+			if(viewBean.getUsuario().getEmail().length()>0 && viewBean.getUsuario() != null){
+				viewBean.getUsuarioLogado().setEmail(viewBean.getUsuario().getEmail());
+			}
+			if(viewBean.getUsuario().getSenha().length()>0 && viewBean.getUsuario() != null){
+				viewBean.getUsuarioLogado().setSenha(viewBean.getUsuario().getSenha());
+			}
+			if(viewBean.getUsuario().getDataNascimento()!= null){
+				viewBean.getUsuarioLogado().setDataNascimento(viewBean.getUsuario().getDataNascimento());
+			}
+			dao.salvarUsuario(viewBean.getUsuarioLogado());
+			mostraMenssagem("SUCESSO", "Usuario alterado com sucesso.");
+			viewBean.setNomeUsuario(viewBean.getUsuarioLogado().getNome());
+			
+		}catch(Exception e){
+			mostraMenssagem("ERRO", "Houve um erro ao tentar alterar o usuario");
+			System.out.println("Erro "+ e);
+		}
+		
+	}
+	
 
 	// DELETAR UM NOVO ALUNO
 	public void deletar() {
@@ -339,7 +367,6 @@ public class UsuarioMB implements Serializable {
 			HttpSession session = (HttpSession) fc.getExternalContext()
 					.getSession(false);
 			session.setAttribute("objLogin", "logado");
-
 			return "logado";
 
 		} else {

@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+	
+	
+<ui:composition template="/templates/template_user.xhtml">
+	<ui:define name="conteudo">
+		<h:form id="frmPerfil">
+		<p:growl id="growl" showDetail="true" showSummary="true" autoUpdate="true" life="5000"/>
+
+		<h:outputText value="Nome" style="font-size:15px;" />
+		<br/>
+		<p:inputText id="nome" value="#{usuarioMB.viewBean.usuario.nome}"
+			style="height:30px ;" maxlength="50" size="30" />
+		<br/>
+		<h:outputText value="E-mail" style="font-size:15px;" />
+		<br/>
+		<p:inputText id="email"  label="EMAIL:"
+			style="height:30px ;" size="30"
+			validatorMessage="Email Inválido!"
+			value="#{usuarioMB.viewBean.usuario.email}">
+			<f:validateRegex
+				pattern="^[_A-Za-z0-9-\+]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$" />
+		</p:inputText>
+		<p:message for="email" display="text" />
+		<br/>
+		<h:outputText value="Data de nascimento" style="font-size:15px;"></h:outputText>
+		<br/>
+		<p:inputMask id="nascimento" mask="99/99/9999" style="height:30px ;"
+			label="Data Nascimento:" maxlength="10" 
+			value="#{usuarioMB.viewBean.usuario.dataNascimento}">
+			<f:convertDateTime pattern="d/M/yyyy" />
+		</p:inputMask>
+		<p:message for="nascimento" display="text"></p:message>
+
+
+		<br/>
+		<h:outputText value="Senha" style="font-size:15px;" />
+		<br/>
+		<p:password id="senha" style="height:30px ;"
+			value="#{usuarioMB.viewBean.usuario.senha}" size="30" 
+			match="senha2" validatorMessage="Confirme a senha" />
+		<p:message for="senha" display="text" />
+		<br/>
+		<h:outputText value="Confirmar senha" style="font-size:15px;" />
+		<br/>
+		<p:password id="senha2" style="height:30px ;"
+			value="#{usuarioMB.viewBean.usuario.senha}" size="30"  />
+		<br/>
+		<p:commandButton  value="SALVAR"
+			style="width: 315px;height:50px ; background:#24b85b;color: white;border-color: #24b85b;font:18px 'Ruda',sans-serif;"
+			actionListener="#{usuarioMB.alterarUsuario}" update="@form :frmHeaderUser :frmNomeUsuario"/>
+	
+		
+		
+		</h:form>
+	</ui:define>
+	
+</ui:composition>
+</html>

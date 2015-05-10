@@ -7,9 +7,6 @@
    <PROCESS-ITEM-OUTPUT ID="logado::#aluno#home.xhtml" NAME="output"
     PATH="/aluno/home.xhtml" TARGET="rules:#aluno#home.xhtml"
     TITLE="logado" model-entity="JSFProcessItemOutput"/>
-   <PROCESS-ITEM-OUTPUT ID="inicial::#pages#home.xhtml" NAME="output1"
-    PATH="/pages/home.xhtml" TARGET="rules:#pages#home.xhtml"
-    TITLE="inicial" model-entity="JSFProcessItemOutput"/>
   </PROCESS-ITEM>
  </PROCESS-ITEM>
  <PROCESS-ITEM NAME="rules:#aluno#home.xhtml" PATH="/aluno/home.xhtml"
@@ -19,14 +16,65 @@
    <PROCESS-ITEM-OUTPUT ID="sair::#pages#home.xhtml" NAME="output"
     PATH="/pages/home.xhtml" TARGET="rules:#pages#home.xhtml"
     TITLE="sair" model-entity="JSFProcessItemOutput"/>
-  </PROCESS-ITEM>
-  <PROCESS-ITEM ID="rules:#aluno#home.xhtml:1" NAME="item1"
-   PATH="/aluno/home.xhtml" model-entity="JSFProcessItem">
-   <PROCESS-ITEM-OUTPUT ID="video::#aluno#addvideo.xhtml" NAME="output"
+   <PROCESS-ITEM-OUTPUT ID="video::#aluno#addvideo.xhtml" NAME="output1"
     PATH="/aluno/addvideo.xhtml" TARGET="rules:#aluno#addvideo.xhtml"
     TITLE="video" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="inicio::#aluno#home.xhtml" NAME="output2"
+    PATH="/aluno/home.xhtml" TARGET="rules:#aluno#home.xhtml"
+    TITLE="inicio" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="perfil::#aluno#perfil.xhtml" NAME="output3"
+    PATH="/aluno/perfil.xhtml" TARGET="rules:#aluno#perfil.xhtml"
+    TITLE="perfil" model-entity="JSFProcessItemOutput"/>
   </PROCESS-ITEM>
  </PROCESS-ITEM>
  <PROCESS-ITEM NAME="rules:#aluno#addvideo.xhtml"
-  PATH="/aluno/addvideo.xhtml" SHAPE="256,177,0,0" model-entity="JSFProcessGroup"/>
+  PATH="/aluno/addvideo.xhtml" SHAPE="256,177,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#aluno#addvideo.xhtml:0" NAME="item"
+   PATH="/aluno/addvideo.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="sair::#pages#home.xhtml" NAME="output"
+    PATH="/pages/home.xhtml" TARGET="rules:#pages#home.xhtml"
+    TITLE="sair" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="inicio::#aluno#home.xhtml" NAME="output1"
+    PATH="/aluno/home.xhtml" TARGET="rules:#aluno#home.xhtml"
+    TITLE="inicio" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="formulario::#aluno#addformulario.xhtml"
+    NAME="output2" PATH="/aluno/addformulario.xhtml"
+    TARGET="rules:#aluno#addformulario.xhtml" TITLE="formulario" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#pages#adm.xhtml" PATH="/pages/adm.xhtml"
+  SHAPE="32,337,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#pages#adm.xhtml:0" NAME="item"
+   PATH="/pages/adm.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="logado2::#adm#home.xhtml" NAME="output"
+    PATH="/adm/home.xhtml" TARGET="rules:#adm#home.xhtml"
+    TITLE="logado2" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#adm#home.xhtml" PATH="/adm/home.xhtml"
+  SHAPE="240,353,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#aluno#addformulario.xhtml"
+  PATH="/aluno/addformulario.xhtml" SHAPE="560,193,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#aluno#addformulario.xhtml:0" NAME="item"
+   PATH="/aluno/addformulario.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="sair::#pages#home.xhtml" NAME="output"
+    PATH="/pages/home.xhtml" TARGET="rules:#pages#home.xhtml"
+    TITLE="sair" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="inicio::#aluno#home.xhtml" NAME="output1"
+    PATH="/aluno/home.xhtml" TARGET="rules:#aluno#home.xhtml"
+    TITLE="inicio" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#aluno#perfil.xhtml"
+  PATH="/aluno/perfil.xhtml" SHAPE="336,417,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#aluno#perfil.xhtml:0" NAME="item"
+   PATH="/aluno/perfil.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="sair::#pages#home.xhtml" NAME="output"
+    PATH="/pages/home.xhtml" TARGET="rules:#pages#home.xhtml"
+    TITLE="sair" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="inicio::#aluno#home.xhtml" NAME="output1"
+    PATH="/aluno/home.xhtml" TARGET="rules:#aluno#home.xhtml"
+    TITLE="inicio" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
 </PROCESS>

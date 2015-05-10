@@ -19,14 +19,18 @@
 				<!-- Divi botões -->
 				<div class="ui-grid-row">
 					<div class="ui-grid-col-1"></div>
-					<div class="ui-grid-col-2" style="padding-top: 10px; padding-bottom: 10px;">Olá,
-						#{usuarioMB.viewBean.nomeUsuario}</div>
+					<div class="ui-grid-col-2" style="padding-top: 10px; padding-bottom: 10px;">
+					<h:form id="frmNomeUsuario">
+					Olá,
+						#{usuarioMB.viewBean.nomeUsuario}
+						
+						</h:form></div>
 					<div class="ui-grid-col-5"></div>
 					<div class="ui-grid-col-3"
 						style="padding-top: 10px; padding-bottom: 10px; padding-left: 80px;">
 						<h:form id="frmHeaderUser">
 							<p:commandButton id="btnInicio" value="inicio" styleClass="bt" action="inicio" actionListener="#{usuarioMB.atualizarListaVideo}" update="@form :frmHeaderUser" />
-							<p:commandButton id="btnPerfil" value="perfil" styleClass="bt" />
+							<p:commandButton id="btnPerfil" value="perfil" styleClass="bt" action="perfil" update="@form :frmHeaderUser"/>
 							<p:commandButton id="btnSair" value="Sair" styleClass="bt"
 								update="@form :frmHeaderUser" action="#{usuarioMB.logOff}" />
 						</h:form>

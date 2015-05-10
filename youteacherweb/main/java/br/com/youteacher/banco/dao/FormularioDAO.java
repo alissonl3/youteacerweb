@@ -15,6 +15,8 @@ public class FormularioDAO {
 	public void inserir(Formulario formulario) {
 
 		try {
+			
+			
 			em = Banco.getIstancia().getEm();
 			em.getTransaction().begin();
 			em.persist(formulario);
@@ -48,5 +50,14 @@ public class FormularioDAO {
 		List<Formulario> formularios = query.getResultList();
 		return formularios;
 	}
+	
+	public List<Formulario> pesquisarPorVideo(Integer id){
+		  em = Banco.getIstancia().getEm();
+		  em.getTransaction().begin();
+		  Query q = em.createQuery("from " + Formulario.class.getSimpleName()
+		    + " where video_id =" + id);
+		  em.getTransaction().commit();
+		  return q.getResultList();
+		 }
 
 }
