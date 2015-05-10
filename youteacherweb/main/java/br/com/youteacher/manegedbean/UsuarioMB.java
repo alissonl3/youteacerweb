@@ -15,6 +15,8 @@ import javax.servlet.http.HttpSession;
 import org.primefaces.component.commandbutton.CommandButton;
 import org.primefaces.component.inputtextarea.InputTextarea;
 
+import com.mysql.jdbc.StringUtils;
+
 import br.com.youteacher.banco.dao.FormularioDAO;
 import br.com.youteacher.banco.dao.VideoDAO;
 import br.com.youteacher.banco.dao.UsuarioDAO;
@@ -92,24 +94,94 @@ public class UsuarioMB implements Serializable {
 
 	}
 
-	// MOSTRAR PERGUNTA 1
-	public void mostrarPergunta1() {
-		habilitarVisualizacaoPergunta1 = true;
-	}
+
 
 	// ADICIONAR FORMULÁRIO
 	public void inserirFormulario() {
+		
+		int count = 0;
+		
+		if(viewBean.getFormulario1() != null){
+			formularioDAO.inserir(viewBean.getFormulario1());
+			count++;
+		}
+		
+		if(habilitarVisualizacaoPergunta2 == true){
+			if(viewBean.getFormulario2() != null){
+				formularioDAO.inserir(viewBean.getFormulario2());
+				count++;
+			}
+		}
+		
+		if(habilitarVisualizacaoPergunta3 == true){
+			if(viewBean.getFormulario3() != null){
+				formularioDAO.inserir(viewBean.getFormulario3());
+				count++;
+			}
+		}
+		
+		if(habilitarVisualizacaoPergunta4 == true){
+			if(viewBean.getFormulario4() != null){
+				formularioDAO.inserir(viewBean.getFormulario4());
+				count++;
+			}
+		}
+		
+		if(habilitarVisualizacaoPergunta5 == true){
+			if(viewBean.getFormulario5() != null){
+				formularioDAO.inserir(viewBean.getFormulario6());
+				count++;
+			}
+		}
+		
+		if(habilitarVisualizacaoPergunta6 == true){
+			if(viewBean.getFormulario6() != null){
+				formularioDAO.inserir(viewBean.getFormulario6());
+				count++;
+			}
+		}
+		
+		if(habilitarVisualizacaoPergunta7 == true){
+			if(viewBean.getFormulario7() != null){
+				formularioDAO.inserir(viewBean.getFormulario7());
+				count++;
+			}
+		}
+		
+		if(habilitarVisualizacaoPergunta8 == true){
+			if(viewBean.getFormulario8() != null){
+				formularioDAO.inserir(viewBean.getFormulario8());
+				count++;
+			}
+		}
+		
+		if(habilitarVisualizacaoPergunta9 == true){
+			if(viewBean.getFormulario9() != null){
+				formularioDAO.inserir(viewBean.getFormulario9());
+				count++;
+			}
+		}
+		
+		if(habilitarVisualizacaoPergunta10 == true){
+			if(viewBean.getFormulario10() != null){
+				formularioDAO.inserir(viewBean.getFormulario10());
+				count++;
+			}
+		}
+		
+		if(count > 0){
+			
+			mostraMenssagem("SUCESSO", "Formulário adicionado com sucesso!");
+			
+		}
 
 		
 	}
 
 	// GERAR NOVOS FORMULARIOS
-	public void novoFormulario1() {		
-		if (habilitarVisualizacaoPergunta1 == true) {
-			 
+	public void novoFormulario1() {	
+		
 			viewBean.setFormulario1(new Formulario());
-
-		}
 	}
 	public void novoFormulario2() {		
 		if (habilitarVisualizacaoPergunta2 == true) {
