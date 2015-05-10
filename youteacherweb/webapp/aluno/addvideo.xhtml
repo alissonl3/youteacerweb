@@ -49,30 +49,16 @@
 
 							<p:commandButton value="CONFIRMAR" styleClass="btnVerdeClaro"
 								style="width: 315px;height:50px ;background:#24b85b;color: white;border-color: #24b85b; font:18px 'Ruda',sans-serif;"
-								actionListener="#{usuarioMB.inserirVideo}" update="@form" />
+								actionListener="#{usuarioMB.inserirVideo}" update="@form :frmDlgTemplate" 
+								oncomplete="PF('dlgCriacaoForm').show();"/>
 						</h:panelGrid>
 					</div>
 
-					<!-- Imagem Button -->
-					<div class="ui-grid-col-1">
-						<p:commandButton update="@form :pnlQuestionario" value=""
-							id="btnAddQuest"
-							style="width: 105px;height:105px ; margin-top:50px; background: url(../resources/imagens/registro.png) no-repeat; border-color: white; font:18px 'Ruda',sans-serif;">
-							<f:setPropertyActionListener
-								target="#{usuarioMB.habilitarVisualizacaoQuestionario}"
-								value="#{true}" />
-						</p:commandButton>
 
-					</div>
-					<div class="ui-grid-col-1"></div>
-
-
+					<div class="ui-grid-col-2"></div>
 				</div>
 			</div>
 		</h:form>
-
-		<!-- Painel Oculto -->
-		<ui:include src="../aluno/addformulario.xhtml"></ui:include>
 
 		<!-- Dialogs -->
 		<ui:include src="../templates/dlgsTemplate.xhtml"></ui:include>
