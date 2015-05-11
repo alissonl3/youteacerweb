@@ -10,8 +10,9 @@
 <h:form id="frmDlgTemplate">
 
 	<!-- Menssagem sobre formulário -->
-	<p:dialog id="dlgTemplateFormulario" widgetVar="dlgTemplateFormulario"  resizable="false"
-		width="500px" height="200px" modal="true" showHeader="false">
+	<p:dialog id="dlgTemplateFormulario" widgetVar="dlgTemplateFormulario"
+		resizable="false" width="500px" height="200px" modal="true"
+		showHeader="false">
 		<font style="color: #24b85b; font-size: 30px; float: left;"> <b>Formulários</b>
 		</font>
 		<p:commandButton styleClass="corClaro" icon="ui-icon-close"
@@ -21,27 +22,28 @@
 		<br />
 		<br />
 		<div class="row">
-		<!-- Desenho -->
-		<div class="ui-grid-col-3">
-			<img src="../resources/imagens/aluno4.png"
-				style="float: left; max-width: 100%; height: auto;" />
-		</div>
-		<div class="ui-grid-col-9">
-		<div style="text-align: justify; text-decoration: none; color: graytext; 
-		margin-top: 30px;">
-			<h:outputText
-				value="Os formulários são desenvolvidos pelos próprios autores das video-aulas, sendo que 
+			<!-- Desenho -->
+			<div class="ui-grid-col-3">
+				<img src="../resources/imagens/aluno4.png"
+					style="float: left; max-width: 100%; height: auto;" />
+			</div>
+			<div class="ui-grid-col-9">
+				<div
+					style="text-align: justify; text-decoration: none; color: graytext; margin-top: 30px;">
+					<h:outputText
+						value="Os formulários são desenvolvidos pelos próprios autores das video-aulas, sendo que 
 		será do critério dele criar ou não um questionário para o assunto ensinado. Lembrando 
 		que os formulários são validados pelos ADM'S." />
-		</div>
-		</div>
+				</div>
+			</div>
 		</div>
 
 	</p:dialog>
 
 	<!-- Menssagem sobre video -->
-	<p:dialog id="dlgTemplateVideo" widgetVar="dlgTemplateVideo"  resizable="false"
-		width="500px" height="200px" modal="true" showHeader="false">
+	<p:dialog id="dlgTemplateVideo" widgetVar="dlgTemplateVideo"
+		resizable="false" width="500px" height="200px" modal="true"
+		showHeader="false">
 		<font style="color: #24b85b; font-size: 30px; float: left;"> <b>Video-aulas</b>
 		</font>
 		<p:commandButton styleClass="corClaro" icon="ui-icon-close"
@@ -52,27 +54,27 @@
 		<br />
 
 		<div class="row">
-		<!-- Desenho -->
-		<div class="ui-grid-col-3">
-			<img src="../resources/imagens/aluno4.png"
-				style="float: left; max-width: 100%; height: auto;" />
-		</div>
-		<div class="ui-grid-col-9">
-		<div style="text-align: justify; text-decoration: none; color: graytext; 
-		margin-top: 30px;">
-			<h:outputText
-				value="	As videos aulas são desenvolvidas pelos próprios usuarios, havendo assim um maior 
+			<!-- Desenho -->
+			<div class="ui-grid-col-3">
+				<img src="../resources/imagens/aluno4.png"
+					style="float: left; max-width: 100%; height: auto;" />
+			</div>
+			<div class="ui-grid-col-9">
+				<div
+					style="text-align: justify; text-decoration: none; color: graytext; margin-top: 30px;">
+					<h:outputText
+						value="	As videos aulas são desenvolvidas pelos próprios usuarios, havendo assim um maior 
 		compartilhamento de informações de diversas areas. Lembrando que todos os videos
 		são validados pelos ADM'S." />
-		</div>
-		</div>
+				</div>
+			</div>
 		</div>
 
 	</p:dialog>
 
 	<!-- Menssagem adicionar video -->
-	<p:dialog id="dlgAdiconarVideo" widgetVar="dlgAdiconarVideo" resizable="false"
-		dynamic="true" modal="true" showHeader="false">
+	<p:dialog id="dlgAdiconarVideo" widgetVar="dlgAdiconarVideo"
+		resizable="false" dynamic="true" modal="true" showHeader="false">
 		<font style="color: #24b85b; font-size: 30px; float: left;"> <b>Adicionar
 				Video</b>
 		</font>
@@ -84,38 +86,38 @@
 
 		<!-- Formulário para cadastro de video -->
 		<div class="row">
-		<!-- Formulário -->
-		<div class="ui-grid-col-9">
-		<h:panelGrid columns="1" cellpadding="3">
-			<h:outputText value="Preenche todos os campos abaixo."
-				style="font-size:15px; width: 315px; height:50px ;" />
-			<h:outputText value=" " />
-			<h:outputText value="Titulo:" style="font-size:15px; " />
+			<!-- Formulário -->
+			<div class="ui-grid-col-9">
+				<h:panelGrid columns="1" cellpadding="3">
+					<h:outputText value="Preenche todos os campos abaixo."
+						style="font-size:15px; width: 315px; height:50px ;" />
+					<h:outputText value=" " />
+					<h:outputText value="Titulo:" style="font-size:15px; " />
 
-			<p:inputText id="iptTituloCadastro" label="Titulo:" size="30"
-			 required="true" value="#{usuarioMB.viewBean.usuario.email}" />
-			<h:outputText value="URL:" style="font-size:15px; " />
-			<p:inputText id="iptUrlCadastro"
-			  required="true" value="#{usuarioMB.viewBean.usuario.senha}" size="30" />
+					<p:inputText id="iptTituloCadastro" label="Titulo:" size="30"
+						required="true" value="#{usuarioMB.viewBean.usuario.email}" />
+					<h:outputText value="URL:" style="font-size:15px; " />
+					<p:inputText id="iptUrlCadastro" required="true"
+						value="#{usuarioMB.viewBean.usuario.senha}" size="30" />
 
-			<p:commandButton update="@form" value="CONFIRMAR"
-				styleClass="btnVerdeClaro" 
-				style="width: 315px;height:50px ;background:#24b85b;color: white;border-color: #24b85b; font:18px 'Ruda',sans-serif;" />
-		</h:panelGrid>
-		</div>
-		<!-- Imagem Button -->
-		<div class="ui-grid-col-3">
-		<p:commandButton update="@form" value=""
-				style="width: 105px;height:105px ; margin-top:50px; background: url(../resources/imagens/registro.png) no-repeat; border-color: white; font:18px 'Ruda',sans-serif;" 
-				oncomplete="PF('dlgTemplateFormulario').show();"/>
-				
-		</div>
+					<p:commandButton update="@form" value="CONFIRMAR"
+						styleClass="btnVerdeClaro"
+						style="width: 315px;height:50px ;background:#24b85b;color: white;border-color: #24b85b; font:18px 'Ruda',sans-serif;" />
+				</h:panelGrid>
+			</div>
+			<!-- Imagem Button -->
+			<div class="ui-grid-col-3">
+				<p:commandButton update="@form" value=""
+					style="width: 105px;height:105px ; margin-top:50px; background: url(../resources/imagens/registro.png) no-repeat; border-color: white; font:18px 'Ruda',sans-serif;"
+					oncomplete="PF('dlgTemplateFormulario').show();" />
+
+			</div>
 		</div>
 	</p:dialog>
 
 	<!-- Dialgo do Pesquisa Avançada -->
-	<p:dialog id="dlgPesquisaVideoAvan" widgetVar="dlgPesquisaVideoAvan"  resizable="false"
-		dynamic="true" modal="true" showHeader="false">
+	<p:dialog id="dlgPesquisaVideoAvan" widgetVar="dlgPesquisaVideoAvan"
+		resizable="false" dynamic="true" modal="true" showHeader="false">
 		<font style="color: #24b85b; font-size: 30px; float: left;"> <b>Pesquisar
 				Video</b>
 		</font>
@@ -144,78 +146,94 @@
 		</h:panelGrid>
 
 	</p:dialog>
-	
+
 	<!-- Dialgo do Palyer do video -->
-	<p:dialog id="dlgPlayerVideo" widgetVar="dlgPlayerVideo"  resizable="false"
-		dynamic="true" modal="true" showHeader="false">
+	<p:dialog id="dlgPlayerVideo" widgetVar="dlgPlayerVideo"
+		resizable="false" dynamic="true" modal="true" showHeader="false">
 		<p:commandButton styleClass="corClaro" icon="ui-icon-close"
 			oncomplete="PF('dlgPlayerVideo').hide();"
 			style=" float: right; background:white;" />
 
 		<br />
-		<br />
+
 		<!-- Titulo do video -->
 		<center>
-			<h1 style="text-align: center; color: rgb(202, 60, 60); font-size: 30px; font-weight: bold;"><h:outputText value="#{usuarioMB.viewBean.videoSelecionado.titulo}"/> </h1>
+			<h1
+				style="text-align: center; color: rgb(202, 60, 60); font-size: 30px; font-weight: bold;">
+				<h:outputText value="#{usuarioMB.viewBean.videoSelecionado.titulo}" />
+			</h1>
 		</center>
 		<div style="width: 100%;">
-		<p:commandButton styleClass="corClaro" icon="ui-icon-close"
-			style=" float: left; background:white;" />	
-		<center style="background: black;">
-			<h3 style="text-align: center; color: graytext; font-size: 20px; font-weight: bold;">Postado por #{usuarioMB.viewBean.videoSelecionado.usuario.nome}</h3>
-		</center>
-		<p:commandButton styleClass="corClaro" icon="ui-icon-close"
-			style=" float: right; background:white;" />	
+			<div style="width: 80%; float: left;">
+				<center>
+					<h3
+						style="text-align: center; color: graytext; font-size: 20px; font-weight: bold;">Postado
+						por #{usuarioMB.viewBean.videoSelecionado.usuario.nome}</h3>
+				</center>
+			</div>
+			<div style="width: 20%; float: right;">
+				<p:commandButton rendered="#{usuarioMB.habilitarVisualizacaoAdicao}" styleClass="corClaro" value=" "
+					style="  width: 50px;   height:50px ; margin-top:5px; background: url(../resources/imagens/addForm.png) no-repeat; border-color: white; font:18px 'Ruda',sans-serif;" />
+				<p:commandButton rendered="#{usuarioMB.hbilitarVisualizacaoEdicao}" styleClass="corClaro" value=" "
+					style=" width: 50px;height:50px ; margin-top:5px; background: url(../resources/imagens/edit.png) no-repeat; border-color: white; font:18px 'Ruda',sans-serif;" />
+			</div>
 		</div>
 		<div style="clear: both;"></div>
-		<hr></hr>
-		<!-- Tag do video -->
-		<div style="height: 400px; width: 600px; margin: auto; margin-top: 20px; margin-bottom: 20px;">
 
-				<p:media value="#{usuarioMB.viewBean.videoSelecionado.url}" width="600"
-					height="400" player="flash" />
+		<!-- Tag do video -->
+		<div
+			style="height: 400px; width: 600px; margin: auto; margin-top: 20px; margin-bottom: 20px;">
+
+			<p:media value="#{usuarioMB.viewBean.videoSelecionado.url}"
+				width="600" height="400" player="flash" />
 
 		</div>
-		<hr></hr>
+		<center>
+			<p:commandButton rendered="#{usuarioMB.habilitarVisualizacaoPraticar}" value="VAMOS PRATICAR" styleClass="btnVerdeClaro"
+				id="btnPraticar" update="@form"
+				style=" margin-top:10px;  width: 315px;height:50px ;background:#24b85b;color: white;border-color: #24b85b; font:18px 'Ruda',sans-serif;">
+			</p:commandButton>
+		</center>
 	</p:dialog>
-	
+
 	<!-- Menssagem sobre formulário -->
-	<p:dialog id="dlgCriacaoForm" widgetVar="dlgCriacaoForm"  resizable="false"
-		width="500px" height="220px" modal="true" showHeader="false">
+	<p:dialog id="dlgCriacaoForm" widgetVar="dlgCriacaoForm"
+		resizable="false" width="500px" height="220px" modal="true"
+		showHeader="false">
 		<font style="color: #24b85b; font-size: 30px; float: left;"> <b>Notificação</b>
 		</font>
 
 		<br />
 		<br />
 		<div class="row">
-		<!-- Desenho -->
-		<div class="ui-grid-col-3">
-			<img src="../resources/imagens/aluno4.png"
-				style="float: left; max-width: 100%; height: auto;" />
-		</div>
-		<div class="ui-grid-col-9">
-		<div style="text-align: justify; text-decoration: none; color: graytext; 
-		margin-top: 30px;">
-		
-		<h:outputText
-				value="Deseja criar formulário para esse video?" />
-		
-			<!-- Botões de Confirmação -->
-			<p:commandButton value="SIM" styleClass="btnVerdeClaro"
-								id="btnSimForm" action="formulario"
-								oncomplete="PF('dlgCriacaoForm').hide();"
-								style=" margin-top:10px;  width: 315px;height:50px ;background:#24b85b;color: white;border-color: #24b85b; font:18px 'Ruda',sans-serif;">							
-			</p:commandButton>
-			<p:commandButton value="NÃO" styleClass="btnVerdeClaro"
-								id="btnNaoForm" action="inicio"
-								oncomplete="PF('dlgCriacaoForm').hide();" actionListener="#{usuarioMB.atualizarListaVideo}"  update="@form"
-								style=" margin-top:10px;  width: 315px;height:50px ;background:#24b85b;color: white;border-color: #24b85b; font:18px 'Ruda',sans-serif;">
-			</p:commandButton>
-			
-			
-			
-		</div>
-		</div>
+			<!-- Desenho -->
+			<div class="ui-grid-col-3">
+				<img src="../resources/imagens/aluno4.png"
+					style="float: left; max-width: 100%; height: auto;" />
+			</div>
+			<div class="ui-grid-col-9">
+				<div
+					style="text-align: justify; text-decoration: none; color: graytext; margin-top: 30px;">
+
+					<h:outputText value="Deseja criar formulário para esse video?" />
+
+					<!-- Botões de Confirmação -->
+					<p:commandButton value="SIM" styleClass="btnVerdeClaro"
+						id="btnSimForm" action="formulario"
+						oncomplete="PF('dlgCriacaoForm').hide();"
+						style=" margin-top:10px;  width: 315px;height:50px ;background:#24b85b;color: white;border-color: #24b85b; font:18px 'Ruda',sans-serif;">
+					</p:commandButton>
+					<p:commandButton value="NÃO" styleClass="btnVerdeClaro"
+						id="btnNaoForm" action="inicio"
+						oncomplete="PF('dlgCriacaoForm').hide();"
+						actionListener="#{usuarioMB.atualizarListaVideo}" update="@form"
+						style=" margin-top:10px;  width: 315px;height:50px ;background:#24b85b;color: white;border-color: #24b85b; font:18px 'Ruda',sans-serif;">
+					</p:commandButton>
+
+
+
+				</div>
+			</div>
 		</div>
 
 	</p:dialog>

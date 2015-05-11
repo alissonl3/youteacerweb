@@ -32,11 +32,13 @@ public class UsuarioMB implements Serializable {
 	private FormularioDAO formularioDAO;
 
 	private UsuarioViewBean viewBean;
+	private List<Video> videos;
+	
 
 	public UsuarioMB() {
 	}
 
-	private List<Video> videos;
+
 
 	// Formulário
 	private boolean habilitarFormulario;
@@ -53,19 +55,19 @@ public class UsuarioMB implements Serializable {
 	private boolean habilitarVisualizacaoPergunta8;
 	private boolean habilitarVisualizacaoPergunta9;
 	private boolean habilitarVisualizacaoPergunta10;
+	
+	//opções video
+	private boolean habilitarVisualizacaoAdicao;
+	private boolean hbilitarVisualizacaoEdicao;
+	private boolean habilitarVisualizacaoPraticar;
 
 	// video
 	private Video videoSelecionado;
 	private int listaTamanho;
 	
+	private Video videoSelecionadoFormulario;
+	
 
-	public int getListaTamanho() {
-		return listaTamanho;
-	}
-
-	public void setListaTamanho(int listaTamanho) {
-		this.listaTamanho = listaTamanho;
-	}
 
 	@PostConstruct
 	private void initPage() {
@@ -93,6 +95,10 @@ public class UsuarioMB implements Serializable {
 			viewBean.getVideo().setUsuario(viewBean.getUsuarioLogado());
 			videoDAO.inserir(viewBean.getVideo());
 			atualizarListaVideo();
+			
+			//passar video inseido para o formulario
+			videoSelecionadoFormulario = viewBean.getVideo();
+			
 			novoVideo();
 
 			mostraMenssagem("SUCESSO", "Video inserido com sucesso!");
@@ -196,6 +202,37 @@ public class UsuarioMB implements Serializable {
 			
 		}
 
+		
+	}
+	
+	//VERIFICAR EXISTENCIA DE FORMULÁRIO DO VIDEO
+	public void verificarFormularioVideo(){
+		
+		List<Formulario> formularioExistente = new ArrayList<Formulario>();
+		
+		try{
+			
+			formularioExistente = formularioDAO.pesquisarPorVideo(videoSelecionado.getId());
+			
+			if(!formularioExistente.isEmpty()){
+				habilitarVisualizacaoAdicao = false;
+				hbilitarVisualizacaoEdicao = true;
+				habilitarVisualizacaoPraticar = true;
+			}
+			else{
+				habilitarVisualizacaoAdicao = true;
+				hbilitarVisualizacaoEdicao = false;
+				habilitarVisualizacaoPraticar = false;
+				
+			}
+			
+			
+		}catch(Exception e){
+			
+			System.out.println("Houve um erro " + e);
+			
+		}
+		
 		
 	}
 
@@ -544,5 +581,51 @@ public class UsuarioMB implements Serializable {
 	public void setViewBean(UsuarioViewBean viewBean) {
 		this.viewBean = viewBean;
 	}
+	
+
+	public int getListaTamanho() {
+		return listaTamanho;
+	}
+
+	public void setListaTamanho(int listaTamanho) {
+		this.listaTamanho = listaTamanho;
+	}
+
+	public Video getVideoSelecionadoFormulario() {
+		return videoSelecionadoFormulario;
+	}
+
+	public void setVideoSelecionadoFormulario(Video videoSelecionadoFormulario) {
+		this.videoSelecionadoFormulario = videoSelecionadoFormulario;
+	}
+
+	public boolean isHabilitarVisualizacaoAdicao() {
+		return habilitarVisualizacaoAdicao;
+	}
+
+	public void setHabilitarVisualizacaoAdicao(boolean habilitarVisualizacaoAdicao) {
+		this.habilitarVisualizacaoAdicao = habilitarVisualizacaoAdicao;
+	}
+
+	public boolean isHbilitarVisualizacaoEdicao() {
+		return hbilitarVisualizacaoEdicao;
+	}
+
+	public void setHbilitarVisualizacaoEdicao(boolean hbilitarVisualizacaoEdicao) {
+		this.hbilitarVisualizacaoEdicao = hbilitarVisualizacaoEdicao;
+	}
+
+	public boolean isHabilitarVisualizacaoPraticar() {
+		return habilitarVisualizacaoPraticar;
+	}
+
+	public void setHabilitarVisualizacaoPraticar(
+			boolean habilitarVisualizacaoPraticar) {
+		this.habilitarVisualizacaoPraticar = habilitarVisualizacaoPraticar;
+	}
+	
+	
+	
+	
 
 }

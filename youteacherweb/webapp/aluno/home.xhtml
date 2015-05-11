@@ -30,7 +30,7 @@
 							filter="true"
 							style="width: 300px; background: #F0FFFF; border:#F0FFFF; color:graytext; font-size:17px;"
 							scrollHeight="400" filterMatchMode="contains">
-							<p:ajax event="click" update="@form :frmDlgTemplate" oncomplete="PF('dlgPlayerVideo').show()"/>
+							<p:ajax event="click" listener="#{usuarioMB.verificarFormularioVideo}" update="@form :frmDlgTemplate" oncomplete="PF('dlgPlayerVideo').show()"/>
 							<f:selectItems value="#{usuarioMB.viewBean.videos}" var="videos"
 								itemLabel="#{videos.titulo}" itemValue="#{videos}">
 							</f:selectItems>
