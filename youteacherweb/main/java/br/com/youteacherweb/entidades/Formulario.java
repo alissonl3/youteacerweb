@@ -36,6 +36,7 @@ public class Formulario  implements Serializable{
 	@Column(name="resposta_certa")
 	private String resposta_certa;
 	//mappedBy indica qual tabela será a dona do relacionamento, no nosso caso setá a tabela Video, ela irá ter a fk da tabela Formulario
+	
 	@ManyToOne
 	private Video video;
 	

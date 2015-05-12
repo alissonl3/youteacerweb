@@ -53,9 +53,10 @@ public class VideoDAO {
 		em = Banco.getIstancia().getEm();
 		em.getTransaction().begin();
 		Query q = em.createQuery("from " + Video.class.getSimpleName()
-				+ " where id =" + id);
+				+ " where id = " + id);
 		em.getTransaction().commit();
 		return (Video)q.getSingleResult();
 	}
+	
 
 }

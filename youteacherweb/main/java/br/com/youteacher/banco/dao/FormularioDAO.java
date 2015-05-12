@@ -52,10 +52,10 @@ public class FormularioDAO {
 	public List<Formulario> pesquisarPorVideo(Integer id){
 		  em = Banco.getIstancia().getEm();
 		  em.getTransaction().begin();
-		  Query q = em.createQuery("from " + Formulario.class.getSimpleName()
-		    + " where video_id =" + id);
+		  Query q = em.createQuery(" select f from formulario f where f.video = "+ id);
 		  em.getTransaction().commit();
 		  return q.getResultList();
 		 }
+	
 
 }

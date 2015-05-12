@@ -115,38 +115,6 @@
 		</div>
 	</p:dialog>
 
-	<!-- Dialgo do Pesquisa Avançada -->
-	<p:dialog id="dlgPesquisaVideoAvan" widgetVar="dlgPesquisaVideoAvan"
-		resizable="false" dynamic="true" modal="true" showHeader="false">
-		<font style="color: #24b85b; font-size: 30px; float: left;"> <b>Pesquisar
-				Video</b>
-		</font>
-		<p:commandButton styleClass="corClaro" icon="ui-icon-close"
-			oncomplete="PF('dlgPesquisaVideoAvan').hide();"
-			style=" float: right; background:white;" />
-
-		<br />
-		<br />
-
-		<h:panelGrid columns="1" cellpadding="3">
-			<h:outputText value="Pesquise pelos campos abaixo."
-				style="font-size:15px; width: 315px; height:50px ;" />
-			<h:outputText value=" " />
-			<h:outputText value="Titulo:" style="font-size:15px; " />
-
-			<p:inputText id="iptTitulo" label="Titulo:" size="30"
-				value="#{usuarioMB.viewBean.usuario.email}" />
-			<h:outputText value="Autor:" style="font-size:15px; " />
-			<p:inputText id="iptAutor"
-				value="#{usuarioMB.viewBean.usuario.senha}" size="30" />
-
-			<p:commandButton update="@form" value="PESQUISAR"
-				styleClass="btnVerdeClaro"
-				style="width: 315px;height:50px ;background:#24b85b;color: white;border-color: #24b85b; font:18px 'Ruda',sans-serif;" />
-		</h:panelGrid>
-
-	</p:dialog>
-
 	<!-- Dialgo do Palyer do video -->
 	<p:dialog id="dlgPlayerVideo" widgetVar="dlgPlayerVideo"
 		resizable="false" dynamic="true" modal="true" showHeader="false">

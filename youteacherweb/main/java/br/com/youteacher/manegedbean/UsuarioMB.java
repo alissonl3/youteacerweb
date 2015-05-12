@@ -7,15 +7,8 @@ import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
-import javax.faces.component.html.HtmlOutputText;
-import javax.faces.component.html.HtmlPanelGrid;
 import javax.faces.context.FacesContext;
 import javax.servlet.http.HttpSession;
-
-import org.primefaces.component.commandbutton.CommandButton;
-import org.primefaces.component.inputtextarea.InputTextarea;
-
-import com.mysql.jdbc.StringUtils;
 
 import br.com.youteacher.banco.dao.FormularioDAO;
 import br.com.youteacher.banco.dao.VideoDAO;
@@ -209,10 +202,14 @@ public class UsuarioMB implements Serializable {
 	public void verificarFormularioVideo(){
 		
 		List<Formulario> formularioExistente = new ArrayList<Formulario>();
-		
+
 		try{
-			
-			formularioExistente = formularioDAO.pesquisarPorVideo(videoSelecionado.getId());
+		
+		
+			formularioExistente = formularioDAO.pesquisarPorVideo(viewBean.getVideoSelecionado().getId());
+			for(int i=0;i<formularioExistente.size();i++){
+			System.out.println("Formularios:"+formularioExistente.get(i).getId());
+			}
 			
 			if(!formularioExistente.isEmpty()){
 				habilitarVisualizacaoAdicao = false;
@@ -335,18 +332,6 @@ public class UsuarioMB implements Serializable {
 	//Editar usuario
 	public void alterarUsuario(){
 		try{
-			if(viewBean.getUsuario().getNome().length()>0 && viewBean.getUsuario() != null){
-				viewBean.getUsuarioLogado().setNome(viewBean.getUsuario().getNome());
-			}
-			if(viewBean.getUsuario().getEmail().length()>0 && viewBean.getUsuario() != null){
-				viewBean.getUsuarioLogado().setEmail(viewBean.getUsuario().getEmail());
-			}
-			if(viewBean.getUsuario().getSenha().length()>0 && viewBean.getUsuario() != null){
-				viewBean.getUsuarioLogado().setSenha(viewBean.getUsuario().getSenha());
-			}
-			if(viewBean.getUsuario().getDataNascimento()!= null){
-				viewBean.getUsuarioLogado().setDataNascimento(viewBean.getUsuario().getDataNascimento());
-			}
 			dao.salvarUsuario(viewBean.getUsuarioLogado());
 			mostraMenssagem("SUCESSO", "Usuario alterado com sucesso.");
 			viewBean.setNomeUsuario(viewBean.getUsuarioLogado().getNome());
@@ -422,6 +407,7 @@ public class UsuarioMB implements Serializable {
 
 			viewBean.setUsuarioLogado(viewBean.getUsuarios().get(0));
 			viewBean.setNomeUsuario(viewBean.getUsuarios().get(0).getNome());
+			//viewBean.setUsuarioEditado(viewBean.getUsuarios().get(0));
 			atualizarListaVideo();
 
 			FacesContext fc = FacesContext.getCurrentInstance();
