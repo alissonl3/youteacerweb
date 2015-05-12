@@ -5,6 +5,7 @@ import java.util.List;
 import javax.persistence.*;
 
 import br.com.youteacher.banco.Banco;
+import br.com.youteacherweb.entidades.Formulario;
 import br.com.youteacherweb.entidades.Usuario;
 import br.com.youteacherweb.entidades.Video;
 
@@ -57,6 +58,13 @@ public class VideoDAO {
 		em.getTransaction().commit();
 		return (Video)q.getSingleResult();
 	}
+	public List<Video> pesquisarPorUsuario(Integer id){
+		  em = Banco.getIstancia().getEm();
+		  em.getTransaction().begin();
+		  Query q = em.createQuery(" select v from video v where v.usuario = "+ id);
+		  em.getTransaction().commit();
+		  return q.getResultList();
+		 }
 	
 
 }
