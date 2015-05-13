@@ -23,8 +23,10 @@ public class Video implements Serializable {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "id")
 	private Integer id;
+	
 	@Column(name = "url")
 	private String url;
+	
 	@Column(name = "titulo")
 	private String titulo;
 

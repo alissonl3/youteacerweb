@@ -61,7 +61,7 @@ public class VideoDAO {
 	public List<Video> pesquisarPorUsuario(Integer id){
 		  em = Banco.getIstancia().getEm();
 		  em.getTransaction().begin();
-		  Query q = em.createQuery(" select v from video v where v.usuario = "+ id);
+		  Query q = em.createQuery(" select v from Video v where v.usuario = "+ id);
 		  em.getTransaction().commit();
 		  return q.getResultList();
 		 }

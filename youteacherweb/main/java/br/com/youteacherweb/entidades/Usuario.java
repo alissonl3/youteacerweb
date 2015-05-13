@@ -26,15 +26,20 @@ public class Usuario implements Serializable{
 	@GeneratedValue (strategy = GenerationType.AUTO)
 	@Column(name="id")
 	private Integer id;
+	
 	@Column(name="nome")
 	private String nome;
+	
 	@Column(name="email")
 	private String email;
+	
 	@Temporal(TemporalType.DATE)
 	@Column(name="dataNascimento")
 	private Date dataNascimento;
+	
 	@Column(name="senha")
 	private String senha;
+	
 	@Column(name="adm")
 	private String adm;
 	

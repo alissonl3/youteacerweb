@@ -26,12 +26,9 @@ public class UsuarioMB implements Serializable {
 
 	private UsuarioViewBean viewBean;
 	private List<Video> videos;
-	
 
 	public UsuarioMB() {
 	}
-
-
 
 	// Formulário
 	private boolean habilitarFormulario;
@@ -48,8 +45,8 @@ public class UsuarioMB implements Serializable {
 	private boolean habilitarVisualizacaoPergunta8;
 	private boolean habilitarVisualizacaoPergunta9;
 	private boolean habilitarVisualizacaoPergunta10;
-	
-	//opções video
+
+	// opções video
 	private boolean habilitarVisualizacaoAdicao;
 	private boolean hbilitarVisualizacaoEdicao;
 	private boolean habilitarVisualizacaoPraticar;
@@ -57,10 +54,8 @@ public class UsuarioMB implements Serializable {
 	// video
 	private Video videoSelecionado;
 	private int listaTamanho;
-	
-	private Video videoSelecionadoFormulario;
-	
 
+	private Video videoSelecionadoFormulario;
 
 	@PostConstruct
 	private void initPage() {
@@ -88,10 +83,10 @@ public class UsuarioMB implements Serializable {
 			viewBean.getVideo().setUsuario(viewBean.getUsuarioLogado());
 			videoDAO.inserir(viewBean.getVideo());
 			atualizarListaVideo();
-			
-			//passar video inseido para o formulario
+
+			// passar video inseido para o formulario
 			videoSelecionadoFormulario = viewBean.getVideo();
-			
+
 			novoVideo();
 
 			mostraMenssagem("SUCESSO", "Video inserido com sucesso!");
@@ -103,200 +98,262 @@ public class UsuarioMB implements Serializable {
 
 	}
 
-
-
 	// ADICIONAR FORMULÁRIO
 	public void inserirFormulario() {
-		
+
 		int count = 0;
-		
-		if(viewBean.getFormulario1() != null){
-			
-			viewBean.getFormulario1().setVideo(viewBean.getVideos().get(listaTamanho));
+
+		if (viewBean.getFormulario1() != null) {
+
+			viewBean.getFormulario1().setVideo(
+					viewBean.getVideos().get(listaTamanho));
 			formularioDAO.inserir(viewBean.getFormulario1());
 			count++;
 		}
-		
-		if(habilitarVisualizacaoPergunta2 == true){
-			if(viewBean.getFormulario2() != null){
-				viewBean.getFormulario2().setVideo(viewBean.getVideos().get(listaTamanho));
+
+		if (habilitarVisualizacaoPergunta2 == true) {
+			if (viewBean.getFormulario2() != null) {
+				viewBean.getFormulario2().setVideo(
+						viewBean.getVideos().get(listaTamanho));
 				formularioDAO.inserir(viewBean.getFormulario2());
 				count++;
 			}
 		}
-		
-		if(habilitarVisualizacaoPergunta3 == true){
-			if(viewBean.getFormulario3() != null){
-				viewBean.getFormulario3().setVideo(viewBean.getVideos().get(listaTamanho));
+
+		if (habilitarVisualizacaoPergunta3 == true) {
+			if (viewBean.getFormulario3() != null) {
+				viewBean.getFormulario3().setVideo(
+						viewBean.getVideos().get(listaTamanho));
 				formularioDAO.inserir(viewBean.getFormulario3());
 				count++;
 			}
 		}
-		
-		if(habilitarVisualizacaoPergunta4 == true){
-			if(viewBean.getFormulario4() != null){
-				viewBean.getFormulario4().setVideo(viewBean.getVideos().get(listaTamanho));
+
+		if (habilitarVisualizacaoPergunta4 == true) {
+			if (viewBean.getFormulario4() != null) {
+				viewBean.getFormulario4().setVideo(
+						viewBean.getVideos().get(listaTamanho));
 				formularioDAO.inserir(viewBean.getFormulario4());
 				count++;
 			}
 		}
-		
-		if(habilitarVisualizacaoPergunta5 == true){
-			if(viewBean.getFormulario5() != null){
-				viewBean.getFormulario5().setVideo(viewBean.getVideos().get(listaTamanho));
+
+		if (habilitarVisualizacaoPergunta5 == true) {
+			if (viewBean.getFormulario5() != null) {
+				viewBean.getFormulario5().setVideo(
+						viewBean.getVideos().get(listaTamanho));
 				formularioDAO.inserir(viewBean.getFormulario6());
 				count++;
 			}
 		}
-		
-		if(habilitarVisualizacaoPergunta6 == true){
-			if(viewBean.getFormulario6() != null){
-				viewBean.getFormulario6().setVideo(viewBean.getVideos().get(listaTamanho));
+
+		if (habilitarVisualizacaoPergunta6 == true) {
+			if (viewBean.getFormulario6() != null) {
+				viewBean.getFormulario6().setVideo(
+						viewBean.getVideos().get(listaTamanho));
 				formularioDAO.inserir(viewBean.getFormulario6());
 				count++;
 			}
 		}
-		
-		if(habilitarVisualizacaoPergunta7 == true){
-			if(viewBean.getFormulario7() != null){
-				viewBean.getFormulario7().setVideo(viewBean.getVideos().get(listaTamanho));
+
+		if (habilitarVisualizacaoPergunta7 == true) {
+			if (viewBean.getFormulario7() != null) {
+				viewBean.getFormulario7().setVideo(
+						viewBean.getVideos().get(listaTamanho));
 				formularioDAO.inserir(viewBean.getFormulario7());
 				count++;
 			}
 		}
-		
-		if(habilitarVisualizacaoPergunta8 == true){
-			if(viewBean.getFormulario8() != null){
-				viewBean.getFormulario8().setVideo(viewBean.getVideos().get(listaTamanho));
+
+		if (habilitarVisualizacaoPergunta8 == true) {
+			if (viewBean.getFormulario8() != null) {
+				viewBean.getFormulario8().setVideo(
+						viewBean.getVideos().get(listaTamanho));
 				formularioDAO.inserir(viewBean.getFormulario8());
 				count++;
 			}
 		}
-		
-		if(habilitarVisualizacaoPergunta9 == true){
-			if(viewBean.getFormulario9() != null){
-				viewBean.getFormulario9().setVideo(viewBean.getVideos().get(listaTamanho));
+
+		if (habilitarVisualizacaoPergunta9 == true) {
+			if (viewBean.getFormulario9() != null) {
+				viewBean.getFormulario9().setVideo(
+						viewBean.getVideos().get(listaTamanho));
 				formularioDAO.inserir(viewBean.getFormulario9());
 				count++;
 			}
 		}
-		
-		if(habilitarVisualizacaoPergunta10 == true){
-			if(viewBean.getFormulario10() != null){
-				viewBean.getFormulario10().setVideo(viewBean.getVideos().get(listaTamanho));
+
+		if (habilitarVisualizacaoPergunta10 == true) {
+			if (viewBean.getFormulario10() != null) {
+				viewBean.getFormulario10().setVideo(
+						viewBean.getVideos().get(listaTamanho));
 				formularioDAO.inserir(viewBean.getFormulario10());
 				count++;
 			}
 		}
-		
-		if(count > 0){
-			
+
+		if (count > 0) {
+
 			mostraMenssagem("SUCESSO", "Formulário adicionado com sucesso!");
-			
+
 		}
 
-		
 	}
-	
-	//VERIFICAR EXISTENCIA DE FORMULÁRIO DO VIDEO
-	public void verificarFormularioVideo(){
-		
-		List<Formulario> formularioExistente = new ArrayList<Formulario>();
 
-		try{
-		
-		
-			formularioExistente = formularioDAO.pesquisarPorVideo(viewBean.getVideoSelecionado().getId());
-			for(int i=0;i<formularioExistente.size();i++){
-			System.out.println("Formularios:"+formularioExistente.get(i).getId());
+	// VERIFICAR EXISTENCIA DE FORMULÁRIO DO VIDEO
+	public void verificarFormularioVideo() {
+
+		List<Formulario> formularioExistente = new ArrayList<Formulario>();
+		List<Video> videoRelacionados = new ArrayList<Video>();
+
+		boolean verificarRelacaoVideoFormulario = false;
+		boolean verificarRelacaoVideoUsuario = false;
+
+		try {
+			
+			formularioExistente = formularioDAO.pesquisarPorVideo(viewBean
+					.getVideoSelecionado().getId());
+
+			videoRelacionados = videoDAO.pesquisarPorUsuario(viewBean
+					.getUsuarioLogado().getId());
+
+			
+
+			// VERIFICAR SE USUARIO É DONO DO VIDEO
+			if(!videoRelacionados.isEmpty()){	
+				//SE EXISTE FORMULARIO DAQUELE VIDEO
+			if (!formularioExistente.isEmpty()) {
+				for (Video v : videoRelacionados) {
+					for (Formulario f : formularioExistente) {
+						if (v.getId() == f.getVideo().getId()) {
+							verificarRelacaoVideoFormulario = true;
+						}
+					}
+				}
+			}
+			//SE NÃO EXISTE FORMULARIO DAQUELE VIDEO
+			if(formularioExistente.isEmpty()){
+				for(Video v : videoRelacionados){
+					if(v.getUsuario().getId() == viewBean.getUsuarioLogado().getId()){
+						verificarRelacaoVideoUsuario = true;
+					}
+					
+				}	
+			}	
 			}
 			
-			if(!formularioExistente.isEmpty()){
+
+			// VERIFICAÇÃO DA VISUALIZAÇÃO DAS OPÇOES
+			//SE EXISTE FORMULARIO E SE O VIDEO É DO USUARIO
+			if (!formularioExistente.isEmpty() && !videoRelacionados.isEmpty() && verificarRelacaoVideoFormulario == true) {
 				habilitarVisualizacaoAdicao = false;
 				hbilitarVisualizacaoEdicao = true;
 				habilitarVisualizacaoPraticar = true;
 			}
-			else{
+			//SE EXISTE O FORMULARIO E O VIDEO FOR DO USUARIO
+			else if (!formularioExistente.isEmpty()
+					&& videoRelacionados.isEmpty() && verificarRelacaoVideoUsuario == false) {
+				habilitarVisualizacaoAdicao = false;
+				hbilitarVisualizacaoEdicao = false;
+				habilitarVisualizacaoPraticar = true;
+			}
+			//SE NÃO EXISTE O FORMULARIO E O VIDEO FOR DO USUARIO
+			else if (formularioExistente.isEmpty()
+					&& !videoRelacionados.isEmpty() && verificarRelacaoVideoUsuario == true) {
 				habilitarVisualizacaoAdicao = true;
 				hbilitarVisualizacaoEdicao = false;
 				habilitarVisualizacaoPraticar = false;
-				
 			}
+			//SE NÃO EXISTE O FORMULÁRIO E O VIDEO NÃO FOR DO USUARIO
+			else if (formularioExistente.isEmpty()
+					&& videoRelacionados.isEmpty() && verificarRelacaoVideoUsuario == false) {
+				habilitarVisualizacaoAdicao = false;
+				hbilitarVisualizacaoEdicao = false;
+				habilitarVisualizacaoPraticar = false;
+			} 
 			
-			
-		}catch(Exception e){
-			
+
+		} catch (Exception e) {
+
 			System.out.println("Houve um erro " + e);
-			
+
 		}
-		
-		
+
 	}
 
 	// GERAR NOVOS FORMULARIOS
-	public void novoFormulario1() {	
-		
-			viewBean.setFormulario1(new Formulario());
+	public void novoFormulario1() {
+
+		viewBean.setFormulario1(new Formulario());
 	}
-	public void novoFormulario2() {		
+
+	public void novoFormulario2() {
 		if (habilitarVisualizacaoPergunta2 == true) {
-			 
+
 			viewBean.setFormulario2(new Formulario());
 
 		}
 	}
-	public void novoFormulario3() {		
+
+	public void novoFormulario3() {
 		if (habilitarVisualizacaoPergunta3 == true) {
-			 
+
 			viewBean.setFormulario3(new Formulario());
 
 		}
 	}
-	public void novoFormulario4() {		
+
+	public void novoFormulario4() {
 		if (habilitarVisualizacaoPergunta4 == true) {
-			 
+
 			viewBean.setFormulario4(new Formulario());
 
 		}
 	}
-	public void novoFormulario5() {		
+
+	public void novoFormulario5() {
 		if (habilitarVisualizacaoPergunta5 == true) {
-			 
+
 			viewBean.setFormulario5(new Formulario());
 
 		}
 	}
-	public void novoFormulario6() {		
+
+	public void novoFormulario6() {
 		if (habilitarVisualizacaoPergunta6 == true) {
-			 
+
 			viewBean.setFormulario6(new Formulario());
 
 		}
 	}
-	public void novoFormulario7() {		
+
+	public void novoFormulario7() {
 		if (habilitarVisualizacaoPergunta7 == true) {
-			 
+
 			viewBean.setFormulario7(new Formulario());
 
 		}
 	}
-	public void novoFormulario8() {		
+
+	public void novoFormulario8() {
 		if (habilitarVisualizacaoPergunta8 == true) {
-			 
+
 			viewBean.setFormulario8(new Formulario());
 
 		}
 	}
-	public void novoFormulario9() {		
+
+	public void novoFormulario9() {
 		if (habilitarVisualizacaoPergunta9 == true) {
-			 
+
 			viewBean.setFormulario9(new Formulario());
 
 		}
 	}
-	public void novoFormulario10() {		
+
+	public void novoFormulario10() {
 		if (habilitarVisualizacaoPergunta10 == true) {
-			 
+
 			viewBean.setFormulario10(new Formulario());
 
 		}
@@ -312,14 +369,15 @@ public class UsuarioMB implements Serializable {
 	public void inserir() {
 
 		try {
-			if(dao.listarCondicaoUsuario("email = '"+viewBean.getUsuario().getEmail()+"'").size()>0){
+			if (dao.listarCondicaoUsuario(
+					"email = '" + viewBean.getUsuario().getEmail() + "'")
+					.size() > 0) {
 				mostraMenssagem("ERRO", "Já existe um usúario com este Email");
-			}
-			else{
-			dao.inserirUsuario(viewBean.getUsuario());
-			mostraMenssagem("SUCESSO", "Usuario inserido com sucesso.");
+			} else {
+				dao.inserirUsuario(viewBean.getUsuario());
+				mostraMenssagem("SUCESSO", "Usuario inserido com sucesso.");
 
-			novoUsuario();
+				novoUsuario();
 			}
 
 		} catch (Exception e) {
@@ -329,20 +387,20 @@ public class UsuarioMB implements Serializable {
 		}
 
 	}
-	//Editar usuario
-	public void alterarUsuario(){
-		try{
+
+	// Editar usuario
+	public void alterarUsuario() {
+		try {
 			dao.salvarUsuario(viewBean.getUsuarioLogado());
 			mostraMenssagem("SUCESSO", "Usuario alterado com sucesso.");
 			viewBean.setNomeUsuario(viewBean.getUsuarioLogado().getNome());
-			
-		}catch(Exception e){
+
+		} catch (Exception e) {
 			mostraMenssagem("ERRO", "Houve um erro ao tentar alterar o usuario");
-			System.out.println("Erro "+ e);
+			System.out.println("Erro " + e);
 		}
-		
+
 	}
-	
 
 	// DELETAR UM NOVO ALUNO
 	public void deletar() {
@@ -382,7 +440,7 @@ public class UsuarioMB implements Serializable {
 	public void atualizarListaVideo() {
 		viewBean.setVideos(videoDAO.listarTodos());
 		addRecente(viewBean.getVideos());
-		setListaTamanho(viewBean.getVideos().size()-1);
+		setListaTamanho(viewBean.getVideos().size() - 1);
 	}
 
 	// ADICIONADOS RECENTEMENTE
@@ -407,7 +465,7 @@ public class UsuarioMB implements Serializable {
 
 			viewBean.setUsuarioLogado(viewBean.getUsuarios().get(0));
 			viewBean.setNomeUsuario(viewBean.getUsuarios().get(0).getNome());
-			//viewBean.setUsuarioEditado(viewBean.getUsuarios().get(0));
+			// viewBean.setUsuarioEditado(viewBean.getUsuarios().get(0));
 			atualizarListaVideo();
 
 			FacesContext fc = FacesContext.getCurrentInstance();
@@ -567,7 +625,6 @@ public class UsuarioMB implements Serializable {
 	public void setViewBean(UsuarioViewBean viewBean) {
 		this.viewBean = viewBean;
 	}
-	
 
 	public int getListaTamanho() {
 		return listaTamanho;
@@ -589,7 +646,8 @@ public class UsuarioMB implements Serializable {
 		return habilitarVisualizacaoAdicao;
 	}
 
-	public void setHabilitarVisualizacaoAdicao(boolean habilitarVisualizacaoAdicao) {
+	public void setHabilitarVisualizacaoAdicao(
+			boolean habilitarVisualizacaoAdicao) {
 		this.habilitarVisualizacaoAdicao = habilitarVisualizacaoAdicao;
 	}
 
@@ -609,9 +667,5 @@ public class UsuarioMB implements Serializable {
 			boolean habilitarVisualizacaoPraticar) {
 		this.habilitarVisualizacaoPraticar = habilitarVisualizacaoPraticar;
 	}
-	
-	
-	
-	
 
 }
