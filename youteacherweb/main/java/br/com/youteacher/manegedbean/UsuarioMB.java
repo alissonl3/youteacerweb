@@ -99,104 +99,134 @@ public class UsuarioMB implements Serializable {
 	}
 
 	// ADICIONAR FORMULÁRIO
-	public void inserirFormulario() {
+	public String inserirFormulario() {
 
 		int count = 0;
+		String retorno = null;
 
 		if (viewBean.getFormulario1() != null) {
 
-			viewBean.getFormulario1().setVideo(
-					viewBean.getVideos().get(listaTamanho));
+			
+			viewBean.getFormulario1().setVideo(videoSelecionadoFormulario);
+			
 			formularioDAO.inserir(viewBean.getFormulario1());
 			count++;
+			
+			novoFormulario1();
 		}
 
 		if (habilitarVisualizacaoPergunta2 == true) {
 			if (viewBean.getFormulario2() != null) {
-				viewBean.getFormulario2().setVideo(
-						viewBean.getVideos().get(listaTamanho));
+
+				viewBean.getFormulario2().setVideo(videoSelecionadoFormulario);
+				
 				formularioDAO.inserir(viewBean.getFormulario2());
 				count++;
+				
+				novoFormulario2();
 			}
 		}
 
 		if (habilitarVisualizacaoPergunta3 == true) {
 			if (viewBean.getFormulario3() != null) {
-				viewBean.getFormulario3().setVideo(
-						viewBean.getVideos().get(listaTamanho));
+
+				viewBean.getFormulario3().setVideo(videoSelecionadoFormulario);
 				formularioDAO.inserir(viewBean.getFormulario3());
 				count++;
+				
+				novoFormulario3();
 			}
 		}
 
 		if (habilitarVisualizacaoPergunta4 == true) {
 			if (viewBean.getFormulario4() != null) {
-				viewBean.getFormulario4().setVideo(
-						viewBean.getVideos().get(listaTamanho));
+
+				viewBean.getFormulario4().setVideo(videoSelecionadoFormulario);
 				formularioDAO.inserir(viewBean.getFormulario4());
 				count++;
+				
+				novoFormulario4();
 			}
 		}
 
 		if (habilitarVisualizacaoPergunta5 == true) {
 			if (viewBean.getFormulario5() != null) {
-				viewBean.getFormulario5().setVideo(
-						viewBean.getVideos().get(listaTamanho));
+
+				viewBean.getFormulario5().setVideo(videoSelecionadoFormulario);
 				formularioDAO.inserir(viewBean.getFormulario6());
 				count++;
+				
+				novoFormulario5();
 			}
 		}
 
 		if (habilitarVisualizacaoPergunta6 == true) {
 			if (viewBean.getFormulario6() != null) {
-				viewBean.getFormulario6().setVideo(
-						viewBean.getVideos().get(listaTamanho));
+
+				viewBean.getFormulario6().setVideo(videoSelecionadoFormulario);
 				formularioDAO.inserir(viewBean.getFormulario6());
 				count++;
+				
+				novoFormulario6();
 			}
 		}
 
 		if (habilitarVisualizacaoPergunta7 == true) {
 			if (viewBean.getFormulario7() != null) {
-				viewBean.getFormulario7().setVideo(
-						viewBean.getVideos().get(listaTamanho));
+
+				viewBean.getFormulario7().setVideo(videoSelecionadoFormulario);
 				formularioDAO.inserir(viewBean.getFormulario7());
 				count++;
+				
+				novoFormulario7();
 			}
 		}
 
 		if (habilitarVisualizacaoPergunta8 == true) {
 			if (viewBean.getFormulario8() != null) {
-				viewBean.getFormulario8().setVideo(
-						viewBean.getVideos().get(listaTamanho));
+
+				viewBean.getFormulario8().setVideo(videoSelecionadoFormulario);
 				formularioDAO.inserir(viewBean.getFormulario8());
 				count++;
+				
+				novoFormulario8();
 			}
 		}
 
 		if (habilitarVisualizacaoPergunta9 == true) {
 			if (viewBean.getFormulario9() != null) {
-				viewBean.getFormulario9().setVideo(
-						viewBean.getVideos().get(listaTamanho));
+
+				viewBean.getFormulario9().setVideo(videoSelecionadoFormulario);
 				formularioDAO.inserir(viewBean.getFormulario9());
 				count++;
+				
+				novoFormulario9();
 			}
 		}
 
 		if (habilitarVisualizacaoPergunta10 == true) {
 			if (viewBean.getFormulario10() != null) {
-				viewBean.getFormulario10().setVideo(
-						viewBean.getVideos().get(listaTamanho));
+
+				viewBean.getFormulario10().setVideo(videoSelecionadoFormulario);
 				formularioDAO.inserir(viewBean.getFormulario10());
 				count++;
+				
+				novoFormulario10();
 			}
 		}
 
 		if (count > 0) {
 
 			mostraMenssagem("SUCESSO", "Formulário adicionado com sucesso!");
-
+			retorno = "inicio";
 		}
+		else
+		{
+			mostraMenssagem("ATENÇÃO", "Não foi adicionado nenhum formulário!");
+			retorno = "inicio";
+		}	
+		
+		return retorno;
 
 	}
 	

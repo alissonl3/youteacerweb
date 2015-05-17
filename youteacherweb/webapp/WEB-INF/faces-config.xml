@@ -65,6 +65,11 @@
 			<to-view-id>/aluno/praticar.xhtml</to-view-id>
 			<redirect></redirect>
 		</navigation-case>
+		<navigation-case>
+			<from-outcome>formulario</from-outcome>
+			<to-view-id>/aluno/addformulario.xhtml</to-view-id>
+			<redirect></redirect>
+		</navigation-case>
 	</navigation-rule>
 	
 	<!-- Navegação pagina do video -->
