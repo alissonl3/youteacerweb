@@ -10,6 +10,8 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.context.FacesContext;
 import javax.servlet.http.HttpSession;
 
+import org.primefaces.context.RequestContext;
+
 import br.com.youteacher.banco.dao.FormularioDAO;
 import br.com.youteacher.banco.dao.VideoDAO;
 import br.com.youteacher.banco.dao.UsuarioDAO;
@@ -355,6 +357,8 @@ public class UsuarioMB implements Serializable {
 
 		try {
 			
+			setVideoSelecionadoFormulario(getVideoSelecionado());
+			
 			formularioExistente = formularioDAO.pesquisarPorVideo(viewBean
 					.getVideoSelecionado().getId());
 
@@ -416,6 +420,8 @@ public class UsuarioMB implements Serializable {
 				habilitarVisualizacaoPraticar = false;
 			} 
 			
+			System.out.println("Titulo Video Formulário " + getVideoSelecionadoFormulario());
+			
 
 		} catch (Exception e) {
 
@@ -424,6 +430,7 @@ public class UsuarioMB implements Serializable {
 		}
 
 	}
+	
 
 	// GERAR NOVOS FORMULARIOS
 	public void novoFormulario1() {
