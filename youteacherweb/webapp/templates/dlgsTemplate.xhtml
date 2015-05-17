@@ -158,7 +158,7 @@
 		</div>
 		<center>
 			<p:commandButton rendered="#{usuarioMB.habilitarVisualizacaoPraticar}" value="VAMOS PRATICAR" styleClass="btnVerdeClaro"
-				id="btnPraticar" update="@form"
+				id="btnPraticar" actionListener="#{usuarioMB.praticar}" action="praticar" update="@form"
 				style=" margin-top:10px;  width: 315px;height:50px ;background:#24b85b;color: white;border-color: #24b85b; font:18px 'Ruda',sans-serif;">
 			</p:commandButton>
 		</center>

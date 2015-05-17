@@ -1,0 +1,212 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="/templates/template_user.xhtml">
+
+	<ui:define name="conteudo">
+		<h:form id="frmPraticar">
+			<div class="ui-grid">
+				<div class="ui-grid-row" style="margin-bottom: 20px;">
+					<div class="ui-grid-col-2"></div>
+
+					<div class="ui-grid-col-8">
+						<div style="width: 700px; margin: auto;">
+
+							<p:outputPanel id="pnlPergunta1" rendered="#{usuarioMB.habilitarVisualizacaoPergunta1}">
+							
+							<h:outputText value="1) #{usuarioMB.viewBean.formulario1.pergunta}" style="font-size:15px; " />
+								<!-- Resposta certa 1 -->
+								<h:panelGrid columns="1" cellpadding="3">
+									<h:outputText value="Escolha a resposta correta:" />
+									<p:selectOneRadio id="console1"
+										value="#{usuarioMB.viewBean.resposta1}" layout="grid" columns="1">
+										<f:selectItem itemLabel="A) #{usuarioMB.viewBean.formulario1.resposta_A}" itemValue="A" />
+										<f:selectItem itemLabel="B) #{usuarioMB.viewBean.formulario1.resposta_B}" itemValue="B" />
+										<f:selectItem itemLabel="C) #{usuarioMB.viewBean.formulario1.resposta_C}" itemValue="C" />
+										<f:selectItem itemLabel="D) #{usuarioMB.viewBean.formulario1.resposta_D}" itemValue="D" />
+										<f:selectItem itemLabel="E) #{usuarioMB.viewBean.formulario1.resposta_E}" itemValue="E" />
+									</p:selectOneRadio>
+								</h:panelGrid>
+								
+							</p:outputPanel>
+							<p:outputPanel id="pnlPergunta2" rendered="#{usuarioMB.habilitarVisualizacaoPergunta2}">
+							
+							<h:outputText value="2) #{usuarioMB.viewBean.formulario2.pergunta}" style="font-size:15px; " />
+								<!-- Resposta  -->
+								<h:panelGrid columns="1" cellpadding="3">
+									<p:selectOneRadio id="console2"
+										value="#{usuarioMB.viewBean.resposta2}" layout="grid" columns="1">
+										<f:selectItem itemLabel="A) #{usuarioMB.viewBean.formulario2.resposta_A}" itemValue="A" />
+										<f:selectItem itemLabel="B) #{usuarioMB.viewBean.formulario2.resposta_B}" itemValue="B" />
+										<f:selectItem itemLabel="C) #{usuarioMB.viewBean.formulario2.resposta_C}" itemValue="C" />
+										<f:selectItem itemLabel="D) #{usuarioMB.viewBean.formulario2.resposta_D}" itemValue="D" />
+										<f:selectItem itemLabel="E) #{usuarioMB.viewBean.formulario2.resposta_E}" itemValue="E" />
+									</p:selectOneRadio>
+								</h:panelGrid>
+								
+							</p:outputPanel>
+							<p:outputPanel id="pnlPergunta3" rendered="#{usuarioMB.habilitarVisualizacaoPergunta3}">
+							
+							<h:outputText value="3) #{usuarioMB.viewBean.formulario3.pergunta}" style="font-size:15px; " />
+								<!-- Resposta  -->
+								<h:panelGrid columns="1" cellpadding="3">
+									<p:selectOneRadio id="console3"
+										value="#{usuarioMB.viewBean.resposta3}" layout="grid" columns="1">
+										<f:selectItem itemLabel="A) #{usuarioMB.viewBean.formulario3.resposta_A}" itemValue="A" />
+										<f:selectItem itemLabel="B) #{usuarioMB.viewBean.formulario3.resposta_B}" itemValue="B" />
+										<f:selectItem itemLabel="C) #{usuarioMB.viewBean.formulario3.resposta_C}" itemValue="C" />
+										<f:selectItem itemLabel="D) #{usuarioMB.viewBean.formulario3.resposta_D}" itemValue="D" />
+										<f:selectItem itemLabel="E) #{usuarioMB.viewBean.formulario3.resposta_E}" itemValue="E" />
+									</p:selectOneRadio>
+								</h:panelGrid>
+								
+							</p:outputPanel>
+							
+							<p:outputPanel id="pnlPergunta4" rendered="#{usuarioMB.habilitarVisualizacaoPergunta4}">
+							
+							<h:outputText value="2) #{usuarioMB.viewBean.formulario4.pergunta}" style="font-size:15px; " />
+								<!-- Resposta  -->
+								<h:panelGrid columns="1" cellpadding="3">
+									<p:selectOneRadio id="console4"
+										value="#{usuarioMB.viewBean.resposta4}" layout="grid" columns="1">
+										<f:selectItem itemLabel="A) #{usuarioMB.viewBean.formulario4.resposta_A}" itemValue="A" />
+										<f:selectItem itemLabel="B) #{usuarioMB.viewBean.formulario4.resposta_B}" itemValue="B" />
+										<f:selectItem itemLabel="C) #{usuarioMB.viewBean.formulario4.resposta_C}" itemValue="C" />
+										<f:selectItem itemLabel="D) #{usuarioMB.viewBean.formulario4.resposta_D}" itemValue="D" />
+										<f:selectItem itemLabel="E) #{usuarioMB.viewBean.formulario4.resposta_E}" itemValue="E" />
+									</p:selectOneRadio>
+								</h:panelGrid>
+								
+							</p:outputPanel>
+						
+							<p:outputPanel id="pnlPergunta5" rendered="#{usuarioMB.habilitarVisualizacaoPergunta5}">
+							
+							<h:outputText value="5) #{usuarioMB.viewBean.formulario5.pergunta}" style="font-size:15px; " />
+								<!-- Resposta  -->
+								<h:panelGrid columns="1" cellpadding="3">
+									<p:selectOneRadio id="console5"
+										value="#{usuarioMB.viewBean.resposta5}" layout="grid" columns="1">
+										<f:selectItem itemLabel="A) #{usuarioMB.viewBean.formulario5.resposta_A}" itemValue="A" />
+										<f:selectItem itemLabel="B) #{usuarioMB.viewBean.formulario5.resposta_B}" itemValue="B" />
+										<f:selectItem itemLabel="C) #{usuarioMB.viewBean.formulario5.resposta_C}" itemValue="C" />
+										<f:selectItem itemLabel="D) #{usuarioMB.viewBean.formulario5.resposta_D}" itemValue="D" />
+										<f:selectItem itemLabel="E) #{usuarioMB.viewBean.formulario5.resposta_E}" itemValue="E" />
+									</p:selectOneRadio>
+								</h:panelGrid>
+								
+							</p:outputPanel>
+						
+							<p:outputPanel id="pnlPergunta6" rendered="#{usuarioMB.habilitarVisualizacaoPergunta6}">
+							
+							<h:outputText value="6) #{usuarioMB.viewBean.formulario6.pergunta}" style="font-size:15px; " />
+								<!-- Resposta  -->
+								<h:panelGrid columns="1" cellpadding="3">
+									<p:selectOneRadio id="console6"
+										value="#{usuarioMB.viewBean.resposta6}" layout="grid" columns="1">
+										<f:selectItem itemLabel="A) #{usuarioMB.viewBean.formulario6.resposta_A}" itemValue="A" />
+										<f:selectItem itemLabel="B) #{usuarioMB.viewBean.formulario6.resposta_B}" itemValue="B" />
+										<f:selectItem itemLabel="C) #{usuarioMB.viewBean.formulario6.resposta_C}" itemValue="C" />
+										<f:selectItem itemLabel="D) #{usuarioMB.viewBean.formulario6.resposta_D}" itemValue="D" />
+										<f:selectItem itemLabel="E) #{usuarioMB.viewBean.formulario6.resposta_E}" itemValue="E" />
+									</p:selectOneRadio>
+								</h:panelGrid>
+								
+							</p:outputPanel>
+							
+							
+							<p:outputPanel id="pnlPergunta7" rendered="#{usuarioMB.habilitarVisualizacaoPergunta7}">
+							
+							<h:outputText value="7) #{usuarioMB.viewBean.formulario7.pergunta}" style="font-size:15px; " />
+								<!-- Resposta  -->
+								<h:panelGrid columns="1" cellpadding="3">
+									<p:selectOneRadio id="console7"
+										value="#{usuarioMB.viewBean.resposta7}" layout="grid" columns="1">
+										<f:selectItem itemLabel="A) #{usuarioMB.viewBean.formulario7.resposta_A}" itemValue="A" />
+										<f:selectItem itemLabel="B) #{usuarioMB.viewBean.formulario7.resposta_B}" itemValue="B" />
+										<f:selectItem itemLabel="C) #{usuarioMB.viewBean.formulario7.resposta_C}" itemValue="C" />
+										<f:selectItem itemLabel="D) #{usuarioMB.viewBean.formulario7.resposta_D}" itemValue="D" />
+										<f:selectItem itemLabel="E) #{usuarioMB.viewBean.formulario7.resposta_E}" itemValue="E" />
+									</p:selectOneRadio>
+								</h:panelGrid>
+								
+							</p:outputPanel>
+					
+							<p:outputPanel id="pnlPergunta8" rendered="#{usuarioMB.habilitarVisualizacaoPergunta8}">
+							
+							<h:outputText value="8) #{usuarioMB.viewBean.formulario8.pergunta}" style="font-size:15px; " />
+								<!-- Resposta  -->
+								<h:panelGrid columns="1" cellpadding="3">
+									<p:selectOneRadio id="console8"
+										value="#{usuarioMB.viewBean.resposta8}" layout="grid" columns="1">
+										<f:selectItem itemLabel="A) #{usuarioMB.viewBean.formulario8.resposta_A}" itemValue="A" />
+										<f:selectItem itemLabel="B) #{usuarioMB.viewBean.formulario8.resposta_B}" itemValue="B" />
+										<f:selectItem itemLabel="C) #{usuarioMB.viewBean.formulario8.resposta_C}" itemValue="C" />
+										<f:selectItem itemLabel="D) #{usuarioMB.viewBean.formulario8.resposta_D}" itemValue="D" />
+										<f:selectItem itemLabel="E) #{usuarioMB.viewBean.formulario8.resposta_E}" itemValue="E" />
+									</p:selectOneRadio>
+								</h:panelGrid>
+								
+							</p:outputPanel>
+						
+							<p:outputPanel id="pnlPergunta9" rendered="#{usuarioMB.habilitarVisualizacaoPergunta9}">
+							
+							<h:outputText value="9) #{usuarioMB.viewBean.formulario9.pergunta}" style="font-size:15px; " />
+								<!-- Resposta  -->
+								<h:panelGrid columns="1" cellpadding="3">
+									<p:selectOneRadio id="console9"
+										value="#{usuarioMB.viewBean.resposta9}" layout="grid" columns="1">
+										<f:selectItem itemLabel="A) #{usuarioMB.viewBean.formulario9.resposta_A}" itemValue="A" />
+										<f:selectItem itemLabel="B) #{usuarioMB.viewBean.formulario9.resposta_B}" itemValue="B" />
+										<f:selectItem itemLabel="C) #{usuarioMB.viewBean.formulario9.resposta_C}" itemValue="C" />
+										<f:selectItem itemLabel="D) #{usuarioMB.viewBean.formulario9.resposta_D}" itemValue="D" />
+										<f:selectItem itemLabel="E) #{usuarioMB.viewBean.formulario9.resposta_E}" itemValue="E" />
+									</p:selectOneRadio>
+								</h:panelGrid>
+								
+							</p:outputPanel>
+						
+							<p:outputPanel id="pnlPergunta10" rendered="#{usuarioMB.habilitarVisualizacaoPergunta10}">
+							
+							<h:outputText value="10) #{usuarioMB.viewBean.formulario10.pergunta}" style="font-size:15px; " />
+								<!-- Resposta  -->
+								<h:panelGrid columns="1" cellpadding="3">
+									<p:selectOneRadio id="console10"
+										value="#{usuarioMB.viewBean.resposta10}" layout="grid" columns="1">
+										<f:selectItem itemLabel="A) #{usuarioMB.viewBean.formulario10.resposta_A}" itemValue="A" />
+										<f:selectItem itemLabel="B) #{usuarioMB.viewBean.formulario10.resposta_B}" itemValue="B" />
+										<f:selectItem itemLabel="C) #{usuarioMB.viewBean.formulario10.resposta_C}" itemValue="C" />
+										<f:selectItem itemLabel="D) #{usuarioMB.viewBean.formulario10.resposta_D}" itemValue="D" />
+										<f:selectItem itemLabel="E) #{usuarioMB.viewBean.formulario10.resposta_E}" itemValue="E" />
+									</p:selectOneRadio>
+								</h:panelGrid>
+								
+							</p:outputPanel>
+
+							<div style="clear: both;"></div>
+							<br />
+								<center>
+									<p:commandButton value="SALVAR" styleClass="btnVerdeClaro"
+										actionListener="#{usuarioMB.corrigir}"
+										id="btnCriarQuestionario" update="@form"
+										style=" margin-top:10px;  width: 315px;height:50px ;background:#24b85b;color: white;border-color: #24b85b; font:18px 'Ruda',sans-serif;">
+									</p:commandButton>
+								</center>
+
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+
+		</h:form>
+	</ui:define>
+
+</ui:composition>
+</html>

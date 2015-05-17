@@ -199,6 +199,120 @@ public class UsuarioMB implements Serializable {
 		}
 
 	}
+	
+	
+	
+	//Metodo para preencher os campos quando o usuario clicar em "VAMOS PRATICAR"
+	public void praticar(){
+		List<Formulario> formularios = new ArrayList<Formulario>();
+		try{
+			System.out.println("Entrou no praticar:");
+		 formularios = formularioDAO.pesquisarPorVideo(viewBean.getVideoSelecionado().getId());
+		 int tamanho = formularios.size();
+		System.out.println("Tamanho da lista de formulario:"+formularios.size());
+		
+		if(tamanho>=1 ){
+			viewBean.setFormulario1(formularios.get(0));
+			setHabilitarVisualizacaoPergunta1(true);
+		}
+		if(tamanho>=2 ){
+			viewBean.setFormulario2(formularios.get(1));
+			setHabilitarVisualizacaoPergunta2(true);
+				}
+		if(tamanho>=3 ){
+			viewBean.setFormulario3(formularios.get(2));
+			setHabilitarVisualizacaoPergunta3(true);
+		}
+		if(tamanho>=4 ){
+			viewBean.setFormulario4(formularios.get(3));
+			setHabilitarVisualizacaoPergunta4(true);
+		}
+		if(tamanho>=5 ){
+			viewBean.setFormulario5(formularios.get(4));
+			setHabilitarVisualizacaoPergunta5(true);
+		}
+		if(tamanho>=6 ){
+			viewBean.setFormulario6(formularios.get(5));
+			setHabilitarVisualizacaoPergunta6(true);
+		}
+		if(tamanho>=7 ){
+			viewBean.setFormulario7(formularios.get(6));
+			setHabilitarVisualizacaoPergunta7(true);
+		}
+		if(tamanho>=8 ){
+			viewBean.setFormulario8(formularios.get(7));
+			setHabilitarVisualizacaoPergunta8(true);
+		}
+		if(tamanho>=9 ){
+			viewBean.setFormulario9(formularios.get(8));
+			setHabilitarVisualizacaoPergunta9(true);
+		}
+		if(tamanho>=10 ){
+			viewBean.setFormulario10(formularios.get(9));
+			setHabilitarVisualizacaoPergunta10(true);
+		}
+		
+		
+		}
+		catch(Exception e){
+			mostraMenssagem("ERRO!", "Não existe formulário para o Vídeo");
+		}
+		
+	}
+	
+	//Metodo para corrigir as respostas do Usuario
+	public void corrigir(){
+		
+		try{
+			int acertos =0;
+			if(viewBean.getResposta1().equals(viewBean.getFormulario1().getResposta_certa())){
+				acertos++;
+				
+			}
+			if(viewBean.getResposta2().equals(viewBean.getFormulario2().getResposta_certa())){
+				acertos++;
+				
+			}
+			if(viewBean.getResposta3().equals(viewBean.getFormulario3().getResposta_certa())){
+				acertos++;
+				
+			}
+			if(viewBean.getResposta4().equals(viewBean.getFormulario4().getResposta_certa())){
+				acertos++;
+				
+			}
+			if(viewBean.getResposta5().equals(viewBean.getFormulario5().getResposta_certa())){
+				acertos++;
+				
+			}
+			if(viewBean.getResposta6().equals(viewBean.getFormulario6().getResposta_certa())){
+				acertos++;
+				
+			}
+			if(viewBean.getResposta7().equals(viewBean.getFormulario7().getResposta_certa())){
+				acertos++;
+				
+			}
+			if(viewBean.getResposta8().equals(viewBean.getFormulario8().getResposta_certa())){
+				acertos++;
+				
+			}
+			if(viewBean.getResposta9().equals(viewBean.getFormulario9().getResposta_certa())){
+				acertos++;
+				
+			}
+			if(viewBean.getResposta10().equals(viewBean.getFormulario10().getResposta_certa())){
+				acertos++;
+				
+			}
+			System.out.println("Total de acertos:"+acertos);
+			
+		}catch(Exception e){
+			
+		}
+		
+	}
+	
 
 	// VERIFICAR EXISTENCIA DE FORMULÁRIO DO VIDEO
 	public void verificarFormularioVideo() {

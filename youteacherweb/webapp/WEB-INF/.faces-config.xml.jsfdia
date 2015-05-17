@@ -25,6 +25,9 @@
    <PROCESS-ITEM-OUTPUT ID="perfil::#aluno#perfil.xhtml" NAME="output3"
     PATH="/aluno/perfil.xhtml" TARGET="rules:#aluno#perfil.xhtml"
     TITLE="perfil" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="praticar::#aluno#praticar.xhtml"
+    NAME="output4" PATH="/aluno/praticar.xhtml"
+    TARGET="rules:#aluno#praticar.xhtml" TITLE="praticar" model-entity="JSFProcessItemOutput"/>
   </PROCESS-ITEM>
  </PROCESS-ITEM>
  <PROCESS-ITEM NAME="rules:#aluno#addvideo.xhtml"
@@ -40,6 +43,9 @@
    <PROCESS-ITEM-OUTPUT ID="formulario::#aluno#addformulario.xhtml"
     NAME="output2" PATH="/aluno/addformulario.xhtml"
     TARGET="rules:#aluno#addformulario.xhtml" TITLE="formulario" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="perfil::#aluno#perfil.xhtml" NAME="output3"
+    PATH="/aluno/perfil.xhtml" TARGET="rules:#aluno#perfil.xhtml"
+    TITLE="perfil" model-entity="JSFProcessItemOutput"/>
   </PROCESS-ITEM>
  </PROCESS-ITEM>
  <PROCESS-ITEM NAME="rules:#pages#adm.xhtml" PATH="/pages/adm.xhtml"
@@ -63,6 +69,9 @@
    <PROCESS-ITEM-OUTPUT ID="inicio::#aluno#home.xhtml" NAME="output1"
     PATH="/aluno/home.xhtml" TARGET="rules:#aluno#home.xhtml"
     TITLE="inicio" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="perfil::#aluno#perfil.xhtml" NAME="output2"
+    PATH="/aluno/perfil.xhtml" TARGET="rules:#aluno#perfil.xhtml"
+    TITLE="perfil" model-entity="JSFProcessItemOutput"/>
   </PROCESS-ITEM>
  </PROCESS-ITEM>
  <PROCESS-ITEM NAME="rules:#aluno#perfil.xhtml"
@@ -75,6 +84,24 @@
    <PROCESS-ITEM-OUTPUT ID="inicio::#aluno#home.xhtml" NAME="output1"
     PATH="/aluno/home.xhtml" TARGET="rules:#aluno#home.xhtml"
     TITLE="inicio" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="perfil::#aluno#perfil.xhtml" NAME="output2"
+    PATH="/aluno/perfil.xhtml" TARGET="rules:#aluno#perfil.xhtml"
+    TITLE="perfil" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#aluno#praticar.xhtml"
+  PATH="/aluno/praticar.xhtml" SHAPE="368,481,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#aluno#praticar.xhtml:0" NAME="item"
+   PATH="/aluno/praticar.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="sair::#pages#home.xhtml" NAME="output"
+    PATH="/pages/home.xhtml" TARGET="rules:#pages#home.xhtml"
+    TITLE="sair" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="inicio::#aluno#home.xhtml" NAME="output1"
+    PATH="/aluno/home.xhtml" TARGET="rules:#aluno#home.xhtml"
+    TITLE="inicio" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="perfil::#aluno#perfil.xhtml" NAME="output2"
+    PATH="/aluno/perfil.xhtml" TARGET="rules:#aluno#perfil.xhtml"
+    TITLE="perfil" model-entity="JSFProcessItemOutput"/>
   </PROCESS-ITEM>
  </PROCESS-ITEM>
 </PROCESS>
