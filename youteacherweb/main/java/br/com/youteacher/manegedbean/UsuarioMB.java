@@ -58,6 +58,11 @@ public class UsuarioMB implements Serializable {
 	private int listaTamanho;
 
 	private Video videoSelecionadoFormulario;
+	
+	//popUp rendimento
+	private String imagem;
+	private Double rendimento;
+	private int tamanhoFormulario;
 
 	@PostConstruct
 	private void initPage() {
@@ -238,48 +243,48 @@ public class UsuarioMB implements Serializable {
 	public void praticar(){
 		List<Formulario> formularios = new ArrayList<Formulario>();
 		try{
-			System.out.println("Entrou no praticar:");
+		 System.out.println("Entrou no praticar:");
 		 formularios = formularioDAO.pesquisarPorVideo(viewBean.getVideoSelecionado().getId());
-		 int tamanho = formularios.size();
-		System.out.println("Tamanho da lista de formulario:"+formularios.size());
+		  tamanhoFormulario = formularios.size();
+		 System.out.println("Tamanho da lista de formulario:"+formularios.size());
 		
-		if(tamanho>=1 ){
+		if(tamanhoFormulario>=1 ){
 			viewBean.setFormulario1(formularios.get(0));
 			setHabilitarVisualizacaoPergunta1(true);
 		}
-		if(tamanho>=2 ){
+		if(tamanhoFormulario>=2 ){
 			viewBean.setFormulario2(formularios.get(1));
 			setHabilitarVisualizacaoPergunta2(true);
 				}
-		if(tamanho>=3 ){
+		if(tamanhoFormulario>=3 ){
 			viewBean.setFormulario3(formularios.get(2));
 			setHabilitarVisualizacaoPergunta3(true);
 		}
-		if(tamanho>=4 ){
+		if(tamanhoFormulario>=4 ){
 			viewBean.setFormulario4(formularios.get(3));
 			setHabilitarVisualizacaoPergunta4(true);
 		}
-		if(tamanho>=5 ){
+		if(tamanhoFormulario>=5 ){
 			viewBean.setFormulario5(formularios.get(4));
 			setHabilitarVisualizacaoPergunta5(true);
 		}
-		if(tamanho>=6 ){
+		if(tamanhoFormulario>=6 ){
 			viewBean.setFormulario6(formularios.get(5));
 			setHabilitarVisualizacaoPergunta6(true);
 		}
-		if(tamanho>=7 ){
+		if(tamanhoFormulario>=7 ){
 			viewBean.setFormulario7(formularios.get(6));
 			setHabilitarVisualizacaoPergunta7(true);
 		}
-		if(tamanho>=8 ){
+		if(tamanhoFormulario>=8 ){
 			viewBean.setFormulario8(formularios.get(7));
 			setHabilitarVisualizacaoPergunta8(true);
 		}
-		if(tamanho>=9 ){
+		if(tamanhoFormulario>=9 ){
 			viewBean.setFormulario9(formularios.get(8));
 			setHabilitarVisualizacaoPergunta9(true);
 		}
-		if(tamanho>=10 ){
+		if(tamanhoFormulario>=10 ){
 			viewBean.setFormulario10(formularios.get(9));
 			setHabilitarVisualizacaoPergunta10(true);
 		}
@@ -295,9 +300,10 @@ public class UsuarioMB implements Serializable {
 	//Metodo para corrigir as respostas do Usuario
 	public void corrigir(){
 		
+		
 		try{
-			int acertos =0;
-			if(viewBean.getResposta1().equals(viewBean.getFormulario1().getResposta_certa())){
+			double acertos = 0;
+			if(viewBean.getResposta1().equals(viewBean.getFormulario1().getResposta_certa()) ){
 				acertos++;
 				
 			}
@@ -336,10 +342,32 @@ public class UsuarioMB implements Serializable {
 			if(viewBean.getResposta10().equals(viewBean.getFormulario10().getResposta_certa())){
 				acertos++;
 				
+			}		
+			
+			setRendimento((acertos / tamanhoFormulario) * 100);
+			
+			System.out.println("Total de acertos: "+acertos);
+			System.out.println("Seu rendimento foi de: " + getRendimento());
+			
+			//DEFINIR A IMAGEM DE BOM OU RUIM
+			if(rendimento > 50){
+				
+				setImagem("../resources/imagens/acima50.png");
+				
+			}else{
+				
+				setImagem("../resources/imagens/abaixo50.png");
+				
 			}
-			System.out.println("Total de acertos:"+acertos);
+			
+			
+			//RequestContext.getCurrentInstance().update(":frmDlgTemplate");
+			//RequestContext.getCurrentInstance().execute("PF('dlgRendimento').show();");
+			
 			
 		}catch(Exception e){
+			
+			System.out.println("Ocorreu um erro: " + e.getMessage());
 			
 		}
 		
@@ -652,6 +680,32 @@ public class UsuarioMB implements Serializable {
 				+ viewBean.getUsuario().getEmail() + "' and senha = '"
 				+ viewBean.getUsuario().getSenha() + "'"));
 
+	}
+	
+	
+
+	public int getTamanhoFormulario() {
+		return tamanhoFormulario;
+	}
+
+	public void setTamanhoFormulario(int tamanhoFormulario) {
+		this.tamanhoFormulario = tamanhoFormulario;
+	}
+
+	public String getImagem() {
+		return imagem;
+	}
+
+	public void setImagem(String imagem) {
+		this.imagem = imagem;
+	}
+
+	public Double getRendimento() {
+		return rendimento;
+	}
+
+	public void setRendimento(Double rendimento) {
+		this.rendimento = rendimento;
 	}
 
 	public boolean isHabilitarVisualizacaoPergunta1() {

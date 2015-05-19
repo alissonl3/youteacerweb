@@ -207,6 +207,40 @@
 		</div>
 
 	</p:dialog>
+	
+	
+	<!-- Menssagem sobre o rendimento -->
+	<p:dialog id="dlgRendimento" widgetVar="dlgRendimento"
+		resizable="false" width="500px" height="220px" modal="true"
+		showHeader="false">
+		<font style="color: #24b85b; font-size: 30px; float: left;"> <b>Rendimento</b>
+		</font>
+
+		<br />
+		<br />
+		<div class="row">
+			<!-- Desenho -->
+			<div class="ui-grid-col-1">
+			</div>
+			<div class="ui-grid-col-10">
+				<center>
+				
+					<img src="#{usuarioMB.imagem}"
+					style="float: left; max-width: 100%; height: auto;" />
+
+					<p:commandButton value="OK" styleClass="btnVerdeClaro"
+						id="btnOkRendimento" action="inicio"
+						oncomplete="PF('dlgRendimento').hide();"
+					    update="@form"
+						style=" margin-top:10px;  width: 315px;height:50px ;background:#24b85b;color: white;border-color: #24b85b; font:18px 'Ruda',sans-serif;">
+					</p:commandButton>
+
+				</center>
+			</div>
+			<div class="ui-grid-col-1"></div>
+		</div>
+
+	</p:dialog>
 
 </h:form>
 
