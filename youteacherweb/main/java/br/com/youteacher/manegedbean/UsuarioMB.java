@@ -119,7 +119,7 @@ public class UsuarioMB implements Serializable {
 			formularioDAO.inserir(viewBean.getFormulario1());
 			count++;
 			
-			novoFormulario1();
+			limparFormulario1();
 		}
 
 		if (habilitarVisualizacaoPergunta2 == true) {
@@ -130,7 +130,7 @@ public class UsuarioMB implements Serializable {
 				formularioDAO.inserir(viewBean.getFormulario2());
 				count++;
 				
-				novoFormulario2();
+				limparFormulario2();
 			}
 		}
 
@@ -141,7 +141,7 @@ public class UsuarioMB implements Serializable {
 				formularioDAO.inserir(viewBean.getFormulario3());
 				count++;
 				
-				novoFormulario3();
+				limparFormulario3();
 			}
 		}
 
@@ -152,7 +152,7 @@ public class UsuarioMB implements Serializable {
 				formularioDAO.inserir(viewBean.getFormulario4());
 				count++;
 				
-				novoFormulario4();
+				limparFormulario4();
 			}
 		}
 
@@ -163,7 +163,7 @@ public class UsuarioMB implements Serializable {
 				formularioDAO.inserir(viewBean.getFormulario6());
 				count++;
 				
-				novoFormulario5();
+				limparFormulario5();
 			}
 		}
 
@@ -174,7 +174,7 @@ public class UsuarioMB implements Serializable {
 				formularioDAO.inserir(viewBean.getFormulario6());
 				count++;
 				
-				novoFormulario6();
+				limparFormulario6();
 			}
 		}
 
@@ -185,7 +185,7 @@ public class UsuarioMB implements Serializable {
 				formularioDAO.inserir(viewBean.getFormulario7());
 				count++;
 				
-				novoFormulario7();
+				limparFormulario7();
 			}
 		}
 
@@ -196,7 +196,7 @@ public class UsuarioMB implements Serializable {
 				formularioDAO.inserir(viewBean.getFormulario8());
 				count++;
 				
-				novoFormulario8();
+				limparFormulario8();
 			}
 		}
 
@@ -207,7 +207,7 @@ public class UsuarioMB implements Serializable {
 				formularioDAO.inserir(viewBean.getFormulario9());
 				count++;
 				
-				novoFormulario9();
+				limparFormulario9();
 			}
 		}
 
@@ -218,7 +218,7 @@ public class UsuarioMB implements Serializable {
 				formularioDAO.inserir(viewBean.getFormulario10());
 				count++;
 				
-				novoFormulario10();
+				limparFormulario10();
 			}
 		}
 
@@ -240,7 +240,7 @@ public class UsuarioMB implements Serializable {
 	
 	
 	//Metodo para preencher os campos quando o usuario clicar em "VAMOS PRATICAR"
-	public void praticar(){
+	public void mostrarFormulario(){
 		List<Formulario> formularios = new ArrayList<Formulario>();
 		try{
 		 System.out.println("Entrou no praticar:");
@@ -461,12 +461,12 @@ public class UsuarioMB implements Serializable {
 	
 
 	// GERAR NOVOS FORMULARIOS
-	public void novoFormulario1() {
+	public void limparFormulario1() {
 
 		viewBean.setFormulario1(new Formulario());
 	}
 
-	public void novoFormulario2() {
+	public void limparFormulario2() {
 		if (habilitarVisualizacaoPergunta2 == true) {
 
 			viewBean.setFormulario2(new Formulario());
@@ -474,7 +474,7 @@ public class UsuarioMB implements Serializable {
 		}
 	}
 
-	public void novoFormulario3() {
+	public void limparFormulario3() {
 		if (habilitarVisualizacaoPergunta3 == true) {
 
 			viewBean.setFormulario3(new Formulario());
@@ -482,7 +482,7 @@ public class UsuarioMB implements Serializable {
 		}
 	}
 
-	public void novoFormulario4() {
+	public void limparFormulario4() {
 		if (habilitarVisualizacaoPergunta4 == true) {
 
 			viewBean.setFormulario4(new Formulario());
@@ -490,7 +490,7 @@ public class UsuarioMB implements Serializable {
 		}
 	}
 
-	public void novoFormulario5() {
+	public void limparFormulario5() {
 		if (habilitarVisualizacaoPergunta5 == true) {
 
 			viewBean.setFormulario5(new Formulario());
@@ -498,7 +498,7 @@ public class UsuarioMB implements Serializable {
 		}
 	}
 
-	public void novoFormulario6() {
+	public void limparFormulario6() {
 		if (habilitarVisualizacaoPergunta6 == true) {
 
 			viewBean.setFormulario6(new Formulario());
@@ -506,7 +506,7 @@ public class UsuarioMB implements Serializable {
 		}
 	}
 
-	public void novoFormulario7() {
+	public void limparFormulario7() {
 		if (habilitarVisualizacaoPergunta7 == true) {
 
 			viewBean.setFormulario7(new Formulario());
@@ -514,7 +514,7 @@ public class UsuarioMB implements Serializable {
 		}
 	}
 
-	public void novoFormulario8() {
+	public void limparFormulario8() {
 		if (habilitarVisualizacaoPergunta8 == true) {
 
 			viewBean.setFormulario8(new Formulario());
@@ -522,7 +522,7 @@ public class UsuarioMB implements Serializable {
 		}
 	}
 
-	public void novoFormulario9() {
+	public void limparFormulario9() {
 		if (habilitarVisualizacaoPergunta9 == true) {
 
 			viewBean.setFormulario9(new Formulario());
@@ -530,7 +530,7 @@ public class UsuarioMB implements Serializable {
 		}
 	}
 
-	public void novoFormulario10() {
+	public void limparFormulario10() {
 		if (habilitarVisualizacaoPergunta10 == true) {
 
 			viewBean.setFormulario10(new Formulario());
@@ -538,14 +538,8 @@ public class UsuarioMB implements Serializable {
 		}
 	}
 
-	// SELECIONADO
-	public void selecionado() {
-		System.out.println("SELECIONADO:" + viewBean.getVideoSelecionado());
-
-	}
-
 	// INSERIR UM NOVO ALUNO
-	public void inserir() {
+	public void inserirUsuario() {
 
 		try {
 			if (dao.listarCondicaoUsuario(
@@ -553,7 +547,7 @@ public class UsuarioMB implements Serializable {
 					.size() > 0) {
 				mostraMenssagem("ERRO", "Já existe um usúario com este Email");
 			} else {
-				dao.inserirUsuario(viewBean.getUsuario());
+				dao.inserir(viewBean.getUsuario());
 				mostraMenssagem("SUCESSO", "Usuario inserido com sucesso.");
 
 				novoUsuario();
@@ -570,7 +564,7 @@ public class UsuarioMB implements Serializable {
 	// Editar usuario
 	public void alterarUsuario() {
 		try {
-			dao.salvarUsuario(viewBean.getUsuarioLogado());
+			dao.alterar(viewBean.getUsuarioLogado());
 			mostraMenssagem("SUCESSO", "Usuario alterado com sucesso.");
 			viewBean.setNomeUsuario(viewBean.getUsuarioLogado().getNome());
 
@@ -582,11 +576,11 @@ public class UsuarioMB implements Serializable {
 	}
 
 	// DELETAR UM NOVO ALUNO
-	public void deletar() {
+	public void deletarUsuario() {
 
 		try {
 
-			dao.deletarUsuario(viewBean.getUsuario());
+			dao.remover(viewBean.getUsuario());
 			mostraMenssagem("SUCESSO", "Usuario deletado com sucesso.");
 
 		} catch (Exception e) {

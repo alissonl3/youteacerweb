@@ -83,9 +83,9 @@ public class UsuarioViewBean {
 		formulario10 = new Formulario();
 		
 		//Respostas
-		resposta1 = new String();
-		resposta2 = new String();
-		resposta3 = new String();
+		resposta1 = "";
+		resposta2 = "";
+		resposta3 = "";
 		resposta4 = new String();
 		resposta5 = new String();
 		resposta6 = new String();
@@ -110,6 +110,7 @@ public class UsuarioViewBean {
 
 	public void setVideoSelecionado(Video videoSelecionado) {
 		this.videoSelecionado = videoSelecionado;
+		
 	}
 
 	public boolean isHabilitarVisualizacaoQuestionario() {

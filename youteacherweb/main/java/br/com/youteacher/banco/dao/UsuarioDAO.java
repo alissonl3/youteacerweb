@@ -16,14 +16,14 @@ public class UsuarioDAO implements Serializable {
 
 	EntityManager em;
 
-	public List<Usuario> listaTodos() {
+	public List<Usuario> listarTodos() {
 
 		Query q = em.createQuery("from Usuario u");
 		return q.getResultList();
 
 	}
 
-	public void inserirUsuario(Usuario usuario) {
+	public void inserir(Usuario usuario) {
 		try {
 
 			em = Banco.getIstancia().getEm();
@@ -37,7 +37,7 @@ public class UsuarioDAO implements Serializable {
 		} 
 	}
 
-	public boolean deletarUsuario(Usuario usuario) {
+	public boolean remover(Usuario usuario) {
 		try {
 			em.getTransaction().begin();
 			em.remove(usuario);
@@ -60,25 +60,16 @@ public class UsuarioDAO implements Serializable {
 
 	}
 
-	public List<Usuario> listaTodosUsuarios(Usuario user) {
 
+	public void alterar(Usuario usuario) {
 		em = Banco.getIstancia().getEm();
 		em.getTransaction().begin();
-		Query q = em.createQuery("from " + user.getClass().getSimpleName());
-		em.getTransaction().commit();
-		return q.getResultList();
-
-	}
-
-	public void salvarUsuario(Usuario user) {
-		em = Banco.getIstancia().getEm();
-		em.getTransaction().begin();
-		em.merge(user);
+		em.merge(usuario); 
 		em.getTransaction().commit();
 
 	}
 
-	public Usuario retornarUsuario(Long id) {
+	public Usuario pesquisarUsuarioPorId(Long id) {
 		em = Banco.getIstancia().getEm();
 		Usuario retornado = null;
 		em.getTransaction().begin();
