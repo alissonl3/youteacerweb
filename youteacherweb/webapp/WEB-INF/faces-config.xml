@@ -27,13 +27,74 @@
 			<to-view-id>/aluno/home.xhtml</to-view-id>
 			<redirect></redirect>
 		</navigation-case>
-	</navigation-rule>
-	
-	<navigation-rule>
-		<from-view-id>/pages/adm.xhtml</from-view-id>
 		<navigation-case>
 			<from-outcome>logado2</from-outcome>
 			<to-view-id>/adm/home.xhtml</to-view-id>
+			<redirect></redirect>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>logado3</from-outcome>
+			<to-view-id>/master/home.xhtml</to-view-id>
+			<redirect></redirect>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>home</from-outcome>
+			<to-view-id>/pages/home.xhtml</to-view-id>
+			<redirect></redirect>
+		</navigation-case>
+	</navigation-rule>
+	
+	<!-- Navegação Master -->
+	<navigation-rule>
+		<from-view-id>/master/home.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>inicio</from-outcome>
+			<to-view-id>/master/home.xhtml</to-view-id>
+			<redirect></redirect>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>sair</from-outcome>
+			<to-view-id>/pages/home.xhtml</to-view-id>
+			<redirect></redirect>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>adm</from-outcome>
+			<to-view-id>/master/addadm.xhtml</to-view-id>
+			<redirect></redirect>
+		</navigation-case>
+	</navigation-rule>
+	
+	<!-- Navegação Master -->
+	<navigation-rule>
+		<from-view-id>/master/addadm.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>inicio</from-outcome>
+			<to-view-id>/master/home.xhtml</to-view-id>
+			<redirect></redirect>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>sair</from-outcome>
+			<to-view-id>/pages/home.xhtml</to-view-id>
+			<redirect></redirect>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>adm</from-outcome>
+			<to-view-id>/master/addadm.xhtml</to-view-id>
+			<redirect></redirect>
+		</navigation-case>
+	</navigation-rule>
+	
+	<!-- Navegação Adm -->
+	<navigation-rule>
+		<from-view-id>/adm/home.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>inicio</from-outcome>
+			<to-view-id>/adm/home.xhtml</to-view-id>
+			<redirect></redirect>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>sair</from-outcome>
+			<to-view-id>/pages/home.xhtml</to-view-id>
 			<redirect></redirect>
 		</navigation-case>
 	</navigation-rule>

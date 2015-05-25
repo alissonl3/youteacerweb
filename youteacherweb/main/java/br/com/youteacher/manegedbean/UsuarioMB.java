@@ -28,9 +28,14 @@ public class UsuarioMB implements Serializable {
 
 	private UsuarioViewBean viewBean;
 	private List<Video> videos;
+	
+	private List<Usuario> usuarioDataModel;
 
 	public UsuarioMB() {
 	}
+	
+	//menu bar
+	private boolean habilitarVisualizacaoBtnPerfil;
 
 	// Formulário
 	private boolean habilitarFormulario;
@@ -69,6 +74,8 @@ public class UsuarioMB implements Serializable {
 
 		dao = new UsuarioDAO();
 		formularioDAO = new FormularioDAO();
+		
+		usuarioDataModel = new ArrayList<Usuario>();
 
 		viewBean = new UsuarioViewBean();
 		videoDAO = new VideoDAO();
@@ -83,9 +90,17 @@ public class UsuarioMB implements Serializable {
 
 	// ADICIONAR VIDEO
 	public void inserirVideo() {
+			
+			List<Video> videoCondicao = new ArrayList<Video>();
+		
 		try {
 			String novoUrl = viewBean.getVideo().getUrl()
 					.replace("watch?v=", "v/");
+			
+			videoCondicao = videoDAO.listarCondicaoVideo("titulo = '" + viewBean.getVideo().getTitulo() + "'");
+			
+			//VERIFICAR SE EXISTE UM VIDEO COM O MESMO TITULO
+			if(videoCondicao.isEmpty()){
 			viewBean.getVideo().setUrl(novoUrl);
 			viewBean.getVideo().setUsuario(viewBean.getUsuarioLogado());
 			videoDAO.inserir(viewBean.getVideo());
@@ -95,14 +110,55 @@ public class UsuarioMB implements Serializable {
 			videoSelecionadoFormulario = viewBean.getVideo();
 
 			novoVideo();
-
+			
 			mostraMenssagem("SUCESSO", "Video inserido com sucesso!");
+			
+			RequestContext.getCurrentInstance().execute("PF('dlgCriacaoForm').show();");
+			
+			}else{
+				
+			mostraMenssagem("ATENÇÃO", "Já existe um video com esse titulo.");
+			
+			}
 
 		} catch (Exception e) {
+			
 			mostraMenssagem("ERRO!!", "Erro ao inserir video!");
 			System.out.println("Erro video:" + e);
 		}
 
+	}
+	
+	//DIRECIONAR PARA A PAGINA DE ADDFORMULARIO
+	public String toAddFormulario(){
+		
+		
+		//controle da vizualização
+		habilitarVisualizacaoPergunta2 = false;
+		habilitarVisualizacaoPergunta3 = false;
+		habilitarVisualizacaoPergunta4 = false;
+		habilitarVisualizacaoPergunta5 = false;
+		habilitarVisualizacaoPergunta6 = false;
+		habilitarVisualizacaoPergunta7 = false;
+		habilitarVisualizacaoPergunta8 = false;
+		habilitarVisualizacaoPergunta9 = false;
+		habilitarVisualizacaoPergunta10 = false;
+		
+		
+		//limpar todos os formularios
+		limparFormulario1();
+		limparFormulario2();
+		limparFormulario3();
+		limparFormulario4();
+		limparFormulario5();
+		limparFormulario6();
+		limparFormulario7();
+		limparFormulario8();
+		limparFormulario9();
+		limparFormulario10();
+		
+		
+		return "formulario";
 	}
 
 	// ADICIONAR FORMULÁRIO
@@ -237,15 +293,41 @@ public class UsuarioMB implements Serializable {
 
 	}
 	
+	//TONAR UM USUARIO EM ADMINISTRADOR
+	public void tornarAdministrador(){
+		
+		if(viewBean.getUsuarioSelecionadoTabela() != null){
+			System.out.println("Entrou em tornar adm");
+			viewBean.getUsuarioSelecionadoTabela().setAdm("sim");
+			
+			try{
+			dao.alterar(viewBean.getUsuarioSelecionadoTabela());
+			mostraMenssagem("SUCESSO", "O usuario se tornou um administrador");
+			}catch(Exception e){
+				System.out.println("Erro tornar adm: " + e);
+				mostraMenssagem("ERRO", "Houve um erro");
+				
+			}
+			
+		}
+		
+		
+	}
+	
+	
+	
 	
 	
 	//Metodo para preencher os campos quando o usuario clicar em "VAMOS PRATICAR"
 	public void mostrarFormulario(){
 		List<Formulario> formularios = new ArrayList<Formulario>();
+		
 		try{
+			
+			
 		 System.out.println("Entrou no praticar:");
 		 formularios = formularioDAO.pesquisarPorVideo(viewBean.getVideoSelecionado().getId());
-		  tamanhoFormulario = formularios.size();
+		 tamanhoFormulario = formularios.size();
 		 System.out.println("Tamanho da lista de formulario:"+formularios.size());
 		
 		if(tamanhoFormulario>=1 ){
@@ -289,12 +371,22 @@ public class UsuarioMB implements Serializable {
 			setHabilitarVisualizacaoPergunta10(true);
 		}
 		
+		RequestContext.getCurrentInstance().update(":frmPraticar");
+		
 		
 		}
 		catch(Exception e){
 			mostraMenssagem("ERRO!", "Não existe formulário para o Vídeo");
 		}
 		
+	}
+	
+	//REDIRECIONAR PARA ADDADM
+	public String irParaAddAdm(){
+		
+		usuarioDataModel = dao.listarTodos();
+		
+		return "adm";
 	}
 	
 	//Metodo para corrigir as respostas do Usuario
@@ -376,6 +468,20 @@ public class UsuarioMB implements Serializable {
 
 	// VERIFICAR EXISTENCIA DE FORMULÁRIO DO VIDEO
 	public void verificarFormularioVideo() {
+		
+				//controle da vizualização
+				habilitarVisualizacaoPergunta1 = false;
+				habilitarVisualizacaoPergunta2 = false;
+				habilitarVisualizacaoPergunta3 = false;
+				habilitarVisualizacaoPergunta4 = false;
+				habilitarVisualizacaoPergunta5 = false;
+				habilitarVisualizacaoPergunta6 = false;
+				habilitarVisualizacaoPergunta7 = false;
+				habilitarVisualizacaoPergunta8 = false;
+				habilitarVisualizacaoPergunta9 = false;
+				habilitarVisualizacaoPergunta10 = false;
+				
+		
 
 		List<Formulario> formularioExistente = new ArrayList<Formulario>();
 		List<Video> videoRelacionados = new ArrayList<Video>();
@@ -631,11 +737,57 @@ public class UsuarioMB implements Serializable {
 
 	// EXECUTAR O LOGIN DO USUARIO
 	public String loginUsuario() {
+		
+		
+		if(viewBean.getUsuario().getEmail().equals("ifpr@gmail.com") && viewBean.getUsuario().getSenha().equals("root")){
+			System.out.println("Entrou no master!");
+			
+			habilitarVisualizacaoBtnPerfil = false;
+			
+			viewBean.setNomeUsuario("Usuario Master");
+			
+			FacesContext fc = FacesContext.getCurrentInstance();
+			HttpSession session = (HttpSession) fc.getExternalContext()
+					.getSession(false);
+			session.setAttribute("objLogin", "logado3");
+			return "logado3";
+			
+		}
+		else{
+			
+		habilitarVisualizacaoBtnPerfil = true;
+			
+		List<Usuario> usuarioAdm = new ArrayList<Usuario>();
+		List<Usuario> usuarioNormal = new ArrayList<Usuario>();
+	
+		usuarioAdm = listarCondicaoAdministrador();
+	
+		if(usuarioAdm.isEmpty()){
+		
+			usuarioNormal = listarCondicao();
+		}
+			
+		if (!usuarioAdm.isEmpty()) {
+		
+			viewBean.setUsuarios(usuarioAdm);
 
-		listarCondicao();
+			viewBean.setUsuarioLogado(viewBean.getUsuarios().get(0));
+			viewBean.setNomeUsuario(viewBean.getUsuarios().get(0).getNome());
+			// viewBean.setUsuarioEditado(viewBean.getUsuarios().get(0));
+			atualizarListaVideo();
 
-		if (!viewBean.getUsuarios().isEmpty()) {
+			FacesContext fc = FacesContext.getCurrentInstance();
+			HttpSession session = (HttpSession) fc.getExternalContext()
+					.getSession(false);
+			session.setAttribute("objLogin", "logado2");
+			return "logado2";
 
+		}
+
+		else if (!usuarioNormal.isEmpty()) {
+			
+			viewBean.setUsuarios(usuarioNormal);
+			
 			viewBean.setUsuarioLogado(viewBean.getUsuarios().get(0));
 			viewBean.setNomeUsuario(viewBean.getUsuarios().get(0).getNome());
 			// viewBean.setUsuarioEditado(viewBean.getUsuarios().get(0));
@@ -653,8 +805,10 @@ public class UsuarioMB implements Serializable {
 			return "inicial";
 
 		}
+		}
 
 	}
+	
 
 	// EXECUTAR LOGOFF DO USUARIO
 	public String logOff() {
@@ -668,13 +822,23 @@ public class UsuarioMB implements Serializable {
 	}
 
 	// LISTAR CONDICÃO LOGAR USUARIO
-	public void listarCondicao() {
+	public List<Usuario> listarCondicao() {
+		
 
-		viewBean.setUsuarios(dao.listarCondicaoUsuario(" email = '"
+				return	dao.listarCondicaoUsuario(" email = '"
 				+ viewBean.getUsuario().getEmail() + "' and senha = '"
-				+ viewBean.getUsuario().getSenha() + "'"));
+				+ viewBean.getUsuario().getSenha() + "'");
 
 	}
+	
+	// LISTAR CONDICÃO LOGAR ADMINISTRADOR
+		public List<Usuario> listarCondicaoAdministrador() {
+
+			return dao.listarCondicaoUsuario(" email = '"
+					+ viewBean.getUsuario().getEmail() + "' and senha = '"
+					+ viewBean.getUsuario().getSenha() + "' and adm = 'sim' ");
+
+		}
 	
 	
 
@@ -745,6 +909,15 @@ public class UsuarioMB implements Serializable {
 	public void setHabilitarVisualizacaoPergunta5(
 			boolean habilitarVisualizacaoPergunta5) {
 		this.habilitarVisualizacaoPergunta5 = habilitarVisualizacaoPergunta5;
+	}
+
+	public boolean isHabilitarVisualizacaoBtnPerfil() {
+		return habilitarVisualizacaoBtnPerfil;
+	}
+
+	public void setHabilitarVisualizacaoBtnPerfil(
+			boolean habilitarVisualizacaoBtnPerfil) {
+		this.habilitarVisualizacaoBtnPerfil = habilitarVisualizacaoBtnPerfil;
 	}
 
 	public boolean isHabilitarVisualizacaoPergunta6() {
@@ -866,5 +1039,15 @@ public class UsuarioMB implements Serializable {
 			boolean habilitarVisualizacaoPraticar) {
 		this.habilitarVisualizacaoPraticar = habilitarVisualizacaoPraticar;
 	}
+
+	public List<Usuario> getUsuarioDataModel() {
+		return usuarioDataModel;
+	}
+
+	public void setUsuarioDataModel(List<Usuario> usuarioDataModel) {
+		this.usuarioDataModel = usuarioDataModel;
+	}
+	
+	
 
 }

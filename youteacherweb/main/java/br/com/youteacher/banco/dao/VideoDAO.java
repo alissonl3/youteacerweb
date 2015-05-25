@@ -50,6 +50,17 @@ public class VideoDAO {
 
 	}
 	
+	public List<Video> listarCondicaoVideo(String condicao) {
+
+		em = Banco.getIstancia().getEm();
+		em.getTransaction().begin();
+		Query q = em.createQuery("from " + Video.class.getSimpleName()
+				+ " where " + condicao);
+		em.getTransaction().commit();
+		return q.getResultList();
+
+	}
+	
 	public Video pesquisarPorID(Integer id){
 		em = Banco.getIstancia().getEm();
 		em.getTransaction().begin();

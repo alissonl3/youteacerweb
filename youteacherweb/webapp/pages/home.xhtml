@@ -9,7 +9,7 @@
 
 
 	<ui:define name="conteudo">
-		<div
+		<div id="#topo"
 			style="min-height: 100%; height: auto; width: 100%; margin-top: 20px;">
 
 			<!-- Div da Imagem -->
@@ -101,7 +101,7 @@
 				Dúvidas? Entre em contato!</h2>
 
 			<!-- Tag de contatos -->
-			<div style="height: 300px; width: 100%; margin-top: 20px;">
+			<div style="height: 260px; width: 100%; margin-top: 20px;">
 				<div
 					style="width: 33%; margin: auto; margin-left: 6px; height: 256px; float: left; text-align: center;">
 
@@ -131,6 +131,21 @@
 					alissonlopes3@gmail.com <br /> alanlopes4@gmail.com <br />
 				</div>
 
+			</div>
+			
+			
+			<!-- Tag do topo -->
+			<div style="height: 150px; width: 100%; margin-bottom: 20px;">
+				<center>
+				
+				<p:commandLink id="btnTopoHome" onclick="window.location='#'" >
+					<p:graphicImage value="../resources/imagens/ancora.png"/>	
+				</p:commandLink>
+				<br />
+				<h:outputText value="Topo" style=" font-size: 20px; color:  rgba(156, 201, 236, 1); "/>
+				
+
+				</center>			
 			</div>
 
 

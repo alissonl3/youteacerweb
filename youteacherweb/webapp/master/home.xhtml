@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<ui:composition template="/templates/template_user.xhtml">
+	
+
+	<ui:define name="conteudo">
+	
+		<!-- Adicionar Video -->
+		<div class="ui-grid-row">
+		
+		<!-- Canto esquerdo -->
+		<div class="ui-grid-col-2" style="margin-top: 30px; height: 500px;">		
+		</div>
+		
+		<!-- Canto meio -->
+		<div class="ui-grid-col-8" style="margin-top: 30px; height: 500px;">
+		<!-- Desenho -->
+				<div class="ui-grid-col-6">
+					<img src="../resources/imagens/adm_home.png"
+						style="float: left; max-width: 100%; height: auto;" />
+				</div>
+				<!-- Botão adicionar -->
+				<div class="ui-grid-col-6">
+					<center style="margin-top: 40px;">
+						<p:commandButton id="btnAddAdm" value="Adicionar Adm"
+							styleClass="btAddVideo"
+							style="border-radius: 15px; color: white; margin-top: 50px; height:80px;"
+							action="#{usuarioMB.irParaAddAdm}" />	
+											
+						<h3
+							style="text-align: center; color: #ff8d3b; font-family: ‘Lucida Console’, sans-serif; font-size: 20px; font-weight: bold;">ADMINISTRADORES</h3>
+						<div style="width: 300px;">
+							<p
+								style="text-align: inherit; color: graytext; font-weight: bold;">
+								Adicione um administrador que poderá gerenciar o YouTeacher!</p>
+						</div>
+						<div style="clear: both;"></div>
+					
+					</center>
+				</div>
+		</div>
+		
+		
+		<!-- Canto direito -->
+		<div class="ui-grid-col-2" style="margin-top: 30px; height: 500px;">	
+		</div>
+		
+		</div>
+
+	</ui:define>
+</ui:composition>
+</html>

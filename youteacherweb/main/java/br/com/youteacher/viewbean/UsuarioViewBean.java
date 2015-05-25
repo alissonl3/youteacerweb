@@ -16,6 +16,7 @@ public class UsuarioViewBean {
 	private Video video;
 	private List<Video> videos;
 	private List<Video> videosRecente;
+	private Usuario usuarioSelecionadoTabela;
 	
 
 
@@ -185,6 +186,14 @@ public class UsuarioViewBean {
 
 	public void setVideo(Video video) {
 		this.video = video;
+	}
+
+	public Usuario getUsuarioSelecionadoTabela() {
+		return usuarioSelecionadoTabela;
+	}
+
+	public void setUsuarioSelecionadoTabela(Usuario usuarioSelecionadoTabela) {
+		this.usuarioSelecionadoTabela = usuarioSelecionadoTabela;
 	}
 
 	public Formulario getFormulario1() {

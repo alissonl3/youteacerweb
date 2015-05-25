@@ -30,7 +30,7 @@
 						style="padding-top: 10px; padding-bottom: 10px; padding-left: 80px;">
 						<h:form id="frmHeaderUser">
 							<p:commandButton id="btnInicio" value="inicio" styleClass="bt" action="inicio" actionListener="#{usuarioMB.atualizarListaVideo}" update="@form :frmHeaderUser" />
-							<p:commandButton id="btnPerfil" value="perfil" styleClass="bt" action="perfil" update="@form :frmHeaderUser"/>
+							<p:commandButton id="btnPerfil" rendered="#{usuarioMB.habilitarVisualizacaoBtnPerfil}" value="perfil" styleClass="bt" action="perfil" update="@form :frmHeaderUser"/>
 							<p:commandButton id="btnSair" value="Sair" styleClass="bt"
 								update="@form :frmHeaderUser" action="#{usuarioMB.logOff}" />
 						</h:form>

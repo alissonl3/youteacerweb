@@ -17,8 +17,11 @@ public class UsuarioDAO implements Serializable {
 	EntityManager em;
 
 	public List<Usuario> listarTodos() {
-
+		
+		em = Banco.getIstancia().getEm();
+		em.getTransaction().begin();
 		Query q = em.createQuery("from Usuario u");
+		em.getTransaction().commit();
 		return q.getResultList();
 
 	}

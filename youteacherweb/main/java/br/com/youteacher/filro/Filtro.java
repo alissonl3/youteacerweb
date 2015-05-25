@@ -29,7 +29,15 @@ public class Filtro implements Filter {
 	        String login = (String) req.getSession().getAttribute("objLogin");
 	        String url = req.getRequestURI();
 	        
-	        if(url.contains("aluno") && (login == null || !login.equals("logado"))){
+	        if(url.contains("master") && (login == null || !login.equals("logado3"))){
+	            
+	            String contextPath =  ((HttpServletRequest) request).getContextPath();
+	            
+	            ((HttpServletResponse) response).sendRedirect(contextPath + "/index.html");
+	        
+	        
+	        }
+	        else if(url.contains("aluno") && (login == null || !login.equals("logado"))){
 	            
 	            String contextPath =  ((HttpServletRequest) request).getContextPath();
 	            
