@@ -824,17 +824,26 @@ public class UsuarioMB implements Serializable {
 	}
 
 	// ADICIONADOS RECENTEMENTE
-	public void addRecente(List<Video> videos) {
-		if (videos.size() > 3) {
-			List<Video> recentes = new ArrayList<Video>();
-			int tamanho = videos.size();
-			for (int i = (tamanho - 3); i < tamanho; i++) {
-				recentes.add(videos.get(i));
+		public void addRecente(List<Video> videos) {
+			if (videos.size() > 0) {
+				List<Video> recentes = new ArrayList<Video>();
+				int tamanho = videos.size();
+				if(tamanho>6){
+					int inicio =tamanho;
+					inicio -= 6; 
+					for (int i = (tamanho-1); i >=inicio ; i--) {
+						recentes.add(videos.get(i));
+					}
+				}
+				else{
+					for (int i = (tamanho-1); i >= 0; i--) {
+						recentes.add(videos.get(i));
+					}
+				}
+				viewBean.setVideosRecente(recentes);
 			}
-			viewBean.setVideosRecente(recentes);
-		}
 
-	}
+		}
 
 	// EXECUTAR O LOGIN DO USUARIO
 	public String loginUsuario() {
