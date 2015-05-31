@@ -464,7 +464,7 @@ public class UsuarioMB implements Serializable {
 			}
 			
 			
-			//RequestContext.getCurrentInstance().update(":frmDlgTemplate");
+				RequestContext.getCurrentInstance().update(":frmDlgTemplate");
 			//RequestContext.getCurrentInstance().execute("PF('dlgRendimento').show();");
 			
 			
@@ -893,7 +893,18 @@ public class UsuarioMB implements Serializable {
 	
 		//ATUALIZAR RESPOSTAS FORMULARIOS
 		public void atualizarFormulario(){
-			viewBean.initValues();
+			//Respostas
+			viewBean.setResposta1(new String());
+			viewBean.setResposta2(new String());
+			viewBean.setResposta3(new String());
+			viewBean.setResposta4(new String());
+			viewBean.setResposta5(new String());
+			viewBean.setResposta6(new String());
+			viewBean.setResposta7(new String());
+			viewBean.setResposta8(new String());
+			viewBean.setResposta9(new String());
+			viewBean.setResposta10(new String());
+			
 			org.primefaces.context.RequestContext.getCurrentInstance().update(":frmPraticar");
 		}
 		
