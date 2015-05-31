@@ -305,6 +305,7 @@ public class UsuarioMB implements Serializable {
 			mostraMenssagem("SUCESSO", "O usuario se tornou um administrador");
 			
 			RequestContext.getCurrentInstance().update("frmAddAdm");
+			RequestContext.getCurrentInstance().update("frmGerenciar");
 			
 			}catch(Exception e){
 				System.out.println("Erro tornar adm: " + e);
@@ -476,42 +477,55 @@ public class UsuarioMB implements Serializable {
 		
 	}
 	
-	//DELETAR VIDEO
-		public String deletarVideo(){
-			String url = "";
-		try{	
-			if(viewBean.getVideoSelecionado() != null){
-				System.out.println("Video Selecionado diferente de null");
-				List<Formulario> formularioExistente = new ArrayList<Formulario>();
-				
-				formularioExistente = formularioDAO.pesquisarPorVideo(viewBean
-						.getVideoSelecionado().getId());
-				
-				videoDAO.remover(viewBean.getVideoSelecionado());
-				
-				if(formularioExistente.size() == 1){
-				System.out.println("Existe Formulario vinculado ao videoSelecionado");
-				formularioDAO.remover(formularioExistente.get(0));
-				System.out.println("Removeu Formulario");
-				}
-				
-				mostraMenssagem("SUCESSO", "Video deletado com sucesso");
-				System.out.println("Removeu video");
-				
-				atualizarListaVideo();
-				
-				url = "inicio";
-				
-			}
-		}catch(Exception e){
-			System.out.println("Erro ao deletar video " + e);
+	// REDIRECIONAR PARA PAGINA DE GERENCIAMENTO
+		public String irParaGerenciar() {
+
+			usuarioDataModel = dao.listarTodos();
+
+			return "gerenciar";
 		}
-		
+	
+	
+	
+	// DELETAR VIDEO
+		public String deletarVideo() {
+			String url = "";
+			try {
+				if (viewBean.getVideoSelecionado() != null) {
+					System.out.println("Video Selecionado diferente de null");
+					List<Formulario> formularioExistente = new ArrayList<Formulario>();
+
+					formularioExistente = formularioDAO.pesquisarPorVideo(viewBean
+							.getVideoSelecionado().getId());			
+
+					if (formularioExistente.size() >= 1) {
+						System.out
+								.println("Existe Formulario vinculado ao videoSelecionado");
+						for (int i = 0; i < formularioExistente.size(); i++) {
+							formularioDAO.remover(formularioExistente.get(i));
+							System.out.println("Removeu Formulario");
+						}
+					}
+					
+					videoDAO.remover(viewBean.getVideoSelecionado());
+
+					mostraMenssagem("SUCESSO", "Video deletado com sucesso");
+					System.out.println("Removeu video");
+
+					atualizarListaVideo();
+
+					url = "inicio";
+
+				}
+			} catch (Exception e) {
+				System.out.println("Erro ao deletar video " + e);
+			}
+
 			return url;
-		
-//			RequestContext.getCurrentInstance().update("frmDlgTemplate");
-//			RequestContext.getCurrentInstance().execute("PF('dlgDeletarVideo').show();");
-			
+
+			// RequestContext.getCurrentInstance().update("frmDlgTemplate");
+			// RequestContext.getCurrentInstance().execute("PF('dlgDeletarVideo').show();");
+
 		}
 	
 

@@ -1,0 +1,124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="/templates/template_user.xhtml">
+
+	<ui:define name="conteudo">
+		<h:form id="frmGerenciar">
+			<p:growl showDetail="true" showSummary="true" life="5000" />
+			<div class="ui-grid">
+				<div class="ui-grid-row">
+					<div class="ui-grid-col-12">
+						<center>
+							<h3
+								style="text-align: center; color: #ff8d3b; font-family: ‘Lucida Console’, sans-serif; font-size: 30px; font-weight: bold;">TABELA DE USUÁRIOS</h3>
+						</center>
+					</div>
+				</div>
+				<!-- Formulário para cadastro de video -->
+				<div class="ui-grid-row"
+					style="margin-top: 20px; margin-bottom: 20px;">
+					
+					<div class="ui-grid-col-2"></div>
+					
+					
+					<!-- Formulário -->
+					<div class="ui-grid-col-8">
+						<!-- Div da Imagem -->
+						<center>
+						<!-- Resultados da Pesquisa -->
+	<p:dataTable 
+		id="dtUsuario" 
+		var="usuario"
+		value="#{usuarioMB.usuarioDataModel}" 
+		paginator="true" 
+		rowsPerPageTemplate="10,20,30" 
+		rows="10"
+		paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+		paginatorPosition="bottom"
+		rowKey="#{usuario.id}" >
+		
+			<!-- id -->
+			<p:column style="width:20%;vertical-align:middle;">
+				<f:facet name="header">
+					Id
+				</f:facet>
+				#{usuario.id}
+			</p:column>
+			
+			<!-- Nome -->
+			<p:column style="width:20%;vertical-align:middle;">
+				<f:facet name="header">
+					Nome
+				</f:facet>
+				#{usuario.nome}
+			</p:column>
+			
+			<!-- Email -->
+			<p:column style="width:20%;vertical-align:middle;">
+				<f:facet name="header">
+					Email
+				</f:facet>
+				#{usuario.email}
+			</p:column>
+			
+			<!-- dataNascimento -->
+			<p:column style="width:20%;vertical-align:middle;">
+				<f:facet name="header">
+					dtNascimento
+				</f:facet>
+				#{usuario.dataNascimento}
+			</p:column>
+			
+			<!-- Adm -->
+			<p:column style="width:20%;vertical-align:middle;">
+				<f:facet name="header">
+					Adm
+				</f:facet>
+				#{usuario.adm}
+			</p:column>
+			
+			<!-- Ação -->
+			<p:column style="width:20%;vertical-align:middle;">
+				<f:facet name="header">
+					Ação
+				</f:facet>
+				<center>
+				<p:commandButton 
+				actionListener="#{usuarioMB.atualizarDialogAddAdm}"
+				value="" 
+				update="@form"
+				style="width: 25px;height:25px ; background: url(../resources/imagens/admin.png) no-repeat; border-color: white;">
+					<f:setPropertyActionListener target="#{usuarioMB.viewBean.usuarioSelecionadoTabela}" value="#{usuario}" />
+				</p:commandButton>
+				<p:commandButton 			
+				value="" 
+				update="@form"
+				style="width: 25px;height:25px ; background: url(../resources/imagens/del.png) no-repeat; border-color: white;">
+					<f:setPropertyActionListener target="#{usuarioMB.viewBean.usuarioSelecionadoTabela}" value="#{usuario}" />
+				</p:commandButton>
+				</center>
+			</p:column>			
+		</p:dataTable>  				
+						</center>
+					</div>
+
+					<div class="ui-grid-col-2"></div>
+				</div>
+				
+			</div>
+		</h:form>
+
+		<!-- Dialogs -->
+		<ui:include src="../templates/dlgsTemplate.xhtml"></ui:include>
+
+	</ui:define>
+</ui:composition>
+
+</html>

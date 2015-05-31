@@ -105,6 +105,11 @@
 			<redirect></redirect>
 		</navigation-case>	
 		<navigation-case>
+			<from-outcome>gerenciar</from-outcome>
+			<to-view-id>/adm/gerenciar.xhtml</to-view-id>
+			<redirect></redirect>
+		</navigation-case>
+		<navigation-case>
 			<from-outcome>dltVideo</from-outcome>
 			<to-view-id>/adm/deletarvideo.xhtml</to-view-id>
 			<redirect></redirect>
@@ -210,9 +215,29 @@
 		</navigation-case>
 	</navigation-rule>
 	
-	<!-- Navegação Aluno -->
+	<!-- Navegação Adm -->
 	<navigation-rule>
 		<from-view-id>/adm/praticar.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>sair</from-outcome>
+			<to-view-id>/pages/home.xhtml</to-view-id>
+			<redirect></redirect>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>inicio</from-outcome>
+			<to-view-id>/adm/home.xhtml</to-view-id>
+			<redirect></redirect>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>perfil</from-outcome>
+			<to-view-id>/adm/perfil.xhtml</to-view-id>
+			<redirect></redirect>
+		</navigation-case>
+	</navigation-rule>
+	
+	<!-- Navegação Adm -->
+	<navigation-rule>
+		<from-view-id>/adm/gerenciar.xhtml</from-view-id>
 		<navigation-case>
 			<from-outcome>sair</from-outcome>
 			<to-view-id>/pages/home.xhtml</to-view-id>

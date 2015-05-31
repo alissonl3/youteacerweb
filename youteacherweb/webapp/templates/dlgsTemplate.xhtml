@@ -127,7 +127,7 @@
 		<!-- Titulo do video -->
 		<center>
 			<h1
-				style="text-align: center; color: rgb(202, 60, 60); font-size: 30px; font-weight: bold;">
+				style="text-align: center; color: rgb(202, 60, 60); font-size: 25px; font-weight: bold;">
 				<h:outputText value="#{usuarioMB.viewBean.videoSelecionado.titulo}" />
 			</h1>
 		</center>
@@ -135,7 +135,7 @@
 			<div style="width: 80%; float: left;">
 				<center>
 					<h3
-						style="text-align: center; color: graytext; font-size: 20px; font-weight: bold;">Postado
+						style="text-align: center; color: graytext; font-size: 18px; font-weight: bold;">Postado
 						por #{usuarioMB.viewBean.videoSelecionado.usuario.nome}</h3>
 				</center>
 			</div>
@@ -156,7 +156,7 @@
 
 		<!-- Tag do video -->
 		<div
-			style="height: 400px; width: 600px; margin: auto; margin-top: 20px; margin-bottom: 20px;">
+			style="height: 400px; width: 600px; margin: auto; margin-top: 10px; margin-bottom: 5px;">
 
 			<p:media value="#{usuarioMB.viewBean.videoSelecionado.url}"
 				width="600" height="400" player="flash" />
@@ -165,7 +165,7 @@
 		<center>
 			<p:commandButton rendered="#{usuarioMB.habilitarVisualizacaoPraticar}" value="VAMOS PRATICAR" styleClass="btnVerdeClaro"
 				id="btnPraticar" actionListener="#{usuarioMB.mostrarFormulario}" action="praticar" update="@form"
-				style=" margin-top:10px;  width: 315px;height:50px ;background:#24b85b;color: white;border-color: #24b85b; font:18px 'Ruda',sans-serif;">
+				style="  width: 315px;height:50px ;background:#24b85b;color: white;border-color: #24b85b; font:18px 'Ruda',sans-serif;">
 			</p:commandButton>
 		</center>
 	</p:dialog>
@@ -346,7 +346,7 @@
 	
 	<!-- Menssagem sobre  deletarVideo -->
 	<p:dialog id="dlgDeletarVideo" widgetVar="dlgDeletarVideo"
-		resizable="false" width="500px" height="230px" modal="true"
+		resizable="false" width="500px" height="250px" modal="true"
 		showHeader="false">
 		<font style="color: #24b85b; font-size: 30px; float: left;"> <b>Notificação</b>
 		</font>
@@ -363,7 +363,7 @@
 				<div
 					style="text-align: inherit; text-decoration: none; color: graytext; margin-top: 30px;">
 
-					<h:outputText value="Tem certeza que deseja excluir?" />
+					<h:outputText value="Atenção: O formulário vinculado também será deletado! Tem certeza que deseja excluir?" />
 					<!-- Botões de Confirmação -->
 					<p:commandButton value="SIM" styleClass="btnVerdeClaro"
 						id="btnSimExclusaoVideo" 
