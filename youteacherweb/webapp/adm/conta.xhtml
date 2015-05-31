@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+
+<h:form id="frmConta">
+
+	
+		<h:panelGrid columns="1" cellpadding="3">
+		<h:outputText value="Configurar sua conta."
+			style="font-size:15px; width: 315px; height:50px ;" />
+			<p:commandButton id="btnPerfil" update="@form" value="Editar Perfil"			
+				style="width: 200px;height:50px ; 	background: #9cc9ec;color:
+				 white;border-color: #9cc9ec; font:18px 'Ruda',sans-serif;"
+				/>
+			<p:commandButton id="btnSair" update="@form" value="Sair"
+				
+				style="width: 200px;height:50px ; background: #9cc9ec;color: white;border-color: #9cc9ec;"
+				action="#{usuarioMB.logOff}" />
+		</h:panelGrid>
+	
+</h:form>
+
+</html>

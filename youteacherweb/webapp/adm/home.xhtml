@@ -2,13 +2,112 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
-	xmlns:h="http://java.sun.com/jsf/html">
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core">
 
-<ui:composition template="/templates/template.xhtml">
-	
+<ui:composition template="/templates/template_user.xhtml">
+
 
 	<ui:define name="conteudo">
-			Aqui é a pagina do Administrador.
+		<!-- Adicionar Video -->
+		<div class="ui-grid-row">
+			<!-- Div lista de vídeos -->
+			<div class="ui-grid-col-4" style="margin-top: 30px; height: 500px;">
+				<!-- Componente da lista de videos -->
+				<h:form>
+					<h:panelGrid style=" margin-left: 20px; margin-bottom:50px"
+						cellpadding="5">
+						<p:selectOneListbox id="listaVideos"
+							value="#{usuarioMB.viewBean.videoSelecionado}" converter="videoConverter" var="v"
+							filter="true"
+							style="width: 300px; background: #F0FFFF; border:#F0FFFF; color:graytext; font-size:17px;"
+							scrollHeight="400" filterMatchMode="contains">
+							<p:ajax event="click" listener="#{usuarioMB.verificarFormularioVideo}" update="@form :frmDlgTemplate" oncomplete="PF('dlgPlayerVideo').show()">							
+							</p:ajax>
+							<f:selectItems value="#{usuarioMB.viewBean.videos}" var="videos"
+								itemLabel="#{videos.titulo}" itemValue="#{videos}">
+							</f:selectItems>
+							<p:column>
+								<h:outputText value="#{v.titulo}" />
+							</p:column>
+						</p:selectOneListbox>
+					</h:panelGrid>
+	
+				</h:form>
+			</div>
+			<!-- Painel Direito -->
+			<div class="ui-grid-col-8" style="margin-top: 30px; height: 550px;">
+				<!-- Desenho -->
+				<div class="ui-grid-col-6">
+					<img src="../resources/imagens/nerd_home.png"
+						style="float: left; max-width: 100%; height: auto;" />
+				</div>
+				<!-- Botão adicionar -->
+				<div class="ui-grid-col-6">
+					<center style="margin-top: 100px;">
+						<h3
+							style="text-align: center; color: #ff8d3b; font-family: ‘Lucida Console’, sans-serif; font-size: 20px; font-weight: bold;">COMPARTILHE
+							CONHECIMENTO!</h3>
+						<div style="width: 300px;">
+							<p
+								style="text-align: inherit; color: graytext; font-weight: bold;">
+								Tem conhecimento de algo importante, não perca tempo...
+								Compartilhe já!</p>
+						</div>
+						<div style="clear: both;"></div>
+						<p:commandButton id="btnAddVideo" value="Adicionar vídeo"
+							styleClass="btAddVideo"
+							style="border-radius: 15px; color: white; margin-top: 50px; height:80px;"
+							action="video" />
+					</center>
+				</div>
+			</div>
+		</div>
+
+		<div style="clear: both;"></div>
+		<p:separator />
+		<div style="clear: both;"></div>
+
+		<!-- Histórico de videos -->
+		<div class="ui-grid-row">
+
+			<!-- Div lista de vídeos -->
+			<div class="ui-grid-col-4" style="margin-top: 30px; height: 400px;">
+
+				<!-- Div da Imagem -->
+				<center>
+					<img src="../resources/imagens/nerd22.png"
+						style="max-width: 100%; height: auto; margin-top: 10px;" />
+				</center>
+
+			</div>
+
+			<!-- Painel Direito -->
+			<div class="ui-grid-col-8" style="margin-top: 30px; height: 400px;">
+				<center>
+					<h3
+						style="text-align: center; color: #ff8d3b; font-family: ‘Lucida Console’, sans-serif; font-size: 30px; font-weight: bold;">ADICIONADOS
+						RECENTEMENTE</h3>
+				</center>
+				<center>
+					<p:selectOneListbox id="recente"
+						value="#{usuarioMB.viewBean.videosRecente}" scrollHeight="200"
+						style="width:500px; color:graytext; font-size: 25px; font-weight:bold; background: #F0FFFF; border:#F0FFFF;  font-family: ‘Lucida Console’, sans-serif;">
+						<f:selectItems value="#{usuarioMB.viewBean.videosRecente}"
+							var="recentes" itemLabel="#{recentes.titulo}"
+							itemValue="#{recentes}" />
+					</p:selectOneListbox>
+				</center>
+
+			</div>
+
+		</div>
+
+
+
+		<ui:include src="../templates/dlgsTemplate.xhtml"></ui:include>
+
 	</ui:define>
 </ui:composition>
 </html>

@@ -140,12 +140,16 @@
 				</center>
 			</div>
 			<div style="width: 20%; float: right;">
-				<p:commandButton rendered="#{usuarioMB.habilitarVisualizacaoAdicao}" styleClass="corClaro" value=" " action="#{usuarioMB.toAddFormulario}"  update="@form" 
+				<p:commandButton id="btAdicaoFormulario" rendered="#{usuarioMB.habilitarVisualizacaoAdicao}" styleClass="corClaro" value=" " action="#{usuarioMB.toAddFormulario}"  update="@form" 
 					style="  width: 50px;   height:50px ; margin-top:5px; background: url(../resources/imagens/addForm.png) no-repeat; border-color: white; font:18px 'Ruda',sans-serif;" >
-					<f:setPropertyActionListener target="#{usuarioMB.videoSelecionadoFormulario}" value="#{usuarioMB.viewBean.videoSelecionado}"/>
-					</p:commandButton>
-				<p:commandButton rendered="#{usuarioMB.hbilitarVisualizacaoEdicao}" styleClass="corClaro" value=" "
-					style=" width: 50px;height:50px ; margin-top:5px; background: url(../resources/imagens/edit.png) no-repeat; border-color: white; font:18px 'Ruda',sans-serif;" />
+						<f:setPropertyActionListener target="#{usuarioMB.videoSelecionadoFormulario}" value="#{usuarioMB.viewBean.videoSelecionado}"/>
+				</p:commandButton>
+				<p:tooltip for="btAdicaoFormulario" value="Adicionar um formulário" />
+				<p:commandButton id="btExclusaoFormulario" rendered="#{usuarioMB.hbilitarVisualizacaoEdicao}" styleClass="corClaro" value=" " action="dltVideo" update="@form"
+					style=" width: 50px;height:50px ; margin-top:5px; background: url(../resources/imagens/excForm.png) no-repeat; border-color: white; font:18px 'Ruda',sans-serif;" >
+						<f:setPropertyActionListener target="#{usuarioMB.videoSelecionadoFormulario}" value="#{usuarioMB.viewBean.videoSelecionado}"/>
+				</p:commandButton>
+				<p:tooltip for="btExclusaoFormulario" value="Excluir esse video" />
 			</div>
 		</div>
 		<div style="clear: both;"></div>
@@ -254,7 +258,7 @@
 	
 	<!-- Menssagem sobre  tornar usuario adm -->
 	<p:dialog id="dlgAddAdm" widgetVar="dlgAddAdm"
-		resizable="false" width="500px" height="220px" modal="true"
+		resizable="false" width="500px" height="230px" modal="true"
 		showHeader="false">
 		<font style="color: #24b85b; font-size: 30px; float: left;"> <b>Notificação</b>
 		</font>
@@ -327,6 +331,47 @@
 			</div>
 			<div class="ui-grid-col-1"></div>
 		</div>
+	</p:dialog>
+	
+	
+	<!-- Menssagem sobre  deletarVideo -->
+	<p:dialog id="dlgDeletarVideo" widgetVar="dlgDeletarVideo"
+		resizable="false" width="500px" height="230px" modal="true"
+		showHeader="false">
+		<font style="color: #24b85b; font-size: 30px; float: left;"> <b>Notificação</b>
+		</font>
+
+		<br />
+		<br />
+		<div class="row">
+			<!-- Desenho -->
+			<div class="ui-grid-col-3">
+				<img src="../resources/imagens/aluno4.png"
+					style="float: left; max-width: 100%; height: auto;" />
+			</div>
+			<div class="ui-grid-col-9">
+				<div
+					style="text-align: inherit; text-decoration: none; color: graytext; margin-top: 30px;">
+
+					<h:outputText value="Tem certeza que deseja excluir?" />
+					<!-- Botões de Confirmação -->
+					<p:commandButton value="SIM" styleClass="btnVerdeClaro"
+						id="btnSimExclusaoVideo"  update="@form"
+						oncomplete="PF('dlgDeletarVideo').hide();"
+						style=" margin-top:10px;  width: 315px;height:50px ;background:#24b85b;color: white;border-color: #24b85b; font:18px 'Ruda',sans-serif;">
+					</p:commandButton>
+					<p:commandButton value="NÃO" styleClass="btnVerdeClaro"
+						id="btnNaoExclusaoVideo"
+						oncomplete="PF('dlgDeletarVideo').hide();"
+						style=" margin-top:10px;  width: 315px;height:50px ;background:#24b85b;color: white;border-color: #24b85b; font:18px 'Ruda',sans-serif;">
+					</p:commandButton>
+
+
+
+				</div>
+			</div>
+		</div>
+
 	</p:dialog>
 
 </h:form>

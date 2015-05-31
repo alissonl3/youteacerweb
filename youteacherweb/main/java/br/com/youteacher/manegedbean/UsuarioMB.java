@@ -303,6 +303,9 @@ public class UsuarioMB implements Serializable {
 			try{
 			dao.alterar(viewBean.getUsuarioSelecionadoTabela());
 			mostraMenssagem("SUCESSO", "O usuario se tornou um administrador");
+			
+			RequestContext.getCurrentInstance().update("frmAddAdm");
+			
 			}catch(Exception e){
 				System.out.println("Erro tornar adm: " + e);
 				mostraMenssagem("ERRO", "Houve um erro");
@@ -389,6 +392,14 @@ public class UsuarioMB implements Serializable {
 		return "adm";
 	}
 	
+	//atulizar dialog
+	public void atualizarDialogAddAdm(){
+		
+		RequestContext.getCurrentInstance().update("frmDlgTemplate");
+		RequestContext.getCurrentInstance().execute("PF('dlgAddAdm').show();");
+		
+	}
+	
 	//Metodo para corrigir as respostas do Usuario
 	public void corrigir(){
 		
@@ -462,6 +473,14 @@ public class UsuarioMB implements Serializable {
 			System.out.println("Ocorreu um erro: " + e.getMessage());
 			
 		}
+		
+	}
+	
+	//DELETAR VIDEO
+	public void deletarVideo(){
+		
+		RequestContext.getCurrentInstance().update("frmDlgTemplate");
+		RequestContext.getCurrentInstance().execute("PF('dlgDeletarVideo').show();");
 		
 	}
 	
@@ -543,7 +562,7 @@ public class UsuarioMB implements Serializable {
 			else if (formularioExistente.isEmpty()
 					&& !videoRelacionados.isEmpty() && verificarRelacaoVideoUsuario == true) {
 				habilitarVisualizacaoAdicao = true;
-				hbilitarVisualizacaoEdicao = false;
+				hbilitarVisualizacaoEdicao = true;
 				habilitarVisualizacaoPraticar = false;
 			}
 			//SE NÃO EXISTE O FORMULÁRIO E O VIDEO NÃO FOR DO USUARIO
@@ -768,6 +787,8 @@ public class UsuarioMB implements Serializable {
 		}
 			
 		if (!usuarioAdm.isEmpty()) {
+			
+			hbilitarVisualizacaoEdicao = true;
 		
 			viewBean.setUsuarios(usuarioAdm);
 

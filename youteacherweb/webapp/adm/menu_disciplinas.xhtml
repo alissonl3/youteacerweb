@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+
+<h:form id="frmMenuDisciplinas">
+
+	 <p:slideMenu style="width:100%;">
+        <p:submenu label="Matematica" icon="ui-icon-refresh">
+            <p:menuitem value="P.A." icon="ui-icon-disk" />
+            <p:menuitem value="P.G."  icon="ui-icon-arrowrefresh-1-w" />
+        </p:submenu>
+        <p:submenu label="Português" icon="ui-icon-newwin">
+            <p:menuitem value="Escrita"  ajax="false" icon="ui-icon-close"/>
+        </p:submenu>
+        <p:separator />
+        <p:submenu label="Biologia" icon="ui-icon-extlink">
+            <p:submenu label="Citologia">
+                <p:menuitem value="Celula" url="http://www.prime.com.tr" />
+                <p:menuitem value="Menbrana" url="http://www.primefaces.org" />
+            </p:submenu>
+        </p:submenu>
+    </p:slideMenu>
+		
+	
+</h:form>
+
+</html>

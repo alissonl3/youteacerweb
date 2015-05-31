@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="/templates/template_user.xhtml">
+
+	<ui:define name="conteudo">
+		<h:form id="frmVideo">
+			<p:growl showDetail="true" showSummary="true" life="5000" />
+			<div class="ui-grid">
+				<div class="ui-grid-row">
+					<div class="ui-grid-col-12">
+						<center>
+							<h3
+								style="text-align: center; color: #ff8d3b; font-family: ‘Lucida Console’, sans-serif; font-size: 30px; font-weight: bold;">ADICIONAR
+								VIDEO</h3>
+						</center>
+					</div>
+				</div>
+				<!-- Formulário para cadastro de video -->
+				<div class="ui-grid-row"
+					style="margin-top: 20px; margin-bottom: 20px;">
+					<!-- Formulário -->
+					<div class="ui-grid-col-5">
+						<!-- Div da Imagem -->
+						<center>
+							<img src="../resources/imagens/aluno9.png"
+								style="max-width: 100%; height: auto; margin-top: 10px;" />
+						</center>
+					</div>
+
+					<div class="ui-grid-col-4" style="padding-top: 20px;">
+						<h:panelGrid columns="1" cellpadding="3">
+							<h:outputText value="Preenche todos os campos abaixo."
+								style="font-size:15px; width: 315px; height:50px ;" />
+							<h:outputText value=" " />
+							<h:outputText value="Titulo:" style="font-size:15px; " />
+							<p:inputText id="iptTituloCadastro" label="Titulo:" size="30"
+								value="#{usuarioMB.viewBean.video.titulo}" />
+
+							<h:outputText value="URL:" style="font-size:15px; " />
+							<p:inputText id="iptUrlCadastro"
+								value="#{usuarioMB.viewBean.video.url}" size="30" />
+
+							<p:commandButton value="CONFIRMAR" styleClass="btnVerdeClaro"
+								style="width: 315px;height:50px ;background:#24b85b;color: white;border-color: #24b85b; font:18px 'Ruda',sans-serif;"
+								actionListener="#{usuarioMB.inserirVideo}" update="@form :frmDlgTemplate" 
+								/>
+						</h:panelGrid>
+					</div>
+
+
+					<div class="ui-grid-col-2"></div>
+				</div>
+			</div>
+		</h:form>
+
+		<!-- Dialogs -->
+		<ui:include src="../templates/dlgsTemplate.xhtml"></ui:include>
+
+	</ui:define>
+</ui:composition>
+
+</html>

@@ -90,17 +90,12 @@
 					Ação
 				</f:facet>
 				<p:commandButton 
-				icon="ui-icon-check" update=":frmDlgTemplate:dlgAddAdm"
-				onclick="PF('dlgAddAdm').show();" >
-				<f:setPropertyActionListener target="#{usuarioMB.viewBean.usuarioSelecionadoTabela}" value="#{usuario}" />
+				actionListener="#{usuarioMB.atualizarDialogAddAdm}"
+				icon="ui-icon-check" 
+				update="@form">
+					<f:setPropertyActionListener target="#{usuarioMB.viewBean.usuarioSelecionadoTabela}" value="#{usuario}" />
 			</p:commandButton>
-			</p:column>
-			
-			
-			
-		
-		
-						
+			</p:column>			
 		</p:dataTable>  				
 						</center>
 					</div>

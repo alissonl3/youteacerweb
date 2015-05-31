@@ -84,21 +84,155 @@
 		</navigation-case>
 	</navigation-rule>
 	
+	<!-- Cortou -->
+	
 	<!-- Navegação Adm -->
 	<navigation-rule>
 		<from-view-id>/adm/home.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>sair</from-outcome>
+			<to-view-id>/pages/home.xhtml</to-view-id>
+			<redirect></redirect>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>video</from-outcome>
+			<to-view-id>/adm/addvideo.xhtml</to-view-id>
+			<redirect></redirect>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>inicio</from-outcome>
+			<to-view-id>/adm/home.xhtml</to-view-id>
+			<redirect></redirect>
+		</navigation-case>	
+		<navigation-case>
+			<from-outcome>dltVideo</from-outcome>
+			<to-view-id>/adm/deletarvideo.xhtml</to-view-id>
+			<redirect></redirect>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>perfil</from-outcome>
+			<to-view-id>/adm/perfil.xhtml</to-view-id>
+			<redirect></redirect>
+		</navigation-case>
+			<navigation-case>
+			<from-outcome>praticar</from-outcome>
+			<to-view-id>/adm/praticar.xhtml</to-view-id>
+			<redirect></redirect>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>formulario</from-outcome>
+			<to-view-id>/adm/addformulario.xhtml</to-view-id>
+			<redirect></redirect>
+		</navigation-case>
+	</navigation-rule>
+	
+	<!-- Navegação Adm -->
+	<navigation-rule>
+		<from-view-id>/adm/deletarvideo.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>sair</from-outcome>
+			<to-view-id>/pages/home.xhtml</to-view-id>
+			<redirect></redirect>
+		</navigation-case>
 		<navigation-case>
 			<from-outcome>inicio</from-outcome>
 			<to-view-id>/adm/home.xhtml</to-view-id>
 			<redirect></redirect>
 		</navigation-case>
 		<navigation-case>
+			<from-outcome>perfil</from-outcome>
+			<to-view-id>/adm/perfil.xhtml</to-view-id>
+			<redirect></redirect>
+		</navigation-case>
+	</navigation-rule>
+	
+	<!-- Navegação Adm -->
+	<navigation-rule>
+		<from-view-id>/adm/addvideo.xhtml</from-view-id>
+		<navigation-case>
 			<from-outcome>sair</from-outcome>
 			<to-view-id>/pages/home.xhtml</to-view-id>
 			<redirect></redirect>
 		</navigation-case>
+		<navigation-case>
+			<from-outcome>inicio</from-outcome>
+			<to-view-id>/adm/home.xhtml</to-view-id>
+			<redirect></redirect>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>formulario</from-outcome>
+			<to-view-id>/adm/addformulario.xhtml</to-view-id>
+			<redirect></redirect>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>perfil</from-outcome>
+			<to-view-id>/adm/perfil.xhtml</to-view-id>
+			<redirect></redirect>
+		</navigation-case>
+	</navigation-rule>
+	
+	<!-- Navegação Adm -->
+	<navigation-rule>
+		<from-view-id>/adm/addformulario.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>sair</from-outcome>
+			<to-view-id>/pages/home.xhtml</to-view-id>
+			<redirect></redirect>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>inicio</from-outcome>
+			<to-view-id>/adm/home.xhtml</to-view-id>
+			<redirect></redirect>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>perfil</from-outcome>
+			<to-view-id>/adm/perfil.xhtml</to-view-id>
+			<redirect></redirect>
+		</navigation-case>
+	</navigation-rule>
+	<!-- Navegação Aluno -->
+	<navigation-rule>
+		<from-view-id>/adm/perfil.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>sair</from-outcome>
+			<to-view-id>/pages/home.xhtml</to-view-id>
+			<redirect></redirect>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>inicio</from-outcome>
+			<to-view-id>/adm/home.xhtml</to-view-id>
+			<redirect></redirect>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>perfil</from-outcome>
+			<to-view-id>/adm/perfil.xhtml</to-view-id>
+			<redirect></redirect>
+		</navigation-case>
+	</navigation-rule>
+	
+	<!-- Navegação Aluno -->
+	<navigation-rule>
+		<from-view-id>/adm/praticar.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>sair</from-outcome>
+			<to-view-id>/pages/home.xhtml</to-view-id>
+			<redirect></redirect>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>inicio</from-outcome>
+			<to-view-id>/adm/home.xhtml</to-view-id>
+			<redirect></redirect>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>perfil</from-outcome>
+			<to-view-id>/adm/perfil.xhtml</to-view-id>
+			<redirect></redirect>
+		</navigation-case>
 	</navigation-rule>
 
+	<!-- Cortou  -->
+
+	<!-- Navegação Aluno -->
 	<navigation-rule>
 		<from-view-id>/aluno/home.xhtml</from-view-id>
 		<navigation-case>
@@ -133,7 +267,7 @@
 		</navigation-case>
 	</navigation-rule>
 	
-	<!-- Navegação pagina do video -->
+	<!-- Navegação Aluno -->
 	<navigation-rule>
 		<from-view-id>/aluno/addvideo.xhtml</from-view-id>
 		<navigation-case>
@@ -158,7 +292,7 @@
 		</navigation-case>
 	</navigation-rule>
 	
-	<!-- Navegação pagina do formulário -->
+	<!-- Navegação Aluno -->
 	<navigation-rule>
 		<from-view-id>/aluno/addformulario.xhtml</from-view-id>
 		<navigation-case>
@@ -177,7 +311,7 @@
 			<redirect></redirect>
 		</navigation-case>
 	</navigation-rule>
-	<!-- Navegação pagina do Perfil -->
+	<!-- Navegação Aluno -->
 	<navigation-rule>
 		<from-view-id>/aluno/perfil.xhtml</from-view-id>
 		<navigation-case>
@@ -197,7 +331,7 @@
 		</navigation-case>
 	</navigation-rule>
 	
-	<!-- Navegação pagina do praticar -->
+	<!-- Navegação Aluno -->
 	<navigation-rule>
 		<from-view-id>/aluno/praticar.xhtml</from-view-id>
 		<navigation-case>
