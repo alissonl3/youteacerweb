@@ -89,12 +89,21 @@
 				<f:facet name="header">
 					Ação
 				</f:facet>
+				<center>
 				<p:commandButton 
 				actionListener="#{usuarioMB.atualizarDialogAddAdm}"
-				icon="ui-icon-check" 
-				update="@form">
+				value="" 
+				update="@form"
+				style="width: 25px;height:25px ; background: url(../resources/imagens/admin.png) no-repeat; border-color: white;">
 					<f:setPropertyActionListener target="#{usuarioMB.viewBean.usuarioSelecionadoTabela}" value="#{usuario}" />
-			</p:commandButton>
+				</p:commandButton>
+				<p:commandButton 			
+				value="" 
+				update="@form"
+				style="width: 25px;height:25px ; background: url(../resources/imagens/del.png) no-repeat; border-color: white;">
+					<f:setPropertyActionListener target="#{usuarioMB.viewBean.usuarioSelecionadoTabela}" value="#{usuario}" />
+				</p:commandButton>
+				</center>
 			</p:column>			
 		</p:dataTable>  				
 						</center>

@@ -30,6 +30,7 @@ public class UsuarioMB implements Serializable {
 	private List<Video> videos;
 	
 	private List<Usuario> usuarioDataModel;
+	private List<Video> videoDataModel;
 
 	public UsuarioMB() {
 	}
@@ -68,6 +69,9 @@ public class UsuarioMB implements Serializable {
 	private String imagem;
 	private Double rendimento;
 	private int tamanhoFormulario;
+	
+	//pagina gerenciar
+	private boolean habilitarVisualizacaoDadosUsuario;
 
 	@PostConstruct
 	private void initPage() {
@@ -76,6 +80,7 @@ public class UsuarioMB implements Serializable {
 		formularioDAO = new FormularioDAO();
 		
 		usuarioDataModel = new ArrayList<Usuario>();
+		videoDataModel = new ArrayList<Video>();
 
 		viewBean = new UsuarioViewBean();
 		videoDAO = new VideoDAO();
@@ -1165,6 +1170,24 @@ public class UsuarioMB implements Serializable {
 	public void setUsuarioDataModel(List<Usuario> usuarioDataModel) {
 		this.usuarioDataModel = usuarioDataModel;
 	}
+
+	public List<Video> getVideoDataModel() {
+		return videoDataModel;
+	}
+
+	public void setVideoDataModel(List<Video> videoDataModel) {
+		this.videoDataModel = videoDataModel;
+	}
+
+	public boolean isHabilitarVisualizacaoDadosUsuario() {
+		return habilitarVisualizacaoDadosUsuario;
+	}
+
+	public void setHabilitarVisualizacaoDadosUsuario(
+			boolean habilitarVisualizacaoDadosUsuario) {
+		this.habilitarVisualizacaoDadosUsuario = habilitarVisualizacaoDadosUsuario;
+	}
+	
 	
 	
 
