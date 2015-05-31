@@ -28,16 +28,18 @@ public class VideoDAO {
 
 	}
 
-	public boolean remover(Video video) {
+	public void remover(Video video) {
 		try {
+			
+			em = Banco.getIstancia().getEm();
 			em.getTransaction().begin();
 			em.remove(video);
 			em.getTransaction().commit();
-			return true;
+		
 		} catch (Exception e) {
 			e.printStackTrace();
 			em.getTransaction().rollback();
-			return false;
+			
 		}
 	}
 

@@ -40,15 +40,17 @@ public class UsuarioDAO implements Serializable {
 		} 
 	}
 
-	public boolean remover(Usuario usuario) {
+	public void remover(Usuario usuario) {
 		try {
+			em = Banco.getIstancia().getEm();
 			em.getTransaction().begin();
 			em.remove(usuario);
 			em.getTransaction().commit();
-			return true;
+			
 		} catch (Exception e) {
 			e.printStackTrace();
-			return false;
+			em.getTransaction().rollback();
+			
 		}
 	}
 

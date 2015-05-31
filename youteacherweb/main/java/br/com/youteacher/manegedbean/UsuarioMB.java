@@ -477,12 +477,42 @@ public class UsuarioMB implements Serializable {
 	}
 	
 	//DELETAR VIDEO
-	public void deletarVideo(){
+		public String deletarVideo(){
+			String url = "";
+		try{	
+			if(viewBean.getVideoSelecionado() != null){
+				System.out.println("Video Selecionado diferente de null");
+				List<Formulario> formularioExistente = new ArrayList<Formulario>();
+				
+				formularioExistente = formularioDAO.pesquisarPorVideo(viewBean
+						.getVideoSelecionado().getId());
+				
+				videoDAO.remover(viewBean.getVideoSelecionado());
+				
+				if(formularioExistente.size() == 1){
+				System.out.println("Existe Formulario vinculado ao videoSelecionado");
+				formularioDAO.remover(formularioExistente.get(0));
+				System.out.println("Removeu Formulario");
+				}
+				
+				mostraMenssagem("SUCESSO", "Video deletado com sucesso");
+				System.out.println("Removeu video");
+				
+				atualizarListaVideo();
+				
+				url = "inicio";
+				
+			}
+		}catch(Exception e){
+			System.out.println("Erro ao deletar video " + e);
+		}
 		
-		RequestContext.getCurrentInstance().update("frmDlgTemplate");
-		RequestContext.getCurrentInstance().execute("PF('dlgDeletarVideo').show();");
+			return url;
 		
-	}
+//			RequestContext.getCurrentInstance().update("frmDlgTemplate");
+//			RequestContext.getCurrentInstance().execute("PF('dlgDeletarVideo').show();");
+			
+		}
 	
 
 	// VERIFICAR EXISTENCIA DE FORMULÁRIO DO VIDEO
