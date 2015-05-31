@@ -719,9 +719,41 @@ public class UsuarioMB implements Serializable {
 	// Editar usuario
 	public void alterarUsuario() {
 		try {
-			dao.alterar(viewBean.getUsuarioLogado());
-			mostraMenssagem("SUCESSO", "Usuario alterado com sucesso.");
+			
+			//Caso o Email seja alterado e o mesmo não existe no banco
+			if((!viewBean.getEmailAlterado().equals(viewBean.getUsuarioLogado().getEmail())
+					&& dao.listarCondicaoUsuario(
+							"email = '" + viewBean.getEmailAlterado() + "'")
+							.size() == 0) || viewBean.getEmailAlterado().equals(viewBean.getUsuarioLogado().getEmail())
+					){
+				viewBean.getUsuarioLogado().setEmail(viewBean.getEmailAlterado());
+				//Caso  a senha seja alterada
+				if(!viewBean.getSenhaAlterada().equals("")){
+					viewBean.getUsuarioLogado().setSenha(viewBean.getSenhaAlterada());
+				}
+				//Caso o nome seja alterado
+				if(!viewBean.getNomeAlterado().equals(viewBean.getUsuarioLogado().getNome())){
+					viewBean.getUsuarioLogado().setNome(viewBean.getNomeAlterado());
+				}
+				if(viewBean.getDataAlterada()!=viewBean.getUsuarioLogado().getDataNascimento()){
+					viewBean.getUsuarioLogado().setDataNascimento(viewBean.getDataAlterada());
+				}
+				
+				dao.alterar(viewBean.getUsuarioLogado());
+				mostraMenssagem("SUCESSO", "Usuario alterado com sucesso.");
+			
+			}
+			//caso o email alterado já exista no banco
+			else{
+				mostraMenssagem("Erro", "Já existe um usuario com este Email!!");
+				
+				
+			}
+		
 			viewBean.setNomeUsuario(viewBean.getUsuarioLogado().getNome());
+			viewBean.setNomeAlterado(viewBean.getUsuarioLogado().getNome());
+			viewBean.setEmailAlterado(viewBean.getUsuarioLogado().getEmail());
+			viewBean.setDataAlterada(viewBean.getUsuarioLogado().getDataNascimento());
 
 		} catch (Exception e) {
 			mostraMenssagem("ERRO", "Houve um erro ao tentar alterar o usuario");
@@ -787,7 +819,7 @@ public class UsuarioMB implements Serializable {
 	// EXECUTAR O LOGIN DO USUARIO
 	public String loginUsuario() {
 		
-		
+		//Logando como root
 		if(viewBean.getUsuario().getEmail().equals("ifpr@gmail.com") && viewBean.getUsuario().getSenha().equals("root")){
 			System.out.println("Entrou no master!");
 			
@@ -838,9 +870,12 @@ public class UsuarioMB implements Serializable {
 		else if (!usuarioNormal.isEmpty()) {
 			
 			viewBean.setUsuarios(usuarioNormal);
-			
+			//Inserção dos dados do usuario
 			viewBean.setUsuarioLogado(viewBean.getUsuarios().get(0));
 			viewBean.setNomeUsuario(viewBean.getUsuarios().get(0).getNome());
+			viewBean.setEmailAlterado(viewBean.getUsuarios().get(0).getEmail());
+			viewBean.setNomeAlterado(viewBean.getUsuarios().get(0).getNome());
+			viewBean.setDataAlterada(viewBean.getUsuarios().get(0).getDataNascimento());
 			// viewBean.setUsuarioEditado(viewBean.getUsuarios().get(0));
 			atualizarListaVideo();
 

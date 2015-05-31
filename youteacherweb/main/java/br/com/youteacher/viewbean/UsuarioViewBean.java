@@ -1,6 +1,7 @@
 package br.com.youteacher.viewbean;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import br.com.youteacher.banco.dao.VideoDAO;
@@ -17,6 +18,15 @@ public class UsuarioViewBean {
 	private List<Video> videos;
 	private List<Video> videosRecente;
 	private Usuario usuarioSelecionadoTabela;
+	
+	//Dados de alteracao do perfil
+	private String senhaAlterada;
+	private String emailAlterado;
+	private String nomeAlterado;
+	private Date dataAlterada;
+	
+	
+
 	
 
 
@@ -69,6 +79,10 @@ public class UsuarioViewBean {
 		usuarioLogado = new Usuario();
 		video = new Video();
 		videoSelecionado = new Video();
+		senhaAlterada="";
+		emailAlterado = "";
+		nomeAlterado = "";
+		dataAlterada = new Date();
 		
 
 		// formulários
@@ -372,6 +386,35 @@ public class UsuarioViewBean {
 	public void setResposta10(String resposta10) {
 		this.resposta10 = resposta10;
 	}
+	public String getSenhaAlterada() {
+		return senhaAlterada;
+	}
 
+	public void setSenhaAlterada(String senhaAlterada) {
+		this.senhaAlterada = senhaAlterada;
+	}
+	public String getEmailAlterado() {
+		return emailAlterado;
+	}
+
+	public void setEmailAlterado(String emailAlterado) {
+		this.emailAlterado = emailAlterado;
+	}
+
+	public String getNomeAlterado() {
+		return nomeAlterado;
+	}
+
+	public void setNomeAlterado(String nomeAlterado) {
+		this.nomeAlterado = nomeAlterado;
+	}
+
+	public Date getDataAlterada() {
+		return dataAlterada;
+	}
+
+	public void setDataAlterada(Date dataAlterada) {
+		this.dataAlterada = dataAlterada;
+	}
 
 }
