@@ -321,7 +321,7 @@
 					style="max-width: 100%; height: auto;" />
 
 					<p:commandButton value="OK" styleClass="btnVerdeClaro"
-						id="btnOkRendimento" action="inicio"
+						id="btnOkRendimento" action="inicio" actionListener="#{usuarioMB.atualizarFormulario}"
 						oncomplete="PF('dlgRendimento').hide();"
 					    update="@form"
 						style=" margin-top:10px;  width: 315px;height:50px ;background:#24b85b;color: white;border-color: #24b85b; font:18px 'Ruda',sans-serif;">

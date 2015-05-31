@@ -861,6 +861,12 @@ public class UsuarioMB implements Serializable {
 
 		}
 	
+		//ATUALIZAR RESPOSTAS FORMULARIOS
+		public void atualizarFormulario(){
+			viewBean.initValues();
+			org.primefaces.context.RequestContext.getCurrentInstance().update(":frmPraticar");
+		}
+		
 	
 
 	public int getTamanhoFormulario() {

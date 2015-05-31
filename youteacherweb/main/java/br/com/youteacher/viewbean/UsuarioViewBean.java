@@ -64,7 +64,7 @@ public class UsuarioViewBean {
 
 	}
 
-	private void initValues() {
+	public void initValues() {
 		usuario = new Usuario();
 		usuarioLogado = new Usuario();
 		video = new Video();
@@ -84,9 +84,9 @@ public class UsuarioViewBean {
 		formulario10 = new Formulario();
 		
 		//Respostas
-		resposta1 = "";
-		resposta2 = "";
-		resposta3 = "";
+		resposta1 = new String();
+		resposta2 = new String();
+		resposta3 = new String();
 		resposta4 = new String();
 		resposta5 = new String();
 		resposta6 = new String();
@@ -103,6 +103,7 @@ public class UsuarioViewBean {
 		habilitarVisualizacaoQuestionario = false;
 	}
 
+	
 
 
 	public Video getVideoSelecionado() {
