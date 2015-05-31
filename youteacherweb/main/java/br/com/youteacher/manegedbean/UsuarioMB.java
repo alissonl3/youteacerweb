@@ -1,6 +1,7 @@
 package br.com.youteacher.manegedbean;
 
 import java.io.Serializable;
+import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,6 +14,7 @@ import javax.servlet.http.HttpSession;
 import org.primefaces.context.RequestContext;
 
 import br.com.youteacher.banco.dao.FormularioDAO;
+import br.com.youteacher.banco.dao.SenhaEncripty;
 import br.com.youteacher.banco.dao.VideoDAO;
 import br.com.youteacher.banco.dao.UsuarioDAO;
 import br.com.youteacher.viewbean.UsuarioViewBean;
@@ -749,7 +751,7 @@ public class UsuarioMB implements Serializable {
 				viewBean.getUsuarioLogado().setEmail(viewBean.getEmailAlterado());
 				//Caso  a senha seja alterada
 				if(!viewBean.getSenhaAlterada().equals("")){
-					viewBean.getUsuarioLogado().setSenha(viewBean.getSenhaAlterada());
+					viewBean.getUsuarioLogado().setSenha(SenhaEncripty.md5(viewBean.getSenhaAlterada()));
 				}
 				//Caso o nome seja alterado
 				if(!viewBean.getNomeAlterado().equals(viewBean.getUsuarioLogado().getNome())){
@@ -846,7 +848,7 @@ public class UsuarioMB implements Serializable {
 		}
 
 	// EXECUTAR O LOGIN DO USUARIO
-	public String loginUsuario() {
+	public String loginUsuario() throws NoSuchAlgorithmException {
 		
 		//Logando como root
 		if(viewBean.getUsuario().getEmail().equals("ifpr@gmail.com") && viewBean.getUsuario().getSenha().equals("root")){
@@ -937,21 +939,21 @@ public class UsuarioMB implements Serializable {
 	}
 
 	// LISTAR CONDICÃO LOGAR USUARIO
-	public List<Usuario> listarCondicao() {
+	public List<Usuario> listarCondicao() throws NoSuchAlgorithmException {
 		
 
 				return	dao.listarCondicaoUsuario(" email = '"
 				+ viewBean.getUsuario().getEmail() + "' and senha = '"
-				+ viewBean.getUsuario().getSenha() + "'");
+				+ SenhaEncripty.md5(viewBean.getUsuario().getSenha()) + "'");
 
 	}
 	
 	// LISTAR CONDICÃO LOGAR ADMINISTRADOR
-		public List<Usuario> listarCondicaoAdministrador() {
+		public List<Usuario> listarCondicaoAdministrador() throws NoSuchAlgorithmException {
 
 			return dao.listarCondicaoUsuario(" email = '"
 					+ viewBean.getUsuario().getEmail() + "' and senha = '"
-					+ viewBean.getUsuario().getSenha() + "' and adm = 'sim' ");
+					+ SenhaEncripty.md5(viewBean.getUsuario().getSenha()) + "' and adm = 'sim' ");
 
 		}
 	

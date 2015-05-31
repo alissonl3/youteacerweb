@@ -1,6 +1,7 @@
 package br.com.youteacher.banco.dao;
 
 import java.io.Serializable;
+import java.security.NoSuchAlgorithmException;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -31,6 +32,13 @@ public class UsuarioDAO implements Serializable {
 
 			em = Banco.getIstancia().getEm();
 			em.getTransaction().begin();
+			String senha="";
+			try {
+				senha = SenhaEncripty.md5(usuario.getSenha());
+			} catch (NoSuchAlgorithmException nsae) {
+				System.out.println("Erro senha");
+			}
+			usuario.setSenha(senha);
 			em.persist(usuario);
 			em.getTransaction().commit();
 
@@ -64,7 +72,6 @@ public class UsuarioDAO implements Serializable {
 		return q.getResultList();
 
 	}
-
 
 	public void alterar(Usuario usuario) {
 		em = Banco.getIstancia().getEm();
