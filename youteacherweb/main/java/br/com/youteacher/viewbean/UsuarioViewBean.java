@@ -17,7 +17,10 @@ public class UsuarioViewBean {
 	private Video video;
 	private List<Video> videos;
 	private List<Video> videosRecente;
+	
+	//tabela data model
 	private Usuario usuarioSelecionadoTabela;
+	
 	
 	//Dados de alteracao do perfil
 	private String senhaAlterada;
@@ -116,8 +119,6 @@ public class UsuarioViewBean {
 		urlVideo = "https://www.youtube.com/v/1OH3ISC-vfk";
 		habilitarVisualizacaoQuestionario = false;
 	}
-
-	
 
 
 	public Video getVideoSelecionado() {

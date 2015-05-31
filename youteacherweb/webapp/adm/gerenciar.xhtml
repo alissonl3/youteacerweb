@@ -96,19 +96,21 @@
 										</p:commandButton>
 										<p:commandButton value=""
 											update="@form frmGerenciar:pnlOcultoDados"
+											actionListener="#{usuarioMB.atualizarTabelaVideoDataModel}"									
 											style="width: 25px;height:25px ; background: url(../resources/imagens/lupa.png) no-repeat; border-color: white;">
-											<f:setPropertyActionListener
-												target="#{usuarioMB.viewBean.usuarioSelecionadoTabela}"
-												value="#{usuario}" />
-										</p:commandButton>
-										<p:commandButton value="" update="@form"
-											style="width: 25px;height:25px ; background: url(../resources/imagens/del.png) no-repeat; border-color: white;">
+											
 											<f:setPropertyActionListener
 												target="#{usuarioMB.viewBean.usuarioSelecionadoTabela}"
 												value="#{usuario}" />
 											<f:setPropertyActionListener
 												target="#{usuarioMB.habilitarVisualizacaoDadosUsuario}"
 												value="#{true}" />
+										</p:commandButton>
+										<p:commandButton value="" update="@form"
+											style="width: 25px;height:25px ; background: url(../resources/imagens/del.png) no-repeat; border-color: white;">
+											<f:setPropertyActionListener
+												target="#{usuarioMB.viewBean.usuarioSelecionadoTabela}"
+												value="#{usuario}" />									
 										</p:commandButton>
 									</center>
 								</p:column>
@@ -119,14 +121,23 @@
 						<!-- Painel oculto dados -->
 						<p:outputPanel id="pnlOcultoDados"
 							rendered="#{usuarioMB.habilitarVisualizacaoDadosUsuario}">
+						
+						<br />
+						<br />
+						<p:separator></p:separator>	
+						<br />	
+						<center>
+							<h3
+								style="text-align: center; color: #ff8d3b; font-family: ‘Lucida Console’, sans-serif; font-size: 30px; font-weight: bold;">TABELA
+								DE USUÁRIOS</h3>
+						</center>
 
-
+							<br />
 							<h:outputText
 								value="Nome: #{usuarioMB.viewBean.usuarioSelecionadoTabela.nome}"
 								style="text-align: center; color: graytext; font-weight: bold; font-size: 25px; margin-top: 20px; " />
 							<br />
 							<br />
-
 							<center>
 
 								<!-- Tabela de video relacionados-->
@@ -139,79 +150,55 @@
 									<!-- id -->
 									<p:column style="width:20%;vertical-align:middle;">
 										<f:facet name="header">
-					Id
-				</f:facet>
-				#{usuario.id}
-			</p:column>
+											Id
+										</f:facet>
+										#{video.id}
+									</p:column>
 
 									<!-- Nome -->
 									<p:column style="width:20%;vertical-align:middle;">
 										<f:facet name="header">
-					Nome
-				</f:facet>
-				#{usuario.nome}
-			</p:column>
+										Titulo
+										</f:facet>
+									#{video.titulo}
+									</p:column>
 
 									<!-- Email -->
 									<p:column style="width:20%;vertical-align:middle;">
 										<f:facet name="header">
-					Email
-				</f:facet>
-				#{usuario.email}
-			</p:column>
-
-									<!-- dataNascimento -->
-									<p:column style="width:20%;vertical-align:middle;">
-										<f:facet name="header">
-					dtNascimento
-				</f:facet>
-				#{usuario.dataNascimento}
-			</p:column>
-
-									<!-- Adm -->
-									<p:column style="width:20%;vertical-align:middle;">
-										<f:facet name="header">
-					Adm
-				</f:facet>
-				#{usuario.adm}
-			</p:column>
+										Url
+										</f:facet>
+									#{video.url}
+									</p:column>
 
 									<!-- Ação -->
 									<p:column style="width:20%;vertical-align:middle;">
 										<f:facet name="header">
-					Ação
-				</f:facet>
+										Ação
+										</f:facet>
 										<center>
-											<p:commandButton
-												actionListener="#{usuarioMB.atualizarDialogAddAdm}" value=""
-												update="@form"
-												style="width: 25px;height:25px ; background: url(../resources/imagens/admin.png) no-repeat; border-color: white;">
-												<f:setPropertyActionListener
-													target="#{usuarioMB.viewBean.usuarioSelecionadoTabela}"
-													value="#{usuario}" />
-											</p:commandButton>
-											<p:commandButton value=""
-												update="@form frmGerenciar:pnlOcultoDados"
-												style="width: 25px;height:25px ; background: url(../resources/imagens/lupa.png) no-repeat; border-color: white;">
-												<f:setPropertyActionListener
-													target="#{usuarioMB.viewBean.usuarioSelecionadoTabela}"
-													value="#{usuario}" />
-											</p:commandButton>
-											<p:commandButton value="" update="@form"
+											<p:commandButton value="" oncomplete="PF('dlgDeletarVideo').show();" update=":frmDlgTemplate"
 												style="width: 25px;height:25px ; background: url(../resources/imagens/del.png) no-repeat; border-color: white;">
 												<f:setPropertyActionListener
-													target="#{usuarioMB.viewBean.usuarioSelecionadoTabela}"
+													target="#{usuarioMB.viewBean.videoSelecionado}"
 													value="#{usuario}" />
-												<f:setPropertyActionListener
-													target="#{usuarioMB.habilitarVisualizacaoDadosUsuario}"
-													value="#{true}" />
 											</p:commandButton>
 										</center>
 									</p:column>
 								</p:dataTable>
-
-
 							</center>
+							
+							<!-- Tag do topo -->
+			<div style="height: 150px; width: 100%; margin-bottom: 20px; margin-top: 20px;">
+				<center>
+				<p:commandLink id="btnOcultar" update="@form"  >
+					<p:graphicImage value="../resources/imagens/ancora.png"/>
+					<f:setPropertyActionListener target="#{usuarioMB.habilitarVisualizacaoDadosUsuario}" value="#{false}"/>	
+				</p:commandLink>
+				<br />
+				<h:outputText value="Ocultar" style=" font-size: 20px; color:  rgba(156, 201, 236, 1); "/>
+				</center>			
+			</div>
 
 						</p:outputPanel>
 					</div>
