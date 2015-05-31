@@ -324,7 +324,9 @@
 						<div style=" width:240px; font-size:20px; padding-top:60px;  margin-right:180px;">
 						<center>
 						<h3 style="color: #ff8d3b; font-family: ‘Lucida Console’, sans-serif; font-size: 35px; font-weight: bold;">
-							<h:outputText value="#{usuarioMB.rendimento}%" />
+							<h:outputText value="#{usuarioMB.rendimento}" >
+								<f:convertNumber maxFractionDigits="2" integerOnly="true"  />
+							</h:outputText>%
 						</h3>
 						</center>
 						</div>
