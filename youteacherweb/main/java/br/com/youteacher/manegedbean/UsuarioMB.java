@@ -92,15 +92,16 @@ public class UsuarioMB implements Serializable {
 	public void inserirVideo() {
 			
 			List<Video> videoCondicao = new ArrayList<Video>();
+			List<Video> videosMesmoURL = new ArrayList<Video>();
 		
 		try {
 			String novoUrl = viewBean.getVideo().getUrl()
 					.replace("watch?v=", "v/");
 			
 			videoCondicao = videoDAO.listarCondicaoVideo("titulo = '" + viewBean.getVideo().getTitulo() + "'");
-			
+			videosMesmoURL = videoDAO.listarCondicaoVideo("url = '"+novoUrl+"'");
 			//VERIFICAR SE EXISTE UM VIDEO COM O MESMO TITULO
-			if(videoCondicao.isEmpty()){
+			if(videoCondicao.isEmpty() && videosMesmoURL.isEmpty()){
 			viewBean.getVideo().setUrl(novoUrl);
 			viewBean.getVideo().setUsuario(viewBean.getUsuarioLogado());
 			videoDAO.inserir(viewBean.getVideo());
@@ -117,7 +118,7 @@ public class UsuarioMB implements Serializable {
 			
 			}else{
 				
-			mostraMenssagem("ATENÇÃO", "Já existe um video com esse titulo.");
+			mostraMenssagem("ATENÇÃO", "Já existe um video com esse titulo ou com esse url!.");
 			
 			}
 
