@@ -555,7 +555,8 @@ public class UsuarioMB implements Serializable {
 						System.out.println("Usuario selecionado n diferente de null");
 					}
 					
-					RequestContext.getCurrentInstance().update("frmGerenciar:pnlOcultoDados:dtUsuarioVideo");
+					
+					RequestContext.getCurrentInstance().update("frmGerenciar:pnlOcultoDados");
 					
 				}
 	
@@ -807,13 +808,25 @@ public class UsuarioMB implements Serializable {
 
 	}
 
-	// DELETAR UM NOVO ALUNO
+	// DELETAR UM ALUNO
 	public void deletarUsuario() {
 
 		try {
-
-			dao.remover(viewBean.getUsuario());
+			
+			if(viewBean.getUsuarioSelecionadoTabela() != null){
+			dao.remover(viewBean.getUsuarioSelecionadoTabela());
+			}
+			else{
+				System.out.println("usuario selecionado null");
+			}
+			
+			usuarioDataModel = dao.listarTodos();
+			
+			RequestContext.getCurrentInstance().update("frmAddAdm:dtUsuario");
+			RequestContext.getCurrentInstance().update("frmGerenciar");
+			
 			mostraMenssagem("SUCESSO", "Usuario deletado com sucesso.");
+			
 
 		} catch (Exception e) {
 
