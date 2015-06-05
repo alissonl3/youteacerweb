@@ -740,25 +740,54 @@ public class UsuarioMB implements Serializable {
 	}
 
 	// INSERIR UM NOVO ALUNO
-	public void inserirUsuario() {
+	public String inserirUsuario() {
+		
+		String retorno = "";
 
 		try {
 			if (dao.listarCondicaoUsuario(
 					"email = '" + viewBean.getUsuario().getEmail() + "'")
 					.size() > 0) {
 				mostraMenssagem("ERRO", "Já existe um usúario com este Email");
+				
+				retorno = "inicial";
+				
 			} else {
+				
+				habilitarVisualizacaoBtnPerfil = true;
+				
 				dao.inserir(viewBean.getUsuario());
 				mostraMenssagem("SUCESSO", "Usuario inserido com sucesso.");
+				
+				viewBean.setUsuarioLogado(viewBean.getUsuario());
+				viewBean.setNomeUsuario(viewBean.getUsuario().getNome());
+				viewBean.setEmailAlterado(viewBean.getUsuario().getEmail());
+				viewBean.setNomeAlterado(viewBean.getUsuario().getNome());
+				viewBean.setDataAlterada(viewBean.getUsuario().getDataNascimento());
+				// viewBean.setUsuarioEditado(viewBean.getUsuarios().get(0));
+				atualizarListaVideo();
+
+				FacesContext fc = FacesContext.getCurrentInstance();
+				HttpSession session = (HttpSession) fc.getExternalContext()
+						.getSession(false);
+				session.setAttribute("objLogin", "logado");
+				retorno = "logado";
 
 				novoUsuario();
 			}
+			
+		
 
 		} catch (Exception e) {
 
 			mostraMenssagem("ERRO", "Houve um erro ao tentar inserir usuario.");
 			System.out.println("Erro " + e);
+			
+			retorno = "inicial";
+		
 		}
+		
+		return retorno;
 
 	}
 
