@@ -41,13 +41,13 @@
 							<h:outputText value=" " />
 							<h:outputText value="Titulo:" style="font-size:15px; " />
 							<p:inputText id="iptTituloCadastro" label="Titulo:" size="30"
-								value="#{usuarioMB.viewBean.video.titulo}" />
+								value="#{usuarioMB.viewBean.video.titulo}" required="true" requiredMessage="Digite o titulo!"/>
 
 							<h:outputText value="URL:" style="font-size:15px; " />
 							<p:inputText id="iptUrlCadastro"
-								value="#{usuarioMB.viewBean.video.url}" size="30" />
-
-							<p:commandButton value="CONFIRMAR" styleClass="btnVerdeClaro"
+								value="#{usuarioMB.viewBean.video.url}" size="30" required="true" requiredMessage="Digite a URL!"/>
+								
+								<p:commandButton value="CONFIRMAR" styleClass="btnVerdeClaro"
 								style="width: 315px;height:50px ;background:#24b85b;color: white;border-color: #24b85b; font:18px 'Ruda',sans-serif;"
 								actionListener="#{usuarioMB.inserirVideo}" update="@form :frmDlgTemplate" 
 								/>
