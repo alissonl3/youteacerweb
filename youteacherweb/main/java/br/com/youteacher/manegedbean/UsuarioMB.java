@@ -58,7 +58,7 @@ public class UsuarioMB implements Serializable {
 
 	// opções video
 	private boolean habilitarVisualizacaoAdicao;
-	private boolean hbilitarVisualizacaoEdicao;
+	private boolean habilitarVisualizacaoRemover;
 	private boolean habilitarVisualizacaoPraticar;
 
 	// video
@@ -579,77 +579,61 @@ public class UsuarioMB implements Serializable {
 		
 
 		List<Formulario> formularioExistente = new ArrayList<Formulario>();
-		List<Video> videoRelacionados = new ArrayList<Video>();
 
-		boolean verificarRelacaoVideoFormulario = false;
-		boolean verificarRelacaoVideoUsuario = false;
 
 		try {
 			
+			System.out.println("Id video selecionado:"+viewBean.getVideoSelecionado().getUsuario().getId());
+			System.out.println("Usuario online:"+viewBean.getUsuarioLogado().getId());
 			setVideoSelecionadoFormulario(getVideoSelecionado());
-			
-			formularioExistente = formularioDAO.pesquisarPorVideo(viewBean
-					.getVideoSelecionado().getId());
-
-			videoRelacionados = videoDAO.pesquisarPorUsuario(viewBean
-					.getUsuarioLogado().getId());
-
-			
-
-			// VERIFICAR SE USUARIO É DONO DO VIDEO
-			if(!videoRelacionados.isEmpty()){	
-				//SE EXISTE FORMULARIO DAQUELE VIDEO
-			if (!formularioExistente.isEmpty()) {
-				for (Video v : videoRelacionados) {
-					for (Formulario f : formularioExistente) {
-						if (v.getId() == f.getVideo().getId()) {
-							verificarRelacaoVideoFormulario = true;
-						}
-					}
-				}
-			}
-			//SE NÃO EXISTE FORMULARIO DAQUELE VIDEO
-			if(formularioExistente.isEmpty()){
-				for(Video v : videoRelacionados){
-					if(v.getUsuario().getId() == viewBean.getUsuarioLogado().getId()){
-						verificarRelacaoVideoUsuario = true;
-					}
-					
-				}	
-			}	
-			}
-			
-
-			// VERIFICAÇÃO DA VISUALIZAÇÃO DAS OPÇOES
-			//SE EXISTE FORMULARIO E SE O VIDEO É DO USUARIO
-			if (!formularioExistente.isEmpty() && !videoRelacionados.isEmpty() && verificarRelacaoVideoFormulario == true) {
-				habilitarVisualizacaoAdicao = false;
-				hbilitarVisualizacaoEdicao = true;
+			formularioExistente = formularioDAO.pesquisarPorVideo(viewBean.getVideoSelecionado().getId());
+			//Se o usuario Logado tiver um video e não for adm
+			if(viewBean.getVideoSelecionado().getUsuario().getId() ==
+					viewBean.getUsuarioLogado().getId() && viewBean.getUsuarioLogado().getAdm()==null){
+				habilitarVisualizacaoRemover = true;
+			if(formularioExistente.size()>0){
 				habilitarVisualizacaoPraticar = true;
-			}
-			//SE EXISTE O FORMULARIO E O VIDEO FOR DO USUARIO
-			else if (!formularioExistente.isEmpty()
-					&& videoRelacionados.isEmpty() && verificarRelacaoVideoUsuario == false) {
-				habilitarVisualizacaoAdicao = false;
-				hbilitarVisualizacaoEdicao = false;
-				habilitarVisualizacaoPraticar = true;
-			}
-			//SE NÃO EXISTE O FORMULARIO E O VIDEO FOR DO USUARIO
-			else if (formularioExistente.isEmpty()
-					&& !videoRelacionados.isEmpty() && verificarRelacaoVideoUsuario == true) {
+			}else{
 				habilitarVisualizacaoAdicao = true;
-				hbilitarVisualizacaoEdicao = true;
+			}
+			
+			}
+			else if(viewBean.getVideoSelecionado().getUsuario().getId() !=
+					viewBean.getUsuarioLogado().getId() && formularioExistente.size()>0){
+				habilitarVisualizacaoRemover = false;
+				habilitarVisualizacaoAdicao = false;
+				habilitarVisualizacaoPraticar = true;	
+			}
+			
+			
+			//Se o usuario Logado for Adm e o video Selecionado não for dele
+			else if(viewBean.getVideoSelecionado().getUsuario().getId() !=
+					viewBean.getUsuarioLogado().getId() && viewBean.getUsuarioLogado().getAdm()!=null){
+				habilitarVisualizacaoRemover = true;
+				if(formularioExistente.size()>0){
+					habilitarVisualizacaoPraticar = true;
+				}
+				
+				
+			}
+			//Se o usuario Logado for Adm e o video Selecionado for dele
+			else if(viewBean.getVideoSelecionado().getUsuario().getId() ==
+					viewBean.getUsuarioLogado().getId() && viewBean.getUsuarioLogado().getAdm()!=null){
+				habilitarVisualizacaoRemover = true;
+				if(formularioExistente.size()>0){
+					habilitarVisualizacaoPraticar = true;
+				}else{
+					habilitarVisualizacaoAdicao = true;
+				}
+				
+				
+			}
+						
+			else{
+				habilitarVisualizacaoAdicao = false;
+				habilitarVisualizacaoRemover = false;
 				habilitarVisualizacaoPraticar = false;
 			}
-			//SE NÃO EXISTE O FORMULÁRIO E O VIDEO NÃO FOR DO USUARIO
-			else if (formularioExistente.isEmpty()
-					&& videoRelacionados.isEmpty() && verificarRelacaoVideoUsuario == false) {
-				habilitarVisualizacaoAdicao = false;
-				hbilitarVisualizacaoEdicao = false;
-				habilitarVisualizacaoPraticar = false;
-			} 
-			
-			System.out.println("Titulo Video Formulário " + getVideoSelecionadoFormulario());
 			
 
 		} catch (Exception e) {
@@ -946,7 +930,7 @@ public class UsuarioMB implements Serializable {
 			
 		if (!usuarioAdm.isEmpty()) {
 			
-			hbilitarVisualizacaoEdicao = true;
+			habilitarVisualizacaoRemover = true;
 		
 			viewBean.setUsuarios(usuarioAdm);
 
@@ -1222,12 +1206,12 @@ public class UsuarioMB implements Serializable {
 		this.habilitarVisualizacaoAdicao = habilitarVisualizacaoAdicao;
 	}
 
-	public boolean isHbilitarVisualizacaoEdicao() {
-		return hbilitarVisualizacaoEdicao;
+	public boolean isHabilitarVisualizacaoRemover() {
+		return habilitarVisualizacaoRemover;
 	}
 
-	public void setHbilitarVisualizacaoEdicao(boolean hbilitarVisualizacaoEdicao) {
-		this.hbilitarVisualizacaoEdicao = hbilitarVisualizacaoEdicao;
+	public void setHabilitarVisualizacaoRemover(boolean habilitarVisualizacaoRemover) {
+		this.habilitarVisualizacaoRemover = habilitarVisualizacaoRemover;
 	}
 
 	public boolean isHabilitarVisualizacaoPraticar() {
