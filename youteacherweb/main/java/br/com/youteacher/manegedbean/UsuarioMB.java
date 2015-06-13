@@ -659,6 +659,9 @@ public class UsuarioMB implements Serializable {
 				habilitarVisualizacaoPergunta10 = false;
 				
 		
+					habilitarVisualizacaoAdicao = false;
+					habilitarVisualizacaoRemover = false;
+					habilitarVisualizacaoPraticar = false;
 
 		List<Formulario> formularioExistente = new ArrayList<Formulario>();
 
