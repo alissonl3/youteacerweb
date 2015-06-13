@@ -665,33 +665,38 @@ public class UsuarioMB implements Serializable {
 
 		try {
 			
-			System.out.println("Id video selecionado:"+viewBean.getVideoSelecionado().getUsuario().getId());
+			System.out.println("Id video selecionado:"+viewBean.getVideoSelecionado().getId());
+			System.out.println("Video pertence ao:"+viewBean.getVideoSelecionado().getUsuario().getId());
 			System.out.println("Usuario online:"+viewBean.getUsuarioLogado().getId());
 			setVideoSelecionadoFormulario(getVideoSelecionado());
 			formularioExistente = formularioDAO.pesquisarPorVideo(viewBean.getVideoSelecionado().getId());
+			System.out.println("Tamanho lista formulario Existente:"+formularioExistente.size());
 			//Se o usuario Logado tiver um video e não for adm
 			if(viewBean.getVideoSelecionado().getUsuario().getId() ==
 					viewBean.getUsuarioLogado().getId() && viewBean.getUsuarioLogado().getAdm()==null){
 				habilitarVisualizacaoRemover = true;
 			if(formularioExistente.size()>0){
 				habilitarVisualizacaoPraticar = true;
+				habilitarVisualizacaoAdicao = false;
 			}else{
 				habilitarVisualizacaoAdicao = true;
+				habilitarVisualizacaoPraticar = false;
 			}
 			
 			}
+			//Se o usuario Logado não for Adm e o video selecionado não for dele
 			else if(viewBean.getVideoSelecionado().getUsuario().getId() !=
-					viewBean.getUsuarioLogado().getId() && formularioExistente.size()>0){
+					viewBean.getUsuarioLogado().getId() && formularioExistente.size()>0 && viewBean.getUsuarioLogado().getAdm() == null){
 				habilitarVisualizacaoRemover = false;
 				habilitarVisualizacaoAdicao = false;
 				habilitarVisualizacaoPraticar = true;	
 			}
 			
-			
 			//Se o usuario Logado for Adm e o video Selecionado não for dele
 			else if(viewBean.getVideoSelecionado().getUsuario().getId() !=
 					viewBean.getUsuarioLogado().getId() && viewBean.getUsuarioLogado().getAdm()!=null){
 				habilitarVisualizacaoRemover = true;
+				habilitarVisualizacaoAdicao = false;
 				if(formularioExistente.size()>0){
 					habilitarVisualizacaoPraticar = true;
 				}
@@ -704,19 +709,21 @@ public class UsuarioMB implements Serializable {
 				habilitarVisualizacaoRemover = true;
 				if(formularioExistente.size()>0){
 					habilitarVisualizacaoPraticar = true;
+					habilitarVisualizacaoAdicao = false;
 				}else{
 					habilitarVisualizacaoAdicao = true;
+					habilitarVisualizacaoPraticar = false;
 				}
 				
 				
 			}
+		
 						
 			else{
 				habilitarVisualizacaoAdicao = false;
 				habilitarVisualizacaoRemover = false;
 				habilitarVisualizacaoPraticar = false;
-			}
-			
+			}			
 
 		} catch (Exception e) {
 
