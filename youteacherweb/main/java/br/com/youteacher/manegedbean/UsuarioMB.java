@@ -635,6 +635,50 @@ public class UsuarioMB implements Serializable {
 				}
 				
 				
+				// DELETAR VIDEO
+				public void deletarVideoTabela() {
+
+					try {
+						if (viewBean.getVideoSelecionadoTabela() != null) {
+							System.out.println("Video Selecionado diferente de null");
+							List<Formulario> formularioExistente = new ArrayList<Formulario>();
+
+							formularioExistente = formularioDAO.pesquisarPorVideo(viewBean
+									.getVideoSelecionadoTabela().getId());			
+
+							if (formularioExistente.size() >= 1) {
+								System.out
+										.println("Existe Formulario vinculado ao videoSelecionado");
+								for (int i = 0; i < formularioExistente.size(); i++) {
+									formularioDAO.remover(formularioExistente.get(i));
+									System.out.println("Removeu Formulario");
+								}
+							}
+							
+							videoDAO.remover(viewBean.getVideoSelecionadoTabela());
+
+							mostraMenssagem("SUCESSO", "Video deletado com sucesso");
+							System.out.println("Removeu video Tabela");
+
+							atualizarListaVideo();
+							
+							RequestContext.getCurrentInstance().update("frmGerenciar");
+							RequestContext.getCurrentInstance().update("frmGerenciar:pnlOcultoDados:dtUsuarioVideo");
+							
+
+						
+
+						}
+					} catch (Exception e) {
+						System.out.println("Erro ao deletar videoTabela " + e);
+					}
+
+					// RequestContext.getCurrentInstance().update("frmDlgTemplate");
+		
+
+				}
+				
+				
 				//ATUALIZAR A TABELA DE VIDEO DATA MODEL DE ACORDO COM O USUARIO SELECIONADO 
 				public void atualizarTabelaVideoDataModel(Usuario user){
 					

@@ -20,6 +20,7 @@ public class UsuarioViewBean {
 	
 	//tabela data model
 	private Usuario usuarioSelecionadoTabela;
+	private Video videoSelecionadoTabela;
 	
 	
 	//Dados de alteracao do perfil
@@ -88,6 +89,7 @@ public class UsuarioViewBean {
 		nomeAlterado = "";
 		dataAlterada = new Date();
 		
+		videoSelecionadoTabela = new Video();
 
 		// formulários
 		formulario1 = new Formulario();
@@ -121,6 +123,15 @@ public class UsuarioViewBean {
 		habilitarVisualizacaoQuestionario = false;
 	}
 
+	
+
+	public Video getVideoSelecionadoTabela() {
+		return videoSelecionadoTabela;
+	}
+
+	public void setVideoSelecionadoTabela(Video videoSelecionadoTabela) {
+		this.videoSelecionadoTabela = videoSelecionadoTabela;
+	}
 
 	public Video getVideoSelecionado() {
 		return videoSelecionado;

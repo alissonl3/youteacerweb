@@ -177,11 +177,11 @@
 										Ação
 										</f:facet>
 										<center>
-											<p:commandButton value="" oncomplete="PF('dlgDeletarVideo').show();" update=":frmDlgTemplate"
+											<p:commandButton value="" oncomplete="PF('dlgDeletarVideoTabela').show();" update=":frmDlgTemplate"
 												style="width: 25px;height:25px ; background: url(../resources/imagens/del.png) no-repeat; border-color: white;">
 												<f:setPropertyActionListener
-													target="#{usuarioMB.viewBean.videoSelecionado}"
-													value="#{usuario}" />
+													target="#{usuarioMB.viewBean.videoSelecionadoTabela}"
+													value="#{video}" />
 											</p:commandButton>
 										</center>
 									</p:column>

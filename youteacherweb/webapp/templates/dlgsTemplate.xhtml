@@ -389,6 +389,45 @@
 	</p:dialog>
 	
 	
+	<!-- Menssagem sobre  deletarVideoTabela -->
+	<p:dialog id="dlgDeletarVideoTabela" widgetVar="dlgDeletarVideoTabela"
+		resizable="false" width="500px" height="250px" modal="true"
+		showHeader="false">
+		<font style="color: #24b85b; font-size: 30px; float: left;"> <b>Notificação</b>
+		</font>
+
+		<br />
+		<br />
+		<div class="row">
+			<!-- Desenho -->
+			<div class="ui-grid-col-3">
+				<img src="../resources/imagens/aluno4.png"
+					style="float: left; max-width: 100%; height: auto;" />
+			</div>
+			<div class="ui-grid-col-9">
+				<div
+					style="text-align: inherit; text-decoration: none; color: graytext; margin-top: 30px;">
+
+					<h:outputText value="Atenção: O formulário vinculado também será deletado! Tem certeza que deseja excluir?" />
+					<!-- Botões de Confirmação -->
+					<p:commandButton value="SIM" styleClass="btnVerdeClaro"
+						id="btnSimExclusaoVideoTabela" 
+						action="#{usuarioMB.deletarVideoTabela}"
+						 update="@form"
+						oncomplete="PF('dlgDeletarVideoTabela').hide();"
+						style=" margin-top:10px;  width: 315px;height:50px ;background:#24b85b;color: white;border-color: #24b85b; font:18px 'Ruda',sans-serif;">
+					</p:commandButton>
+					<p:commandButton value="NÃO" styleClass="btnVerdeClaro"
+						id="btnNaoExclusaoVideoTabela"
+						oncomplete="PF('dlgDeletarVideoTabela').hide();"
+						style=" margin-top:10px;  width: 315px;height:50px ;background:#24b85b;color: white;border-color: #24b85b; font:18px 'Ruda',sans-serif;">
+					</p:commandButton>
+				</div>
+			</div>
+		</div>
+	</p:dialog>
+	
+	
 		<!-- Menssagem deltar usuario	 -->
 	<p:dialog id="dlgDeletarUser" widgetVar="dlgDeletarUser"
 		resizable="false" width="500px" height="230px" modal="true"
