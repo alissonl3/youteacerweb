@@ -218,6 +218,7 @@ public class UsuarioViewBean {
 	}
 
 	public void setUsuarioSelecionadoTabela(Usuario usuarioSelecionadoTabela) {
+		System.out.println("ID:"+usuarioSelecionadoTabela.getId());
 		this.usuarioSelecionadoTabela = usuarioSelecionadoTabela;
 	}
 

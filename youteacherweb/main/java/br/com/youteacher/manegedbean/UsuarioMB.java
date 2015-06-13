@@ -36,6 +36,19 @@ public class UsuarioMB implements Serializable {
 	
 	private List<Usuario> usuarioDataModel;
 	private List<Video> videoDataModel;
+	private Usuario usuarioGerenciado;
+	
+	
+
+	public Usuario getUsuarioGerenciado() {
+		return usuarioGerenciado;
+	}
+
+	public void setUsuarioGerenciado(Usuario usuarioGerenciado) {
+		if(usuarioGerenciado!=null)
+		atualizarTabelaVideoDataModel(usuarioGerenciado);
+		this.usuarioGerenciado = usuarioGerenciado;
+	}
 
 	public UsuarioMB() {
 	}
@@ -623,15 +636,14 @@ public class UsuarioMB implements Serializable {
 				
 				
 				//ATUALIZAR A TABELA DE VIDEO DATA MODEL DE ACORDO COM O USUARIO SELECIONADO 
-				public void atualizarTabelaVideoDataModel(){
+				public void atualizarTabelaVideoDataModel(Usuario user){
 					
 					//RequestContext.getCurrentInstance().update("frmGerenciar");
 					RequestContext.getCurrentInstance().update("frmGerenciar:pnlOcultoDados:dtUsuarioVideo");
 					
-					if(viewBean.getUsuarioSelecionadoTabela() != null){
+					if(user != null){
 						System.out.println("Usuario selecionado diferente de null");
-					this.videoDataModel = videoDAO.pesquisarPorUsuario(viewBean
-							.getUsuarioSelecionadoTabela().getId());
+					this.videoDataModel = videoDAO.pesquisarPorUsuario(user.getId());
 					}
 					else{
 						System.out.println("Usuario selecionado n diferente de null");

@@ -38,7 +38,8 @@
 								value="#{usuarioMB.usuarioDataModel}" paginator="true"
 								rowsPerPageTemplate="10,20,30" rows="10"
 								paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
-								paginatorPosition="bottom" rowKey="#{usuario.id}">
+								paginatorPosition="bottom" 
+								rowKey="#{usuario.id}">
 
 								<!-- id -->
 								<p:column style="width:20%;vertical-align:middle;">
@@ -95,12 +96,11 @@
 												value="#{usuario}" />
 										</p:commandButton>
 										<p:commandButton value=""
-											update="@form frmGerenciar:pnlOcultoDados"
-											actionListener="#{usuarioMB.atualizarTabelaVideoDataModel}"									
+											update="@form frmGerenciar:pnlOcultoDados"									
 											style="width: 25px;height:25px ; background: url(../resources/imagens/lupa.png) no-repeat; border-color: white;">
 											
 											<f:setPropertyActionListener
-												target="#{usuarioMB.viewBean.usuarioSelecionadoTabela}"
+												target="#{usuarioMB.usuarioGerenciado}"
 												value="#{usuario}" />
 											<f:setPropertyActionListener
 												target="#{usuarioMB.habilitarVisualizacaoDadosUsuario}"
@@ -134,7 +134,7 @@
 
 							<br />
 							<h:outputText
-								value="Nome: #{usuarioMB.viewBean.usuarioSelecionadoTabela.nome}"
+								value="Nome: #{usuarioMB.usuarioGerenciado.nome}"
 								style="text-align: center; color: graytext; font-weight: bold; font-size: 25px; margin-top: 20px; " />
 							<br />
 							<br />
