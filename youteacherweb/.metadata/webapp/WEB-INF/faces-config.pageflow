@@ -1,19 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf14293832237420" configfile="/youteacherweb/webapp/WEB-INF/faces-config.xml">
-  <nodes xsi:type="pageflow:PFPage" name="aluno/home.xhtml" x="986" y="807" id="pf14306154291540" referenceLink="//@navigationRule.12/@navigationCase.1/@toViewId|" outlinks="pf14306154434419 pf143061546802010 pf143061551778515 pf14313456771080 pf14318823054030 pf14318823054031" inlinks="pf14306154291555 pf143061549850613 pf143061551778515 pf14312763043110 pf14313456771081 pf14318823054032" path="/aluno/home.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="pages/home.xhtml" x="770" y="807" id="pf14306154291556" referenceLink="//@navigationRule.12/@navigationCase.0/@toViewId|" outlinks="pf14306154291555 pf14324110083400 pf14324971087461 pf14325028543624" inlinks="pf14306154434419 pf143061548555811 pf14312763043151 pf14313456771092 pf14318823054033 pf14324110083400 pf14325028543625 pf14330334558410 pf14330336396623 pf14330336396624 pf14330336396625 pf14330336396626 pf14330336396627" path="/pages/home.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="aluno/addvideo.xhtml" x="122" y="1414" id="pf14306154291558" referenceLink="//@navigationRule.9/@fromViewId|" outlinks="pf143061548555811 pf143061549850613 pf14312763043152 pf14313456771093" inlinks="pf143061546802010" path="/aluno/addvideo.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="pages/adm.xhtml" x="554" y="1191" id="pf14307375049990" referenceLink="//@navigationRule.2/@navigationCase.0/@toViewId|" outlinks="pf14324905143820 pf14325028543625 pf14325028543627" inlinks="pf14324905143820 pf14325028543624 pf14330334558421" path="/master/home.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="adm/home.xhtml" x="554" y="807" id="pf14307375049992" referenceLink="//@navigationRule.7/@navigationCase.1/@toViewId|" outlinks="pf14330336396623 pf14330336396628 pf14330336396629 pf143303363966210 pf143303363966211 pf143303363966212" inlinks="pf14324971087461 pf14330336396629 pf143303363966213 pf143303363966214 pf143303363966215 pf143303363966216" path="/adm/home.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="aluno/addf.xhtml" x="338" y="1414" id="pf14312763043153" referenceLink="//@navigationRule.10/@fromViewId|" outlinks="pf14312763043151 pf14312763043110 pf14313456810065" inlinks="pf14312763043152 pf14318823054031" path="/aluno/addformulario.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="aluno/perfil.xhtml" x="554" y="381" id="pf14313456771104" referenceLink="//@navigationRule.12/@navigationCase.2/@toViewId|" outlinks="pf14313456771092 pf14313456771081 pf14313456891126" inlinks="pf14313456771080 pf14313456771093 pf14313456810065 pf14313456891126 pf14318823054034" path="/aluno/perfil.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="aluno/praticar.xhtml" x="338" y="178" id="pf14318823054035" referenceLink="//@navigationRule.12/@fromViewId|" outlinks="pf14318823054033 pf14318823054032 pf14318823054034" inlinks="pf14318823054030" path="/aluno/praticar.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="master/home.xhtml" x="122" y="1799" id="pf14324971087463" referenceLink="//@navigationRule.0/@navigationCase.2/@toViewId|" path="/master/home.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="master/addadm.xhtml" x="338" y="1030" id="pf14325028543629" referenceLink="//@navigationRule.2/@navigationCase.2/@toViewId|" outlinks="pf14330334558421 pf14330334558410 pf14330334558432" inlinks="pf14325028543627 pf14330334558432" path="/master/addadm.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="adm/addvideo.xhtml" id="pf143303363966217" referenceLink="//@navigationRule.4/@fromViewId|" outlinks="pf14330336396624 pf143303363966213 pf143303363966218 pf143303363966219" inlinks="pf14330336396628" path="/adm/addvideo.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="adm/perfil.xhtml" id="pf143303363966220" referenceLink="//@navigationRule.7/@navigationCase.2/@toViewId|" outlinks="pf14330336396626 pf143303363966215 pf143303363966221" inlinks="pf143303363966210 pf143303363966219 pf143303363966222 pf143303363966221 pf143303363966223" path="/adm/perfil.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="adm/praticar.xhtml" id="pf143303363966224" referenceLink="//@navigationRule.7/@fromViewId|" outlinks="pf14330336396627 pf143303363966216 pf143303363966223" inlinks="pf143303363966211" path="/adm/praticar.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="adm/addformulario.xhtml" id="pf143303363966225" referenceLink="//@navigationRule.5/@fromViewId|" outlinks="pf14330336396625 pf143303363966214 pf143303363966222" inlinks="pf143303363966212 pf143303363966218" path="/adm/addformulario.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="aluno/home.xhtml" x="1202" y="381" id="pf14306154291540" referenceLink="//@navigationRule.13/@navigationCase.1/@toViewId|" outlinks="pf14306154434419 pf143061546802010 pf143061551778515 pf14313456771080 pf14318823054030 pf14318823054031 pf143422659683714" inlinks="pf14306154291555 pf143061549850613 pf143061551778515 pf14312763043110 pf14313456771081 pf14318823054032 pf143422664133222" path="/aluno/home.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/home.xhtml" x="986" y="1253" id="pf14306154291556" referenceLink="//@navigationRule.13/@navigationCase.0/@toViewId|" outlinks="pf14306154291555 pf14324110083400 pf14324971087461 pf14325028543624 pf14342265915071" inlinks="pf14306154434419 pf143061548555811 pf14312763043151 pf14313456771092 pf14318823054033 pf14324110083400 pf14325028543625 pf14330334558410 pf14330336396623 pf14330336396624 pf14330336396625 pf14330336396626 pf14330336396627 pf14342265915072 pf14342265915073 pf14342265915074 pf143422663378419" path="/pages/home.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="aluno/addvideo.xhtml" x="338" y="401" id="pf14306154291558" referenceLink="//@navigationRule.12/@fromViewId|" outlinks="pf143061548555811 pf143061549850613 pf14312763043152 pf14313456771093" inlinks="pf143061546802010" path="/aluno/addvideo.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/adm.xhtml" x="770" y="1051" id="pf14307375049990" referenceLink="//@navigationRule.2/@navigationCase.0/@toViewId|" outlinks="pf14324905143820 pf14325028543625 pf14325028543627" inlinks="pf14324905143820 pf14325028543624 pf14330334558421" path="/master/home.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="adm/home.xhtml" x="770" y="1882" id="pf14307375049992" referenceLink="//@navigationRule.13/@navigationCase.1/@toViewId|" outlinks="pf14330336396623 pf14330336396628 pf14330336396629 pf143303363966210 pf143303363966211 pf143303363966212 pf14342265915075 pf14342265915076" inlinks="pf14324971087461 pf14330336396629 pf143303363966213 pf143303363966214 pf143303363966215 pf143303363966216 pf14342265915077 pf14342265915078" path="/adm/home.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="aluno/addf.xhtml" x="554" y="199" id="pf14312763043153" referenceLink="//@navigationRule.13/@fromViewId|" outlinks="pf14312763043151 pf14312763043110 pf14313456810065" inlinks="pf14312763043152 pf14318823054031" path="/aluno/addformulario.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="aluno/perfil.xhtml" x="770" y="360" id="pf14313456771104" referenceLink="//@navigationRule.13/@navigationCase.2/@toViewId|" outlinks="pf14313456771092 pf14313456771081 pf14313456891126" inlinks="pf14313456771080 pf14313456771093 pf14313456810065 pf14313456891126 pf14318823054034 pf143422664453123" path="/aluno/perfil.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="aluno/praticar.xhtml" x="554" y="625" id="pf14318823054035" referenceLink="//@navigationRule.15/@fromViewId|" outlinks="pf14318823054033 pf14318823054032 pf14318823054034" inlinks="pf14318823054030" path="/aluno/praticar.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="master/home.xhtml" x="122" y="939" id="pf14324971087463" referenceLink="//@navigationRule.0/@navigationCase.2/@toViewId|" path="/master/home.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="master/addadm.xhtml" x="554" y="1072" id="pf14325028543629" referenceLink="//@navigationRule.2/@navigationCase.2/@toViewId|" outlinks="pf14330334558421 pf14330334558410 pf14330334558432" inlinks="pf14325028543627 pf14330334558432" path="/master/addadm.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="adm/addvideo.xhtml" x="122" y="2083" id="pf143303363966217" referenceLink="//@navigationRule.6/@fromViewId|" outlinks="pf14330336396624 pf143303363966213 pf143303363966218 pf143303363966219" inlinks="pf14330336396628" path="/adm/addvideo.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="adm/perfil.xhtml" x="554" y="1679" id="pf143303363966220" referenceLink="//@navigationRule.13/@navigationCase.2/@toViewId|" outlinks="pf14330336396626 pf143303363966215 pf143303363966221" inlinks="pf143303363966210 pf143303363966219 pf143303363966222 pf143303363966221 pf143303363966223 pf14342265915089 pf143422659150810" path="/adm/perfil.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="adm/praticar.xhtml" x="338" y="1092" id="pf143303363966224" referenceLink="//@navigationRule.9/@fromViewId|" outlinks="pf14330336396627 pf143303363966216 pf143303363966223" inlinks="pf143303363966211" path="/adm/praticar.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="adm/addformulario.xhtml" x="338" y="1881" id="pf143303363966225" referenceLink="//@navigationRule.7/@fromViewId|" outlinks="pf14330336396625 pf143303363966214 pf143303363966222" inlinks="pf143303363966212 pf143303363966218" path="/adm/addformulario.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/email.xhtml" x="770" y="1477" id="pf143422659150811" referenceLink="//@navigationRule.3/@fromViewId|" outlinks="pf14342265915072" inlinks="pf14342265915071" path="/pages/email.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="adm/gerenciar.xhtml" x="338" y="1476" id="pf143422659150812" referenceLink="//@navigationRule.10/@fromViewId|" outlinks="pf14342265915074 pf14342265915078 pf143422659150810" inlinks="pf14342265915075" path="/adm/gerenciar.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="adm/deletarvideo.xhtml" x="338" y="2307" id="pf143422659150813" referenceLink="//@navigationRule.13/@fromViewId|" outlinks="pf14342265915073 pf14342265915077 pf14342265915089" inlinks="pf14342265915076" path="/adm/deletarvideo.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="aluno/deletarvideo.xhtml" id="pf143422659683815" referenceLink="//@navigationRule.13/@fromViewId|" outlinks="pf143422663378419 pf143422664133222 pf143422664453123" inlinks="pf143422659683714" path="/aluno/deletarvideo.xhtml"/>
   <links id="pf14306154291555" target="pf14306154291540" source="pf14306154291556" outcome="logado" redirect="true"/>
   <links id="pf14306154434419" target="pf14306154291556" source="pf14306154291540" outcome="sair" redirect="true"/>
   <links id="pf143061546802010" target="pf14306154291558" source="pf14306154291540" outcome="video" redirect="true"/>
@@ -38,6 +42,33 @@
   <links id="pf14325028543627" target="pf14325028543629" source="pf14307375049990" outcome="adm" redirect="true"/>
   <links id="pf14330334558421" target="pf14307375049990" source="pf14325028543629" outcome="inicio" redirect="true"/>
   <links id="pf14330334558410" target="pf14306154291556" source="pf14325028543629" outcome="sair" redirect="true"/>
+  <links id="pf14330336396623" target="pf14306154291556" source="pf14307375049992" outcome="sair" redirect="true"/>
+  <links id="pf14330336396628" target="pf143303363966217" source="pf14307375049992" outcome="video" redirect="true"/>
+  <links id="pf143303363966210" target="pf143303363966220" source="pf14307375049992" outcome="perfil" redirect="true"/>
+  <links id="pf143303363966211" target="pf143303363966224" source="pf14307375049992" outcome="praticar" redirect="true"/>
+  <links id="pf143303363966212" target="pf143303363966225" source="pf14307375049992" outcome="formulario" redirect="true"/>
+  <links id="pf14330336396624" target="pf14306154291556" source="pf143303363966217" outcome="sair" redirect="true"/>
+  <links id="pf143303363966213" target="pf14307375049992" source="pf143303363966217" outcome="inicio" redirect="true"/>
+  <links id="pf143303363966218" target="pf143303363966225" source="pf143303363966217" outcome="formulario" redirect="true"/>
+  <links id="pf143303363966219" target="pf143303363966220" source="pf143303363966217" outcome="perfil" redirect="true"/>
+  <links id="pf14330336396625" target="pf14306154291556" source="pf143303363966225" outcome="sair" redirect="true"/>
+  <links id="pf143303363966214" target="pf14307375049992" source="pf143303363966225" outcome="inicio" redirect="true"/>
+  <links id="pf143303363966222" target="pf143303363966220" source="pf143303363966225" outcome="perfil" redirect="true"/>
+  <links id="pf14330336396626" target="pf14306154291556" source="pf143303363966220" outcome="sair" redirect="true"/>
+  <links id="pf143303363966215" target="pf14307375049992" source="pf143303363966220" outcome="inicio" redirect="true"/>
+  <links id="pf14330336396627" target="pf14306154291556" source="pf143303363966224" outcome="sair" redirect="true"/>
+  <links id="pf143303363966216" target="pf14307375049992" source="pf143303363966224" outcome="inicio" redirect="true"/>
+  <links id="pf143303363966223" target="pf143303363966220" source="pf143303363966224" outcome="perfil" redirect="true"/>
+  <links id="pf14342265915071" target="pf143422659150811" source="pf14306154291556" outcome="email" redirect="true"/>
+  <links id="pf14342265915072" target="pf14306154291556" source="pf143422659150811" outcome="inicio" redirect="true"/>
+  <links id="pf14342265915075" target="pf143422659150812" source="pf14307375049992" outcome="gerenciar" redirect="true"/>
+  <links id="pf14342265915076" target="pf143422659150813" source="pf14307375049992" outcome="dltVideo" redirect="true"/>
+  <links id="pf14342265915073" target="pf14306154291556" source="pf143422659150813" outcome="sair" redirect="true"/>
+  <links id="pf14342265915077" target="pf14307375049992" source="pf143422659150813" outcome="inicio" redirect="true"/>
+  <links id="pf14342265915089" target="pf143303363966220" source="pf143422659150813" outcome="perfil" redirect="true"/>
+  <links id="pf14342265915074" target="pf14306154291556" source="pf143422659150812" outcome="sair" redirect="true"/>
+  <links id="pf14342265915078" target="pf14307375049992" source="pf143422659150812" outcome="inicio" redirect="true"/>
+  <links id="pf143422659150810" target="pf143303363966220" source="pf143422659150812" outcome="perfil" redirect="true"/>
   <links id="pf143061551778515" target="pf14306154291540" source="pf14306154291540" outcome="inicio" redirect="true">
     <bendPoints d1Height="-36" d2Height="-36"/>
     <bendPoints d1Width="-64" d1Height="-36" d2Width="-64" d2Height="-36"/>
@@ -63,23 +94,18 @@
     <bendPoints d1Width="-64" d1Height="-36" d2Width="-64" d2Height="-36"/>
     <bendPoints d1Width="-64" d2Width="-64"/>
   </links>
-  <links id="pf14330336396623" target="pf14306154291556" source="pf14307375049992" outcome="sair" redirect="true"/>
-  <links id="pf14330336396628" target="pf143303363966217" source="pf14307375049992" outcome="video" redirect="true"/>
-  <links id="pf14330336396629" target="pf14307375049992" source="pf14307375049992" outcome="inicio" redirect="true"/>
-  <links id="pf143303363966210" target="pf143303363966220" source="pf14307375049992" outcome="perfil" redirect="true"/>
-  <links id="pf143303363966211" target="pf143303363966224" source="pf14307375049992" outcome="praticar" redirect="true"/>
-  <links id="pf143303363966212" target="pf143303363966225" source="pf14307375049992" outcome="formulario" redirect="true"/>
-  <links id="pf14330336396624" target="pf14306154291556" source="pf143303363966217" outcome="sair" redirect="true"/>
-  <links id="pf143303363966213" target="pf14307375049992" source="pf143303363966217" outcome="inicio" redirect="true"/>
-  <links id="pf143303363966218" target="pf143303363966225" source="pf143303363966217" outcome="formulario" redirect="true"/>
-  <links id="pf143303363966219" target="pf143303363966220" source="pf143303363966217" outcome="perfil" redirect="true"/>
-  <links id="pf14330336396625" target="pf14306154291556" source="pf143303363966225" outcome="sair" redirect="true"/>
-  <links id="pf143303363966214" target="pf14307375049992" source="pf143303363966225" outcome="inicio" redirect="true"/>
-  <links id="pf143303363966222" target="pf143303363966220" source="pf143303363966225" outcome="perfil" redirect="true"/>
-  <links id="pf14330336396626" target="pf14306154291556" source="pf143303363966220" outcome="sair" redirect="true"/>
-  <links id="pf143303363966215" target="pf14307375049992" source="pf143303363966220" outcome="inicio" redirect="true"/>
-  <links id="pf143303363966221" target="pf143303363966220" source="pf143303363966220" outcome="perfil" redirect="true"/>
-  <links id="pf14330336396627" target="pf14306154291556" source="pf143303363966224" outcome="sair" redirect="true"/>
-  <links id="pf143303363966216" target="pf14307375049992" source="pf143303363966224" outcome="inicio" redirect="true"/>
-  <links id="pf143303363966223" target="pf143303363966220" source="pf143303363966224" outcome="perfil" redirect="true"/>
+  <links id="pf14330336396629" target="pf14307375049992" source="pf14307375049992" outcome="inicio" redirect="true">
+    <bendPoints d1Height="-36" d2Height="-36"/>
+    <bendPoints d1Width="-64" d1Height="-36" d2Width="-64" d2Height="-36"/>
+    <bendPoints d1Width="-64" d2Width="-64"/>
+  </links>
+  <links id="pf143303363966221" target="pf143303363966220" source="pf143303363966220" outcome="perfil" redirect="true">
+    <bendPoints d1Height="-36" d2Height="-36"/>
+    <bendPoints d1Width="-64" d1Height="-36" d2Width="-64" d2Height="-36"/>
+    <bendPoints d1Width="-64" d2Width="-64"/>
+  </links>
+  <links id="pf143422659683714" target="pf143422659683815" source="pf14306154291540" outcome="dltVideo" redirect="true"/>
+  <links id="pf143422663378419" target="pf14306154291556" source="pf143422659683815" outcome="sair" redirect="true"/>
+  <links id="pf143422664133222" target="pf14306154291540" source="pf143422659683815" outcome="inicio" redirect="true"/>
+  <links id="pf143422664453123" target="pf14313456771104" source="pf143422659683815" outcome="perfil" redirect="true"/>
 </pageflow:Pageflow>
