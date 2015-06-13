@@ -37,19 +37,13 @@ public class UsuarioMB implements Serializable {
 	private List<Usuario> usuarioDataModel;
 	private List<Video> videoDataModel;
 	private Usuario usuarioGerenciado;
+	private Usuario usuarioGerenciadoApagar;
+
 	
 	
+	
 
-	public Usuario getUsuarioGerenciado() {
-		return usuarioGerenciado;
-	}
-
-	public void setUsuarioGerenciado(Usuario usuarioGerenciado) {
-		if(usuarioGerenciado!=null)
-		atualizarTabelaVideoDataModel(usuarioGerenciado);
-		this.usuarioGerenciado = usuarioGerenciado;
-	}
-
+	
 	public UsuarioMB() {
 	}
 	
@@ -970,32 +964,73 @@ public class UsuarioMB implements Serializable {
 	}
 
 	// DELETAR UM ALUNO
-	public void deletarUsuario() {
+		public void deletarUsuario(Usuario user) {
 
-		try {
-			
-			if(viewBean.getUsuarioSelecionadoTabela() != null){
-			dao.remover(viewBean.getUsuarioSelecionadoTabela());
+			try {
+				
+				if(user != null){
+				apagarVideosUsuario(user);
+				dao.remover(user);
+				
+				
+				usuarioDataModel = dao.listarTodos();
+				atualizarListaVideo();
+				RequestContext.getCurrentInstance().update("frmAddAdm:dtUsuario");
+				RequestContext.getCurrentInstance().update("frmGerenciar");
+				
+				mostraMenssagem("SUCESSO", "Usuario deletado com sucesso.");
+				}
+				else{
+					System.out.println("usuario selecionado null");
+				}
+				
+				
+				
+
+			} catch (Exception e) {
+
+				mostraMenssagem("ERRO", "Houve um erro ao tentar deletar usuario.");
+				System.out.println("Erro " + e);
 			}
-			else{
-				System.out.println("usuario selecionado null");
-			}
-			
-			usuarioDataModel = dao.listarTodos();
-			
-			RequestContext.getCurrentInstance().update("frmAddAdm:dtUsuario");
-			RequestContext.getCurrentInstance().update("frmGerenciar");
-			
-			mostraMenssagem("SUCESSO", "Usuario deletado com sucesso.");
-			
 
-		} catch (Exception e) {
-
-			mostraMenssagem("ERRO", "Houve um erro ao tentar deletar usuario.");
-			System.out.println("Erro " + e);
 		}
+		//Apagar todos os videos daquele usuario
+		public void apagarVideosUsuario(Usuario usuario){
+			try{
+				List<Video> videosRemovidos = videoDAO.pesquisarPorUsuario(usuario.getId());
+				if(videosRemovidos.size()>0){
+					for(Video video: videosRemovidos){
+						viewBean.setVideoSelecionadoTabela(video);
+						//deletarVideoTabela();
+						if (viewBean.getVideoSelecionadoTabela() != null) {
+							System.out.println("Video Selecionado diferente de null");
+							List<Formulario> formularioExistente = new ArrayList<Formulario>();
 
-	}
+							formularioExistente = formularioDAO.pesquisarPorVideo(viewBean
+									.getVideoSelecionadoTabela().getId());			
+
+							if (formularioExistente.size() >= 1) {
+								System.out
+										.println("Existe Formulario vinculado ao videoSelecionado");
+								for (int i = 0; i < formularioExistente.size(); i++) {
+									formularioDAO.remover(formularioExistente.get(i));
+									System.out.println("Removeu Formulario");
+								}
+							}
+							
+							videoDAO.remover(viewBean.getVideoSelecionadoTabela());
+						}
+						
+					}
+					
+				}
+			}
+			catch(Exception e){
+				mostraMenssagem("ERRO", "Houve um erro ao tentar deletar video");
+				System.out.println("Erro "+ e);
+			}
+			
+		}
 
 	// MOSTRAR MENSSAGEM DE NOTIFICAÇÃO
 	public void mostraMenssagem(String titulo, String menssagem) {
@@ -1404,6 +1439,26 @@ public class UsuarioMB implements Serializable {
 			boolean habilitarVisualizacaoBtInicio) {
 		this.habilitarVisualizacaoBtInicio = habilitarVisualizacaoBtInicio;
 	}
+	public Usuario getUsuarioGerenciado() {
+		return usuarioGerenciado;
+	}
+
+	public void setUsuarioGerenciado(Usuario usuarioGerenciado) {
+		if(usuarioGerenciado!=null)
+		atualizarTabelaVideoDataModel(usuarioGerenciado);
+		this.usuarioGerenciado = usuarioGerenciado;
+	}
+	public Usuario getUsuarioGerenciadoApagar() {
+		return usuarioGerenciadoApagar;
+	}
+
+	public void setUsuarioGerenciadoApagar(Usuario usuarioGerenciadoApagar) {
+		if(usuarioGerenciadoApagar!=null){
+			deletarUsuario(usuarioGerenciadoApagar);
+			this.usuarioGerenciadoApagar = usuarioGerenciadoApagar;
+		}
+	}
+
 	
 
 }

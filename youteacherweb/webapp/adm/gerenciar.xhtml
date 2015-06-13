@@ -106,10 +106,10 @@
 												target="#{usuarioMB.habilitarVisualizacaoDadosUsuario}"
 												value="#{true}" />
 										</p:commandButton>
-										<p:commandButton value="" update="@form"
+										<p:commandButton value=""  update="@form"
 											style="width: 25px;height:25px ; background: url(../resources/imagens/del.png) no-repeat; border-color: white;">
 											<f:setPropertyActionListener
-												target="#{usuarioMB.viewBean.usuarioSelecionadoTabela}"
+												target="#{usuarioMB.usuarioGerenciadoApagar}"
 												value="#{usuario}" />									
 										</p:commandButton>
 									</center>
