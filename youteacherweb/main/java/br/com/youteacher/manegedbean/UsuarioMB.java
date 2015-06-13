@@ -516,15 +516,15 @@ public class UsuarioMB implements Serializable {
 					
 				
 				Menssagem men = new Menssagem(viewBean.getEmailEnviar(), "Recuperar senha", "Olá " + user.getNome() + ", sua nova senha é: " + novaSenha + ". "
-						+ "Por favor, faça o login com está nova senha!");
+						+ "Faça o login com sua nova senha! \n "
+						+"Link: http://localhost:8080/youteacherweb ");
 				
 				Carteiro carta = new Carteiro();
 				
 				if(carta.enviarMensagem(men)){
 					
 					RequestContext.getCurrentInstance().update("frmDlgTemplate");
-					RequestContext.getCurrentInstance().execute("PF().show(dlgEmailEnviar);");
-					
+					RequestContext.getCurrentInstance().execute("PF('dlgEmailEnviar').show();");
 				
 				}
 				else

@@ -15,7 +15,7 @@ public class Carteiro {
     
     private String hostName = "smtp.gmail.com";
 	private String usuario = "youteacher2015"; // Seu login do Gmail
-	private String senha = "tccyouteacher2015"; // Sua senha do Gmail
+	private String senha = "tccyouteacer2015"; // Sua senha do Gmail
 	private String email = "youteacher2015@gmail.com"; 
         
         private SimpleEmail simple;

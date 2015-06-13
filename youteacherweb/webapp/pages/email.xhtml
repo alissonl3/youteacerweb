@@ -10,8 +10,7 @@
 <ui:composition template="/templates/template.xhtml">
 
 	<ui:define name="conteudo">
-		<h:form id="frmEnviarEmail">
-			<p:growl showDetail="true" showSummary="true" life="5000" />
+		
 			<div class="ui-grid">
 				<div class="ui-grid-row">
 					<div class="ui-grid-col-12">
@@ -35,12 +34,15 @@
 					</div>
 
 					<div class="ui-grid-col-4" style="padding-top: 20px;">
+					<h:form id="frmEnviarEmail">
+						<p:growl showDetail="true" showSummary="true" life="5000" />
 						<h:panelGrid columns="1" cellpadding="3">
 							<h:outputText value="Preenche o campo abaixo."
 								style="font-size:15px; width: 315px; height:50px ;" />
 							<h:outputText value=" " />
 							<h:outputText value="Email:" style="font-size:15px; " />
-							<p:inputText id="iptEmailEnviar" required="true" label="Email:" size="30"
+							<p:inputText id="iptEmailEnviar" required="true" label="Email:"
+								size="30"
 								requiredMessage="O campo e-mail não pode ficar em branco"
 								validatorMessage="Email Inválido!" style="height:30px ; "
 								value="#{usuarioMB.viewBean.emailEnviar}">
@@ -51,13 +53,24 @@
 							<p:commandButton value="ENVIAR" styleClass="btnVerdeClaro"
 								style="width: 315px;height:50px ;background:#24b85b;color: white;border-color: #24b85b; font:18px 'Ruda',sans-serif;"
 								actionListener="#{usuarioMB.enviarEmail}"
-								update="@form :frmDlgTemplate" />
+								update="@form" />
 						</h:panelGrid>
+						</h:form>
+						<h:form>
+						<p:commandLink update="@form" value="Voltar"
+										action="inicio" style=" margin-left: 40%;" styleClass="command">
+										<f:setPropertyActionListener
+											target="#{usuarioMB.habilitarVisualizacaoBtInicio}"
+											value="#{false}"></f:setPropertyActionListener>
+						</p:commandLink>
+						</h:form>
 					</div>
 					<div class="ui-grid-col-2"></div>
 				</div>
 			</div>
-		</h:form>
+		
+
+
 
 		<!-- Dialogs -->
 		<ui:include src="../templates/dlgsTemplate.xhtml"></ui:include>

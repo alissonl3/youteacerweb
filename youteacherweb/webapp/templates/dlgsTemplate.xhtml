@@ -431,9 +431,9 @@
 	</p:dialog>
 	
 	
-			<!-- Menssagem sobre o envio do email	 -->
+	<!-- Menssagem sobre o envio do email	 -->
 	<p:dialog id="dlgEmailEnviar" widgetVar="dlgEmailEnviar"
-		resizable="false" width="500px" height="230px" modal="true"
+		resizable="false" width="500px" height="200px" modal="true"
 		showHeader="false">
 		<font style="color: #24b85b; font-size: 30px; float: left;"> <b>Notificação</b>
 		</font>
@@ -458,7 +458,10 @@
 						id="btnOkEmailEnviar"  update="@form"
 						action="inicio"
 						oncomplete="PF('dlgEmailEnviar').hide();"
-						style=" margin-top:10px;  width: 315px;height:50px ;background:#24b85b;color: white;border-color: #24b85b; font:18px 'Ruda',sans-serif;">
+						style=" margin-top:25px;  width: 315px;height:50px ;background:#24b85b;color: white;border-color: #24b85b; font:18px 'Ruda',sans-serif;">
+						<f:setPropertyActionListener
+											target="#{usuarioMB.habilitarVisualizacaoBtInicio}"
+											value="#{false}"></f:setPropertyActionListener>
 					</p:commandButton>
 				</div>
 			</div>
