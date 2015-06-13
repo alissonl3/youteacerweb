@@ -29,7 +29,8 @@ public class UsuarioViewBean {
 	private Date dataAlterada;
 	
 	
-
+	//envio de email
+	private String emailEnviar;
 	
 
 
@@ -149,6 +150,14 @@ public class UsuarioViewBean {
 
 	public String getTituloVideo() {
 		return tituloVideo;
+	}
+
+	public String getEmailEnviar() {
+		return emailEnviar;
+	}
+
+	public void setEmailEnviar(String emailEnviar) {
+		this.emailEnviar = emailEnviar;
 	}
 
 	public void setTituloVideo(String tituloVideo) {

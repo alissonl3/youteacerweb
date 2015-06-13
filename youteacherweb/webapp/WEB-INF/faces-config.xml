@@ -28,6 +28,11 @@
 			<redirect></redirect>
 		</navigation-case>
 		<navigation-case>
+			<from-outcome>email</from-outcome>
+			<to-view-id>/pages/email.xhtml</to-view-id>
+			<redirect></redirect>
+		</navigation-case>
+		<navigation-case>
 			<from-outcome>logado2</from-outcome>
 			<to-view-id>/adm/home.xhtml</to-view-id>
 			<redirect></redirect>
@@ -80,6 +85,18 @@
 		<navigation-case>
 			<from-outcome>adm</from-outcome>
 			<to-view-id>/master/addadm.xhtml</to-view-id>
+			<redirect></redirect>
+		</navigation-case>
+	</navigation-rule>
+	
+	<!-- Cortou -->
+	
+	<!-- Navegação Email -->
+	<navigation-rule>
+		<from-view-id>/pages/email.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>inicio</from-outcome>
+			<to-view-id>/pages/home.xhtml</to-view-id>
 			<redirect></redirect>
 		</navigation-case>
 	</navigation-rule>

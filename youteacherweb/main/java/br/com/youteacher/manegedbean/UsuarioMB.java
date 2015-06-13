@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 import javax.annotation.PostConstruct;
 import javax.faces.application.FacesMessage;
@@ -17,6 +18,8 @@ import br.com.youteacher.banco.dao.FormularioDAO;
 import br.com.youteacher.banco.dao.SenhaEncripty;
 import br.com.youteacher.banco.dao.VideoDAO;
 import br.com.youteacher.banco.dao.UsuarioDAO;
+import br.com.youteacher.email.Carteiro;
+import br.com.youteacher.email.Menssagem;
 import br.com.youteacher.viewbean.UsuarioViewBean;
 import br.com.youteacherweb.entidades.*;
 
@@ -58,7 +61,7 @@ public class UsuarioMB implements Serializable {
 
 	// opções video
 	private boolean habilitarVisualizacaoAdicao;
-	private boolean hbilitarVisualizacaoEdicao;
+	private boolean habilitarVisualizacaoRemover;
 	private boolean habilitarVisualizacaoPraticar;
 
 	// video
@@ -74,6 +77,10 @@ public class UsuarioMB implements Serializable {
 	
 	//pagina gerenciar
 	private boolean habilitarVisualizacaoDadosUsuario;
+	
+
+	//opções render botão principal
+	private boolean habilitarVisualizacaoBtInicio;
 
 	@PostConstruct
 	private void initPage() {
@@ -485,6 +492,81 @@ public class UsuarioMB implements Serializable {
 		
 	}
 	
+	
+	//ENVIO DE MAIL
+		public void enviarEmail(){
+			
+		
+
+			try{
+				
+				List<Usuario> listaEmail = dao.listarCondicaoUsuario("email = '" + viewBean.getEmailEnviar() + "'");
+				
+				if(listaEmail.size() > 0){
+				
+				//gerando nova senha
+				Usuario user = new Usuario();
+				user = listaEmail.get(0);
+				String novaSenha = gerarSenha();
+				user.setSenha(novaSenha);
+				
+				
+				dao.alterar(user);
+				System.out.println("Alterado: nova senha >  " + novaSenha);
+					
+				
+				Menssagem men = new Menssagem(viewBean.getEmailEnviar(), "Recuperar senha", "Olá " + user.getNome() + ", sua nova senha é: " + novaSenha + ". "
+						+ "Por favor, faça o login com está nova senha!");
+				
+				Carteiro carta = new Carteiro();
+				
+				if(carta.enviarMensagem(men)){
+					
+					RequestContext.getCurrentInstance().update("frmDlgTemplate");
+					RequestContext.getCurrentInstance().execute("PF().show(dlgEmailEnviar);");
+					
+				
+				}
+				else
+				{
+					
+					mostraMenssagem("ERRO", "Houve um erro ao tentar enviar a menssagem");
+					
+				}
+				}else{
+					
+					mostraMenssagem("ERRO", "Não existe um usuário com esse email");
+				}
+				
+				
+			}catch(Exception e){
+				
+				System.out.println("Erro no enviarEmail " + e.getMessage());
+				
+			}
+			
+			
+		}
+		
+		
+		//GERAR NOVA SENHA
+		public String gerarSenha(){  
+			char[] chart ={'0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'};  
+			  
+			char[] senha= new char[5];  
+			  
+			int chartLenght = chart.length; 
+			Random rdm = new Random();  
+			  
+			for (int x=0; x<5; x++)  
+			senha[x] = chart[rdm.nextInt(chartLenght)];  
+			  
+			return new String(senha);  
+			} 
+	
+	
+	
+	
 	// REDIRECIONAR PARA PAGINA DE GERENCIAMENTO
 		public String irParaGerenciar() {
 
@@ -579,77 +661,61 @@ public class UsuarioMB implements Serializable {
 		
 
 		List<Formulario> formularioExistente = new ArrayList<Formulario>();
-		List<Video> videoRelacionados = new ArrayList<Video>();
 
-		boolean verificarRelacaoVideoFormulario = false;
-		boolean verificarRelacaoVideoUsuario = false;
 
 		try {
 			
+			System.out.println("Id video selecionado:"+viewBean.getVideoSelecionado().getUsuario().getId());
+			System.out.println("Usuario online:"+viewBean.getUsuarioLogado().getId());
 			setVideoSelecionadoFormulario(getVideoSelecionado());
-			
-			formularioExistente = formularioDAO.pesquisarPorVideo(viewBean
-					.getVideoSelecionado().getId());
-
-			videoRelacionados = videoDAO.pesquisarPorUsuario(viewBean
-					.getUsuarioLogado().getId());
-
-			
-
-			// VERIFICAR SE USUARIO É DONO DO VIDEO
-			if(!videoRelacionados.isEmpty()){	
-				//SE EXISTE FORMULARIO DAQUELE VIDEO
-			if (!formularioExistente.isEmpty()) {
-				for (Video v : videoRelacionados) {
-					for (Formulario f : formularioExistente) {
-						if (v.getId() == f.getVideo().getId()) {
-							verificarRelacaoVideoFormulario = true;
-						}
-					}
-				}
-			}
-			//SE NÃO EXISTE FORMULARIO DAQUELE VIDEO
-			if(formularioExistente.isEmpty()){
-				for(Video v : videoRelacionados){
-					if(v.getUsuario().getId() == viewBean.getUsuarioLogado().getId()){
-						verificarRelacaoVideoUsuario = true;
-					}
-					
-				}	
-			}	
-			}
-			
-
-			// VERIFICAÇÃO DA VISUALIZAÇÃO DAS OPÇOES
-			//SE EXISTE FORMULARIO E SE O VIDEO É DO USUARIO
-			if (!formularioExistente.isEmpty() && !videoRelacionados.isEmpty() && verificarRelacaoVideoFormulario == true) {
-				habilitarVisualizacaoAdicao = false;
-				hbilitarVisualizacaoEdicao = true;
+			formularioExistente = formularioDAO.pesquisarPorVideo(viewBean.getVideoSelecionado().getId());
+			//Se o usuario Logado tiver um video e não for adm
+			if(viewBean.getVideoSelecionado().getUsuario().getId() ==
+					viewBean.getUsuarioLogado().getId() && viewBean.getUsuarioLogado().getAdm()==null){
+				habilitarVisualizacaoRemover = true;
+			if(formularioExistente.size()>0){
 				habilitarVisualizacaoPraticar = true;
-			}
-			//SE EXISTE O FORMULARIO E O VIDEO FOR DO USUARIO
-			else if (!formularioExistente.isEmpty()
-					&& videoRelacionados.isEmpty() && verificarRelacaoVideoUsuario == false) {
-				habilitarVisualizacaoAdicao = false;
-				hbilitarVisualizacaoEdicao = false;
-				habilitarVisualizacaoPraticar = true;
-			}
-			//SE NÃO EXISTE O FORMULARIO E O VIDEO FOR DO USUARIO
-			else if (formularioExistente.isEmpty()
-					&& !videoRelacionados.isEmpty() && verificarRelacaoVideoUsuario == true) {
+			}else{
 				habilitarVisualizacaoAdicao = true;
-				hbilitarVisualizacaoEdicao = true;
+			}
+			
+			}
+			else if(viewBean.getVideoSelecionado().getUsuario().getId() !=
+					viewBean.getUsuarioLogado().getId() && formularioExistente.size()>0){
+				habilitarVisualizacaoRemover = false;
+				habilitarVisualizacaoAdicao = false;
+				habilitarVisualizacaoPraticar = true;	
+			}
+			
+			
+			//Se o usuario Logado for Adm e o video Selecionado não for dele
+			else if(viewBean.getVideoSelecionado().getUsuario().getId() !=
+					viewBean.getUsuarioLogado().getId() && viewBean.getUsuarioLogado().getAdm()!=null){
+				habilitarVisualizacaoRemover = true;
+				if(formularioExistente.size()>0){
+					habilitarVisualizacaoPraticar = true;
+				}
+				
+				
+			}
+			//Se o usuario Logado for Adm e o video Selecionado for dele
+			else if(viewBean.getVideoSelecionado().getUsuario().getId() ==
+					viewBean.getUsuarioLogado().getId() && viewBean.getUsuarioLogado().getAdm()!=null){
+				habilitarVisualizacaoRemover = true;
+				if(formularioExistente.size()>0){
+					habilitarVisualizacaoPraticar = true;
+				}else{
+					habilitarVisualizacaoAdicao = true;
+				}
+				
+				
+			}
+						
+			else{
+				habilitarVisualizacaoAdicao = false;
+				habilitarVisualizacaoRemover = false;
 				habilitarVisualizacaoPraticar = false;
 			}
-			//SE NÃO EXISTE O FORMULÁRIO E O VIDEO NÃO FOR DO USUARIO
-			else if (formularioExistente.isEmpty()
-					&& videoRelacionados.isEmpty() && verificarRelacaoVideoUsuario == false) {
-				habilitarVisualizacaoAdicao = false;
-				hbilitarVisualizacaoEdicao = false;
-				habilitarVisualizacaoPraticar = false;
-			} 
-			
-			System.out.println("Titulo Video Formulário " + getVideoSelecionadoFormulario());
 			
 
 		} catch (Exception e) {
@@ -946,7 +1012,7 @@ public class UsuarioMB implements Serializable {
 			
 		if (!usuarioAdm.isEmpty()) {
 			
-			hbilitarVisualizacaoEdicao = true;
+			habilitarVisualizacaoRemover = true;
 		
 			viewBean.setUsuarios(usuarioAdm);
 
@@ -1222,12 +1288,12 @@ public class UsuarioMB implements Serializable {
 		this.habilitarVisualizacaoAdicao = habilitarVisualizacaoAdicao;
 	}
 
-	public boolean isHbilitarVisualizacaoEdicao() {
-		return hbilitarVisualizacaoEdicao;
+	public boolean isHabilitarVisualizacaoRemover() {
+		return habilitarVisualizacaoRemover;
 	}
 
-	public void setHbilitarVisualizacaoEdicao(boolean hbilitarVisualizacaoEdicao) {
-		this.hbilitarVisualizacaoEdicao = hbilitarVisualizacaoEdicao;
+	public void setHabilitarVisualizacaoRemover(boolean habilitarVisualizacaoRemover) {
+		this.habilitarVisualizacaoRemover = habilitarVisualizacaoRemover;
 	}
 
 	public boolean isHabilitarVisualizacaoPraticar() {
@@ -1264,7 +1330,14 @@ public class UsuarioMB implements Serializable {
 		this.habilitarVisualizacaoDadosUsuario = habilitarVisualizacaoDadosUsuario;
 	}
 	
-	
+	public boolean isHabilitarVisualizacaoBtInicio() {
+		return habilitarVisualizacaoBtInicio;
+	}
+
+	public void setHabilitarVisualizacaoBtInicio(
+			boolean habilitarVisualizacaoBtInicio) {
+		this.habilitarVisualizacaoBtInicio = habilitarVisualizacaoBtInicio;
+	}
 	
 
 }

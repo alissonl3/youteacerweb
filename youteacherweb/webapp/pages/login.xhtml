@@ -33,10 +33,15 @@
 			<p:commandButton update="@form" value="ENTRAR"
 				styleClass="btnVerdeClaro"
 				style="width: 315px;height:50px ;background:#24b85b; color: white;border-color: #24b85b; font:18px 'Ruda',sans-serif;"
-				action="#{usuarioMB.loginUsuario}" />
-			<p:commandLink value="Esqueceu a senha?" />
-		</h:panelGrid>
-	
+				action="#{usuarioMB.loginUsuario}" />		
+		</h:panelGrid>	
+</h:form>
+<h:form>	
+	<h:panelGrid columns="1" cellpadding="3">
+			<p:commandLink update="@form" value="Esqueceu a senha?" action="email" >
+			<f:setPropertyActionListener target="#{usuarioMB.habilitarVisualizacaoBtInicio}" value="#{true}"></f:setPropertyActionListener>
+			</p:commandLink>
+	</h:panelGrid>	
 </h:form>
 
 </html>
