@@ -41,19 +41,19 @@
 
 
 
-		<h:outputText value="Senha" style="font-size:15px;" />
-		<p:password id="senha" style="height:30px ;"
-			value="#{usuarioMB.viewBean.usuario.senha}" size="30" required="true"
-			match="senha2" requiredMessage="Digite uma senha!"
-			validatorMessage="Senha incorreta" />
-		<p:message for="senha" display="text" />
-		<h:outputText value="Confirmar senha" style="font-size:15px;" />
-		<p:password id="senha2" style="height:30px ;"
-			value="#{usuarioMB.viewBean.usuario.senha}" size="30" required="true" />
+<!-- 		<h:outputText value="Senha" style="font-size:15px;" /> -->
+<!-- 		<p:password id="senha" style="height:30px ;" -->
+<!-- 			value="{usuarioMB.viewBean.usuario.senha}" size="30" required="true" -->
+<!-- 			match="senha2" requiredMessage="Digite uma senha!" -->
+<!-- 			validatorMessage="Senha incorreta" /> -->
+<!-- 		<p:message for="senha" display="text" /> -->
+<!-- 		<h:outputText value="Confirmar senha" style="font-size:15px;" /> -->
+<!-- 		<p:password id="senha2" style="height:30px ;" -->
+<!-- 			value="{usuarioMB.viewBean.usuario.senha}" size="30" required="true" /> -->
 
 		<p:commandButton  value="CADASTRAR"
 			style="width: 315px;height:50px ; background:#24b85b;color: white;border-color: #24b85b;font:18px 'Ruda',sans-serif;"
-			action="#{usuarioMB.inserirUsuario}" update="frmCadastro"/>
+			actionListener="#{usuarioMB.inserirUsuario}" update="frmCadastro"/>
 	
 
 	</h:panelGrid>
