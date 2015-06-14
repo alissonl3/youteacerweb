@@ -38,7 +38,7 @@ public class UsuarioMB implements Serializable {
 	private List<Video> videoDataModel;
 	private Usuario usuarioGerenciado;
 	private Usuario usuarioGerenciadoApagar;
-
+	
 	public UsuarioMB() {
 	}
 
@@ -295,10 +295,12 @@ public class UsuarioMB implements Serializable {
 		}
 
 		if (count > 0) {
-
+			atualizarListaVideo();
 			mostraMenssagem("SUCESSO", "Formulário adicionado com sucesso!");
 			retorno = "inicio";
+			
 		} else {
+			atualizarListaVideo();
 			mostraMenssagem("ATENÇÃO", "Não foi adicionado nenhum formulário!");
 			retorno = "inicio";
 		}
@@ -904,9 +906,7 @@ public class UsuarioMB implements Serializable {
 					"email = '" + viewBean.getUsuario().getEmail() + "'")
 					.size() > 0) {
 				mostraMenssagem("ERRO", "Já existe um usúario com este Email");
-
 			} else {
-
 				habilitarVisualizacaoBtnPerfil = true;
 				
 				String novaSenha = 	gerarSenha();
@@ -921,13 +921,14 @@ public class UsuarioMB implements Serializable {
 								+ ", seja Bem Vindo ao YouTeacher. Sua nova senha é: " + novaSenha + ". "
 								+ "Faça o login com essa senha! Você poderá muda-lá no seu perfil. \n "
 								+ "Link: http://localhost:8080/youteacherweb ");
-
+				
 				Carteiro carta = new Carteiro();
 
 				if (carta.enviarMensagem(men)) {
-
 					RequestContext.getCurrentInstance()
 							.update("frmDlgTemplate");
+					//TODO
+					
 					RequestContext.getCurrentInstance().execute(
 							"PF('dlgEmailEnviarCadastrar').show();");
 

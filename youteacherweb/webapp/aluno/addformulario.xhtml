@@ -38,38 +38,45 @@
 									<h:panelGrid id="gridP1" columns="1" cellpadding="3">
 
 										<h:outputText value="1° Pergunta:" style="font-size:15px; " />
-										<p:inputTextarea id="iptPergunta1" cols="75" rows="2"
-											value="#{usuarioMB.viewBean.formulario1.pergunta}" />
-										<h:outputText value=" " />
+										<p:editor id="iptPergunta1"  value="#{usuarioMB.viewBean.formulario1.pergunta}" width="600" />
+<!-- 										<p:inputTextarea id="iptPergunta1" cols="75" rows="2" -->
+<!-- 											value="#{usuarioMB.viewBean.formulario1.pergunta}" /> -->
+									<h:outputText value=" " /> 
 
 										<!-- Alternativa A -->
 										<h:outputText value="A)" style="font-size:15px; " />
-										<p:inputTextarea id="iptResposta1A" cols="75" rows="1"
-											value="#{usuarioMB.viewBean.formulario1.resposta_A}" />
+										<p:editor id="iptResposta1A"  value="#{usuarioMB.viewBean.formulario1.resposta_A}" width="600" height="100"/>
+										
+<!-- 										<p:inputTextarea id="iptResposta1A" cols="75" rows="1" -->
+<!-- 											value="#{usuarioMB.viewBean.formulario1.resposta_A}" /> -->
 
 										<!-- Alternativa B -->
 										<h:outputText value="B)" style="font-size:15px; " />
-
-										<p:inputTextarea id="iptResposta1B" cols="75" rows="1"
-											value="#{usuarioMB.viewBean.formulario1.resposta_B}" />
-										<h:outputText value=" " />
+										<p:editor id="iptResposta1B"  value="#{usuarioMB.viewBean.formulario1.resposta_B}" width="600" height="100"/>
+				
+<!-- 										<p:inputTextarea id="iptResposta1B" cols="75" rows="1" -->
+<!-- 											value="#{usuarioMB.viewBean.formulario1.resposta_B}" /> -->
+										<h:outputText value=" " /> 
 										<!-- Alternativa C -->
 										<h:outputText value="C)" style="font-size:15px; " />
+										<p:editor id="iptResposta1C"  value="#{usuarioMB.viewBean.formulario1.resposta_C}" width="600" height="100"/>
 
-										<p:inputTextarea id="iptResposta1C" cols="75" rows="1"
-											value="#{usuarioMB.viewBean.formulario1.resposta_C}" />
+<!-- 										<p:inputTextarea id="iptResposta1C" cols="75" rows="1" -->
+<!-- 											value="#{usuarioMB.viewBean.formulario1.resposta_C}" /> -->
 										<h:outputText value=" " />
 										<!-- Alternativa D -->
 										<h:outputText value="D)" style="font-size:15px; " />
+										<p:editor id="iptResposta1D"  value="#{usuarioMB.viewBean.formulario1.resposta_D}" width="600" height="100"/>
 
-										<p:inputTextarea id="iptResposta1D" cols="75" rows="1"
-											value="#{usuarioMB.viewBean.formulario1.resposta_D}" />
+<!-- 										<p:inputTextarea id="iptResposta1D" cols="75" rows="1" -->
+<!-- 											value="#{usuarioMB.viewBean.formulario1.resposta_D}" /> -->
 										<h:outputText value=" " />
 										<!-- Alternativa E -->
 										<h:outputText value="E)" style="font-size:15px; " />
+										<p:editor id="iptResposta1E"  value="#{usuarioMB.viewBean.formulario1.resposta_E}" width="600" height="100"/>
 
-										<p:inputTextarea id="iptResposta1E" cols="75" rows="1"
-											value="#{usuarioMB.viewBean.formulario1.resposta_E}" />
+<!-- 										<p:inputTextarea id="iptResposta1E" cols="75" rows="1" -->
+<!-- 											value="#{usuarioMB.viewBean.formulario1.resposta_E}" /> -->
 										<h:outputText value=" " />
 									</h:panelGrid>
 									<!-- Resposta certa 1 -->
@@ -118,39 +125,45 @@
 									<h:panelGrid columns="1" cellpadding="3">
 
 										<h:outputText value="2° Pergunta:" style="font-size:15px; " />
+										<p:editor id="iptPergunta2"  value="#{usuarioMB.viewBean.formulario2.pergunta}" width="600" />
 
-										<p:inputTextarea id="iptPergunta2" cols="75" rows="2"
-											value="#{usuarioMB.viewBean.formulario2.pergunta}" />
+<!-- 										<p:inputTextarea id="iptPergunta2" cols="75" rows="2" -->
+<!-- 											value="#{usuarioMB.viewBean.formulario2.pergunta}" /> -->
 										<h:outputText value=" " />
 										<!-- Alternativa A -->
 										<h:outputText value="A)" style="font-size:15px; " />
+										<p:editor id="iptResposta2A"  value="#{usuarioMB.viewBean.formulario2.resposta_A}" width="600" height="100"/>
 
-										<p:inputTextarea id="iptResposta2A" cols="75" rows="1"
-											value="#{usuarioMB.viewBean.formulario2.resposta_A}" />
+<!-- 										<p:inputTextarea id="iptResposta2A" cols="75" rows="1" -->
+<!-- 											value="#{usuarioMB.viewBean.formulario2.resposta_A}" /> -->
 										<h:outputText value=" " />
 										<!-- Alternativa B -->
 										<h:outputText value="B)" style="font-size:15px; " />
+										<p:editor id="iptResposta2B"  value="#{usuarioMB.viewBean.formulario2.resposta_B}" width="600" height="100"/>
 
-										<p:inputTextarea id="iptResposta2B" cols="75" rows="1"
-											value="#{usuarioMB.viewBean.formulario2.resposta_B}" />
+<!-- 										<p:inputTextarea id="iptResposta2B" cols="75" rows="1" -->
+<!-- 											value="#{usuarioMB.viewBean.formulario2.resposta_B}" /> -->
 										<h:outputText value=" " />
 										<!-- Alternativa C -->
 										<h:outputText value="C)" style="font-size:15px; " />
+										<p:editor id="iptResposta2C"  value="#{usuarioMB.viewBean.formulario2.resposta_C}" width="600" height="100"/>
 
-										<p:inputTextarea id="iptResposta2C" cols="75" rows="1"
-											value="#{usuarioMB.viewBean.formulario2.resposta_C}" />
+<!-- 										<p:inputTextarea id="iptResposta2C" cols="75" rows="1" -->
+<!-- 											value="#{usuarioMB.viewBean.formulario2.resposta_C}" /> -->
 										<h:outputText value=" " />
 										<!-- Alternativa D -->
 										<h:outputText value="D)" style="font-size:15px; " />
+										<p:editor id="iptResposta2D"  value="#{usuarioMB.viewBean.formulario2.resposta_D}" width="600" height="100"/>
 
-										<p:inputTextarea id="iptResposta2D" cols="75" rows="1"
-											value="#{usuarioMB.viewBean.formulario2.resposta_D}" />
+<!-- 										<p:inputTextarea id="iptResposta2D" cols="75" rows="1" -->
+<!-- 											value="#{usuarioMB.viewBean.formulario2.resposta_D}" /> -->
 										<h:outputText value=" " />
 										<!-- Alternativa E -->
 										<h:outputText value="E)" style="font-size:15px; " />
+										<p:editor id="iptResposta2E"  value="#{usuarioMB.viewBean.formulario2.resposta_E}" width="600" height="100"/>
 
-										<p:inputTextarea id="iptResposta2E" cols="75" rows="1"
-											value="#{usuarioMB.viewBean.formulario2.resposta_E}" />
+<!-- 										<p:inputTextarea id="iptResposta2E" cols="75" rows="1" -->
+<!-- 											value="#{usuarioMB.viewBean.formulario2.resposta_E}" /> -->
 										<h:outputText value=" " />
 									</h:panelGrid>
 									<!-- Resposta certa 2 -->
@@ -201,39 +214,45 @@
 									<h:panelGrid columns="1" cellpadding="3">
 
 										<h:outputText value="3° Pergunta:" style="font-size:15px; " />
+										<p:editor id="iptPergunta3"  value="#{usuarioMB.viewBean.formulario3.pergunta}" width="600" />
 
-										<p:inputTextarea id="iptPergunta3" cols="75" rows="2"
-											value="#{usuarioMB.viewBean.formulario3.pergunta}" />
+<!-- 										<p:inputTextarea id="iptPergunta3" cols="75" rows="2" -->
+<!-- 											value="#{usuarioMB.viewBean.formulario3.pergunta}" /> -->
 										<h:outputText value=" " />
 										<!-- Alternativa A -->
 										<h:outputText value="A)" style="font-size:15px; " />
+										<p:editor id="iptResposta3A"  value="#{usuarioMB.viewBean.formulario3.resposta_A}" width="600" height="100"/>
 
-										<p:inputTextarea id="iptResposta3A" cols="75" rows="1"
-											value="#{usuarioMB.viewBean.formulario3.resposta_A}" />
+<!-- 										<p:inputTextarea id="iptResposta3A" cols="75" rows="1" -->
+<!-- 											value="#{usuarioMB.viewBean.formulario3.resposta_A}" /> -->
 										<h:outputText value=" " />
 										<!-- Alternativa B -->
 										<h:outputText value="B)" style="font-size:15px; " />
+										<p:editor id="iptResposta3B"  value="#{usuarioMB.viewBean.formulario3.resposta_B}" width="600" height="100"/>
 
-										<p:inputTextarea id="iptResposta3B" cols="75" rows="1"
-											value="#{usuarioMB.viewBean.formulario3.resposta_B}" />
+<!-- 										<p:inputTextarea id="iptResposta3B" cols="75" rows="1" -->
+<!-- 											value="#{usuarioMB.viewBean.formulario3.resposta_B}" /> -->
 										<h:outputText value=" " />
 										<!-- Alternativa C -->
 										<h:outputText value="C)" style="font-size:15px; " />
+										<p:editor id="iptResposta3C"  value="#{usuarioMB.viewBean.formulario3.resposta_C}" width="600" height="100"/>
 
-										<p:inputTextarea id="iptResposta3C" cols="75" rows="1"
-											value="#{usuarioMB.viewBean.formulario3.resposta_C}" />
+<!-- 										<p:inputTextarea id="iptResposta3C" cols="75" rows="1" -->
+<!-- 											value="#{usuarioMB.viewBean.formulario3.resposta_C}" /> -->
 										<h:outputText value=" " />
 										<!-- Alternativa D -->
 										<h:outputText value="D)" style="font-size:15px; " />
+										<p:editor id="iptResposta3D"  value="#{usuarioMB.viewBean.formulario3.resposta_D}" width="600" height="100"/>
 
-										<p:inputTextarea id="iptResposta3D" cols="75" rows="1"
-											value="#{usuarioMB.viewBean.formulario3.resposta_D}" />
+<!-- 										<p:inputTextarea id="iptResposta3D" cols="75" rows="1" -->
+<!-- 											value="#{usuarioMB.viewBean.formulario3.resposta_D}" /> -->
 										<h:outputText value=" " />
 										<!-- Alternativa E -->
 										<h:outputText value="E)" style="font-size:15px; " />
+										<p:editor id="iptResposta3E"  value="#{usuarioMB.viewBean.formulario3.resposta_E}" width="600" height="100"/>
 
-										<p:inputTextarea id="iptResposta3E" cols="75" rows="1"
-											value="#{usuarioMB.viewBean.formulario3.resposta_E}" />
+<!-- 										<p:inputTextarea id="iptResposta3E" cols="75" rows="1" -->
+<!-- 											value="#{usuarioMB.viewBean.formulario3.resposta_E}" /> -->
 										<h:outputText value=" " />
 									</h:panelGrid>
 									<!-- Resposta certa 3 -->
@@ -284,39 +303,45 @@
 									<h:panelGrid columns="1" cellpadding="3">
 
 										<h:outputText value="4° Pergunta:" style="font-size:15px; " />
+										<p:editor id="iptPergunta4"  value="#{usuarioMB.viewBean.formulario4.pergunta}" width="600" />
 
-										<p:inputTextarea id="iptPergunta4" cols="75" rows="2"
-											value="#{usuarioMB.viewBean.formulario4.pergunta}" />
+<!-- 										<p:inputTextarea id="iptPergunta4" cols="75" rows="2" -->
+<!-- 											value="#{usuarioMB.viewBean.formulario4.pergunta}" /> -->
 										<h:outputText value=" " />
 										<!-- Alternativa A -->
 										<h:outputText value="A)" style="font-size:15px; " />
+										<p:editor id="iptResposta4A"  value="#{usuarioMB.viewBean.formulario4.resposta_A}" width="600" height="100"/>
 
-										<p:inputTextarea id="iptResposta4A" cols="75" rows="1"
-											value="#{usuarioMB.viewBean.formulario4.resposta_A}" />
+<!-- 										<p:inputTextarea id="iptResposta4A" cols="75" rows="1" -->
+<!-- 											value="#{usuarioMB.viewBean.formulario4.resposta_A}" /> -->
 										<h:outputText value=" " />
 										<!-- Alternativa B -->
 										<h:outputText value="B)" style="font-size:15px; " />
+										<p:editor id="iptResposta4B"  value="#{usuarioMB.viewBean.formulario4.resposta_B}" width="600" height="100"/>
 
-										<p:inputTextarea id="iptResposta4B" cols="75" rows="1"
-											value="#{usuarioMB.viewBean.formulario4.resposta_B}" />
+<!-- 										<p:inputTextarea id="iptResposta4B" cols="75" rows="1" -->
+<!-- 											value="#{usuarioMB.viewBean.formulario4.resposta_B}" /> -->
 										<h:outputText value=" " />
 										<!-- Alternativa C -->
 										<h:outputText value="C)" style="font-size:15px; " />
+										<p:editor id="iptResposta4C"  value="#{usuarioMB.viewBean.formulario4.resposta_C}" width="600" height="100"/>
 
-										<p:inputTextarea id="iptResposta4C" cols="75" rows="1"
-											value="#{usuarioMB.viewBean.formulario4.resposta_C}" />
+<!-- 										<p:inputTextarea id="iptResposta4C" cols="75" rows="1" -->
+<!-- 											value="#{usuarioMB.viewBean.formulario4.resposta_C}" /> -->
 										<h:outputText value=" " />
 										<!-- Alternativa D -->
 										<h:outputText value="D)" style="font-size:15px; " />
+										<p:editor id="iptResposta4D"  value="#{usuarioMB.viewBean.formulario4.resposta_D}" width="600" height="100"/>
 
-										<p:inputTextarea id="iptResposta4D" cols="75" rows="1"
-											value="#{usuarioMB.viewBean.formulario4.resposta_D}" />
+<!-- 										<p:inputTextarea id="iptResposta4D" cols="75" rows="1" -->
+<!-- 											value="#{usuarioMB.viewBean.formulario4.resposta_D}" /> -->
 										<h:outputText value=" " />
 										<!-- Alternativa E -->
 										<h:outputText value="E)" style="font-size:15px; " />
+										<p:editor id="iptResposta4E"  value="#{usuarioMB.viewBean.formulario4.resposta_E}" width="600" height="100"/>
 
-										<p:inputTextarea id="iptResposta4E" cols="75" rows="1"
-											value="#{usuarioMB.viewBean.formulario4.resposta_E}" />
+<!-- 										<p:inputTextarea id="iptResposta4E" cols="75" rows="1" -->
+<!-- 											value="#{usuarioMB.viewBean.formulario4.resposta_E}" /> -->
 										<h:outputText value=" " />
 									</h:panelGrid>
 									<!-- Resposta certa 4 -->
@@ -368,39 +393,45 @@
 									<h:panelGrid columns="1" cellpadding="3">
 
 										<h:outputText value="5° Pergunta:" style="font-size:15px; " />
+										<p:editor id="iptPergunta5"  value="#{usuarioMB.viewBean.formulario5.pergunta}" width="600" />
 
-										<p:inputTextarea id="iptPergunta5" cols="75" rows="2"
-											value="#{usuarioMB.viewBean.formulario5.pergunta}" />
+<!-- 										<p:inputTextarea id="iptPergunta5" cols="75" rows="2" -->
+<!-- 											value="#{usuarioMB.viewBean.formulario5.pergunta}" /> -->
 										<h:outputText value=" " />
 										<!-- Alternativa A -->
 										<h:outputText value="A)" style="font-size:15px; " />
+										<p:editor id="iptResposta5A"  value="#{usuarioMB.viewBean.formulario5.resposta_A}" width="600" height="100"/>
 
-										<p:inputTextarea id="iptResposta5A" cols="75" rows="1"
-											value="#{usuarioMB.viewBean.formulario5.resposta_A}" />
+<!-- 										<p:inputTextarea id="iptResposta5A" cols="75" rows="1" -->
+<!-- 											value="#{usuarioMB.viewBean.formulario5.resposta_A}" /> -->
 										<h:outputText value=" " />
 										<!-- Alternativa B -->
 										<h:outputText value="B)" style="font-size:15px; " />
+										<p:editor id="iptResposta5B"  value="#{usuarioMB.viewBean.formulario5.resposta_B}" width="600" height="100"/>
 
-										<p:inputTextarea id="iptResposta5B" cols="75" rows="1"
-											value="#{usuarioMB.viewBean.formulario5.resposta_B}" />
+<!-- 										<p:inputTextarea id="iptResposta5B" cols="75" rows="1" -->
+<!-- 											value="#{usuarioMB.viewBean.formulario5.resposta_B}" /> -->
 										<h:outputText value=" " />
 										<!-- Alternativa C -->
 										<h:outputText value="C)" style="font-size:15px; " />
+										<p:editor id="iptResposta5C"  value="#{usuarioMB.viewBean.formulario5.resposta_C}" width="600" height="100"/>
 
-										<p:inputTextarea id="iptResposta5C" cols="75" rows="1"
-											value="#{usuarioMB.viewBean.formulario5.resposta_C}" />
+<!-- 										<p:inputTextarea id="iptResposta5C" cols="75" rows="1" -->
+<!-- 											value="#{usuarioMB.viewBean.formulario5.resposta_C}" /> -->
 										<h:outputText value=" " />
 										<!-- Alternativa D -->
 										<h:outputText value="D)" style="font-size:15px; " />
+										<p:editor id="iptResposta5D"  value="#{usuarioMB.viewBean.formulario5.resposta_D}" width="600" height="100"/>
 
-										<p:inputTextarea id="iptResposta5D" cols="75" rows="1"
-											value="#{usuarioMB.viewBean.formulario5.resposta_D}" />
+<!-- 										<p:inputTextarea id="iptResposta5D" cols="75" rows="1" -->
+<!-- 											value="#{usuarioMB.viewBean.formulario5.resposta_D}" /> -->
 										<h:outputText value=" " />
 										<!-- Alternativa E -->
 										<h:outputText value="E)" style="font-size:15px; " />
+										<p:editor id="iptResposta5E"  value="#{usuarioMB.viewBean.formulario5.resposta_E}" width="600" height="100"/>
 
-										<p:inputTextarea id="iptResposta5E" cols="75" rows="1"
-											value="#{usuarioMB.viewBean.formulario5.resposta_E}" />
+<!-- 										<p:inputTextarea id="iptResposta5E" cols="75" rows="1" -->
+<!-- 											value="#{usuarioMB.viewBean.formulario5.resposta_E}" /> -->
 										<h:outputText value=" " />
 									</h:panelGrid>
 									<!-- Resposta certa 5 -->
@@ -451,39 +482,45 @@
 									<h:panelGrid columns="1" cellpadding="3">
 
 										<h:outputText value="6° Pergunta:" style="font-size:15px; " />
+										<p:editor id="iptPergunta6"  value="#{usuarioMB.viewBean.formulario6.pergunta}" width="600" />
 
-										<p:inputTextarea id="iptPergunta6" cols="75" rows="2"
-											value="#{usuarioMB.viewBean.formulario6.pergunta}" />
+<!-- 										<p:inputTextarea id="iptPergunta6" cols="75" rows="2" -->
+<!-- 											value="#{usuarioMB.viewBean.formulario6.pergunta}" /> -->
 										<h:outputText value=" " />
 										<!-- Alternativa A -->
 										<h:outputText value="A)" style="font-size:15px; " />
+										<p:editor id="iptResposta6A"  value="#{usuarioMB.viewBean.formulario6.resposta_A}" width="600" height="100"/>
 
-										<p:inputTextarea id="iptResposta6A" cols="75" rows="1"
-											value="#{usuarioMB.viewBean.formulario6.resposta_A}" />
+<!-- 										<p:inputTextarea id="iptResposta6A" cols="75" rows="1" -->
+<!-- 											value="#{usuarioMB.viewBean.formulario6.resposta_A}" /> -->
 										<h:outputText value=" " />
 										<!-- Alternativa B -->
 										<h:outputText value="B)" style="font-size:15px; " />
+										<p:editor id="iptResposta6B"  value="#{usuarioMB.viewBean.formulario6.resposta_B}" width="600" height="100"/>
 
-										<p:inputTextarea id="iptResposta6B" cols="75" rows="1"
-											value="#{usuarioMB.viewBean.formulario6.resposta_B}" />
+<!-- 										<p:inputTextarea id="iptResposta6B" cols="75" rows="1" -->
+<!-- 											value="#{usuarioMB.viewBean.formulario6.resposta_B}" /> -->
 										<h:outputText value=" " />
 										<!-- Alternativa C -->
 										<h:outputText value="C)" style="font-size:15px; " />
+										<p:editor id="iptResposta6C"  value="#{usuarioMB.viewBean.formulario6.resposta_C}" width="600" height="100"/>
 
-										<p:inputTextarea id="iptResposta6C" cols="75" rows="1"
-											value="#{usuarioMB.viewBean.formulario6.resposta_C}" />
+<!-- 										<p:inputTextarea id="iptResposta6C" cols="75" rows="1" -->
+<!-- 											value="#{usuarioMB.viewBean.formulario6.resposta_C}" /> -->
 										<h:outputText value=" " />
 										<!-- Alternativa D -->
 										<h:outputText value="D)" style="font-size:15px; " />
+										<p:editor id="iptResposta6D"  value="#{usuarioMB.viewBean.formulario6.resposta_D}" width="600" height="100"/>
 
-										<p:inputTextarea id="iptResposta6D" cols="75" rows="1"
-											value="#{usuarioMB.viewBean.formulario6.resposta_D}" />
+<!-- 										<p:inputTextarea id="iptResposta6D" cols="75" rows="1" -->
+<!-- 											value="#{usuarioMB.viewBean.formulario6.resposta_D}" /> -->
 										<h:outputText value=" " />
 										<!-- Alternativa E -->
 										<h:outputText value="E)" style="font-size:15px; " />
+										<p:editor id="iptResposta6E"  value="#{usuarioMB.viewBean.formulario6.resposta_E}" width="600" height="100"/>
 
-										<p:inputTextarea id="iptResposta6E" cols="75" rows="1"
-											value="#{usuarioMB.viewBean.formulario6.resposta_E}" />
+<!-- 										<p:inputTextarea id="iptResposta6E" cols="75" rows="1" -->
+<!-- 											value="#{usuarioMB.viewBean.formulario6.resposta_E}" /> -->
 										<h:outputText value=" " />
 									</h:panelGrid>
 									<!-- Resposta certa 6 -->
@@ -534,39 +571,45 @@
 									<h:panelGrid columns="1" cellpadding="3">
 
 										<h:outputText value="7° Pergunta:" style="font-size:15px; " />
+										<p:editor id="iptPergunta7"  value="#{usuarioMB.viewBean.formulario7.pergunta}" width="600"/>
 
-										<p:inputTextarea id="iptPergunta7" cols="75" rows="2"
-											value="#{usuarioMB.viewBean.formulario7.pergunta}" />
+<!-- 										<p:inputTextarea id="iptPergunta7" cols="75" rows="2" -->
+<!-- 											value="#{usuarioMB.viewBean.formulario7.pergunta}" /> -->
 										<h:outputText value=" " />
 										<!-- Alternativa A -->
 										<h:outputText value="A)" style="font-size:15px; " />
+										<p:editor id="iptResposta7A"  value="#{usuarioMB.viewBean.formulario7.resposta_A}" width="600" height="100"/>
 
-										<p:inputTextarea id="iptResposta7A" cols="75" rows="1"
-											value="#{usuarioMB.viewBean.formulario7.resposta_A}" />
+<!-- 										<p:inputTextarea id="iptResposta7A" cols="75" rows="1" -->
+<!-- 											value="#{usuarioMB.viewBean.formulario7.resposta_A}" /> -->
 										<h:outputText value=" " />
 										<!-- Alternativa B -->
 										<h:outputText value="B)" style="font-size:15px; " />
+										<p:editor id="iptResposta7B"  value="#{usuarioMB.viewBean.formulario7.resposta_B}" width="600" height="100"/>
 
-										<p:inputTextarea id="iptResposta7B" cols="75" rows="1"
-											value="#{usuarioMB.viewBean.formulario7.resposta_B}" />
+<!-- 										<p:inputTextarea id="iptResposta7B" cols="75" rows="1" -->
+<!-- 											value="#{usuarioMB.viewBean.formulario7.resposta_B}" /> -->
 										<h:outputText value=" " />
 										<!-- Alternativa C -->
 										<h:outputText value="C)" style="font-size:15px; " />
+										<p:editor id="iptResposta7C"  value="#{usuarioMB.viewBean.formulario7.resposta_C}" width="600" height="100"/>
 
-										<p:inputTextarea id="iptResposta7C" cols="75" rows="1"
-											value="#{usuarioMB.viewBean.formulario7.resposta_C}" />
+<!-- 										<p:inputTextarea id="iptResposta7C" cols="75" rows="1" -->
+<!-- 											value="#{usuarioMB.viewBean.formulario7.resposta_C}" /> -->
 										<h:outputText value=" " />
 										<!-- Alternativa D -->
 										<h:outputText value="D)" style="font-size:15px; " />
+										<p:editor id="iptResposta7D"  value="#{usuarioMB.viewBean.formulario7.resposta_D}" width="600" height="100"/>
 
-										<p:inputTextarea id="iptResposta7D" cols="75" rows="1"
-											value="#{usuarioMB.viewBean.formulario7.resposta_D}" />
+<!-- 										<p:inputTextarea id="iptResposta7D" cols="75" rows="1" -->
+<!-- 											value="#{usuarioMB.viewBean.formulario7.resposta_D}" /> -->
 										<h:outputText value=" " />
 										<!-- Alternativa E -->
 										<h:outputText value="E)" style="font-size:15px; " />
+										<p:editor id="iptResposta7E"  value="#{usuarioMB.viewBean.formulario7.resposta_E}" width="600" height="100"/>
 
-										<p:inputTextarea id="iptResposta7E" cols="75" rows="1"
-											value="#{usuarioMB.viewBean.formulario7.resposta_E}" />
+<!-- 										<p:inputTextarea id="iptResposta7E" cols="75" rows="1" -->
+<!-- 											value="#{usuarioMB.viewBean.formulario7.resposta_E}" /> -->
 										<h:outputText value=" " />
 									</h:panelGrid>
 									<!-- Resposta certa 7 -->
@@ -617,39 +660,45 @@
 									<h:panelGrid columns="1" cellpadding="3">
 
 										<h:outputText value="8° Pergunta:" style="font-size:15px; " />
+										<p:editor id="iptPergunta8"  value="#{usuarioMB.viewBean.formulario8.pergunta}" width="600" />
 
-										<p:inputTextarea id="iptPergunta8" cols="75" rows="2"
-											value="#{usuarioMB.viewBean.formulario8.pergunta}" />
+<!-- 										<p:inputTextarea id="iptPergunta8" cols="75" rows="2" -->
+<!-- 											value="#{usuarioMB.viewBean.formulario8.pergunta}" /> -->
 										<h:outputText value=" " />
 										<!-- Alternativa A -->
 										<h:outputText value="A)" style="font-size:15px; " />
+										<p:editor id="iptResposta8A"  value="#{usuarioMB.viewBean.formulario8.resposta_A}" width="600" height="100"/>
 
-										<p:inputTextarea id="iptResposta8A" cols="75" rows="1"
-											value="#{usuarioMB.viewBean.formulario8.resposta_A}" />
+<!-- 										<p:inputTextarea id="iptResposta8A" cols="75" rows="1" -->
+<!-- 											value="#{usuarioMB.viewBean.formulario8.resposta_A}" /> -->
 										<h:outputText value=" " />
 										<!-- Alternativa B -->
 										<h:outputText value="B)" style="font-size:15px; " />
+										<p:editor id="iptResposta8B"  value="#{usuarioMB.viewBean.formulario8.resposta_B}" width="600" height="100"/>
 
-										<p:inputTextarea id="iptResposta8B" cols="75" rows="1"
-											value="#{usuarioMB.viewBean.formulario8.resposta_B}" />
+<!-- 										<p:inputTextarea id="iptResposta8B" cols="75" rows="1" -->
+<!-- 											value="#{usuarioMB.viewBean.formulario8.resposta_B}" /> -->
 										<h:outputText value=" " />
 										<!-- Alternativa C -->
 										<h:outputText value="C)" style="font-size:15px; " />
+										<p:editor id="iptResposta8C"  value="#{usuarioMB.viewBean.formulario8.resposta_C}" width="600" height="100"/>
 
-										<p:inputTextarea id="iptResposta8C" cols="75" rows="1"
-											value="#{usuarioMB.viewBean.formulario8.resposta_C}" />
+<!-- 										<p:inputTextarea id="iptResposta8C" cols="75" rows="1" -->
+<!-- 											value="#{usuarioMB.viewBean.formulario8.resposta_C}" /> -->
 										<h:outputText value=" " />
 										<!-- Alternativa D -->
 										<h:outputText value="D)" style="font-size:15px; " />
+										<p:editor id="iptResposta8D"  value="#{usuarioMB.viewBean.formulario8.resposta_D}" width="600" height="100"/>
 
-										<p:inputTextarea id="iptResposta8D" cols="75" rows="1"
-											value="#{usuarioMB.viewBean.formulario8.resposta_D}" />
+<!-- 										<p:inputTextarea id="iptResposta8D" cols="75" rows="1" -->
+<!-- 											value="#{usuarioMB.viewBean.formulario8.resposta_D}" /> -->
 										<h:outputText value=" " />
 										<!-- Alternativa E -->
 										<h:outputText value="E)" style="font-size:15px; " />
+										<p:editor id="iptResposta8E"  value="#{usuarioMB.viewBean.formulario8.resposta_E}" width="600" height="100"/>
 
-										<p:inputTextarea id="iptResposta8E" cols="75" rows="1"
-											value="#{usuarioMB.viewBean.formulario8.resposta_E}" />
+<!-- 										<p:inputTextarea id="iptResposta8E" cols="75" rows="1" -->
+<!-- 											value="#{usuarioMB.viewBean.formulario8.resposta_E}" /> -->
 										<h:outputText value=" " />
 									</h:panelGrid>
 									<!-- Resposta certa 8 -->
@@ -700,39 +749,45 @@
 									<h:panelGrid columns="1" cellpadding="3">
 
 										<h:outputText value="9° Pergunta:" style="font-size:15px; " />
+										<p:editor id="iptPergunta9"  value="#{usuarioMB.viewBean.formulario9.pergunta}" width="600" />
 
-										<p:inputTextarea id="iptPergunta9" cols="75" rows="2"
-											value="#{usuarioMB.viewBean.formulario9.pergunta}" />
+<!-- 										<p:inputTextarea id="iptPergunta9" cols="75" rows="2" -->
+<!-- 											value="#{usuarioMB.viewBean.formulario9.pergunta}" /> -->
 										<h:outputText value=" " />
 										<!-- Alternativa A -->
 										<h:outputText value="A)" style="font-size:15px; " />
+										<p:editor id="iptResposta9A"  value="#{usuarioMB.viewBean.formulario9.resposta_A}" width="600" height="100"/>
 
-										<p:inputTextarea id="iptResposta9A" cols="75" rows="1"
-											value="#{usuarioMB.viewBean.formulario9.resposta_A}" />
+<!-- 										<p:inputTextarea id="iptResposta9A" cols="75" rows="1" -->
+<!-- 											value="#{usuarioMB.viewBean.formulario9.resposta_A}" /> -->
 										<h:outputText value=" " />
 										<!-- Alternativa B -->
 										<h:outputText value="B)" style="font-size:15px; " />
+										<p:editor id="iptResposta9B"  value="#{usuarioMB.viewBean.formulario9.resposta_B}" width="600" height="100"/>
 
-										<p:inputTextarea id="iptResposta9B" cols="75" rows="1"
-											value="#{usuarioMB.viewBean.formulario9.resposta_B}" />
+<!-- 										<p:inputTextarea id="iptResposta9B" cols="75" rows="1" -->
+<!-- 											value="#{usuarioMB.viewBean.formulario9.resposta_B}" /> -->
 										<h:outputText value=" " />
 										<!-- Alternativa C -->
 										<h:outputText value="C)" style="font-size:15px; " />
+										<p:editor id="iptResposta9C"  value="#{usuarioMB.viewBean.formulario9.resposta_C}" width="600" height="100"/>
 
-										<p:inputTextarea id="iptResposta9C" cols="75" rows="1"
-											value="#{usuarioMB.viewBean.formulario9.resposta_C}" />
+<!-- 										<p:inputTextarea id="iptResposta9C" cols="75" rows="1" -->
+<!-- 											value="#{usuarioMB.viewBean.formulario9.resposta_C}" /> -->
 										<h:outputText value=" " />
 										<!-- Alternativa D -->
 										<h:outputText value="D)" style="font-size:15px; " />
+										<p:editor id="iptResposta9D"  value="#{usuarioMB.viewBean.formulario9.resposta_D}" width="600" height="100"/>
 
-										<p:inputTextarea id="iptResposta9D" cols="75" rows="1"
-											value="#{usuarioMB.viewBean.formulario9.resposta_D}" />
+<!-- 										<p:inputTextarea id="iptResposta9D" cols="75" rows="1" -->
+<!-- 											value="#{usuarioMB.viewBean.formulario9.resposta_D}" /> -->
 										<h:outputText value=" " />
 										<!-- Alternativa E -->
 										<h:outputText value="E)" style="font-size:15px; " />
+										<p:editor id="iptResposta9E"  value="#{usuarioMB.viewBean.formulario9.resposta_E}" width="600" height="100"/>
 
-										<p:inputTextarea id="iptResposta9E" cols="75" rows="1"
-											value="#{usuarioMB.viewBean.formulario9.resposta_E}" />
+<!-- 										<p:inputTextarea id="iptResposta9E" cols="75" rows="1" -->
+<!-- 											value="#{usuarioMB.viewBean.formulario9.resposta_E}" /> -->
 										<h:outputText value=" " />
 									</h:panelGrid>
 									<!-- Resposta certa 9 -->
@@ -783,39 +838,45 @@
 									<h:panelGrid columns="1" cellpadding="3">
 
 										<h:outputText value="10° Pergunta:" style="font-size:15px; " />
+										<p:editor id="iptPergunta10"  value="#{usuarioMB.viewBean.formulario10.pergunta}" width="600" />
 
-										<p:inputTextarea id="iptPergunta10" cols="75" rows="2"
-											value="#{usuarioMB.viewBean.formulario10.pergunta}" />
+<!-- 										<p:inputTextarea id="iptPergunta10" cols="75" rows="2" -->
+<!-- 											value="#{usuarioMB.viewBean.formulario10.pergunta}" /> -->
 										<h:outputText value=" " />
 										<!-- Alternativa A -->
 										<h:outputText value="A)" style="font-size:15px; " />
+										<p:editor id="iptResposta10A"  value="#{usuarioMB.viewBean.formulario10.resposta_A}" width="600" height="100"/>
 
-										<p:inputTextarea id="iptResposta10A" cols="75" rows="1"
-											value="#{usuarioMB.viewBean.formulario10.resposta_A}" />
+<!-- 										<p:inputTextarea id="iptResposta10A" cols="75" rows="1" -->
+<!-- 											value="#{usuarioMB.viewBean.formulario10.resposta_A}" /> -->
 										<h:outputText value=" " />
 										<!-- Alternativa B -->
 										<h:outputText value="B)" style="font-size:15px; " />
+										<p:editor id="iptResposta10B"  value="#{usuarioMB.viewBean.formulario10.resposta_B}" width="600" height="100"/>
 
-										<p:inputTextarea id="iptResposta10B" cols="75" rows="1"
-											value="#{usuarioMB.viewBean.formulario10.resposta_B}" />
+<!-- 										<p:inputTextarea id="iptResposta10B" cols="75" rows="1" -->
+<!-- 											value="#{usuarioMB.viewBean.formulario10.resposta_B}" /> -->
 										<h:outputText value=" " />
 										<!-- Alternativa C -->
 										<h:outputText value="C)" style="font-size:15px; " />
+										<p:editor id="iptResposta10C"  value="#{usuarioMB.viewBean.formulario10.resposta_C}" width="600" height="100"/>
 
-										<p:inputTextarea id="iptResposta10C" cols="75" rows="1"
-											value="#{usuarioMB.viewBean.formulario10.resposta_C}" />
+<!-- 										<p:inputTextarea id="iptResposta10C" cols="75" rows="1" -->
+<!-- 											value="#{usuarioMB.viewBean.formulario10.resposta_C}" /> -->
 										<h:outputText value=" " />
 										<!-- Alternativa D -->
 										<h:outputText value="D)" style="font-size:15px; " />
+										<p:editor id="iptResposta10D"  value="#{usuarioMB.viewBean.formulario10.resposta_D}" width="600" height="100"/>
 
-										<p:inputTextarea id="iptResposta10D" cols="75" rows="1"
-											value="#{usuarioMB.viewBean.formulario10.resposta_D}" />
+<!-- 										<p:inputTextarea id="iptResposta10D" cols="75" rows="1" -->
+<!-- 											value="#{usuarioMB.viewBean.formulario10.resposta_D}" /> -->
 										<h:outputText value=" " />
 										<!-- Alternativa E -->
 										<h:outputText value="E)" style="font-size:15px; " />
+										<p:editor id="iptResposta10E"  value="#{usuarioMB.viewBean.formulario10.resposta_E}" width="600" height="100"/>
 
-										<p:inputTextarea id="iptResposta10E" cols="75" rows="1"
-											value="#{usuarioMB.viewBean.formulario10.resposta_E}" />
+<!-- 										<p:inputTextarea id="iptResposta10E" cols="75" rows="1" -->
+<!-- 											value="#{usuarioMB.viewBean.formulario10.resposta_E}" /> -->
 										<h:outputText value=" " />
 									</h:panelGrid>
 									<!-- Resposta certa 10 -->
