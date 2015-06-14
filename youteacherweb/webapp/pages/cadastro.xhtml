@@ -51,12 +51,13 @@
 <!-- 		<p:password id="senha2" style="height:30px ;" -->
 <!-- 			value="{usuarioMB.viewBean.usuario.senha}" size="30" required="true" /> -->
 
-		<p:commandButton  value="CADASTRAR"
+		<p:commandButton  value="CADASTRAR" ajax="true"
 			style="width: 315px;height:50px ; background:#24b85b;color: white;border-color: #24b85b;font:18px 'Ruda',sans-serif;"
-			actionListener="#{usuarioMB.inserirUsuario}" update="frmCadastro"/>
-	
-
+			actionListener="#{usuarioMB.inserirUsuario}" onstart="PF('dlgLoading').show();" oncomplete="PF('dlgLoading').hide();"  update="frmCadastro">		
+		</p:commandButton>			
 	</h:panelGrid>
+	
+	
 </h:form>
 
 </html>
