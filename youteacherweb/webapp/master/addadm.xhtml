@@ -97,12 +97,13 @@
 				style="width: 25px;height:25px ; background: url(../resources/imagens/admin.png) no-repeat; border-color: white;">
 					<f:setPropertyActionListener target="#{usuarioMB.viewBean.usuarioSelecionadoTabela}" value="#{usuario}" />
 				</p:commandButton>
-				<p:commandButton 
-				oncomplete="PF('dlgDeletarUser').show()"			
+				<p:commandButton 			
 				value="" 
-				update="@form :frmDlgTemplate:dlgDeletarUser"
+				update="@form"
 				style="width: 25px;height:25px ; background: url(../resources/imagens/del.png) no-repeat; border-color: white;">
-					<f:setPropertyActionListener target="#{usuarioMB.viewBean.usuarioSelecionadoTabela}" value="#{usuario}" />
+					<f:setPropertyActionListener
+												target="#{usuarioMB.usuarioGerenciadoApagar}"
+												value="#{usuario}" />
 				</p:commandButton>
 				</center>
 			</p:column>			

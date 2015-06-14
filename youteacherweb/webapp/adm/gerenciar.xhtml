@@ -110,7 +110,8 @@
 											style="width: 25px;height:25px ; background: url(../resources/imagens/del.png) no-repeat; border-color: white;">
 											<f:setPropertyActionListener
 												target="#{usuarioMB.usuarioGerenciadoApagar}"
-												value="#{usuario}" />									
+												value="#{usuario}" />
+											<f:setPropertyActionListener target="#{usuarioMB.habilitarVisualizacaoDadosUsuario}" value="#{false}"/>									
 										</p:commandButton>
 									</center>
 								</p:column>

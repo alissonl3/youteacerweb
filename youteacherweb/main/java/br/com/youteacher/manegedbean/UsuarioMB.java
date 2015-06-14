@@ -410,7 +410,8 @@ public class UsuarioMB implements Serializable {
 	//REDIRECIONAR PARA ADDADM
 	public String irParaAddAdm(){
 		
-		usuarioDataModel = dao.listarTodos();
+//		usuarioDataModel = dao.listarTodos();
+		usuarioDataModel = dao.listarCondicaoUsuario(" email != '" + viewBean.getUsuarioLogado().getEmail() + "'");
 		
 		return "adm";
 	}
@@ -577,7 +578,8 @@ public class UsuarioMB implements Serializable {
 	// REDIRECIONAR PARA PAGINA DE GERENCIAMENTO
 		public String irParaGerenciar() {
 
-			usuarioDataModel = dao.listarTodos();
+//			usuarioDataModel = dao.listarTodos();
+			usuarioDataModel = dao.listarCondicaoUsuario(" email != '" + viewBean.getUsuarioLogado().getEmail() + "'");
 
 			return "gerenciar";
 		}
@@ -627,12 +629,20 @@ public class UsuarioMB implements Serializable {
 					// RequestContext.getCurrentInstance().execute("PF('dlgDeletarVideo').show();");
 
 				}
-				
-				
+							
 				// DELETAR VIDEO
 				public void deletarVideoTabela() {
 
 					try {
+						
+						Usuario user = new Usuario();
+						
+						if(usuarioGerenciado != null){
+						 System.out.println("UsuarioGerenciado diferente de null");
+						user = usuarioGerenciado;
+						}
+						
+						
 						if (viewBean.getVideoSelecionadoTabela() != null) {
 							System.out.println("Video Selecionado diferente de null");
 							List<Formulario> formularioExistente = new ArrayList<Formulario>();
@@ -653,22 +663,15 @@ public class UsuarioMB implements Serializable {
 
 							mostraMenssagem("SUCESSO", "Video deletado com sucesso");
 							System.out.println("Removeu video Tabela");
-
-							atualizarListaVideo();
+							
+							atualizarTabelaVideoDataModel(user);
 							
 							RequestContext.getCurrentInstance().update("frmGerenciar");
-							RequestContext.getCurrentInstance().update("frmGerenciar:pnlOcultoDados:dtUsuarioVideo");
-							
-
-						
-
+					
 						}
 					} catch (Exception e) {
 						System.out.println("Erro ao deletar videoTabela " + e);
 					}
-
-					// RequestContext.getCurrentInstance().update("frmDlgTemplate");
-		
 
 				}
 				
@@ -975,6 +978,7 @@ public class UsuarioMB implements Serializable {
 				
 				usuarioDataModel = dao.listarTodos();
 				atualizarListaVideo();
+				
 				RequestContext.getCurrentInstance().update("frmAddAdm:dtUsuario");
 				RequestContext.getCurrentInstance().update("frmGerenciar");
 				
