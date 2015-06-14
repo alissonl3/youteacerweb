@@ -179,23 +179,25 @@ public class UsuarioMB implements Serializable {
 	}
 
 	// ADICIONAR FORMULÁRIO
-	public String inserirFormulario() {
+	public void inserirFormulario() {
 
 		int count = 0;
-		String retorno = null;
+		//String retorno = null;
 
 		if (viewBean.getFormulario1() != null) {
-
+			if(!viewBean.getFormulario1().getPergunta().equals("")){
 			viewBean.getFormulario1().setVideo(videoSelecionadoFormulario);
 
 			formularioDAO.inserir(viewBean.getFormulario1());
 			count++;
 
 			limparFormulario1();
+			}
 		}
 
 		if (habilitarVisualizacaoPergunta2 == true) {
 			if (viewBean.getFormulario2() != null) {
+				if(!viewBean.getFormulario2().getPergunta().equals("")){
 
 				viewBean.getFormulario2().setVideo(videoSelecionadoFormulario);
 
@@ -203,109 +205,130 @@ public class UsuarioMB implements Serializable {
 				count++;
 
 				limparFormulario2();
+				}
 			}
 		}
 
 		if (habilitarVisualizacaoPergunta3 == true) {
 			if (viewBean.getFormulario3() != null) {
+				if(!viewBean.getFormulario3().getPergunta().equals("")){
 
 				viewBean.getFormulario3().setVideo(videoSelecionadoFormulario);
 				formularioDAO.inserir(viewBean.getFormulario3());
 				count++;
 
 				limparFormulario3();
+				}
 			}
 		}
 
 		if (habilitarVisualizacaoPergunta4 == true) {
 			if (viewBean.getFormulario4() != null) {
+				if(!viewBean.getFormulario4().getPergunta().equals("")){
 
 				viewBean.getFormulario4().setVideo(videoSelecionadoFormulario);
 				formularioDAO.inserir(viewBean.getFormulario4());
 				count++;
 
 				limparFormulario4();
+				}
 			}
 		}
 
 		if (habilitarVisualizacaoPergunta5 == true) {
 			if (viewBean.getFormulario5() != null) {
+				if(!viewBean.getFormulario5().getPergunta().equals("")){
 
 				viewBean.getFormulario5().setVideo(videoSelecionadoFormulario);
 				formularioDAO.inserir(viewBean.getFormulario6());
 				count++;
 
 				limparFormulario5();
+				}
 			}
 		}
 
 		if (habilitarVisualizacaoPergunta6 == true) {
 			if (viewBean.getFormulario6() != null) {
+				if(!viewBean.getFormulario6().getPergunta().equals("")){
 
 				viewBean.getFormulario6().setVideo(videoSelecionadoFormulario);
 				formularioDAO.inserir(viewBean.getFormulario6());
 				count++;
 
 				limparFormulario6();
+				}
 			}
 		}
 
 		if (habilitarVisualizacaoPergunta7 == true) {
 			if (viewBean.getFormulario7() != null) {
+				if(!viewBean.getFormulario7().getPergunta().equals("")){
 
 				viewBean.getFormulario7().setVideo(videoSelecionadoFormulario);
 				formularioDAO.inserir(viewBean.getFormulario7());
 				count++;
 
 				limparFormulario7();
+				}
 			}
 		}
 
 		if (habilitarVisualizacaoPergunta8 == true) {
 			if (viewBean.getFormulario8() != null) {
+				if(!viewBean.getFormulario8().getPergunta().equals("")){
 
 				viewBean.getFormulario8().setVideo(videoSelecionadoFormulario);
 				formularioDAO.inserir(viewBean.getFormulario8());
 				count++;
 
 				limparFormulario8();
+				}
 			}
 		}
 
 		if (habilitarVisualizacaoPergunta9 == true) {
 			if (viewBean.getFormulario9() != null) {
+				if(!viewBean.getFormulario9().getPergunta().equals("")){
 
 				viewBean.getFormulario9().setVideo(videoSelecionadoFormulario);
 				formularioDAO.inserir(viewBean.getFormulario9());
 				count++;
 
 				limparFormulario9();
+				}
 			}
 		}
 
 		if (habilitarVisualizacaoPergunta10 == true) {
 			if (viewBean.getFormulario10() != null) {
+				if(!viewBean.getFormulario10().getPergunta().equals("")){
 
 				viewBean.getFormulario10().setVideo(videoSelecionadoFormulario);
 				formularioDAO.inserir(viewBean.getFormulario10());
 				count++;
 
 				limparFormulario10();
+				}
 			}
 		}
 
 		if (count > 0) {
 			atualizarListaVideo();
 			mostraMenssagem("SUCESSO", "Formulário adicionado com sucesso!");
-			retorno = "inicio";
+			
+			RequestContext.getCurrentInstance().update("frmDlgTemplate");
+			RequestContext.getCurrentInstance().execute("PF('dlgAddForm').show();");
+			
+			//retorno = "inicio";
 			
 		} else {
 			atualizarListaVideo();
 			mostraMenssagem("ATENÇÃO", "Não foi adicionado nenhum formulário!");
-			retorno = "inicio";
+			//retorno = "inicio";
 		}
 
-		return retorno;
+		//return retorno;
 
 	}
 
