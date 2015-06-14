@@ -1085,6 +1085,7 @@ public class UsuarioMB implements Serializable {
 
 	// EXECUTAR O LOGIN DO USUARIO
 	public String loginUsuario() throws NoSuchAlgorithmException {
+		atualizarListaVideo();
 		
 		//Logando como root
 		if(viewBean.getUsuario().getEmail().equals("ifpr@gmail.com") && viewBean.getUsuario().getSenha().equals("root")){
