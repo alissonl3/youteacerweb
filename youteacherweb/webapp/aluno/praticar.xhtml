@@ -47,11 +47,11 @@
 							<h:outputText value="1) #{usuarioMB.viewBean.formulario1.pergunta}" style="font-size:15px; "  escape="false"/>
 								<!-- Resposta certa 1 -->
 								<h:panelGrid columns="1" cellpadding="3">	
-										<h:outputText value="A) #{usuarioMB.viewBean.formulario1.resposta_A}" style="font-size:15px; " escape="false"/>
-										<h:outputText value="B) #{usuarioMB.viewBean.formulario1.resposta_B}" style="font-size:15px; " escape="false"/>														
-										<h:outputText value="C) #{usuarioMB.viewBean.formulario1.resposta_C}" style="font-size:15px; " escape="false"/>
-										<h:outputText value="D) #{usuarioMB.viewBean.formulario1.resposta_D}" style="font-size:15px; " escape="false"/>
-										<h:outputText value="E) #{usuarioMB.viewBean.formulario1.resposta_E}" style="font-size:15px; " escape="false"/>
+										<h:outputText value="A) #{usuarioMB.viewBean.formulario1.resposta_A}" rendered="#{usuarioMB.viewBean.formulario1.resposta_A == '' ? false : true}" style="font-size:15px; " escape="false"/>
+										<h:outputText value="B) #{usuarioMB.viewBean.formulario1.resposta_B}" rendered="#{usuarioMB.viewBean.formulario1.resposta_B == '' ? false : true}" style="font-size:15px; " escape="false"/>														
+										<h:outputText value="C) #{usuarioMB.viewBean.formulario1.resposta_C}" rendered="#{usuarioMB.viewBean.formulario1.resposta_C == '' ? false : true}" style="font-size:15px; " escape="false"/>
+										<h:outputText value="D) #{usuarioMB.viewBean.formulario1.resposta_D}" rendered="#{usuarioMB.viewBean.formulario1.resposta_D == '' ? false : true}" style="font-size:15px; " escape="false"/>
+										<h:outputText value="E) #{usuarioMB.viewBean.formulario1.resposta_E}" rendered="#{usuarioMB.viewBean.formulario1.resposta_E == '' ? false : true}" style="font-size:15px; " escape="false"/>
 									<h:outputText value="Escolha a resposta correta:" />
 									<p:selectOneRadio id="console1" 
 										value="#{usuarioMB.viewBean.resposta1}" layout="grid" columns="5" >
@@ -69,11 +69,11 @@
 							<h:outputText value="2) #{usuarioMB.viewBean.formulario2.pergunta}" style="font-size:15px; " escape="false"/>
 										
 								<h:panelGrid columns="1" cellpadding="3">	
-										<h:outputText value="A) #{usuarioMB.viewBean.formulario2.resposta_A}" style="font-size:15px; " escape="false"/>
-										<h:outputText value="B) #{usuarioMB.viewBean.formulario2.resposta_B}" style="font-size:15px; " escape="false"/>														
-										<h:outputText value="C) #{usuarioMB.viewBean.formulario2.resposta_C}" style="font-size:15px; " escape="false"/>
-										<h:outputText value="D) #{usuarioMB.viewBean.formulario2.resposta_D}" style="font-size:15px; " escape="false"/>
-										<h:outputText value="E) #{usuarioMB.viewBean.formulario2.resposta_E}" style="font-size:15px; " escape="false"/>
+										<h:outputText value="A) #{usuarioMB.viewBean.formulario2.resposta_A}" rendered="#{usuarioMB.viewBean.formulario2.resposta_A == '' ? false : true}" style="font-size:15px; " escape="false"/>
+										<h:outputText value="B) #{usuarioMB.viewBean.formulario2.resposta_B}" rendered="#{usuarioMB.viewBean.formulario2.resposta_B == '' ? false : true}" style="font-size:15px; " escape="false"/>														
+										<h:outputText value="C) #{usuarioMB.viewBean.formulario2.resposta_C}" rendered="#{usuarioMB.viewBean.formulario2.resposta_C == '' ? false : true}" style="font-size:15px; " escape="false"/>
+										<h:outputText value="D) #{usuarioMB.viewBean.formulario2.resposta_D}" rendered="#{usuarioMB.viewBean.formulario2.resposta_D == '' ? false : true}" style="font-size:15px; " escape="false"/>
+										<h:outputText value="E) #{usuarioMB.viewBean.formulario2.resposta_E}" rendered="#{usuarioMB.viewBean.formulario2.resposta_E == '' ? false : true}" style="font-size:15px; " escape="false"/>
 									<h:outputText value="Escolha a resposta correta:" />
 									<p:selectOneRadio id="console2" 
 										value="#{usuarioMB.viewBean.resposta2}" layout="grid" columns="5" >
@@ -91,11 +91,11 @@
 							<h:outputText value="3) #{usuarioMB.viewBean.formulario3.pergunta}" style="font-size:15px; " escape="false"/>
 								<!-- Resposta  -->
 								<h:panelGrid columns="1" cellpadding="3">	
-										<h:outputText value="A) #{usuarioMB.viewBean.formulario3.resposta_A}" style="font-size:15px; " escape="false"/>
-										<h:outputText value="B) #{usuarioMB.viewBean.formulario3.resposta_B}" style="font-size:15px; " escape="false"/>														
-										<h:outputText value="C) #{usuarioMB.viewBean.formulario3.resposta_C}" style="font-size:15px; " escape="false"/>
-										<h:outputText value="D) #{usuarioMB.viewBean.formulario3.resposta_D}" style="font-size:15px; " escape="false"/>
-										<h:outputText value="E) #{usuarioMB.viewBean.formulario3.resposta_E}" style="font-size:15px; " escape="false"/>
+										<h:outputText value="A) #{usuarioMB.viewBean.formulario3.resposta_A}" rendered="#{usuarioMB.viewBean.formulario3.resposta_A == '' ? false : true}" style="font-size:15px; " escape="false"/>
+										<h:outputText value="B) #{usuarioMB.viewBean.formulario3.resposta_B}" rendered="#{usuarioMB.viewBean.formulario3.resposta_B == '' ? false : true}" style="font-size:15px; " escape="false"/>														
+										<h:outputText value="C) #{usuarioMB.viewBean.formulario3.resposta_C}" rendered="#{usuarioMB.viewBean.formulario3.resposta_C == '' ? false : true}" style="font-size:15px; " escape="false"/>
+										<h:outputText value="D) #{usuarioMB.viewBean.formulario3.resposta_D}" rendered="#{usuarioMB.viewBean.formulario3.resposta_D == '' ? false : true}" style="font-size:15px; " escape="false"/>
+										<h:outputText value="E) #{usuarioMB.viewBean.formulario3.resposta_E}" rendered="#{usuarioMB.viewBean.formulario3.resposta_E == '' ? false : true}" style="font-size:15px; " escape="false"/>
 									<h:outputText value="Escolha a resposta correta:" />
 									<p:selectOneRadio id="console3" 
 										value="#{usuarioMB.viewBean.resposta3}" layout="grid" columns="5" >
@@ -114,11 +114,11 @@
 							<h:outputText value="2) #{usuarioMB.viewBean.formulario4.pergunta}" style="font-size:15px; " escape="false"/>
 								<!-- Resposta  -->
 							<h:panelGrid columns="1" cellpadding="3">	
-										<h:outputText value="A) #{usuarioMB.viewBean.formulario4.resposta_A}" style="font-size:15px; " escape="false"/>
-										<h:outputText value="B) #{usuarioMB.viewBean.formulario4.resposta_B}" style="font-size:15px; " escape="false"/>														
-										<h:outputText value="C) #{usuarioMB.viewBean.formulario4.resposta_C}" style="font-size:15px; " escape="false"/>
-										<h:outputText value="D) #{usuarioMB.viewBean.formulario4.resposta_D}" style="font-size:15px; " escape="false"/>
-										<h:outputText value="E) #{usuarioMB.viewBean.formulario4.resposta_E}" style="font-size:15px; " escape="false"/>
+										<h:outputText value="A) #{usuarioMB.viewBean.formulario4.resposta_A}" rendered="#{usuarioMB.viewBean.formulario4.resposta_A == '' ? false : true}" style="font-size:15px; " escape="false"/>
+										<h:outputText value="B) #{usuarioMB.viewBean.formulario4.resposta_B}" rendered="#{usuarioMB.viewBean.formulario4.resposta_B == '' ? false : true}" style="font-size:15px; " escape="false"/>														
+										<h:outputText value="C) #{usuarioMB.viewBean.formulario4.resposta_C}" rendered="#{usuarioMB.viewBean.formulario4.resposta_C == '' ? false : true}" style="font-size:15px; " escape="false"/>
+										<h:outputText value="D) #{usuarioMB.viewBean.formulario4.resposta_D}" rendered="#{usuarioMB.viewBean.formulario4.resposta_D == '' ? false : true}" style="font-size:15px; " escape="false"/>
+										<h:outputText value="E) #{usuarioMB.viewBean.formulario4.resposta_E}" rendered="#{usuarioMB.viewBean.formulario4.resposta_E == '' ? false : true}" style="font-size:15px; " escape="false"/>
 									<h:outputText value="Escolha a resposta correta:" />
 									<p:selectOneRadio id="console4" 
 										value="#{usuarioMB.viewBean.resposta4}" layout="grid" columns="5" >
@@ -137,11 +137,11 @@
 							<h:outputText value="5) #{usuarioMB.viewBean.formulario5.pergunta}" style="font-size:15px; " escape="false"/>
 								<!-- Resposta  -->
 								<h:panelGrid columns="1" cellpadding="3">	
-										<h:outputText value="A) #{usuarioMB.viewBean.formulario5.resposta_A}" style="font-size:15px; " escape="false"/>
-										<h:outputText value="B) #{usuarioMB.viewBean.formulario5.resposta_B}" style="font-size:15px; " escape="false"/>														
-										<h:outputText value="C) #{usuarioMB.viewBean.formulario5.resposta_C}" style="font-size:15px; " escape="false"/>
-										<h:outputText value="D) #{usuarioMB.viewBean.formulario5.resposta_D}" style="font-size:15px; " escape="false"/>
-										<h:outputText value="E) #{usuarioMB.viewBean.formulario5.resposta_E}" style="font-size:15px; " escape="false"/>
+										<h:outputText value="A) #{usuarioMB.viewBean.formulario5.resposta_A}" rendered="#{usuarioMB.viewBean.formulario5.resposta_A == '' ? false : true}" style="font-size:15px; " escape="false"/>
+										<h:outputText value="B) #{usuarioMB.viewBean.formulario5.resposta_B}" rendered="#{usuarioMB.viewBean.formulario5.resposta_B == '' ? false : true}" style="font-size:15px; " escape="false"/>														
+										<h:outputText value="C) #{usuarioMB.viewBean.formulario5.resposta_C}" rendered="#{usuarioMB.viewBean.formulario5.resposta_C == '' ? false : true}" style="font-size:15px; " escape="false"/>
+										<h:outputText value="D) #{usuarioMB.viewBean.formulario5.resposta_D}" rendered="#{usuarioMB.viewBean.formulario5.resposta_D == '' ? false : true}" style="font-size:15px; " escape="false"/>
+										<h:outputText value="E) #{usuarioMB.viewBean.formulario5.resposta_E}" rendered="#{usuarioMB.viewBean.formulario5.resposta_E == '' ? false : true}" style="font-size:15px; " escape="false"/>
 									<h:outputText value="Escolha a resposta correta:" />
 									<p:selectOneRadio id="console5" 
 										value="#{usuarioMB.viewBean.resposta5}" layout="grid" columns="5" >
@@ -160,11 +160,11 @@
 							<h:outputText value="6) #{usuarioMB.viewBean.formulario6.pergunta}" style="font-size:15px; " escape="false"/>
 								<!-- Resposta  -->
 							<h:panelGrid columns="1" cellpadding="3">	
-										<h:outputText value="A) #{usuarioMB.viewBean.formulario6.resposta_A}" style="font-size:15px; " escape="false"/>
-										<h:outputText value="B) #{usuarioMB.viewBean.formulario6.resposta_B}" style="font-size:15px; " escape="false"/>														
-										<h:outputText value="C) #{usuarioMB.viewBean.formulario6.resposta_C}" style="font-size:15px; " escape="false"/>
-										<h:outputText value="D) #{usuarioMB.viewBean.formulario6.resposta_D}" style="font-size:15px; " escape="false"/>
-										<h:outputText value="E) #{usuarioMB.viewBean.formulario6.resposta_E}" style="font-size:15px; " escape="false"/>
+										<h:outputText value="A) #{usuarioMB.viewBean.formulario6.resposta_A}" rendered="#{usuarioMB.viewBean.formulario6.resposta_A == '' ? false : true}" style="font-size:15px; " escape="false"/>
+										<h:outputText value="B) #{usuarioMB.viewBean.formulario6.resposta_B}" rendered="#{usuarioMB.viewBean.formulario6.resposta_B == '' ? false : true}" style="font-size:15px; " escape="false"/>														
+										<h:outputText value="C) #{usuarioMB.viewBean.formulario6.resposta_C}" rendered="#{usuarioMB.viewBean.formulario6.resposta_C == '' ? false : true}" style="font-size:15px; " escape="false"/>
+										<h:outputText value="D) #{usuarioMB.viewBean.formulario6.resposta_D}" rendered="#{usuarioMB.viewBean.formulario6.resposta_D == '' ? false : true}" style="font-size:15px; " escape="false"/>
+										<h:outputText value="E) #{usuarioMB.viewBean.formulario6.resposta_E}" rendered="#{usuarioMB.viewBean.formulario6.resposta_E == '' ? false : true}" style="font-size:15px; " escape="false"/>
 									<h:outputText value="Escolha a resposta correta:" />
 									<p:selectOneRadio id="console6" 
 										value="#{usuarioMB.viewBean.resposta6}" layout="grid" columns="5" >
@@ -184,11 +184,11 @@
 							<h:outputText value="7) #{usuarioMB.viewBean.formulario7.pergunta}" style="font-size:15px; " escape="false"/>
 								<!-- Resposta  -->
 								<h:panelGrid columns="1" cellpadding="3">	
-										<h:outputText value="A) #{usuarioMB.viewBean.formulario7.resposta_A}" style="font-size:15px; " escape="false"/>
-										<h:outputText value="B) #{usuarioMB.viewBean.formulario7.resposta_B}" style="font-size:15px; " escape="false"/>														
-										<h:outputText value="C) #{usuarioMB.viewBean.formulario7.resposta_C}" style="font-size:15px; " escape="false"/>
-										<h:outputText value="D) #{usuarioMB.viewBean.formulario7.resposta_D}" style="font-size:15px; " escape="false"/>
-										<h:outputText value="E) #{usuarioMB.viewBean.formulario7.resposta_E}" style="font-size:15px; " escape="false"/>
+										<h:outputText value="A) #{usuarioMB.viewBean.formulario7.resposta_A}" rendered="#{usuarioMB.viewBean.formulario7.resposta_A == '' ? false : true}" style="font-size:15px; " escape="false"/>
+										<h:outputText value="B) #{usuarioMB.viewBean.formulario7.resposta_B}" rendered="#{usuarioMB.viewBean.formulario7.resposta_B == '' ? false : true}" style="font-size:15px; " escape="false"/>														
+										<h:outputText value="C) #{usuarioMB.viewBean.formulario7.resposta_C}" rendered="#{usuarioMB.viewBean.formulario7.resposta_C == '' ? false : true}" style="font-size:15px; " escape="false"/>
+										<h:outputText value="D) #{usuarioMB.viewBean.formulario7.resposta_D}" rendered="#{usuarioMB.viewBean.formulario7.resposta_D == '' ? false : true}" style="font-size:15px; " escape="false"/>
+										<h:outputText value="E) #{usuarioMB.viewBean.formulario7.resposta_E}" rendered="#{usuarioMB.viewBean.formulario7.resposta_E == '' ? false : true}" style="font-size:15px; " escape="false"/>
 									<h:outputText value="Escolha a resposta correta:" />
 									<p:selectOneRadio id="console7" 
 										value="#{usuarioMB.viewBean.resposta7}" layout="grid" columns="5" >
@@ -207,11 +207,11 @@
 							<h:outputText value="8) #{usuarioMB.viewBean.formulario8.pergunta}" style="font-size:15px; " escape="false"/>
 								<!-- Resposta  -->
 								<h:panelGrid columns="1" cellpadding="3">	
-										<h:outputText value="A) #{usuarioMB.viewBean.formulario8.resposta_A}" style="font-size:15px; " escape="false"/>
-										<h:outputText value="B) #{usuarioMB.viewBean.formulario8.resposta_B}" style="font-size:15px; " escape="false"/>														
-										<h:outputText value="C) #{usuarioMB.viewBean.formulario8.resposta_C}" style="font-size:15px; " escape="false"/>
-										<h:outputText value="D) #{usuarioMB.viewBean.formulario8.resposta_D}" style="font-size:15px; " escape="false"/>
-										<h:outputText value="E) #{usuarioMB.viewBean.formulario8.resposta_E}" style="font-size:15px; " escape="false"/>
+										<h:outputText value="A) #{usuarioMB.viewBean.formulario8.resposta_A}" rendered="#{usuarioMB.viewBean.formulario8.resposta_A == '' ? false : true}" style="font-size:15px; " escape="false"/>
+										<h:outputText value="B) #{usuarioMB.viewBean.formulario8.resposta_B}" rendered="#{usuarioMB.viewBean.formulario8.resposta_B == '' ? false : true}" style="font-size:15px; " escape="false"/>														
+										<h:outputText value="C) #{usuarioMB.viewBean.formulario8.resposta_C}" rendered="#{usuarioMB.viewBean.formulario8.resposta_C == '' ? false : true}" style="font-size:15px; " escape="false"/>
+										<h:outputText value="D) #{usuarioMB.viewBean.formulario8.resposta_D}" rendered="#{usuarioMB.viewBean.formulario8.resposta_D == '' ? false : true}" style="font-size:15px; " escape="false"/>
+										<h:outputText value="E) #{usuarioMB.viewBean.formulario8.resposta_E}" rendered="#{usuarioMB.viewBean.formulario8.resposta_E == '' ? false : true}" style="font-size:15px; " escape="false"/>
 									<h:outputText value="Escolha a resposta correta:" />
 									<p:selectOneRadio id="console8" 
 										value="#{usuarioMB.viewBean.resposta8}" layout="grid" columns="5" >
@@ -230,11 +230,11 @@
 							<h:outputText value="9) #{usuarioMB.viewBean.formulario9.pergunta}" style="font-size:15px; " escape="false"/>
 								<!-- Resposta  -->
 								<h:panelGrid columns="1" cellpadding="3">	
-										<h:outputText value="A) #{usuarioMB.viewBean.formulario9.resposta_A}" style="font-size:15px; " escape="false"/>
-										<h:outputText value="B) #{usuarioMB.viewBean.formulario9.resposta_B}" style="font-size:15px; " escape="false"/>														
-										<h:outputText value="C) #{usuarioMB.viewBean.formulario9.resposta_C}" style="font-size:15px; " escape="false"/>
-										<h:outputText value="D) #{usuarioMB.viewBean.formulario9.resposta_D}" style="font-size:15px; " escape="false"/>
-										<h:outputText value="E) #{usuarioMB.viewBean.formulario9.resposta_E}" style="font-size:15px; " escape="false"/>
+										<h:outputText value="A) #{usuarioMB.viewBean.formulario9.resposta_A}" rendered="#{usuarioMB.viewBean.formulario9.resposta_A == '' ? false : true}" style="font-size:15px; " escape="false"/>
+										<h:outputText value="B) #{usuarioMB.viewBean.formulario9.resposta_B}" rendered="#{usuarioMB.viewBean.formulario9.resposta_B == '' ? false : true}" style="font-size:15px; " escape="false"/>														
+										<h:outputText value="C) #{usuarioMB.viewBean.formulario9.resposta_C}" rendered="#{usuarioMB.viewBean.formulario9.resposta_C == '' ? false : true}" style="font-size:15px; " escape="false"/>
+										<h:outputText value="D) #{usuarioMB.viewBean.formulario9.resposta_D}" rendered="#{usuarioMB.viewBean.formulario9.resposta_D == '' ? false : true}" style="font-size:15px; " escape="false"/>
+										<h:outputText value="E) #{usuarioMB.viewBean.formulario9.resposta_E}" rendered="#{usuarioMB.viewBean.formulario9.resposta_E == '' ? false : true}" style="font-size:15px; " escape="false"/>
 									<h:outputText value="Escolha a resposta correta:" />
 									<p:selectOneRadio id="console9" 
 										value="#{usuarioMB.viewBean.resposta9}" layout="grid" columns="5" >
@@ -253,11 +253,11 @@
 							<h:outputText value="10) #{usuarioMB.viewBean.formulario10.pergunta}" style="font-size:15px; " escape="false"/>
 								<!-- Resposta  -->
 								<h:panelGrid columns="1" cellpadding="3">	
-										<h:outputText value="A) #{usuarioMB.viewBean.formulario10.resposta_A}" style="font-size:15px; " escape="false"/>
-										<h:outputText value="B) #{usuarioMB.viewBean.formulario10.resposta_B}" style="font-size:15px; " escape="false"/>														
-										<h:outputText value="C) #{usuarioMB.viewBean.formulario10.resposta_C}" style="font-size:15px; " escape="false"/>
-										<h:outputText value="D) #{usuarioMB.viewBean.formulario10.resposta_D}" style="font-size:15px; " escape="false"/>
-										<h:outputText value="E) #{usuarioMB.viewBean.formulario10.resposta_E}" style="font-size:15px; " escape="false"/>
+										<h:outputText value="A) #{usuarioMB.viewBean.formulario10.resposta_A}" rendered="#{usuarioMB.viewBean.formulario10.resposta_A == '' ? false : true}" style="font-size:15px; " escape="false"/>
+										<h:outputText value="B) #{usuarioMB.viewBean.formulario10.resposta_B}" rendered="#{usuarioMB.viewBean.formulario10.resposta_B == '' ? false : true}" style="font-size:15px; " escape="false"/>														
+										<h:outputText value="C) #{usuarioMB.viewBean.formulario10.resposta_C}" rendered="#{usuarioMB.viewBean.formulario10.resposta_C == '' ? false : true}" style="font-size:15px; " escape="false"/>
+										<h:outputText value="D) #{usuarioMB.viewBean.formulario10.resposta_D}" rendered="#{usuarioMB.viewBean.formulario10.resposta_D == '' ? false : true}" style="font-size:15px; " escape="false"/>
+										<h:outputText value="E) #{usuarioMB.viewBean.formulario10.resposta_E}" rendered="#{usuarioMB.viewBean.formulario10.resposta_E == '' ? false : true}" style="font-size:15px; " escape="false"/>
 									<h:outputText value="Escolha a resposta correta:" />
 									<p:selectOneRadio id="console10" 
 										value="#{usuarioMB.viewBean.resposta10}" layout="grid" columns="5" >
