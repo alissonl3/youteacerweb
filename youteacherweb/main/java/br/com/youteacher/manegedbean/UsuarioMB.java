@@ -82,6 +82,8 @@ public class UsuarioMB implements Serializable {
 
 	// opções render botão principal
 	private boolean habilitarVisualizacaoBtInicio;
+	
+	private boolean retorno;
 
 	@PostConstruct
 	private void initPage() {
@@ -96,6 +98,20 @@ public class UsuarioMB implements Serializable {
 		videoDAO = new VideoDAO();
 		videoSelecionado = new Video();
 
+	}
+	
+	//VALIDAR INJECTION SQL
+	public boolean validarSQL(String string){
+		 String[] lixo= {"select" , "drop" ,  ";" , "--" , "insert" , "delete" ,  "xp_", "'","update"};
+		this.retorno = false;
+	        for(int i=0;i<lixo.length;i++){
+	            // string = string.replace(lixo[i], "");
+	            boolean validar = string.contains(lixo[i]);
+	            if(validar){
+	            	this.retorno = validar;
+	            }
+	        }
+	       return this.retorno;
 	}
 
 	// SETAR VIDEO SELECIONADO
@@ -1146,8 +1162,8 @@ public class UsuarioMB implements Serializable {
 
 	// EXECUTAR O LOGIN DO USUARIO
 	public String loginUsuario() throws NoSuchAlgorithmException {
+		if(!validarSQL(viewBean.getUsuario().getSenha())){
 		atualizarListaVideo();
-
 		// Logando como root
 		if (viewBean.getUsuario().getEmail().equals("ifpr@gmail.com")
 				&& viewBean.getUsuario().getSenha().equals("root")) {
@@ -1223,6 +1239,10 @@ public class UsuarioMB implements Serializable {
 				return "inicial";
 
 			}
+		}
+		}else{
+			mostraMenssagem("ERRO!", "Tentativa de SQL INJECTION!!");
+			return "inicial";
 		}
 
 	}
