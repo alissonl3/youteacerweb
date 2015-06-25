@@ -439,7 +439,6 @@ public class UsuarioMB implements Serializable {
 		// usuarioDataModel = dao.listarTodos();
 		usuarioDataModel = dao.listarCondicaoUsuario(" email != '"
 				+ viewBean.getUsuarioLogado().getEmail() + "'");
-
 		return "adm";
 	}
 
@@ -562,14 +561,14 @@ public class UsuarioMB implements Serializable {
 				Carteiro carta = new Carteiro();
 
 				if (carta.enviarMensagem(men)) {
-
+					System.out.println("Enviado com sucesso!");
 					RequestContext.getCurrentInstance()
 							.update("frmDlgTemplate");
 					RequestContext.getCurrentInstance().execute(
 							"PF('dlgEmailEnviar').show();");
 
 				} else {
-
+					System.out.println("enviado sem sucesso!");
 					mostraMenssagem("ERRO",
 							"Houve um erro ao tentar enviar a menssagem");
 
@@ -1201,6 +1200,12 @@ public class UsuarioMB implements Serializable {
 
 				viewBean.setUsuarioLogado(viewBean.getUsuarios().get(0));
 				viewBean.setNomeUsuario(viewBean.getUsuarios().get(0).getNome());
+				viewBean.setEmailAlterado(viewBean.getUsuarios().get(0)
+						.getEmail());
+				viewBean.setNomeAlterado(viewBean.getUsuarios().get(0)
+						.getNome());
+				viewBean.setDataAlterada(viewBean.getUsuarios().get(0)
+						.getDataNascimento());
 				// viewBean.setUsuarioEditado(viewBean.getUsuarios().get(0));
 				atualizarListaVideo();
 
@@ -1249,7 +1254,7 @@ public class UsuarioMB implements Serializable {
 
 	// EXECUTAR LOGOFF DO USUARIO
 	public String logOff() {
-
+		viewBean = new UsuarioViewBean();
 		FacesContext fc = FacesContext.getCurrentInstance();
 		HttpSession session = (HttpSession) fc.getExternalContext().getSession(
 				false);
@@ -1291,6 +1296,7 @@ public class UsuarioMB implements Serializable {
 		viewBean.setResposta8(new String());
 		viewBean.setResposta9(new String());
 		viewBean.setResposta10(new String());
+		atualizarListaVideo();
 
 		org.primefaces.context.RequestContext.getCurrentInstance().update(
 				":frmPraticar");
