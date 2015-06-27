@@ -52,17 +52,23 @@
 							<f:convertDateTime pattern="d/M/yyyy" />
 						</p:inputMask>
 						<p:message for="nascimento" display="text"></p:message>
-
-
+						<br/>
+						<h:outputText value="Senha atual" style="font-size:15px;" />
+						<br/>
+						<p:password id="senhaAtual" style="height:30px ;"
+							value="#{usuarioMB.viewBean.senhaAtual}" size="30"
+							validatorMessage="Digite sua senha Atual!"
+							/>
+						<p:message for="senhaAtual" dusplay="text"/>
 						<br />
-						<h:outputText value="Senha" style="font-size:15px;" />
+						<h:outputText value="Nova Senha" style="font-size:15px;" />
 						<br />
 						<p:password id="senha" style="height:30px ;"
 							value="#{usuarioMB.viewBean.senhaAlterada}" size="30"
 							match="senha2" validatorMessage="Confirme a senha" />
 						<p:message for="senha" display="text" />
 						<br />
-						<h:outputText value="Confirmar senha" style="font-size:15px;" />
+						<h:outputText value="Confirmar nova senha" style="font-size:15px;" />
 						<br />
 						<p:password id="senha2" style="height:30px ;"
 							value="#{usuarioMB.viewBean.senhaAlterada}" size="30" />

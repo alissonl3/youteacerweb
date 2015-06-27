@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Random;
 
 import javax.annotation.PostConstruct;
+import javax.crypto.EncryptedPrivateKeyInfo;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.context.FacesContext;
@@ -993,27 +994,34 @@ public class UsuarioMB implements Serializable {
 	// Editar usuario
 	public void alterarUsuario() {
 		try {
-
+				boolean alterado = false;
 				// Caso a senha seja alterada
+				if(SenhaEncripty.md5(viewBean.getSenhaAtual()).equals(viewBean.getUsuarioLogado().getSenha())){
+					System.out.println("Entrou");
 				if (!viewBean.getSenhaAlterada().equals("")) {
-					viewBean.getUsuarioLogado().setSenha(
-							SenhaEncripty.md5(viewBean.getSenhaAlterada()));
+					viewBean.getUsuarioLogado().setSenha(SenhaEncripty.md5(viewBean.getSenhaAlterada()));
+					alterado = true;
 				}
+				}
+				
 				// Caso o nome seja alterado
 				if (!viewBean.getNomeAlterado().equals(
 						viewBean.getUsuarioLogado().getNome())) {
 					viewBean.getUsuarioLogado().setNome(
 							viewBean.getNomeAlterado());
+					alterado = true;
 				}
 				if (viewBean.getDataAlterada() != viewBean.getUsuarioLogado()
 						.getDataNascimento()) {
 					viewBean.getUsuarioLogado().setDataNascimento(
 							viewBean.getDataAlterada());
+					alterado = true;
 				}
 
+				if(alterado){
 				dao.alterar(viewBean.getUsuarioLogado());
 				mostraMenssagem("SUCESSO", "Usuario alterado com sucesso.");
-
+				}
 			
 			
 

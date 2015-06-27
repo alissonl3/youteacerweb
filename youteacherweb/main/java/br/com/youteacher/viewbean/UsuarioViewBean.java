@@ -27,6 +27,8 @@ public class UsuarioViewBean {
 	private String senhaAlterada;
 	private String nomeAlterado;
 	private Date dataAlterada;
+	private String senhaAtual;
+	
 	
 	
 	//envio de email
@@ -429,5 +431,13 @@ public class UsuarioViewBean {
 	public void setDataAlterada(Date dataAlterada) {
 		this.dataAlterada = dataAlterada;
 	}
+	public String getSenhaAtual() {
+		return senhaAtual;
+	}
+
+	public void setSenhaAtual(String senhaAtual) {
+		this.senhaAtual = senhaAtual;
+	}
+
 
 }
