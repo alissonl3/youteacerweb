@@ -25,7 +25,6 @@ public class UsuarioViewBean {
 	
 	//Dados de alteracao do perfil
 	private String senhaAlterada;
-	private String emailAlterado;
 	private String nomeAlterado;
 	private Date dataAlterada;
 	
@@ -85,7 +84,6 @@ public class UsuarioViewBean {
 		video = new Video();
 		videoSelecionado = new Video();
 		senhaAlterada="";
-		emailAlterado = "";
 		nomeAlterado = "";
 		dataAlterada = new Date();
 		
@@ -414,13 +412,6 @@ public class UsuarioViewBean {
 
 	public void setSenhaAlterada(String senhaAlterada) {
 		this.senhaAlterada = senhaAlterada;
-	}
-	public String getEmailAlterado() {
-		return emailAlterado;
-	}
-
-	public void setEmailAlterado(String emailAlterado) {
-		this.emailAlterado = emailAlterado;
 	}
 
 	public String getNomeAlterado() {

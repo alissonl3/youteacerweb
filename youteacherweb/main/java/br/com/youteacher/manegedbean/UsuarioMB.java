@@ -547,7 +547,7 @@ public class UsuarioMB implements Serializable {
 				Usuario user = new Usuario();
 				user = listaEmail.get(0);
 				String novaSenha = gerarSenha();
-				user.setSenha(novaSenha);
+				user.setSenha(SenhaEncripty.md5(novaSenha));
 
 				dao.alterar(user);
 				System.out.println("Alterado: nova senha >  " + novaSenha);
@@ -905,7 +905,6 @@ public class UsuarioMB implements Serializable {
 //
 //				viewBean.setUsuarioLogado(viewBean.getUsuario());
 //				viewBean.setNomeUsuario(viewBean.getUsuario().getNome());
-//				viewBean.setEmailAlterado(viewBean.getUsuario().getEmail());
 //				viewBean.setNomeAlterado(viewBean.getUsuario().getNome());
 //				viewBean.setDataAlterada(viewBean.getUsuario()
 //						.getDataNascimento());
@@ -995,16 +994,6 @@ public class UsuarioMB implements Serializable {
 	public void alterarUsuario() {
 		try {
 
-			// Caso o Email seja alterado e o mesmo não existe no banco
-			if ((!viewBean.getEmailAlterado().equals(
-					viewBean.getUsuarioLogado().getEmail()) && dao
-					.listarCondicaoUsuario(
-							"email = '" + viewBean.getEmailAlterado() + "'")
-					.size() == 0)
-					|| viewBean.getEmailAlterado().equals(
-							viewBean.getUsuarioLogado().getEmail())) {
-				viewBean.getUsuarioLogado().setEmail(
-						viewBean.getEmailAlterado());
 				// Caso a senha seja alterada
 				if (!viewBean.getSenhaAlterada().equals("")) {
 					viewBean.getUsuarioLogado().setSenha(
@@ -1025,16 +1014,11 @@ public class UsuarioMB implements Serializable {
 				dao.alterar(viewBean.getUsuarioLogado());
 				mostraMenssagem("SUCESSO", "Usuario alterado com sucesso.");
 
-			}
-			// caso o email alterado já exista no banco
-			else {
-				mostraMenssagem("Erro", "Já existe um usuario com este Email!!");
-
-			}
+			
+			
 
 			viewBean.setNomeUsuario(viewBean.getUsuarioLogado().getNome());
 			viewBean.setNomeAlterado(viewBean.getUsuarioLogado().getNome());
-			viewBean.setEmailAlterado(viewBean.getUsuarioLogado().getEmail());
 			viewBean.setDataAlterada(viewBean.getUsuarioLogado()
 					.getDataNascimento());
 
@@ -1200,8 +1184,6 @@ public class UsuarioMB implements Serializable {
 
 				viewBean.setUsuarioLogado(viewBean.getUsuarios().get(0));
 				viewBean.setNomeUsuario(viewBean.getUsuarios().get(0).getNome());
-				viewBean.setEmailAlterado(viewBean.getUsuarios().get(0)
-						.getEmail());
 				viewBean.setNomeAlterado(viewBean.getUsuarios().get(0)
 						.getNome());
 				viewBean.setDataAlterada(viewBean.getUsuarios().get(0)
@@ -1223,8 +1205,6 @@ public class UsuarioMB implements Serializable {
 				// Inserção dos dados do usuario
 				viewBean.setUsuarioLogado(viewBean.getUsuarios().get(0));
 				viewBean.setNomeUsuario(viewBean.getUsuarios().get(0).getNome());
-				viewBean.setEmailAlterado(viewBean.getUsuarios().get(0)
-						.getEmail());
 				viewBean.setNomeAlterado(viewBean.getUsuarios().get(0)
 						.getNome());
 				viewBean.setDataAlterada(viewBean.getUsuarios().get(0)

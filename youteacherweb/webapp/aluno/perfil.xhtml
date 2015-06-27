@@ -44,16 +44,6 @@
 						<p:inputText id="nome" value="#{usuarioMB.viewBean.nomeAlterado}"
 							style="height:30px ;" maxlength="50" size="30" />
 						<br />
-						<h:outputText value="E-mail" style="font-size:15px;" />
-						<br />
-						<p:inputText id="email" label="EMAIL:" style="height:30px ;"
-							size="30" validatorMessage="Email Inválido!"
-							value="#{usuarioMB.viewBean.emailAlterado}">
-							<f:validateRegex
-								pattern="^[_A-Za-z0-9-\+]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$" />
-						</p:inputText>
-						<p:message for="email" display="text" />
-						<br />
 						<h:outputText value="Data de nascimento" style="font-size:15px;"></h:outputText>
 						<br />
 						<p:inputMask id="nascimento" mask="99/99/9999"
