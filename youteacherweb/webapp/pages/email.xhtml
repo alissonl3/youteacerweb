@@ -52,7 +52,7 @@
 
 							<p:commandButton value="ENVIAR" styleClass="btnVerdeClaro"
 								style="width: 315px;height:50px ;background:#24b85b;color: white;border-color: #24b85b; font:18px 'Ruda',sans-serif;"
-								actionListener="#{usuarioMB.enviarEmail}"
+								actionListener="#{usuarioMB.enviarEmail}" onstart="PF('dlgLoading').show();" oncomplete="PF('dlgLoading').hide();"
 								update="@form" />
 						</h:panelGrid>
 						</h:form>
