@@ -119,7 +119,7 @@ public class UsuarioViewBean {
 		// pagina
 		habilitarVisualizacaoIdCadastro = false;
 		tituloVideo = "YouTeacher";
-		urlVideo = "https://www.youtube.com/v/1OH3ISC-vfk";
+		urlVideo = "https://www.youtube.com/v/aKDugIvMw5M";
 		habilitarVisualizacaoQuestionario = false;
 	}
 

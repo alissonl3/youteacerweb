@@ -202,7 +202,7 @@ public class UsuarioMB implements Serializable {
 		//String retorno = null;
 
 		if (viewBean.getFormulario1() != null) {
-			if(!viewBean.getFormulario1().getPergunta().equals("")){
+			if(!viewBean.getFormulario1().getPergunta().trim().equals("")){
 			viewBean.getFormulario1().setVideo(videoSelecionadoFormulario);
 
 			formularioDAO.inserir(viewBean.getFormulario1());
@@ -214,7 +214,7 @@ public class UsuarioMB implements Serializable {
 
 		if (habilitarVisualizacaoPergunta2 == true) {
 			if (viewBean.getFormulario2() != null) {
-				if(!viewBean.getFormulario2().getPergunta().equals("")){
+				if(!viewBean.getFormulario2().getPergunta().trim().equals("")){
 
 				viewBean.getFormulario2().setVideo(videoSelecionadoFormulario);
 
@@ -228,7 +228,7 @@ public class UsuarioMB implements Serializable {
 
 		if (habilitarVisualizacaoPergunta3 == true) {
 			if (viewBean.getFormulario3() != null) {
-				if(!viewBean.getFormulario3().getPergunta().equals("")){
+				if(!viewBean.getFormulario3().getPergunta().trim().equals("")){
 
 				viewBean.getFormulario3().setVideo(videoSelecionadoFormulario);
 				formularioDAO.inserir(viewBean.getFormulario3());
@@ -241,7 +241,7 @@ public class UsuarioMB implements Serializable {
 
 		if (habilitarVisualizacaoPergunta4 == true) {
 			if (viewBean.getFormulario4() != null) {
-				if(!viewBean.getFormulario4().getPergunta().equals("")){
+				if(!viewBean.getFormulario4().getPergunta().trim().equals("")){
 
 				viewBean.getFormulario4().setVideo(videoSelecionadoFormulario);
 				formularioDAO.inserir(viewBean.getFormulario4());
@@ -254,7 +254,7 @@ public class UsuarioMB implements Serializable {
 
 		if (habilitarVisualizacaoPergunta5 == true) {
 			if (viewBean.getFormulario5() != null) {
-				if(!viewBean.getFormulario5().getPergunta().equals("")){
+				if(!viewBean.getFormulario5().getPergunta().trim().equals("")){
 
 				viewBean.getFormulario5().setVideo(videoSelecionadoFormulario);
 				formularioDAO.inserir(viewBean.getFormulario6());
@@ -267,7 +267,7 @@ public class UsuarioMB implements Serializable {
 
 		if (habilitarVisualizacaoPergunta6 == true) {
 			if (viewBean.getFormulario6() != null) {
-				if(!viewBean.getFormulario6().getPergunta().equals("")){
+				if(!viewBean.getFormulario6().getPergunta().trim().equals("")){
 
 				viewBean.getFormulario6().setVideo(videoSelecionadoFormulario);
 				formularioDAO.inserir(viewBean.getFormulario6());
@@ -280,7 +280,7 @@ public class UsuarioMB implements Serializable {
 
 		if (habilitarVisualizacaoPergunta7 == true) {
 			if (viewBean.getFormulario7() != null) {
-				if(!viewBean.getFormulario7().getPergunta().equals("")){
+				if(!viewBean.getFormulario7().getPergunta().trim().equals("")){
 
 				viewBean.getFormulario7().setVideo(videoSelecionadoFormulario);
 				formularioDAO.inserir(viewBean.getFormulario7());
@@ -293,7 +293,7 @@ public class UsuarioMB implements Serializable {
 
 		if (habilitarVisualizacaoPergunta8 == true) {
 			if (viewBean.getFormulario8() != null) {
-				if(!viewBean.getFormulario8().getPergunta().equals("")){
+				if(!viewBean.getFormulario8().getPergunta().trim().equals("")){
 
 				viewBean.getFormulario8().setVideo(videoSelecionadoFormulario);
 				formularioDAO.inserir(viewBean.getFormulario8());
@@ -306,7 +306,7 @@ public class UsuarioMB implements Serializable {
 
 		if (habilitarVisualizacaoPergunta9 == true) {
 			if (viewBean.getFormulario9() != null) {
-				if(!viewBean.getFormulario9().getPergunta().equals("")){
+				if(!viewBean.getFormulario9().getPergunta().trim().equals("")){
 
 				viewBean.getFormulario9().setVideo(videoSelecionadoFormulario);
 				formularioDAO.inserir(viewBean.getFormulario9());
@@ -319,7 +319,7 @@ public class UsuarioMB implements Serializable {
 
 		if (habilitarVisualizacaoPergunta10 == true) {
 			if (viewBean.getFormulario10() != null) {
-				if(!viewBean.getFormulario10().getPergunta().equals("")){
+				if(!viewBean.getFormulario10().getPergunta().trim().equals("")){
 
 				viewBean.getFormulario10().setVideo(videoSelecionadoFormulario);
 				formularioDAO.inserir(viewBean.getFormulario10());
@@ -456,53 +456,63 @@ public class UsuarioMB implements Serializable {
 
 		try {
 			double acertos = 0;
+
 			if (viewBean.getResposta1().equals(
-					viewBean.getFormulario1().getResposta_certa())) {
+					viewBean.getFormulario1().getResposta_certa()) && viewBean.getResposta1() != null) {
 				acertos++;
 
 			}
+		
 			if (viewBean.getResposta2().equals(
-					viewBean.getFormulario2().getResposta_certa())) {
+					viewBean.getFormulario2().getResposta_certa()) && viewBean.getResposta2() != null) {
 				acertos++;
 
 			}
+	
 			if (viewBean.getResposta3().equals(
-					viewBean.getFormulario3().getResposta_certa())) {
+					viewBean.getFormulario3().getResposta_certa()) && viewBean.getResposta3() != null) {
 				acertos++;
 
 			}
+	
 			if (viewBean.getResposta4().equals(
-					viewBean.getFormulario4().getResposta_certa())) {
+					viewBean.getFormulario4().getResposta_certa()) && viewBean.getResposta4() != null) {
 				acertos++;
 
 			}
+		
 			if (viewBean.getResposta5().equals(
-					viewBean.getFormulario5().getResposta_certa())) {
+					viewBean.getFormulario5().getResposta_certa()) && viewBean.getResposta5() != null) {
 				acertos++;
 
 			}
+
 			if (viewBean.getResposta6().equals(
-					viewBean.getFormulario6().getResposta_certa())) {
+					viewBean.getFormulario6().getResposta_certa()) && viewBean.getResposta6() != null) {
 				acertos++;
 
 			}
+	
 			if (viewBean.getResposta7().equals(
-					viewBean.getFormulario7().getResposta_certa())) {
+					viewBean.getFormulario7().getResposta_certa()) && viewBean.getResposta7() != null) {
 				acertos++;
 
 			}
+			
 			if (viewBean.getResposta8().equals(
-					viewBean.getFormulario8().getResposta_certa())) {
+					viewBean.getFormulario8().getResposta_certa()) && viewBean.getResposta8() != null) {
 				acertos++;
 
 			}
+		
 			if (viewBean.getResposta9().equals(
-					viewBean.getFormulario9().getResposta_certa())) {
+					viewBean.getFormulario9().getResposta_certa()) && viewBean.getResposta9() != null) {
 				acertos++;
 
 			}
+		
 			if (viewBean.getResposta10().equals(
-					viewBean.getFormulario10().getResposta_certa())) {
+					viewBean.getFormulario10().getResposta_certa()) && viewBean.getResposta10() != null) {
 				acertos++;
 
 			}
@@ -528,7 +538,7 @@ public class UsuarioMB implements Serializable {
 
 		} catch (Exception e) {
 
-			System.out.println("Ocorreu um erro: " + e.getMessage());
+			System.out.println("Ocorreu um erro: " + e);
 
 		}
 
@@ -995,6 +1005,7 @@ public class UsuarioMB implements Serializable {
 	public void alterarUsuario() {
 		try {
 				boolean alterado = false;
+				
 				// Caso a senha seja alterada
 				if(SenhaEncripty.md5(viewBean.getSenhaAtual()).equals(viewBean.getUsuarioLogado().getSenha())){
 					System.out.println("Entrou");

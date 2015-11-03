@@ -2,6 +2,7 @@ html, body {
 	padding: 0px;
 	margin: 0px;
 	background: url(../resources/imagens/fund1.jpg) fixed no-repeat top left;
+	background-size: cover;
 	min-height: 100%;
 	font-family: ‘Lucida Console’, sans-serif;
 	
